@@ -1,0 +1,2602 @@
+%_ **************************************************************************
+%_ * The TeX source for AMS journal articles is the publishers TeX code     *
+%_ * which may contain special commands defined for the AMS production      *
+%_ * environment.  Therefore, it may not be possible to process these files *
+%_ * through TeX without errors.  To display a typeset version of a journal *
+%_ * article easily, we suggest that you retrieve the article in DVI,       *
+%_ * PostScript, or PDF format.                                             *
+%_ **************************************************************************
+%  Author Package
+%% Translation via Omnimark script a2l, February 24, 2003 (all in one day!)
+\controldates{10-JUL-2003,10-JUL-2003,10-JUL-2003,10-JUL-2003}
+ 
+\RequirePackage[warning,log]{snapshot}
+\documentclass{tran-l}
+\issueinfo{355}{11}{November}{2003}
+\pagespan{4397}{4426}
+\dateposted{July 10, 2003}
+\PII{S 0002-9947(03)03291-4}
+\copyrightinfo{2003}{American Mathematical Society}
+\usepackage[cmtip,all]{xy}
+
+
+\newcommand{\reg}{\operatorname{regularity}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\myim}{\operatorname{im}}
+\newcommand{\iso}{\cong}
+\newcommand{\tensor}{\otimes}
+\newcommand{\myHom}{\operatorname{Hom}}
+\newcommand{\Ext}{{\operatorname{Ext}}}
+\newcommand{\Tor}{{\operatorname{Tor}}}
+\newcommand{\tor}{{\operatorname{Tor}}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\sym}{\operatorname{sym}}
+\newcommand{\lin}{\operatorname{lin}}
+\newcommand{\myth}{{\operatorname{th}}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\myB}{\mathcal{B}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\myH}{\mathbf{H}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\myP}{\mathbf{P}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\TT}{\mathbf{T}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\gm}{{\mathfrak{m}}}
+
+\theoremstyle{plain}
+\newtheorem*{theorem1}{Reciprocity Theorem}
+\newtheorem*{theorem2}{Theorem 3.1}
+\newtheorem*{theorem3}{Proposition 2.1}
+\newtheorem*{theorem4}{Theorem 2.2} 
+\newtheorem*{theorem5}{Proposition 2.3}
+\newtheorem*{theorem6}{Corollary 2.4}
+\newtheorem*{theorem7}{Corollary 2.5}
+\newtheorem*{theorem8}{Theorem 2.6}
+\newtheorem*{theorem9}{Corollary 2.7}
+\newtheorem*{theorem10}{Theorem 3.1}
+\newtheorem*{theorem11}{Corollary 3.2}
+\newtheorem*{theorem12}{Theorem 3.4}
+\newtheorem*{theorem13}{Lemma 3.5}
+\newtheorem*{theorem14}{Corollary 3.6}
+\newtheorem*{theorem15}{Theorem 3.7}
+\newtheorem*{theorem16}{Theorem 4.1}
+\newtheorem*{theorem17}{Corollary 4.2}
+\newtheorem*{theorem18}{Theorem 4.3}
+\newtheorem*{theorem19}{Theorem 5.1}
+\newtheorem*{theorem20}{Corollary 5.2}
+\newtheorem*{theorem21}{Corollary 5.3}
+\newtheorem*{theorem22}{Corollary 5.4}
+\newtheorem*{theorem23}{Proposition 5.5}
+\newtheorem*{theorem24}{Proposition 5.6}
+\newtheorem*{theorem25}{Theorem 6.1}
+\newtheorem*{theorem26}{Corollary 6.2}
+\newtheorem*{theorem27}{Corollary 6.3}
+\newtheorem*{theorem28}{Lemma 7.4}
+\newtheorem*{theorem29}{Theorem 8.1}
+\newtheorem*{theorem30}{Proposition 8.6}
+\newtheorem*{theorem31}{Proposition 8.7}
+\newtheorem*{theorem32}{Corollary 8.8}
+\newtheorem*{theorem33}{Corollary 8.9}
+\newtheorem*{theorem34}{Theorem 8.10}
+
+\theoremstyle{remark}
+\newtheorem*{remark1}{Remark $8.14$}
+
+\theoremstyle{definition}
+\newtheorem*{definition1}{Example 3.3}
+\newtheorem*{definition2}{Example 3.3, continued}
+\newtheorem*{definition3}{Example 7.1}
+\newtheorem*{definition4}{Example 7.2. The rational normal curve}
+\newtheorem*{definition5}{Example 7.3. The Horrocks-Mumford bundle in $\mathbf{P}^{4}$}
+\newtheorem*{definition6}{Example 7.3, continued}
+\newtheorem*{definition7}{Example 8.2}
+\newtheorem*{definition8}{Definition 8.3. Partition monads}
+\newtheorem*{definition9}{Example 8.4. Free resolutions}
+\newtheorem*{definition10}{Example 8.5. Linear monads}
+\newtheorem*{definition11}{Example 8.11. Beilinson's free monad}
+\newtheorem*{definition12}{Example 8.12. Walter's monads}
+\newtheorem*{definition13}{Example 8.13}
+
+\begin{document}
+
+\title[Sheaf cohomology and free resolutions]
+{Sheaf cohomology and free resolutions\linebreak[1] over exterior algebras}
+\author[D. Eisenbud]{David Eisenbud}
+\address{Department of Mathematics, University of California Berkeley,
+Berkeley, California 94720}
+\email{eisenbud@math.berkeley.edu}
+
+\author[G. Fl\o ystad]{Gunnar Fl\o ystad}
+\address{Mathematisk Institutt, Johs. Brunsgt. 12,
+N-5008 Bergen, Norway}
+\email{gunnar@mi.uib.no}
+
+\author[F.-O. Schreyer]{Frank-Olaf Schreyer}
+\address{FB Mathematik, Universit\"{a}t Bayreuth
+D-95440 Bayreuth, Germany}
+\email{schreyer@btm8x5.mat.uni-bayreuth.de}
+
+\date{December 1, 2001}
+\thanks{The first and third authors are grateful to the NSF for
+partial support during the preparation of this paper.
+The third author wishes to thank MSRI for its hospitality.}
+\subjclass[2000]{Primary 14F05, 14Q20, 16E05}
+\begin{abstract}
+We derive an explicit version of the
+Bernstein-Gel'fand-Gel'fand (BGG) correspondence between bounded
+complexes of coherent sheaves on projective space and minimal doubly
+infinite free resolutions over its ``Koszul dual'' exterior algebra.
+Among the facts about the BGG correspondence that we derive is that
+taking homology of a complex of sheaves corresponds to taking the
+``linear part'' of a resolution over the exterior algebra.
+
+We explore the structure of
+free resolutions over an exterior algebra. For example,
+we show that such resolutions are eventually dominated by their
+``linear parts" in the sense that erasing all terms of degree $>1$ in
+the complex yields a new complex which is eventually exact.
+
+As applications we give a construction of the Beilinson monad which
+expresses a sheaf on projective space in terms of its cohomology by
+using sheaves of differential forms. The explicitness of our version
+allows us to prove two conjectures about the morphisms in the monad,
+and we get an efficient method for machine computation of the
+cohomology of sheaves. We also construct all the monads for a sheaf
+that can be built from sums of line bundles, and show that they are often
+characterized by numerical data.
+\end{abstract}
+\maketitle
+
+\section*{Introduction}Let $V$ be a finite-dimensional vector space over a field $K$, and let
+$W=V^{*}$ be the dual space. In this paper we will study complexes and
+resolutions over the exterior algebra $E=\bigwedge V$ and their relation
+to modules over $S=\sym \, W$ and sheaves on projective space $\myP (W)$.
+
+In this paper we study the 
+Bernstein-Gel'fand-Gel'fand (BGG) correspondence \cite{BGG}, usually
+stated as an equivalence between the derived category of bounded
+complexes of coherent sheaves on $\myP (W)$ and the stable category of
+finitely generated graded modules over $E$.
+Its
+essential content is a functor $\RR $ from complexes of graded $S$-modules
+to complexes of graded $E$-modules, and its adjoint $\LL $.
+For example, if $M=\bigoplus _{i} M_{i}$ is a graded $S$-module (regarded
+as a complex with just one term), then as a
+bigraded
+$E$-module $\RR (M)=\myHom _{K}(E,M)$, with differential
+$\myHom _{K}(E,M_{i})\to \myHom _{K}(E,M_{i+1})$ defined from the multiplication map
+on $M$. Similarly, for a graded $E$-module $P$, we have
+$\LL (P)=S\otimes _{K}P$. In fact (Proposition 2.1) $\RR $ is an
+equivalence from the category of graded
+$S$-modules
+to the category of linear complexes of free $E$-modules; here {\em linear\/} means essentially that the maps are represented by matrices
+of linear forms. A similar statement holds for $\LL $.
+
+We show that finitely generated modules $M$ go to left-bounded complexes
+that are exact far to the right, and characterize the point at
+which  exactness begins as the Castelnuovo-Mumford regularity of $M$.
+A strong form of this is Theorem 3.7, of which the following is
+a part:
+
+\begin{theorem1}
+If $M$ is a graded $S$-module and $P$ is a
+graded
+$E$-module, then $\RR (M)$ is an injective resolution of $P$ if and only if
+$\LL (P)$ is a free resolution of $M$.
+\end{theorem1}
+
+
+Let  $\F $ be a coherent sheaf on projective space and  take
+$M=\bigoplus _{d} \myH ^{0}(\F (d))$. The results above show that the complex
+$\RR (M_{\geq r})
+$
+associated to the truncation of $M$
+is acyclic for $r>>0$. If we take a minimal free resolution of the kernel
+of the first term in this complex, we obtain a doubly infinite
+exact free complex, independent of $r$, which we call
+the {\em Tate resolution\/}  $\TT (\F )$:
+\begin{equation*}\TT (\F ): \cdots \to T^{r-1}\to T^{r}=\myHom _{K}(E,M_{r})\to \myHom _{K}(E,
+M_{r+1})\to \cdots. \end{equation*}
+It was
+first studied in Gel'fand \cite{Gel}. 
+Our first main theorem  (Theorem 4.1) is that
+the $e^{\myth }$ term of the Tate resolution is
+$T^{e}(\F )=\bigoplus _{j}\myHom _{K}(E, \myH ^{j}(\F (e-j)))$; that is, 
+it is made
+from the cohomology of the twists of $\F $.
+This leads to a new algorithm for computing sheaf
+cohomology. We have  programmed
+this method in the computer algebra system Macaulay2 of Grayson
+and Stillman  [{\tt http://www.math.uiuc.edu/}\linebreak {\tt Macaulay2/}]. In
+some cases it gives the fastest known computation of the
+cohomology. 
+
+We apply the Tate resolution to study
+a result of Beilinson \cite{Bei}, which
+gives, for each sheaf $\F $ on projective space, a complex
+\begin{equation*}\dots \to \bigoplus _{j=0}^{n}\myH ^{j}(\F (e-j))\otimes _{K}
+\Omega _{\myP ^{n}}^{j-e}(j-e)
+\to \cdots .\end{equation*}
+called the {\em Beilinson monad\/}, whose homology is precisely
+$\F $ and whose terms depend only on the cohomology of a few twists of
+$\F $.
+
+Our second main result is a constructive version of
+Beilinson's theorem \cite{Bei}, which clarifies its connection with the
+BGG-correspondence (Theorem 6.1). See Decker and
+Eisenbud \cite{DE} for details and for an implementation of the BGG
+correspondence and the computation of the Beilinson monad. (That paper
+also contains an introduction to the uses of the Beilinson monad.)
+
+Beilinson's original paper
+sketched a proof that leads easily to a weak form of the result, the
+``Beilinson spectral sequence'', which determines the sheaf $\F $ only
+up to filtration. That version is explained in the book of Okonek,
+Schneider, and Spindler \cite{OSS}. Kapranov \cite{Kap1} and Ancona and
+Ottaviani \cite{AO} have given full proofs. However, their use of the
+derived category makes it difficult to compute the Beilinson monad
+effectively, and also makes it hard to obtain information about the
+maps in the monad.
+
+Our construction of the Beilinson monad leads to new results about its
+structure.  There are natural candidates for the linear components of
+the maps in the monad for a sheaf $\F $; and given such a monad, there
+are natural candidates for most of the maps in the monad of
+$\F (1)$. Our techniques allow us to prove that these natural
+candidates really do occur (Corollary 6.2 and Corollary 6.3).
+
+A remarkable feature of the theory of resolutions
+over the exterior algebra, not visible for
+the corresponding theory over a polynomial ring, is that the linear
+terms of any  resolution eventually predominate.
+To state this precisely, we introduce the
+{\em linear part\/} of a free complex $\FF $ over $S$ or $E$. The linear
+part
+is the complex obtained from $\FF $ by taking a minimal free
+complex $\GG $ homotopic to $\FF $, and then erasing all terms of
+absolute degree $>1$ from the matrices representing
+the differentials of $\GG $. In fact, taking the linear
+part is functorial in a suitable sense:
+under the BGG correspondence it corresponds to the  homology
+functor (Theorem 3.4).
+Just as the homology of a complex is simpler than the complex,
+one can often compute the linear part of a complex even when the
+complex itself is mysterious.
+
+Of course free resolutions may have maps with no linear
+terms at all, that is, with linear part equal
+to zero. And they can have infinitely many maps with nonlinear
+terms unavoidably present (this is even the case for periodic
+resolutions). But the linear
+terms eventually predominate in the following
+sense:
+
+\begin{theorem2} If\/ $\FF $ is the free
+resolution of  a finitely generated  module
+over the exterior algebra $E$,
+then the linear part of\/ $\FF $ is eventually exact.
+\end{theorem2}
+
+
+This predominance can take arbitrarily long to assert itself: the
+resolution of the dual of the millionth syzygy of the residue field of
+$E$ has a million linear maps followed by a map with
+linear part 0, and linear dominance happens only at the
+million and first term. In the case of a resolution
+of a monomial ideal, however, Herzog and R\"{o}mer \cite{HR} have
+shown that the linear part becomes exact after at most
+$\dim _{k} V$ steps. It would be interesting to know more results of
+this sort.
+
+Beilinson \cite{Bei} also proved the existence of a different monad for a
+sheaf $\F $, using the sheaves $\mathcal{O}_{\myP }(i)$ 
+for $0\leq i\leq n = \dim \PP (W)$ in place of the $\Omega ^{i}(i)$. Bernstein-Gel'fand-Gel'fand
+also introduced a ``linear'' monad using sums of line bundles and only
+having maps given by matrices of linear forms.  In the last section we
+show that such a monad ``partitions'' the cohomology of the sheaf into
+a ``positive'' part that appears as the homology of the corresponding
+complex of free $S$-modules and a ``negative'' part that appears as
+the cohomology of the dual complex.  We explain how these and other
+free monads of a sheaf $\F $ arise from the Tate resolution
+$\TT (\F )$. We show that many such monads are characterized by simple
+numerical data.
+
+Basic references for the BGG correspondence are
+Gel'fand \cite{Gel},
+and Gel'fand-Manin \cite{GM}).
+Much of the elementary material of this paper could be done for an
+arbitrary pair of homogeneous Koszul algebras (in the sense of Priddy
+\cite{Pri}) in place of the pair of algebras $S, E$. We use a tiny bit of
+this for the pair $(E,S)$.  See Buchweitz \cite{Buc1} for a sketch of the
+general case and a statement of general conditions under which the BGG
+correspondence holds. Buchweitz has also written
+a general treatment of the BGG correspondence over
+Gorenstein rings \cite{Buc2}.  Versions of
+Beilinson's theorem have been established for some other varieties
+through work of Swan \cite{Swa}, Kapranov \cite{Kap1}, \cite{Kap2}, 
+and Orlov \cite{Orl}.  Yet
+other derived category equivalences have been pursued under the rubric of
+``tilting" (see Happel \cite{Hap}). Fl\o ystad \cite{Flo1} gives a general
+theory for Koszul pairs, and also studies how far the equivalences
+can be extended to unbounded complexes.
+
+The material of our paper grew from two independent preprints of
+Eisenbud and Schreyer \cite{ES1} and Fl\o ystad \cite{Flo2}. Since there was
+considerable overlap we wrote a more complete joint paper,
+which also includes new joint results.  The original preprint by the
+second author has also been altered so that the notation and
+terminology are more aligned with the present paper.
+
+The material in this paper has been applied to study the
+cohomology of hyperplane arrangements (Eisenbud, Popescu, and
+Yuzvinsky \cite{EPY}) and to constructing counterexamples to the minimal
+free resolution conjecture for points in projective space (Eisenbud,
+Popescu, Schreyer, and Walter \cite{EPSW}).  The technique developed here
+for the Beilinson monad has been used by Eisenbud and Schreyer to
+construct complexes on various Grassmannians that can be used to
+compute and study Chow forms \cite{ES2}.  In a direction related to
+Green's proof of the linear syzygy conjecture \cite{EW}, Eisenbud and
+Weyman have found a general analogue for the Fitting lemma over {\bf Z/2}-graded algebras, including the exterior algebra.
+
+This paper owes much to the experiments we were able to make
+using the computer algebra system Macaulay2 of Grayson and Stillman,
+and we would like to thank them for their help and patience with
+this project. We are also grateful to Luchezar Avramov for
+getting us interested in resolutions over exterior algebras.
+
+\section*{1. Notation and background}
+
+Throughout this paper we write $K$ for a fixed field, and $V, W$ for
+dual vector spaces of finite dimension $v$ over $K$.  We give the
+elements of $W$ degree 1, so that the elements of $V$ have degree
+$-1$.  We write $E=\bigwedge V$ and $S=\Sym (W)$ for the exterior and
+symmetric algebras; these algebras are graded by their {\em internal
+degrees\/}, whereby $\Sym _{i}(W)$ has degree $i$ and $\bigwedge ^{j}V$ has
+degree $-j$.  We think of $E$ as $\Ext _{S}^{\bullet }(K,K)$ and $S$ as
+$\Ext _{E}^{\bullet }(K,K)$.
+
+We will always write the index indicating the degree of
+a homogeneous component of
+a graded module as subscripts. Thus if $M=\bigoplus M_{i}$ is a graded module over
+$E$ or $S$, then $M_{i}$ denotes the component of degree $i$.
+We let $M(a)$ be the shifted module, so that
+$M(a)_{b}=M_{a+b}$.
+We write complexes cohomologically, with
+upper indices and differentials of degree $+1$. Thus if
+\begin{equation*}\FF : \cdots \to F^{i}\to F^{i+1}\to \cdots
+\end{equation*}
+is a complex,
+then $F^{i}$ denotes the term of cohomological degree $i$.
+We write $\FF [a]$ for the complex whose
+term of cohomological degree $j$ is $F^{a+j}$.
+
+We will write
+$\omega _{S}=S\otimes _{K}\bigwedge ^{v}W$
+for the module associated to the canonical bundle of $\myP (W)$;
+note that $\bigwedge ^{v}W$ is a vector space concentrated in
+degree $v$, so that $\omega _{S}$ is noncanonically isomorphic
+to $S(-v)$. Similarly, we set
+$\omega _{E}:=\myHom _{K}(E,K)=E\otimes _{K}\bigwedge ^{v}W$, which is
+noncanonically isomorphic to $E(-v)$.
+It is easy to check that for any graded vector space $D$ we have
+$\myHom _{K}(E,D)\cong \omega _{E}\otimes _{K} D$
+as left $E$-modules.
+For any $E$-module $P$, we set $P^{*}:=\myHom _{K}(P,K)$.
+
+We often use the fact that the exterior algebra is Gorenstein and
+finite dimensional over $K$,
+which follows from the fact that $\myHom _{K}(E,K)\iso E$ as above.
+As a consequence, the dual of any exact sequence is exact and the notions of
+free module, injective module, and projective module coincide.
+
+We also use the notion of Castelnuovo-Mumford regularity.
+The most convenient
+definition for our purposes is that the Castelnuovo-Mumford
+regularity of a graded $S$-module $M=\bigoplus _{i}M_{i}$ is the smallest integer
+$r$ such that the truncation $M_{\geq r}=\bigoplus _{i\geq r}M_{i}$
+is generated by $M_{r}$ and has
+a {\em linear free resolution}---that is, all the maps in
+its free resolution are represented by matrices of linear forms.
+See for example
+Eisenbud-Goto \cite{EG} or Eisenbud \cite{Eis}
+for a discussion. The regularity of a sheaf $\F $ on projective space
+(equal to the regularity of $\bigoplus _{d} \myH ^{0}(\F (d))$ if this module
+is finitely generated) can also be expressed as the minimal
+$r$ for which $\myH ^{i}(\F (r-i))=0$ for all $i>0$.
+
+A free complex over $E$ or a graded free complex over $S$ is called {\em minimal\/} if all its maps can be represented by matrices with entries in
+the appropriate maximal ideal. For example, any linear complex is
+minimal.
+
+\section*{2. The Bernstein-Gel'fand-Gel'fand correspondence}
+
+In this section we give a brief exposition of the main
+idea of Bernstein-Gel'fand-Gel'fand \cite{BGG}: a construction of a
+pair of adjoint functors between the categories of complexes over $E$
+and over $S$. However, we avoid a peculiar convention, used in the
+original, according to which the differentials of complexes over $E$
+were not homomorphisms of $E$-modules.
+
+Let $e_{i}$ and $x_{i}$ be dual bases of $V$ and $W$ respectively, so that
+$\sum _{i} x_{i}\otimes e_{i}\in W\otimes _{K} V$ corresponds to the identity
+element under the isomorphism $W\otimes _{K} V = \myHom _{K}(W,W)$.
+Let $A$ and $B$ be vector spaces. Giving a map
+$A\otimes _{K} W\to ^{\alpha }B$
+is the same as giving a map $A\to ^{\alpha '}B\otimes _{K} V$ (where the
+tensor products are taken over $K$). For example, given $\alpha $ we
+set $\alpha '(a) = \sum _{i} e_{i}\otimes \alpha (a\otimes x_{i})$.
+
+We begin with a special case that will play a central role. We
+regard a graded $S$-module $M=\bigoplus M_{d}$
+as a complex with only one term, in cohomological degree 0, and
+define $\RR (M)$ to be the complex
+\begin{align*}
+\cdots \overset {\phi }{\longrightarrow }\myHom _{K}(E, M_{d})&\overset {\phi
+}{\longrightarrow }\myHom _{K}(E, M_{d+1})\overset {\phi }{\longrightarrow
+}\cdots, \\
+\phi :\ \alpha &\mapsto \bigl [ e\mapsto \sum _{i}
+x_{i}\alpha (e_{i}e)\bigr ]. 
+\end{align*}
+Here $\myHom _{K}(E,M_{d})$ has cohomological index $d$, and a map
+$\alpha \in \myHom _{K}(E, M_{d})$ has degree $t$ if it factors through the
+projection from $E$ onto $E_{d-t}$. Note that the complex
+$\RR (M)$ is {\em linear\/} in a strong sense:
+the $d^{\myth }$ free module $\myHom _{K}(E, M_{d})\iso \omega _{E}\otimes M_{d}$
+has socle in degree $d$;
+in particular, all the maps are represented by matrices of linear
+forms.
+
+\begin{theorem3}
+The functor $\RR $
+is an equivalence between the category of graded left $S$-modules
+and the category of linear free complexes over $E$ (those
+for which the $d^{\myth }$ free module has socle in degree $d$).
+\end{theorem3}
+\begin{proof}  A collection of maps $\mu _{d}: W\otimes _{K} M_{d}\to M_{d+1}$
+defines a module structure on the graded
+vector space $\bigoplus M_{d}$ if and only if it satisfies
+a commutativity and associativity condition
+expressed by saying that,
+for each $d$, the composition of the multiplication maps
+\begin{equation*}W\otimes _{K} (W\otimes _{K} M_{d})\to W\otimes _{K} M_{d+1}
+\to M_{d+2}
+\end{equation*}
+factors through $\Sym _{2}W \otimes _{K} M_{d}$. Since $\bigwedge ^{2} W$
+is the kernel of $W\otimes _{K} W\to \Sym _{2} W$, this is the same
+as saying that the induced map $\bigwedge ^{2} W\otimes _{K} M_{d}\to M_{d+2}$
+is zero, or again that the map
+$\phi ^{2}:\ \myHom _{K}(E_{v},M_{d})\to \bigwedge ^{2} V\otimes _{K} \myHom _{K}(E_{v},M_{d+2})$
+is zero.
+This last is equivalent to $\RR (M)$ being a complex.
+As the whole construction is reversible, we are done.
+\end{proof}
+
+
+As a first step in extending $\RR $ to all complexes,
+we consider the case of a module regarded as a complex with a single
+term, but in arbitrary cohomological degree. Let $M$ be
+an $S$-module, regarded as a complex concentrated in cohomological
+degree 0. Then $M[ a]$ is a complex concentrated in
+cohomological degree $-a$, and we set
+\begin{equation*}\RR (M[ a])=\RR (M)[ a].
+\end{equation*}
+Now consider the general case of
+a complex of graded $S$-modules
+\begin{equation*}\MM : \cdots \to M^{i}\to M^{i+1}\to \cdots .
+\end{equation*}
+Applying $\RR $ to each $M^{i}$, regarded as a complex concentrated
+in cohomological degree $i$, we get a double complex,
+and we define $\RR (\MM )$ to be the total complex of this double complex.
+Thus $\RR (\MM )$ is the total complex of
+\begin{equation*}\xy \xymatrix {
+&&&\\
+\dotsb \ar [r]&\operatorname{Hom}_{K}(E,(M^{i+1})_{j})\ar [u]\ar [r]&
+\operatorname{Hom}_{K}(E,(M^{i+1})_{j+1})\ar [u]\ar [r]&\dotsb \\
+\dotsb \ar [r]&\operatorname{Hom}_{K}(E,(M^{i})_{j})\ar [u]\ar [r]&
+\operatorname{Hom}_{K}(E,(M^{i})_{j+1})\ar [r]\ar [u]&\dotsb \\
+{}&{}\ar [u]&{}\ar [u]&\\
+}
+\endxy \end{equation*}
+where the vertical maps are induced by the differential of $\MM $ and
+the horizontal complexes are the complexes $\RR (M^{i})$ defined above.
+As $E$-modules we have
+\begin{equation*}(\RR \MM )^{k}=\sum _{i+j=k} \myHom _{K}(E,(M^{i})_{j}),
+\end{equation*}
+where $(M^{i})_{j}$ is regarded as a vector space concentrated
+in degree $j$. Thus, as a bigraded $E$-module, $\RR (\MM )=\myHom _{K}(E,\MM )$, and
+the formula for the graded components is
+\begin{equation*}\RR (\MM )^{i}_{j}=\sum _{m} \myHom _{K}(E_{m-j} ,(M^{i-m})_{m}).
+\end{equation*}
+
+The functor $\RR $ has a left adjoint $\LL $ defined in an
+analogous way by tensoring with $S$: on a graded $E$-module $P=\sum P_{j}$
+the functor $\LL $ takes the value
+\begin{equation*}\LL (P): \cdots \to S\otimes _{K} P_{j}\to S \otimes _{K}
+P_{j-1}\to \cdots ,
+\end{equation*}
+where the map takes $s\otimes p$ to $\sum _{i}x_{i}s\otimes e_{i}p$
+and the term $S\otimes _{K} P_{j}$ has cohomological degree $-j$.
+If $\PP $ is a complex of graded $E$-modules, then we can apply
+$\LL $ to each term to get a double complex, and we define
+$\LL (\PP )$ to be the total complex of this double complex,
+so that
+\begin{equation*}\LL (\PP )^{k}=\sum _{i-j=k}S\otimes _{K}(P^{i})_{j}
+\quad \hbox {and}\quad \LL (\PP )^{i}_{j}=\sum _{m}S_{j-m}\otimes _{K}(P^{i+m})_{m}.
+\end{equation*}
+
+To see that $\LL $ is the left adjoint of $\RR $, we proceed
+as follows. First, if $M$ and $P$ are
+left modules over $S$ and $E$, respectively, then
+\begin{equation*}\myHom _{S}(S\otimes _{K} P, M)=\myHom _{K}(P,M)=\myHom _{E}(P, \myHom _{K}(E,M)).
+\end{equation*}
+If now $\MM $ and $\PP $ are complexes of graded modules over $S$ and
+$E$, we must prove that $\myHom _{S}(\LL (\PP ),\MM )\iso \myHom _{E}(\PP ,\RR (\MM ))$, where on each side we take the maps of modules
+that preserve the internal and cohomological degrees and commute with
+the differentials.  As a bigraded module, $\LL (P)=S\otimes _{K}P$, and
+similarly for $\RR $.  Direct computation shows that these maps of
+complexes correspond to the maps of bigraded $K$-modules
+\begin{equation*}\phi =(\phi ^{i}_{j})\in \myHom _{\text{bigraded\ vector \ spaces}}(\PP ,\MM )
+\end{equation*}
+such that $\phi ^{i}_{j}:\ P^{i}_{j}\to M^{i-j}_{j}$ and
+\begin{equation*}\phi d-d\phi =(\sum _{s} x_{s}\otimes e_{s})\phi ,
+\end{equation*}
+where $(\sum _{s} x_{s}\otimes e_{s})\phi $ takes an element $p\in P^{i}_{j}$
+to
+$(-1)^{i}\sum _{s} x_{s}\phi (e_{s}p)$.
+We have proved:
+\begin{theorem4}[Bernstein-Gel'fand-Gel'fand \cite{BGG}]
+The functor $\LL $,
+from the category of complexes of graded $E$-modules to the category
+of complexes of graded $S$-modules, is a left adjoint to the functor
+$\RR $.
+\end{theorem4}
+
+
+It is not hard to compute the homology of the complexes
+produced by $\LL $ and $\RR $:
+
+\begin{theorem5}
+If $M$ is a graded $S$-module and
+$P$ is a graded $E$-module, then
+
+{$a)$} $\myH ^{i}(\RR (M))_{j}=\tor ^{S}_{j-i}(K,M)_{j}$, and
+
+{$b)$} $\myH ^{i}(\LL (P))_{j}=\Ext _{E}^{j-i}(K,P)_{j}$.
+\end{theorem5}
+
+
+\begin{proof}  The $j-i^{\myth }$ free module in the free resolution
+of $K$ over $E$ is $(\Sym _{j-i}(W))^{*}\otimes _{K} E$, which is generated
+by the vector space $(\Sym _{j-i}(W))^{*}$ of degree $i-j$. We can
+use this to compute the right-hand side of the equality in $b)$: the
+$j^{\myth }$ graded component of the module of homomorphisms of this into $P$
+may be identified with $\Sym _{j-i}(W)\otimes _{K} P_{i}$. The differential
+is the same as that of $\LL (P)$, and part $b)$ follows. Part $a)$ is
+similar (and even more familiar, from Koszul cohomology).
+\end{proof}
+
+
+It follows that the exactness of $\RR (M)$ or $\LL (P)$ is a familiar
+condition. First the case of a module over the symmetric algebra:
+\begin{theorem6}
+$a)$ If $M$ is a finitely generated graded $S$-module,
+then
+the truncated complex
+\begin{equation*}\RR (M)_{\geq d}: \myHom _{K}(E,M_{d})\to \myHom
+_{K}(E,M_{d+1})\to \cdots \end{equation*}
+is acyclic (that is, has homology only at $\myHom _{K}(E,M_{d})$) if
+and only if $M$ is $d$-regular.
+\end{theorem6}
+\begin{proof}  By Proposition 2.3 applied to $M_{\geq d}$, the
+given sequence is acyclic if and only if $M_{\geq d}$ has
+linear free resolution.\end{proof}
+
+
+Since any linear complex is of the form $\LL (P)$ for
+a unique graded $E$-module $P$, it is
+perhaps most interesting to interpret part $b)$ of
+Proposition 2.3 as a statement about linear complexes
+over $S$. The result below is implicitly used in Green's \cite{Gre} proof
+of the linear syzygy conjecture.
+
+We call a right bounded linear complex
+\begin{equation*}\GG : \cdots \to G^{-2}\to G^{-1}\to ^{\phi } G^{0}
+\end{equation*}
+{\em irredundant\/} if it is a subcomplex of the
+minimal free resolution of $\coker (\phi )$ (or equivalently of
+any module whose presentation has linear part equal to $\phi $).
+(Eisenbud and Popescu in \cite{EPo} called this property {\em linear exactness\/},
+but to follow this usage would risk overusing the adjective
+``linear''.)
+\begin{theorem7}
+Let $\GG $ be a minimal linear complex of
+free $S$-modules ending on the right with $G_{0}$ as above,  and let
+$P^{*}$ be the
+$E$-module such that
+$\LL (P^{*})=\GG $. The complex $\GG $ is
+irredundant if and only the module $P$ is generated by $P_{0}$.
+The complex $\GG $ is the linear part of a minimal free resolution
+if and only if the module $P$ is linearly presented.
+\end{theorem7}
+\begin{proof} 
+Let $\phi : G^{-1}\to G^{0}$ be the differential of $\GG =\LL (P^{*})$, let
+\begin{equation*}\FF : \cdots \to F^{-2}\to F^{-1}\overset {\phi }{\longrightarrow }G^{0}
+\end{equation*}
+be the minimal free resolution of $\coker (\phi )$,
+and let $\kappa :\GG \to \FF $ be a comparison map lifting the
+identity on $G^{0}$.
+(This comparison map is unique,
+because $\FF $ is minimal and $\GG $ is linear.) By induction
+one sees that the comparison map is an
+injection if and only if $\myH ^{i}\GG _{-i}=0$ for all $i<0$,
+and it is an isomorphism onto the linear part of $\FF $ if and
+only if in addition $\myH ^{i}\GG _{1-i}=0$ for all $i<0$.
+Proposition 2.3 shows that the first condition is
+satisfied if and only if $P^{*}$ injects into a direct sum
+of copies of $E$, while both conditions are true if and only
+if the minimal injective resolution begins with
+\begin{equation*}0\to P^{*}\to \omega _{E}^{a}\to \omega _{E}(-1)^{b}
+\end{equation*}
+for some numbers $a,b$. Dualizing, we get the desired linear presentation
+\begin{equation*}E(1)^{b} \to E^{a} \to P \to 0 \end{equation*}
+of $P$.
+\end{proof}
+
+
+We now return to the BGG-correspondence.
+Both the functors $\LL $ and $\RR $ preserve
+mapping cones and homotopies of maps of complexes. For mapping cones
+this is immediate. For the second, note that two maps
+$f,g:\FF \to \GG $
+of complexes are homotopic if and only if the induced map
+from $\GG $ to the mapping cone of
+$f-g$ is split. This condition is preserved by any additive functor
+that preserves mapping cones.
+
+Recall that a free resolution of a right bounded complex
+\begin{equation*}\MM : \cdots \to M^{i-1}\to M^{i}\to M^{i+1}\to \cdots \end{equation*}
+of graded $S$-modules is a graded free complex $\FF $ with a
+morphism $\FF \to \MM $, homogeneous of degree 0, which
+induces an isomorphism on homology.
+We say that $\FF $
+is {\em minimal\/} if $K\otimes _{S}\FF $
+has trivial differential. Every right bounded complex
+$\MM $
+of finitely generated modules has a minimal free resolution,
+unique up to isomorphism. It is the minimal part of any free resolution.
+
+The functors $\LL $ and $\RR $ give a general construction of resolutions.
+\begin{theorem8}
+For any complex of graded $S$-modules $\MM $, the complex
+$\LL \RR (\MM )
+$
+is a free resolution of $\MM $ which surjects onto $\MM $; and
+for any complex of graded $E$-modules $\GG $,
+the complex
+$\RR \LL (\GG )
+$
+is an injective resolution of $\GG $ into which $\GG $ injects.
+\end{theorem8}
+
+
+In fact we shall see that every free complex whose homology is $M$ up to finite length
+comes as $\LL $ of a complex that agrees with $\RR (M)$ in high degrees.
+
+An immediate consequence is:
+\begin{theorem9}
+The functors $\RR $ and $\LL $
+define an equivalence 
+\[D^{b}(S\textup{-mod})\iso D^{b}(E\textup{-mod}).\]
+\end{theorem9}
+\begin{proof}[Proof of Corollary $2.7$] The derived category $D^{b}(S\hbox {-mod})$ of bounded complexes
+of finitely generated $S$-modules is equivalent to the derived
+category of complexes of finitely generated $S$-modules with
+bounded cohomology (that is, having just finitely many
+cohomology modules; see for example Hartshorne \cite{Har}, III, Lemma 12.3),
+and similarly for $E$. The functors $\LL $ and $\RR $ carry
+bounded complexes into complexes with bounded cohomology. This is clear for 
+$\LL $, and for $\RR $ it
+follows from Corollary 2.4. Thus $\LL $ and $\RR $ are well defined, and by
+Theorem 2.6
+$\LL \RR$ and $\RR \LL $ are both equivalent to the identity.
+\end{proof}
+\begin{proof}[Proof of Theorem $2.6$]
+The proofs of the two statements are similar,
+so we treat only the first. (A slight simplification
+is possible in the second case, since
+finitely generated modules over $E$ have
+finite composition series.)
+
+Because $\LL $ is the left adjoint functor of $\RR $, there is a
+natural map $\LL \RR (\MM )\to \MM $ adjoint to the identity map
+$\RR (\MM )\to \RR (\MM )$. We claim that this is a surjective
+quasi-isomorphism.
+
+To see that it is a surjection,
+consider a map $\phi :\; \MM \to \MM '$ such that the composite
+$\LL \RR (\MM )\to \MM \to \MM '$ is zero. It follows that
+the adjoint composition $\RR (\MM )\to \RR (\MM )\to \RR (\MM ')$
+is also zero, and since the first map is the identity,
+we get $\RR (\phi )=0$. Since $\RR $ is a faithful functor,
+$\phi =0$, proving surjectivity.
+
+The functor $\LL $ preserves direct limits because it is a left
+adjoint, while the functor $\RR $ preserves direct limits because
+$E$ is a finite-dimensional vector space. Thus it suffices
+to prove our claim in the case where $\MM $ is a bounded complex
+of finitely generated $S$-modules.
+
+If $\MM $ has the form
+\begin{equation*}\MM : \cdots \to M^{d}\to 0\to \cdots, \end{equation*}
+then $\MM $ admits $M^{d}[ -d]$
+(that is, the module $M^{d}$ considered as
+a complex concentrated in cohomological degree $d$) as a subcomplex, and
+the quotient is a complex of smaller length. Using the ``five lemma'',
+the naturality of the map $\LL \RR (\MM ) \to \MM $, and the exactness
+of the functor $\LL \RR $, the claims
+will follow, by induction on the length of the complex,
+from the case
+where $\MM $ has the form $M[ -d]$ for some finitely generated
+graded $S$-module $M$ and integer $d$. This reduces immediately
+to the case $d=0$.
+
+It thus suffices to see that
+$\LL \RR (M)\to M$ is a quasi-isomorphism when $M$ is a finitely
+generated graded $S$-module. Now $\RR (M)$ is the linear complex
+$\myHom _{K}(E,M_{0})\linebreak\to \myHom _{K}(E,M_{1})\to \cdots $, so
+$\LL \RR (M)$ is the total complex
+of the following double complex:
+\begin{equation*}\xy \xymatrix {
+&\\
+\dotsb \ar [r]&S\otimes _{K}\operatorname{Hom}_{K}(K,M_{1})\ar [u]\ar [r]&0\\
+\dotsb \ar [r]&S\otimes _{K}\operatorname{Hom}_{K}(V,M_{0})\ar [r]\ar [u]
+&S\otimes _{K}\operatorname{Hom}_{K}(K,M_{0})\ar [r]\ar [u]&0.
+}
+\endxy \end{equation*}
+In this picture the terms below what is shown are all zero.
+The terms of cohomological degree 0 in the total complex
+are those along the diagonal going northwest from
+$S\otimes _{K}\myHom _{K}(K,M_{0})$. The generators of
+$S\otimes _{K}\myHom _{K}(K,M_{0})$ have internal degree 0, while those
+of $S\otimes _{K}\myHom _{K}(K,M_{1})$ have internal degree 1, etc.
+
+The $d^{\myth }$ row of this double complex is $S\otimes _{K}\myHom _{K}(E,M_{d})$,
+which is equal to the complex obtained by tensoring the
+Koszul complex
+\begin{equation*}\dots \to S\otimes _{K}{\textstyle{\bigwedge ^{2}}} W \to S\otimes _{K} W \to S \to 0
+\end{equation*}
+with $M_{d}$. It is thus acyclic, its one cohomology module being
+$M_{d}$, in cohomological degree $0$. The spectral sequence
+starting with the horizontal cohomology of the double complex
+thus degenerates, and we see that the cohomology of the total
+complex $\LL \RR (M)$ is a graded module with
+component of internal degree equal to $M_{d}$,
+concentrated in cohomological degree 0.
+Thus
+$\LL \RR (M)$ is acyclic, and the Hilbert
+function of $\myH ^{0}(\LL \RR (M))$ is the same as that of $M$.
+As $\LL \RR (M)$ has no terms in
+positive cohomological degree, and $M$ is in cohomological degree 0,
+the surjection $\LL \RR (M)\to M$ induces a surjection
+$\myH ^{0}(\LL \RR (M))\to M$, and we are done. (One can show
+that $\LL \RR (M)$ is the tensor product, over $K$,
+of the Koszul complex and $M$, the action of $S$ being
+the diagonal action, but the isomorphism is complicated
+to write down.) \end{proof}
+
+
+Though the statement of Theorem 2.6 has an attractive simplicity,
+it is not very useful in this form because the resolutions that are
+produced are highly nonminimal (for example, the free resolutions
+produced over $S$ are nearly always infinite).
+Theorem 3.7 shows that a modification of this construction gives at
+least an important part of the minimal free resolution.
+
+\section*{3. The linear part of a complex}
+
+If $A$ is a matrix over $E$, then we define the {\em linear part\/},
+written $\lin (A)$, to be the matrix obtained by erasing all the terms
+of entries of $A$ that are of degree $>1$.  For example, if
+$a,b,c,d$ are linear forms of $E$, then
+the linear part of
+\begin{equation*}\begin{pmatrix}a&0\\
+bc&d
+\end{pmatrix}
+\qquad \hbox {is}\qquad \begin{pmatrix}a& 0\\
+0&d\end{pmatrix}
+.
+\end{equation*}
+Taking the linear part is a functorial operation
+on maps (see Theorem 3.4 below), but
+taking the linear part of a matrix does not
+always commute with change of basis.
+For example, if $a,b,c$ are linear
+forms,
+\begin{equation*}d=\begin{pmatrix}a & 0 \\
+0 & b
+\end{pmatrix}
+,
+\qquad \hbox {and}\qquad e=\begin{pmatrix}1 & c \\
+               0 & 1
+\end{pmatrix}
+, \end{equation*}
+then
+$\lin (de) \neq \lin (d)e. $
+
+Suppose that $e:G\to H$ is a second map of free modules and that the
+composition $ed=0$. It {\em need not\/} be the case that
+$\lin (e)\lin (d)=0$; but if we assume in addition that $d(F)$ is in the
+maximal ideal times $G$ and $e(G)$ is in the maximal ideal times $H$,
+then $\lin (e)\lin (d)=0$ does follow. Thus, if $\FF $ is a
+minimal free complex over $E$, we can define a new complex $\lin (\FF )$
+by replacing each differential $d$ of $\FF $ by its linear part,
+$\lin (d)$. Note that $\lin (\FF )$ is the direct sum of complexes
+$\FF ^{(i)}$ whose $e^{\myth }$ term is a direct sum of copies
+of $E(e+i)$ and whose maps are of degree 1. In general, we define
+the linear part of any free complex $\FF $ to be the linear part of
+a minimal complex homotopic to $\FF $.
+\begin{theorem10}
+Let $\FF $  be a free or injective resolution
+of a finitely generated module over the exterior algebra $E$. The
+linear part of $\FF $ is eventually exact.
+\end{theorem10}
+\begin{proof}  We treat only the case where $\FF $ is an injective resolution;
+by duality, the statement for a free resolution is equivalent.
+By Theorem 3.4 the linear part of $\FF $ is
+the value of $\RR $ on the $S$-module $\Ext _{E}^{\bullet }(K,P)$.
+Since any finitely generated $S$-module has finite regularity
+(see Eisenbud and Goto \cite{EG}), it suffices by Corollary 2.4
+to show that
+$\Ext _{E}^{\bullet }(K,P)$ is a finitely generated
+$S$-module. This was done by Aramova, Avramov,
+and Herzog \cite{AAH}. For the reader's convenience we repeat the
+argument: we prove that $\Ext _{E}^{\bullet }(K,P)$ is a finitely generated
+$S$-module by induction on the length
+of $P$. If $P=K$,
+then $\Ext _{E}^{\bullet }(K,P)$ is free of rank 1 over $S$. If $P'$ is a
+proper submodule of $P$, then from the exact sequence
+\begin{equation*}0\to P' \to P \to P/P' \to 0
+\end{equation*}
+we get an exact triangle of $S$-modules:
+\begin{equation*}\xy \xymatrix {
+\Ext _{E}^{\bullet }(K,P/P') \ar [rr]\ar [dr]&&\Ext _{E}^{\bullet }(K,P')\ar [dl]\\
+&\Ext _{E}^{\bullet }(K,P)
+}
+\endxy \end{equation*}
+The two $S$-modules in the top row are finitely generated by
+induction, and thus $\Ext _{E}^{\bullet }(K,P)$ is finitely generated too.
+\end{proof}
+
+
+If $P$ is an $E$-module, then we write $\lin (P)$ for the cokernel of
+$\lin (d)$, where $d$ is the map in a minimal free presentation of
+$P$. We can further define a family of modules connecting $P$ and
+$\lin (P)$ as follows: Let $d$ be a minimal free presentation of $P$,
+choose a representation of $d$ as a matrix, and let $e_{1},\dots ,e_{v}$ be
+a basis of $V$.  Let $d'$ be the result of substituting $te_{i}$ for
+$e_{i}$ in the entries of $d$, and then dividing each entry by $t$. The
+entries of $d$ have no constant terms because $d$ is minimal, and it
+follows that $d'$ is a matrix over $K[t]\otimes _{K} E$. Let $P'$ be
+the cokernel of $d'$. It has
+fibers $P$ at $t\neq 0$ and $\lin (P)$ at 0.
+The module $P'$ may not be flat over $K[t]$,
+but the module $P'[t^{-1}]$ is flat over $K[t,t^{-1}]$:
+in fact, it is
+isomorphic to the module obtained
+from the trivial family $K[t,t^{-1}]\otimes _{K} P$ by pulling back
+along the automorphism $e_{i}\mapsto te_{i}c$ of $E$.
+
+\begin{theorem11}
+If $P$ is a finitely generated $E$-module,
+then any sufficiently high syzygy $Q$ of $P$ is a flat deformation
+of its linear part $\lin (Q)$.
+\end{theorem11}
+\begin{proof}  If $Q$ is a sufficiently high syzygy, then by
+Theorem 3.1 the linear part of the minimal resolution of $Q$
+is the resolution of $\lin (Q)$, so that
+(with the notation of the preceding paragraph) this free resolution of
+$Q$ lifts to a free resolution of $\lin (Q')$ over $K[t]\otimes _{K} E$.
+Thus $Q'$ is flat, and the result follows.
+\end{proof}
+
+
+\begin{definition1}
+It is sometimes not so obvious what the linear part of the minimal
+version of a complex will be, and in particular it may be hard
+to read from the linear terms in a nonminimal version. For example,
+suppose that $W$  has dimension 2 and that $x,y\in W$ is
+a dual basis to $a,b\in V$. Consider the complex
+\begin{equation*}\MM : 0\to S/(x,y^{2})\overset {x}{\longrightarrow
+}S/(x^{2},y)(1)\to 0,
+\end{equation*}
+where the notation means that the class of 1 goes to the class of $x$.
+
+Applying $\RR $ to $\MM $, we get the double complex
+\begin{equation*}\xy \xymatrix {
+0\ar [r]&E(1)\ar [r]^{a}&E\ar [r]&0\\
+&0\ar [r]\ar [u]&E\ar [u]^{1}\ar [r]_{b}&E(-1)\ar [u]\ar [r]&0
+}
+\endxy \end{equation*}
+whose total complex is
+\begin{equation*}\RR (\MM )=\FF :\quad 0\to E(1)\oplus E
+\overset {(\begin{smallmatrix}a&1\\
+0&b
+\end{smallmatrix})
+}{\longrightarrow }E\oplus E(-1)\to 0.
+\end{equation*}
+Despite the presence of the linear terms
+in the differential of $\FF $, the minimal complex
+$\FF '$ homotopic
+to $\FF $ is
+\begin{equation*}\FF ': 0\to E(1)\overset {ab}{\longrightarrow }E(-1)\to 0,
+\end{equation*}
+so the differential of $\lin (\FF )$ is 0.
+
+Fortunately, we can construct the linear part of a complex directly and
+conceptually, without passing to a minimal complex or to matrices.
+First note that if $\GG $ is a minimal free complex over $E$,
+then giving its linear part is equivalent, by Proposition 2.1,
+to giving the maps
+$\phi _{i}: \myHom _{E}(K, G^{i}) \to V\otimes _{K} \myHom _{E}(K, G^{i+1})$
+corresponding to the
+linear terms in the differential of $\GG $.
+If $\FF $ is a (possibly nonminimal) free complex homotopic to $\GG $,
+then $\myHom _{E}(K, G^{i})=\myH ^{i} \myHom _{E}(K,\FF )$. We will construct
+natural maps
+$\psi _{i}:\myH ^{i} \myHom _{E}(K,\FF )\to V\otimes \myH ^{i+1}\myHom _{E}(K,\FF )$,
+and prove that $\psi _{i}=\phi _{i}$.
+
+We identify $S$ with $\Ext _{E}(K,K)$ and use the well-known
+$\Ext _{E}(K,K)$-module structure on $\myH ^{\bullet }\myHom _{E}(K, \FF )$.
+To formulate this explicitly,
+we make use of the exact sequence
+\begin{equation*}\eta : 0\to V\to E/(V)^{2}\to K\to 0.
+\end{equation*}
+The extension class
+\begin{equation*}\eta \in \Ext ^{1}_{E}(K,V)=\Ext ^{1}_{E}(K,K)\otimes _{K} V=\myHom _{K}(W,\Ext ^{1}_{E}(K,K))
+\end{equation*}
+corresponds to the inclusion $W=\Sym _{1}W\subset \Sym W$.
+Since $\FF $ is a free complex, the sequence
+$\myHom (\eta ,\FF )$ is an exact sequence of complexes, and we obtain
+the homomorphism $\psi _{i}:\myH ^{i} \myHom _{E}(K,\FF )\to V\otimes \myH ^{i+1}\myHom _{E}(K,\FF )$ from the connecting homomorphism
+\begin{equation*}\delta _{i}:
+W\otimes _{K} \myH ^{i}\myHom _{E}(K,\FF )= \myH ^{i} \myHom _{E}(V, \FF ) \to \myH ^{i+1} \myHom _{E}(K, \FF ).
+\end{equation*}
+\end{definition1}
+\begin{theorem12}
+If $\FF $ is a complex of free
+modules over $E$,
+then
+\begin{equation*}\lin (\FF )=\RR (\myH ^{\bullet }\myHom _{E}(K, \FF )),
+\end{equation*}
+where the $S$-module structure
+on
+$\myH ^{\bullet }\myHom _{E}(K,\FF )$ is given by the Yoneda action of
+$\Ext _{E}(K,K)$.
+\end{theorem12}
+
+
+\begin{proof}  We use the notation $\phi _{i},\psi _{i},\delta _{i}$ introduced just before the theorem. 
+From the definition of
+$\psi _{i}:  \myH ^{i}\myHom _{E}(K,\FF ) \to V \otimes _{K}\myH ^{i+1} \myHom _{E}(K, \FF ) $
+ we see that it depends only on the homotopy class of $\FF $,
+ so we may
+assume that $\FF $ is minimal.
+By Proposition 2.1 we may assume that
+\begin{equation*}F^{i}=\myHom _{K}(E,M_{i})=E \otimes _{K} \myHom
+_{K}(E_{v},M_{i}).
+\end{equation*}
+Let $1 \tensor a \in K \otimes _{K} \myHom _{K}(E_{v},M_{i})$ be a generator which is 
+mapped by $\phi _{i}$ to $\sum v_{j} \otimes b_{j} \in V \otimes _{K} \myHom _{K}(E_{v},M_{i+1})$.
+Let $s=v_{0} \wedge v_{1} \wedge \cdots \wedge v_{n} \in E_{v}$ be a generator
+of the socle of $E$. To prove $\psi _{i}=\phi _{i}$ we have to
+show that an element of the form
+$w \tensor s \tensor a \in W\otimes _{K} E_{v} \tensor \myHom _{K}(E_{v},M_{i})=W \tensor _{K} \myHom _{E}(K,F^{i})=\myHom _{E}(V,F^{i})$
+is mapped to 
+$\{1 \mapsto \sum _{j} sw(v_{j})\tensor b_{j}\} \in E_{v} \tensor _{K} \myHom _{K}(E_{v},M_{i+1})=\myHom _{E}(K,F^{i+1})$
+under the connecting homomorphism $\delta _{i}$.
+   
+The element $w\tensor s \tensor a$ corresponds to $\{ v \mapsto sw(v) \tensor a\}$ in $\myHom _{E}(V,F^{i})$.
+We must lift $\{v\mapsto sw(v)\tensor a \}$ to an element
+of $\myHom _{E}(E/(V)^{2},F^{i})$. The image of $1 \in E/(V)^{2}$ will be an element $c \in F^{i}=E\tensor _{K} \myHom _{K}(E_{v},M_{i})$
+which satisfies $v\cdot c = s\tensor w(v) a$ for all $v \in V$,
+and any such element defines a lifting.
+We can take $c= s \lnot w \tensor a$.
+The image of $w\otimes s\tensor a$ under the connecting homomorphism is the
+map  $\{1 \mapsto d(c)\} \in \myHom _{E}(K,F^{i+1})$, where $d: F^{i} \to F^{i+1}$ is the 
+differential of $\FF $. With
+\begin{equation*}d(c)=s\lnot w \wedge d(a)= s\lnot w \wedge (\sum _{j}  v_{j} \tensor b_{j} + \hbox { higher terms}) = \sum _{j} s w(v_{j}) \tensor b_{j} 
+\end{equation*}
+we arrive at the desired formula.
+\end{proof}
+
+
+To understand the linear parts of complexes obtained from
+the functor $\RR $, we will
+employ a general result:
+if the vertical differential of a suitable double complex splits,
+then the associated total complex is homotopic to one built from
+the homology of the vertical differential in a simple way.
+\begin{theorem13}
+Let $\FF $ be a double complex
+\begin{equation*}\xy \xymatrix {
+&&\\
+\dotsb \ar [r]&F^{i+1}_{j}\ar [u]\ar [r]^{d_{hor}}&F^{i+1}_{j+1}\ar [r]\ar [u]&\dotsb \\
+\dotsb \ar [r]&F^{i}_{j}\ar [u]^{d_{vert}}\ar [r]_{d_{hor}}&F_{j+1}^{i}\ar [r]
+\ar [u]_{d_{vert}}&\dotsb \\
+{}&{}\ar [u]&{}\ar [u]&\\
+}
+\endxy \end{equation*}
+in some abelian category such that $F^{i}_{j}=0$ for $i\ll 0$.
+Suppose that the vertical differential of $\FF $ splits, so that for
+each $i,j$
+there is a decomposition
+$F^{i}_{j}=G^{i}_{j}\oplus d_{vert}G^{i-1}_{j}\oplus H^{i}_{j}$
+such that the kernel of $d_{vert}$ in $F^{i}_{j}$ is
+$H^{i}_{j}\oplus d_{vert}G^{i-1}_{j}$,
+and such that $d_{vert}$ maps $G^{i-1}_{j}$ isomorphically to
+$d_{vert}(G^{i}_{j})$.
+If we write $\sigma :\; F^{i}_{j}\to H^{i}_{j}$ for the projection corresponding
+to this decomposition, and
+$\pi :\; F^{i}_{j}\to d_{vert}G^{i-1}_{j}\to G^{i-1}_{j}$
+for the composition of the projection with the inverse of
+$d_{vert}$ restricted to $G^{i-1}_{j}$, then the total complex of $\FF $ is
+homotopic to the complex
+\begin{equation*}\dots \to \bigoplus _{i+j=k}H^{i}_{j}\overset {d}{\longrightarrow }
+\bigoplus _{i+j=k+1}H^{i}_{j}
+\to \cdots \end{equation*}
+with differential
+\begin{equation*}d=\sum _{\ell \geq 0}\sigma (d_{hor} \pi )^{\ell }d_{hor}.
+\end{equation*}
+\end{theorem13}
+\begin{proof}  We write $d_{tot}=d_{vert}\pm d_{hor}$ for the differential
+of the total complex. Note first that $\sigma (d_{hor} \pi )^{\ell }d_{hor}$ takes
+$H^{i}_{j}$ to $H^{i-\ell }_{j+1+\ell }$. Since $F^{i-\ell }_{j+1+\ell }=0$
+for $\ell >>0$,
+the sum defining $d$ is finite.
+
+Let $F$ denote $\FF $ without the differential, that is, as a bigraded module.
+We will first show that
+$F$ is the direct sum of the three components
+\begin{equation*}G=\bigoplus _{i,j} G^{i}_{j},
+\quad d_{tot}G,
+\quad \hbox {and   }
+H=\bigoplus _{i,j} H^{i}_{j},
+\end{equation*}
+and that $d_{tot}$ is a monomorphism on $G$.
+
+The same statements, with $d_{tot}$ replaced by
+$d_{vert}$, are true by hypothesis.
+In particular, any element of $F$ is a sum of elements of the form
+$g'+d_{vert}g+h$ with $g'\in G^{i}_{j},\ g\in G^{i-1}_{j}$ and $h\in H^{i}_{j}$
+for some $i,j$. Modulo $G+d_{tot}G+H$ this element can be written as
+$d_{hor}(g)\in F^{i-1}_{j+1}$. As $F^{s}_{t}=0$ for $s<<0$, we may
+do induction on $i$, and
+assume that $d_{hor}g \in G+d_{tot}G+H$, so we see
+that $F=G+d_{tot}G+H$.
+
+Suppose
+\begin{equation*}g'\in G=\bigoplus _{i+j=\ell } G^{i}_{j},
+\quad g\in G=\bigoplus _{i+j=\ell -1} G^{i}_{j},
+\quad 
+h\in H=\bigoplus _{i+j=\ell } H^{i}_{j}
+\end{equation*}
+and $g'+d_{tot}g+h=0$; we must show that $g=g'=h=0$.
+Write $g=\sum _{k=a}^{b}  g^{k-1}_{\ell -k}$ with
+$g^{s}_{t}\in G^{s}_{t}$.
+If $b-a=-1$, then
+$d_{tot}=0$, and the desired result is
+a special case of the hypothesis. In any case, there is no
+component of $g$ in $G^{b}_{\ell -b-1}$, so
+the
+component of $d_{tot}g$ in
+$G^{b}_{\ell -b}$ is equal to $d_{vert}g^{b-1}_{\ell -b}$. From the
+hypothesis we see that $d_{vert}g^{b-1}_{\ell -b}=0$,
+so $g^{b-1}_{\ell -b}=0$, and we are done by induction
+on $b-a$. This shows that $F=G\oplus d_{tot}G\oplus H$ and that
+$d_{tot}$ is an isomorphism from $G$ to $d_{tot}G$.
+
+The modules $G\oplus d_{tot}G$ form a
+double complex contained in $\FF $ that we will call $\GG $.
+Since $d_{tot}:G\to d_{tot}G$ is
+an isomorphism, the total complex $tot(\GG )$ is split exact.
+It follows that the total complex $tot(\FF )$ is
+homotopic to $tot(\FF )/tot(\GG )$, and the modules of
+this last complex are isomorphic to $\bigoplus _{i+j=k}H^{i}_{j}$.
+We will complete
+the proof by showing that the induced differential on
+$tot(\FF )/tot(\GG )$ is the differential $d$ defined above.
+
+Choose $h\in H^{i}_{j}$. The image of $h$ under the induced
+differential is the unique element $h'\in H$ such that
+$d_{tot}h\equiv h'\ (\hbox {mod }G+dG)$.
+Now
+\begin{equation*}d_{tot}h
+=d_{hor}h
+\equiv \sigma d_{hor} h + (d_{vert}\pi ) d_{hor} h\ (\hbox {mod }G).
+\end{equation*}
+However,
+\begin{equation*}d_{vert}\pi \equiv d_{hor}\pi \equiv \sigma (d_{hor}\pi ) + d_{vert}\pi (d_{hor}\pi )
+\ (\hbox {mod }G+d_{tot}G).
+\end{equation*}
+Continuing this way, and using again the fact that $F^{i}_{j}=0$ for
+$i<<0$, we obtain
+\begin{equation*}d_{tot}h
+\equiv \sum _{\ell }\sigma (d_{hor}\pi )^{\ell }d_{hor}h
+\ (\hbox {mod }G+d_{tot}G),
+\end{equation*}
+as required.
+\end{proof}
+
+
+We apply Theorem 3.4 to complexes of the form
+$\RR (\MM )$:
+\begin{theorem14}
+If $\MM $ is a left-bounded
+complex of graded $S$-modules,
+then
+\begin{equation*}\lin (\RR (\MM ))=\bigoplus _{i}\RR (\myH ^{i}(\MM )),
+\end{equation*}
+where $\myH ^{i}(\MM )$ is regarded as a complex of one term, concentrated
+in cohomological degree $i$. A similar statement holds for
+the linear part of $\LL (\PP )$ when $\PP $ is a left-bounded
+complex of graded $E$-modules.
+\end{theorem14}
+\begin{proof}  As $\MM $ is a left-bounded complex of finitely generated
+modules, the double complex  whose total complex is $\RR (\MM )$
+satisfies the conditions of Lemma 3.5. The
+bigraded module underlying
+$\RR (\myH ^{i}(\MM ))$ is precisely the module $H$ of
+Lemma 3.5,
+and the differential is the map $\sigma d_{hor}$ restricted to $H$.
+This is a linear map. But the other terms in the sum
+$d=\sum _{\ell }\sigma (\pi d_{hor})^{\ell }d_{hor}$ all involve two or
+more iterations of $d_{hor}$, and are thus represented by matrices
+whose entries have degree at least 2.
+\end{proof}
+\begin{definition2}
+Note that the homology of $\MM $ is
+$\myH ^{\bullet }(\MM )=K(-1)\oplus K(1)[-1]$.
+We may write
+$\lin (\FF ')=\RR (K(-1))\oplus \RR (K(1))[-1]$,
+as required by Corollary 3.6.
+\end{definition2}
+
+
+Here is the promised information about the minimal resolution of a module:
+\begin{theorem15}
+$a)$ {\bf Reciprocity}: If $M$ is a finitely
+generated graded $S$-module and $P$ is a finitely generated graded
+$E$-module, then $\LL (P)$ is a free resolution of $M$
+if and only if $\RR (M)$ is an injective resolution of $P$.
+
+$ b)$ More generally, for any minimal
+bounded complex of finitely generated
+graded $S$-modules $\MM $, the linear part of the minimal
+free resolution of $\MM $ is
+$\LL (\myH ^{\bullet }(\RR (\MM )));
+$
+and
+for any minimal bounded complex of finitely generated
+graded $E$-modules $\PP $,
+the linear part of the minimal injective resolution of $\PP $
+is
+$\RR (\myH ^{\bullet }(\LL (\PP ))).
+$
+\end{theorem15}
+\begin{proof} 
+The two parts of $b)$ being
+similar, we prove only the first statement. By Theorem 2.6
+the complex $\LL \RR (\MM )$ is a free resolution. The complex
+$\RR (\MM )$ is left-bounded because $\FF $ is bounded and contains
+only finitely generated modules. Thus we may apply
+Corollary 3.6, proving the first statement.
+
+For the reciprocity statement $a)$, suppose that $\LL (P)$ is a minimal free
+resolution of
+$M$. By part $b)$ the linear part of the minimal
+injective resolution of $P$ is $\RR (\myH ^{\bullet }(\LL (P)))$. Since
+$\LL (P)$ is a resolution of $M$, this is $\RR (M)$. All the
+terms of cohomological degree $d$ of this complex have degree $-d$,
+so there is no room for nonlinear differentials, and the linear part
+of the resolution is the resolution. \end{proof}
+
+
+\section*{4. Sheaf cohomology and exterior syzygies}
+
+In this section we establish a formula for the free
+modules that appear in resolutions over $E$.
+Because $E$ is Gorenstein, it is
+natural to work with doubly infinite resolutions:
+
+A {\em Tate resolution\/} over $E$ is a doubly infinite free
+complex
+\begin{equation*}T: \cdots \to T^{d}\to T^{d+1}\to \cdots \end{equation*}
+that is everywhere exact.
+
+There is a Tate resolution naturally associated to a
+coherent sheaf $\F $
+on $\myP (W)$, defined as follows. Let
+$M$ be a finitely generated graded
+$S$-module representing $\F $,
+for example $M=\bigoplus _{\nu \geq 0}\myH ^{0}(\F (\nu ))$.
+If $d\geq \reg (M)$, then by Corollary 2.4
+the complex $\RR (M_{\geq d})$ is acyclic. Thus,
+if $d>\reg (M)$, then, since $\RR (M_{\geq d})$ is minimal,
+$\myHom _{K}(E,M_{d})$ minimally covers
+the kernel of the map $\myHom _{K}(E,M_{d+1})\to \myHom _{K}(E,M_{d+2})$
+
+Fixing $d>\reg (M)$, we may complete $\RR (M_{\geq d})$ to
+a minimal
+Tate resolution $\TT (\F )$ by adjoining a free resolution of
+\begin{equation*}\ker \bigl [\myHom _{K}(E,M_{d})\to \myHom _{K}(E,M_{d+1})\bigr ].
+\end{equation*}
+Since any two modules representing $\F $ are equal
+in large degree, the Tate resolution
+is independent of which $M$ and which large $d$ is chosen,
+and depends only on
+the coherent sheaf $\F $. It has the form
+\begin{equation*}\begin{split}
+\TT (\F )&: \cdots \to
+T^{d-2}\to T^{d-1}\to \myHom _{K}(E, \myH ^{0}(\F (d)))\\
+&\to \myHom _{K}(E, \myH ^{0}(\F (d+1)))
+\to \cdots, \end{split}
+\end{equation*}
+where the $T_{i}$ are graded free $E$-modules.
+
+The main theorem of this section expresses
+the linear part of this Tate resolution in terms of the
+$S$-modules $\bigoplus _{e} \myH ^{j}(\F (e))$ given by
+the (Zariski) cohomology of $\F $. We regard
+$\bigoplus _{e}\myH ^{j}(\F (e))$ as a complex of $S$-modules concentrated in
+cohomological degree $j$.
+\begin{theorem16}
+If $\F $ is a coherent sheaf
+on $\myP (W)$, then the
+linear part of the Tate resolution $\TT (\F )$ is
+$\bigoplus _{j} \RR (\bigoplus _{e} \myH ^{j}(\F (e)))$.
+In particular,
+\begin{equation*}T^{e}=\bigoplus _{j} \myHom _{K}(E,\myH ^{j}(\F (e-j))),
+\end{equation*}
+where $\myH ^{j}(\F (e-j))$ is regarded as a vector space of
+internal degree $e-j$.
+\end{theorem16}
+
+
+A special case of the theorem appears without proof as Remark 3 after
+Theorem 2 in Bernstein-Gel'fand-Gel'fand \cite{BGG}.
+The proof below could be extended to
+cover the case of a bounded complex of coherent sheaves, replacing the
+cohomology in the formula with hypercohomology.
+We will postpone the proof of Theorem 4.1
+until the end of this section.
+
+Rewriting the indices in Theorem 4.1, we emphasize
+the fact that we can compute any part of the cohomology of $\F $
+from the Tate resolution.
+\begin{theorem17}
+For
+all $j,\ell \in \Z $,
+$\myH ^{j}(\F (\ell )) = \myHom _{E}(K,T^{j+\ell })_{-\ell }.
+$
+\end{theorem17}
+
+
+Corollary 4.2 provides the basis for
+an algorithm
+computing the cohomology of $\F $ with
+any computer program that can provide free resolutions
+of modules over the symmetric and exterior algebras,
+such as the program Macaulay2 of Grayson and Stillman
+[{\tt http://www.math.uiuc.edu/Macaulay2/}].
+For an explanation of the algorithm in practical terms, see
+Decker and Eisenbud \cite{DE}.
+
+To prove Theorem 4.1 we will use
+the reciprocity result Theorem 3.7. We actually prove
+a slightly more general version,
+involving local cohomology. We write $\gm $ for the homogeneous maximal
+ideal $SW$ of $S$, and for any graded $S$-module $M$ we write
+$\myH ^{j}_{\gm }(M)$ for the $j^{\myth }$ local cohomology module of $M$, regarded
+as a graded $S$-module.
+
+\begin{theorem18}
+Let $M$ be a graded $S$-module
+generated in degree $d$, and having
+linear free resolution $\LL (P)$. Let
+$\FF :\ \cdots \to F^{-1}\to F^{0}$ be the minimal free resolution of $P$.
+The linear part
+of $\FF $ is
+\begin{equation*}\lin (\FF )=\bigoplus _{j}\RR (\myH ^{j}_{\gm }(M)),
+\end{equation*}
+where $\myH ^{j}_{\gm }(M)$ is
+regarded as a complex with one term, concentrated in
+cohomological degree $j$. In particular, we have
+\begin{equation*}F^{-i}=\bigoplus _{j}\myHom _{K}(E, \myH ^{j}_{\gm }(M)_{-j-i}).
+\end{equation*}
+\end{theorem18}
+\begin{proof}[Proof of Theorem $4.3$] We compute the linear part of the free resolution of $P$ by
+taking the dual (into $K$) of the linear part of the injective
+resolution of $P^{*}$.
+By Theorem 3.7, the linear part of the injective resolution
+of $P^{*}$ is $\RR (\myH ^{\bullet }(\LL (P^{*})))$.
+It follows at once from
+the definitions that $\LL (P^{*})=\myHom _{S}(\LL (P), S)$.
+By Theorem 3.7 once more,  $\LL (P)$ is the minimal free resolution
+of $M$, so
+$\myH ^{\bullet }(\LL (P^{*}))=\Ext _{S}^{\bullet }(M,S)$.
+ Thus
+the linear part of the free resolution of $P$ is
+$[\RR \Ext _{S}^{\bullet }(M,S)]^{*}$, where $\Ext _{S}^{j}(M,S)$ is
+thought of as a module concentrated in cohomological degree
+$j$.
+
+Because $E^{*}=\omega _{E}=E\otimes \bigwedge ^{v}W$, we have, for
+any graded vector space $D$, natural
+identifications
+\begin{equation*}\begin{split}
+(\myHom _{K}(E,D))^{*}
+&=(E^{*}\otimes _{K}D)^{*}\\
+&=E^{*}\otimes _{K} \textstyle{\bigwedge ^{v}}W^{*} \otimes _{K}D^{*}\\
+&=\myHom _{K}(E,D^{*})\otimes _{K}\textstyle{\bigwedge ^{v}}V.\end{split}
+\end{equation*}
+(Here all the duals of $E$-modules are Hom into $K$.) If $D$
+has the structure of a graded $S$-module, then
+$D^{*}$ is again a graded $S$-module, and this becomes  an
+isomorphism of graded $S$-modules. If we think of
+$D$ as a complex with just one term, in cohomological degree
+$d$, then
+$\RR (D)^{*}=\RR (D^{*}\otimes _{K}\bigwedge ^{v}V)$, where, to make
+all the indices come out right, we must think of
+$D^{*}\otimes _{K} \bigwedge ^{v}V=(D\otimes _{K}\bigwedge ^{v}W)^{*}$ as a complex of one
+term concentrated in cohomological degree $v-d$.
+
+If we take $D=\Ext _{S}^{\ell }(M,S)$, then, by local duality,
+\begin{equation*}\begin{split}
+D^{*}&=(\Ext _{S}^{\ell }(M,S)\otimes _{K}\textstyle{\bigwedge ^{v}}
+W\otimes _{K} \textstyle{\bigwedge ^{v}}V)^{*}\\
+&=(\Ext _{S}^{\ell }(M,\omega _{S})\otimes _{K} \textstyle{\bigwedge ^{v}}
+V)^{*}\\
+&=\myH ^{v-\ell }_{\gm }(M)\otimes \textstyle{\bigwedge ^{v}}W.\end{split}
+\end{equation*}
+Thus
+\begin{equation*}\begin{split}
+\RR (\Ext _{S}^{\ell }(M,S))^{*}&=\RR (\myH ^{v-\ell }_{\gm }(M)
+                         \otimes _{K}\textstyle{\bigwedge ^{v}}
+W)\otimes \textstyle{\bigwedge ^{v}}V\\
+&=\RR (\myH ^{v-\ell }_{\gm }(M)),
+\end{split}
+\end{equation*}
+where $\myH ^{j}_{\gm }(M)$
+is regarded as a complex with just one term, of
+cohomological degree $-j$, as required.\end{proof}
+\begin{proof}[Proof of Theorem $4.1$] For each $i=0, \dots , v-1$ we write $\myH ^{i}$ for the
+cohomology module $\bigoplus _{d=-\infty }^{\infty }\myH ^{i}(\F (d))$.
+If we choose $d\geq \reg (\myH ^{0}_{\geq 0})$  as in the
+construction of $\TT (\F )$, the module $M:=\myH ^{0}_{\geq d}$
+has a linear free resolution, so we may
+apply Theorem 4.3. We deduce that
+the linear part of the  free resolution of
+$P:=\ker [\myHom _{K}(E,\myH ^{0}(\F (d)))\to \myHom _{K}(\myH ^{0}(\F (d+1)))]$
+is
+$\lin (\FF )=\bigoplus _{j}\RR (\myH ^{j}_{\gm }(M)).
+$
+If we insist that $d>\reg (\myH ^{0}_{\geq 0})$,
+then $\myH ^{0}_{\gm }(M)=0$. From the exactness of the
+sequence
+\begin{equation*}0\to \myH ^{0}_{\gm }(M)\to M\to \bigoplus _{d=-\infty }^{\infty }\myH ^{0}(\F (d))\to \myH ^{1}_{\gm }(M)\to 0
+\end{equation*}
+it follows that
+the local cohomology module $\myH ^{1}_{\gm }(M))$
+agrees with the global cohomology module
+$\myH ^{0}$ in all degrees strictly less than $d$,
+and of course we have
+$\myH ^{i}=\myH ^{i+1}_{\gm }(M)$. This concludes the proof.
+\end{proof}
+
+
+\section*{5. Powers of the maximal ideal of $E$}
+
+In this section we provide a basic example of the
+action of the functors $\LL $ and $\RR $.
+Among the most interesting graded $S$-modules are the syzygy modules
+that occur in the Koszul complex. We write
+\begin{equation*}\Omega ^{i}=\coker \bigl [ S\otimes _{K}
+\textstyle{\bigwedge ^{i+2}}W
+\to S\otimes _{K}\textstyle{\bigwedge ^{i+1}}W\bigr ],
+\end{equation*}
+where as usual the elements of $W$ have internal degree 1, so that
+the generators of $\Omega ^{i}$ have internal degree $i+1$. For example,
+ $\Omega ^{-1}=K$ while $\Omega ^{0}=(W)\subset S$
+and $\Omega ^{v-1}=S\otimes \bigwedge ^{v}W$, a free module of rank one
+generated in degree $v$.
+The sheafifications of these modules are the exterior
+powers of the cotangent bundle on projective space
+(see Eisenbud \cite{Eis}, Section 17.5, for more details).
+In this section we shall show that
+under the functors $\LL $ and $\RR $ introduced
+in Section 2
+the $\Omega ^{i}$
+correspond to powers of the maximal ideal $\gm \subset E$. To
+make the correspondence completely functorial, we make use of
+the $E$-modules $\gm ^{i}\omega _{E}$, where
+$\omega _{E}=\myHom _{K}(E,K)$. Recall that $\omega _{E}$ is a
+rank one free $E$-module generated in degree $v$; its
+generators may be identified with the nonzero elements of $\bigwedge ^{v}W$.
+\begin{theorem19}
+The minimal $S$-free resolution
+of $\Omega ^{i}$ is $\LL (\omega _{E}/\gm ^{v-i}\omega _{E})$;
+the minimal $E$-injective
+resolution of $\omega _{E}/\gm ^{v-i}\omega _{E}$ is $\RR (\Omega ^{i})$.
+\end{theorem19}
+
+
+Since $\Omega ^{i}$ is generated in degree $i+1$,
+the complex $\RR (\Omega ^{i})$
+begins in cohomological degree $i+1$, and we regard
+$\omega _{E}/\gm ^{v-i}\omega _{E}$ as concentrated in cohomological
+degree $i+1$.
+
+\begin{proof}  The complex $\LL (\omega _{E})$ is the Koszul complex
+over $S$, so $\LL (\omega _{E}/\gm ^{v-i}\omega _{E})$ is the truncation
+\begin{equation*}0\to S\otimes \textstyle{\bigwedge ^{v}}
+W \to \cdots \to S\otimes 
+\textstyle{\bigwedge ^{i+1}}W,
+\end{equation*}
+which is the resolution of $\Omega ^{i}$, proving the first statement.
+The second statement follows from Theorem 3.7.\end{proof}
+
+
+Since the $K$-dual of a minimal $E$-injective resolution is a
+minimal $E$-free resolution, we may immediately derive the
+free resolution of
+\begin{equation*}\gm ^{i+1}=\myHom _{E}(\omega _{E}/\gm ^{v-i}\omega _{E}, \omega _{E})
+=\myHom _{K}(\omega _{E}/\gm ^{v-i}\omega _{E}, K).
+\end{equation*}
+\begin{theorem20}
+The minimal $E$-free resolution of $\gm ^{j}$ is
+\begin{equation*}\myHom _{K}(\RR (\Omega ^{j-1}), K).
+\end{equation*}
+\end{theorem20}
+
+
+These resolutions can be made explicit using
+the Schur functors $\bigwedge ^{i}_{j}$ associated to ``hook'' diagrams
+(see for example
+Buchsbaum and Eisenbud \cite{BE} or
+Akin, Buchsbaum, Weyman \cite{ABW}).
+We may define
+$\bigwedge ^{i}_{j}$ (called $L^{i}_{j}$ by Buchsbaum and Eisenbud)
+by the formula
+\begin{equation*}\textstyle{\bigwedge ^{i}_{j}}(W)=\myim \bigl 
+[\textstyle{\bigwedge ^{i}}W\otimes _{K}\sym _{j-1}W\to 
+\textstyle{\bigwedge ^{i-1}}W\otimes _{K}\sym _{j}W\bigr ].
+\end{equation*}
+Note that
+\begin{equation*}\textstyle{\bigwedge ^{i}_{j}}(W)=\begin{cases}0 & 
+\text{if $i<1$ or $j<1$},\\
+                     \bigwedge ^{i}W & \text{if $j=1$},\\
+                     \Sym _{j}W & \text{if $i=1$}.\end{cases}
+\end{equation*}
+Buchsbaum and Eisenbud use these functors to
+give (among other things)
+a $GL(W)$-equivariant resolution
+\begin{equation*}\cdots \to S\otimes _{K}\textstyle{\bigwedge ^{2}_{j}}(W)
+\to S\otimes _{K}\textstyle{\bigwedge ^{1}_{j}}(W)
+\to (W)^{j}
+\to 0
+\end{equation*}
+of the $j^{\myth }$ power
+$(W)^{j}$ of the maximal ideal of $S$.
+The $\bigwedge ^{i}_{j}$ also provide the terms in the resolutions above:
+\begin{theorem21}
+For $i>0$ the minimal free resolution of $\gm ^{i}$ has the form
+\begin{equation*}\cdots \to E\otimes (\textstyle{\bigwedge ^{i}_{2}} W)^{*}\to E\otimes
+(\textstyle{\bigwedge ^{i}_{1}} W)^{*}\to \gm ^{i}
+\to 0.
+\end{equation*}
+For $i< v$ the minimal injective resolution of
+$\omega _{E}/\gm ^{v-i}\omega _{E}$ has the form
+\begin{equation*}\myHom _{K}(E, \textstyle{\bigwedge ^{i+1}_{1}}(W))\to \myHom _{K}(E, 
+\textstyle{\bigwedge ^{i+1}_{2}}(W))\to \cdots .
+\end{equation*}
+\end{theorem21}
+\begin{proof}  From the exactness of the Koszul complex we see that
+$(\Omega ^{i})_{j} = \bigwedge ^{i+1}_{j-i}W,
+$
+so the second statement follows from Theorem 5.1.
+The first statement follows similarly from
+Corollary 5.2. \end{proof}
+
+
+Using the exact sequence
+\begin{equation*}0\to \gm ^{v-i}\omega _{E}\to \omega _{E}\to \omega _{E}/\gm
+^{v-i}\omega _{E}\to 0,
+\end{equation*}
+we may paste together the injective and free resolutions considered above
+into the Tate resolution $\TT (\Omega ^{i}_{\myP })$.
+\begin{theorem22}
+There is an exact sequence 
+\begin{equation*}\begin{split}\TT (\Omega ^{i}_{\myP })\!:
+\cdots &\to \myHom _{K}(E,\textstyle{\bigwedge ^{i+1}_{1}}W)\to \myHom _{K}
+(E,\textstyle{\bigwedge ^{i+1}_{2}}W)
+\to \myHom _{K}(E,K) \\
+&\to \myHom _{K}(E,(\textstyle{\bigwedge ^{v-i}_{1}}W)^{*})\to \myHom _{K}
+(E,(\textstyle{\bigwedge ^{v-i}_{2}}W)^{*})
+\to \cdots, \end{split}\end{equation*}
+where $\myHom _{K}(E,K)=\omega _{E}$ is the term in cohomological degree $i$.
+\end{theorem22}
+
+
+The following well-known result now follows from Corollary 5.4
+by inspection.
+\begin{theorem23}
+In the range $ 0 \le j \le v-1$  or  $1 \le q \le v-2$,
+\begin{equation*}\myH ^{q}(\mathcal{O} _{\myP }(-j)\otimes 
+\Omega _{\myP }^{p}(p)) =
+\begin{cases}K, & \text{if }p=q=j, \\
+ 0, & \text{otherwise}. 
+\end{cases}
+\end{equation*}
+\end{theorem23}
+
+
+\begin{proof}  Writing the ranks of the free modules in the Tate resolution
+for $\Omega _{\myP }^{p}$ in
+Macaulay notation, we find
+\begin{equation*}\begin{matrix}(v-p){\binom{v+1 }{v-p+1}} & {\binom{v }{v- p}}  & . & . & .  \\
+  . & . & . & . & .  \\
+  . & . & 1 & . & .  \\
+  . & . & . & . & .  \\
+  . & . & . & . & .  \\
+  . & . & . & {\binom{v }{p+1}} &  (p+1){\binom{v+1 }{p+2}} 
+   \\
+\end{matrix}
+\end{equation*}
+with the rank $1$ module sitting in homological degree $p$ and the ingoing
+and outgoing
+ map from it given by bases of the forms in $\bigwedge ^{v-p} V$ and
+$\bigwedge ^{p+1} V$ respectively.
+\end{proof}
+
+
+If we shift the rank 1 module into homological degree $0$, then we have the Tate resolution of
+ $\Omega ^{p}(p)$. Following Beilinson (\cite{Bei}, Lemma 2), we can also compute
+$\myHom (\Omega ^{i}(i),\Omega ^{j}(j))$ for any $i,j$, which will play a
+major role in Section 6.
+
+
+\begin{theorem24}
+If $\Omega ^{i}(i)$ are the $S$-modules defined in
+Section 5 and $0\leq i,j < v$, then
+\begin{equation*}\hom _{S}(\Omega ^{i}(i), \Omega ^{j}(j))=
+\textstyle{\bigwedge ^{i-j}}V = \hom _{E}(\omega _{E}(i),\omega _{E}(j)),
+\end{equation*}
+where in each case $\hom $ denotes the (degree $0$) homomorphisms;
+for other values of $i,j$ the left-hand side is $0$.
+The product of
+homomorphisms corresponds to the product in $\bigwedge V$.
+\end{theorem24}
+\begin{proof}  The modules $\Omega ^{i}(i)$ are 0 for $i<0$ and $i\geq v$.
+For $0\leq i<v$  they
+have linear resolution, so we may apply Theorem 3.7.
+As they are 0 in degrees $<1$ and generated in degree 1,
+we have
+$\myH ^{1}\RR (\Omega ^{i}(i))=\omega _{E}(i)/\gm ^{v-i}\omega _{E}(i)$ if
+$v>i$,
+by Theorem 5.1. For $0\leq i,j <v$,  maps
+$\omega _{E}(i)/\gm ^{v-i}\omega _{E}(i)\to \omega _{E}(j)/\gm ^{v-j}\omega _{E}(j)$
+are in one-to-one correspondence with maps $\omega _{E}(i)\to \omega _{E}(j)$. Since $\omega _{E}$ is
+a rank one free $E$-module, these may be identified with elements of
+$E_{j-i}=\bigwedge ^{i-j}V$. \end{proof}
+
+
+\section*{6. Beilinson's monad}
+
+Beilinson's paper \cite{Bei} contains
+two main results. The first says that, given
+a sheaf $\F $ on a projective space $\myP =\myP (W)$, there is a complex
+\begin{equation*}\myB : \cdots \to B^{-1}\to B^{0} \to B^{1}\to \cdots \end{equation*}
+with
+\begin{equation*}B^{e}=\bigoplus _{j}\myH ^{j}(\F (e-j))\otimes 
+\Omega _{\myP }^{j-e}(j-e)
+\end{equation*}
+such that $\myB $ is exact except at $B^{0}$ and
+the homology at $B^{0}$ is $\F $.
+
+We show that
+the complex $\myB $ may be obtained by applying a certain functor to the
+Tate resolution
+$\TT (\F )$ over $E$. Beilinson's second main result gives another monad,
+which we will treat in Theorem 8.1.
+
+Given any graded free complex $\TT $ over $E$, we may
+write each module of $\TT $ as a direct sum of copies of
+$\omega _{E}(i)=\myHom _{K}(E, K(i))$ with varying $i$. We
+define
+$\Omega (\TT )$ to be the complex of sheaves on $\myP $
+obtained by replacing each
+summand $\omega _{E}(i)$ by the sheaf $\Omega _{\myP }^{i}(i)$ and using the
+isomorphism of Hom in Proposition 5.6 to provide the maps.
+\begin{theorem25}
+If $\F $ is a
+coherent sheaf on $\myP (W)$ with associated Tate resolution
+$\TT (\F )$,
+then the only homology of  $\Omega (\TT (\F ))$ is
+in cohomological degree $0$, and is isomorphic to $\F $.
+\end{theorem25}
+\begin{proof}  To simplify the notation we set $\TT =\TT (\F )$,
+and we let $\overline{\TT }$ be $\TT $
+modulo the elements of internal degree
+$\geq 0$.
+Let $\mathcal{L}$ be the double complex of sheaves that arises by
+sheafifying the double complex of $S$-modules used to
+construct the complex $\LL (\TT )$; that is, if $T^{e}$ is
+the component of $\TT $ of cohomological degree $e$, and
+$T^{e}_{j}$ is its component of internal degree $j$, then the
+double complex
+$\mathcal{L}$ has the form
+\begin{equation*}\mathcal{L}\colon \xy \xymatrix {
+&&&\\
+\dotsb \ar [r]&T_{j+1}^{e}\otimes _{K}\mathcal{O}(j+1)\ar [u]\ar [r]&
+T_{j+1}^{e+1}\otimes _{K}\mathcal{O}(j+1)\ar [u]\ar [r]&\dotsb \\
+\dotsb \ar [r]&T_{j}^{e}\otimes _{K}\mathcal{O}(j)\ar [r]\ar [u]&T_{j}^{e+1}
+\otimes _{K}\mathcal{O}(j)\ar [r]\ar [u]&\dotsb \\
+{}&{}\ar [u]&{}\ar [u]&\\
+}
+\endxy \end{equation*}
+Since $\TT $ is exact, the rows are exact; since the columns are
+direct sums of sheafified Koszul complexes over $S$, they are
+exact as well.
+
+Choose an integer $f>>0$ (greater than the regularity of
+$\F $ will be sufficient) and let $\mathcal{L}'$ be the double complex
+obtained from $\mathcal{L}$ by taking only those terms $T^{e}_{j}\otimes _{K} \mathcal{O} (j)$
+with $e<f$ and $j>0$. If $e<<0$, then $T^{e}$ is generated in negative
+degrees, so the double complex $\mathcal{L}'$ is finite, and is exact
+except at the right ($e=f-1$) and at $j=1$. An
+easy spectral sequence argument shows that the
+complex obtained as the vertical homology of $\mathcal{L}'$
+has the same homology as the complex obtained as the
+horizontal homology of $\mathcal{L}'$.
+
+If we write
+$T^{e}$ as a sum of copies of $\omega _{E}(i)$ for various $i$,
+then the $e^{\myth }$ column of $\mathcal{L}'$ is correspondingly a sum of
+copies of the sheafification of
+$\LL (\omega _{E}(i)/\gm ^{v-i}\omega _{E}(i))$. 
+As in Theorem 5.1, the
+vertical homology of this column is correspondingly a sum of
+copies of $\Omega _{\myP }^{i}(i)$; that is, it is $\Omega (T^{e})$. Thus
+the complex obtained as the vertical homology of $\mathcal{L}'$ is
+$\Omega (\TT )$.
+
+As $e$ goes to infinity, the degrees of the generators of $T^{e}$
+become more and more positive; thus for $e$ large
+the $e^{\myth }$  column of $\mathcal{L}'$ is the same as that of $\mathcal{L}$, that is,
+it is $\LL (T^{e})$.
+Since $f>>0$, the horizontal homology of $\mathcal{L}'$ is
+the sheafification of $\LL (H)$, where $H$ is
+the homology of $\TT _{<f}$.
+As $\TT $ is exact, $H$ may also be written as the homology of
+$\TT _{\geq f}$. Taking $f>\reg \F $ and using Theorem 3.7,
+we see that $\LL (H)$ is a free resolution of the module
+$\bigoplus _{e\geq f}\myH ^{0}(\F (e))$, whose sheafification is $\F $,
+as required.\end{proof}
+
+
+\begin{theorem26}
+The map in
+the complex $\Omega (\TT (\F ))$ corresponding to
+\begin{equation*}\myH ^{j}(\F (j-i))\otimes \Omega _{\myP
+}^{i-j}(i-j)\longrightarrow \myH ^{j}(\F (j-i+1))\otimes \Omega _{\myP
+}^{i-j-1}(i-j-1)
+\end{equation*}
+corresponds to the multiplication map
+$W\otimes _{K} \myH ^{j}(\F (j-i))\longrightarrow \myH ^{j}(\F (j-i+1))$.
+\end{theorem26}
+\begin{proof}  This follows from Theorem 4.1, since we have identified
+not only the modules but the maps in the linear strands of the
+resolution.
+\end{proof}
+\begin{theorem27}
+The maps in the complex
+$\Omega (\TT (\F ))$ correspond to the maps in the complex
+$\Omega (\TT (\F (1)))$ under the natural correspondence
+\begin{equation*}\hom _{\myP }(\Omega _{\myP }^{i}(i), 
+\Omega _{\myP }^{j}(j))=\textstyle{\bigwedge ^{i-j}}V
+=\hom _{\myP }(\Omega _{\myP }^{i+1}(i+1), \Omega _{\myP }^{j+1}(j+1))
+\end{equation*}
+whenever $0\leq i, i+1, j, j+1 <v$.
+\end{theorem27}
+\begin{proof}  The Tate resolution $\TT (\F (1))$ is obtained by simply
+shifting $\TT (\F )$.\end{proof}
+
+
+\section*{7. Examples}\begin{definition3}
+Let $C$ be an elliptic quartic
+curve in $\myP ^{3}$, and consider $\mathcal{O} _{C}$ as
+a sheaf on $\myP ^{3}$. Write $\omega _{E}=\bigwedge ^{v}W\otimes E$, as usual.
+Computing cohomology,
+one sees that $\TT (\mathcal{O} _{C})$ has the form
+\begin{equation*}\cdots \longrightarrow \omega _{E}^{8}(2)
+\longrightarrow \omega _{E} \oplus \omega _{E}^{4}(1)
+\longrightarrow ^{d}
+\omega _{E}^{4}(-1)\oplus \omega _{E}
+\longrightarrow \omega _{E}^{8}(-2)
+\longrightarrow \cdots. \end{equation*}
+
+If $C \subset \myP ^{3}$ is taken to be Heisenberg invariant, say
+$C = \{ x_{0}^{2}+x_{2}^{2}
++\lambda x_{1}x_{3}=x_{1}^{2}+x_{3}^{2}+\lambda x_{0}x_{2} = 0 \}$
+for some $\lambda \in \mathbf{A} ^{1}_{k}$, then $d$ can be represented
+by the matrix
+\begin{equation*}\begin{pmatrix}0 &e_{0} &         e_{1}   &     e_{2}   &    e_{3}         \\
+ e_{0} &-\lambda e_{1}e_{3}  & e_{2}e_{3}  & 0 & e_{1}e_{2}+{\frac{\lambda ^{2} }{2}}e_{0}e_{3} \\
+ e_{1}  &e_{2}e_{3} & \lambda e_{0}e_{2}    &  -e_{0}e_{3}-{\frac{\lambda ^{2} }{2}} e_{1}e_{2} & 0 \\
+ e_{2} &0       & -e_{0}e_{3}-{\frac{\lambda ^{2} }{2}} e_{1}e_{2} & \lambda e_{1}e_{3}  &  e_{0}e_{1}
+\\
+ e_{3} &e_{1}e_{2}+{\frac{\lambda ^{2} }{2}}e_{0}e_{3}& 0 & e_{0}e_{1} & -\lambda e_{0}e_{2} \\
+\end{pmatrix}
+.\end{equation*}
+\end{definition3}
+\begin{definition4}
+Let $C \subset \myP ^{d}$ be the
+curve parame\-trized by $(s:t) \mapsto (s^{d}:s^{d-1}t:\ldots :t^{d})$. We consider
+ the line bundles $\mathcal{L}_{k}$ on $C$ associated to
+$\bigoplus _{m=0}^{\infty }H^{0}(\myP ^{1},\mathcal{O} (k+md))$ for $k=-1,\ldots ,d-2$. The Tate
+resolution
+$\TT (\mathcal{L}_{k})$ has Betti numbers
+\begin{equation*}\begin{matrix}* \; * & 3d-k-1 & 2d-k-1 & d-k-1 & .     & .      &\ldots \\
+         \ldots & .      & .      & k+1 & d+k+1 & 2d+k+1  &*\;* \\
+\end{matrix}
+\end{equation*}
+The $[(k+1)+(d-k-1)] \times (2d-k-1)$ matrix near the middle and the matrices surrounding it
+ have in case $d=4$ and $k=1$ the following shapes:
+\begin{equation*}
+\scriptscriptstyle {\left(\begin{matrix}
+0&e_{0}&e_{0}e_{2}&e_{0}e_{1} \\
+e_{0}&e_{1}&e_{1}e_{2}+e_{0}e_{3}&e_{0}e_{2} \\
+e_{1}&e_{2}&e_{1}e_{3}+e_{0}e_{4}&e_{0}e_{3} \\
+e_{2}&e_{3}&e_{1}e_{4}&e_{0}e_{4}\\
+e_{3}&e_{4}&0&0\\
+e_{4}&0&0&0\end{matrix}\right)}{\textstyle{,}}
+\left(\begin{matrix}
+0&0& e_{0}e_{4}& e_{1}e_{4}        &   e_{2}e_{4} & e_{3}e_{4} \\
+0&0& e_{0}e_{3}& e_{1}e_{3}+e_{0}e_{4} & e_{2}e_{3}+e_{1}e_{4} & e_{2}e_{4} \\
+0&e_{0}&e_{1}&e_{2}&e_{3}&e_{4}\\
+e_{0}&e_{1}&e_{2}&e_{3}&e_{4}&0\\
+\end{matrix}\right)
+\end{equation*}
+and
+\begin{equation*}
+\left(\begin{matrix}e_{0}&e_{1}&e_{2}&e_{3}&e_{4}&0&0&0&0&0\\
+0&e_{0}&e_{1}&e_{2}&e_{3}&e_{4}&0&0&0&0\\
+0&0&e_{0}&e_{1}&e_{2}&e_{3}&e_{4}&0&0&0\\
+0&0&0&e_{0}&e_{1}&e_{2}&e_{3}&e_{4}&0&0\\
+0&0&0&0&e_{0}&e_{1}&e_{2}&e_{3}&e_{4}&0\\
+0&0&0&0&0&e_{0}&e_{1}&e_{2}&e_{3}&e_{4}\\
+\end{matrix}\right).
+\end{equation*}
+All other matrices look similar to the last one.
+
+In case $k=-1$ we obtain a $d \times d$ symmetric
+matrix of 2-forms:
+\begin{equation*}
+\left(\begin{matrix}e_{0}e_{1}&e_{0}e_{2}&e_{0}e_{3}&e_{0}e_{4}\\
+e_{0}e_{2}&e_{1}e_{2}+e_{0}e_{3}&e_{1}e_{3}+e_{0}e_{4}& e_{1}e_{4}\\
+e_{0}e_{3}&e_{1}e_{3}+e_{0}e_{4}&e_{2}e_{3}+e_{1}e_{4}&e_{2}e_{4} \\
+e_{0}e_{4}&e_{1}e_{4}&e_{2}e_{4} & e_{3}e_{4}
+\end{matrix}\right)
+.
+\end{equation*}
+If we interpret  2-forms as coordinate functions
+\begin{equation*}e_{ij}=e_{i}e_{j}=e_{i}\wedge e_{j} \in \myH ^{0}(\GG
+(W,2),\mathcal{O} (1)) \cong \myH ^{0}(\myP (\textstyle{\bigwedge^{2}} V),/\mathcal{O}
+(1))\end{equation*}
+ on the Grassmannian
+of codimension 2 linear subspaces in $\myP (W)$, then the  determinant of the
+matrix above defines the Chow divisor
+of $C\subset \myP ^{d}$, which is by definition the
+hypersurface
+ $\{\myP ^{d-2} \in \GG (W,2) | \myP ^{d-2} \cap C \ne \emptyset \}$.
+Eisenbud and Schreyer \cite{ES1} give a general computation of Chow forms along these lines.
+\end{definition4}
+\begin{definition5}
+A famous Beilinson monad was discovered by Horrocks and
+Mumford \cite{HM}:
+Consider for $\myP ^{4}$ the Tate resolution $\TT (\varphi )$ of the matrix
+\begin{equation*}
+\varphi = \left(\begin{matrix}
+e_{1}e_{4} & e_{2}e_{0} &e_{3}e_{1} & e_{4}e_{2} & e_{0}e_{3} \\
+e_{2}e_{3} & e_{3}e_{4} &e_{4}e_{0} & e_{0}e_{1} & e_{1}e_{2} 
+\end{matrix}\right).
+\end{equation*}
+By direct computation we find the Betti numbers
+\begin{equation*}
+\setcounter{MaxMatrixCols}{13}
+\begin{matrix}
+?         & .& . & . & . & . & . & . & . & . & . & . & \ldots \\
+  *\; *
+   &100&35 & 4 & 0 & . & . & . & . & . & . & . & \ldots \\
+\ldots 
+   & 0 & 2 & 10&10 & 5 & 0 & . & . & . & . & . &\ldots \\
+\ldots 
+   & . &.  & . & . & 0 & 2 & 0 & . & . & . & . &\ldots \\
+\ldots 
+   & . &.  & . & . & . & 0 & 5 & 10&10 & 2 & 0 &\ldots \\
+\ldots 
+   & . &.  & . & . & . & . & . & 0 & 4 & 35&100&*\;* \\
+\ldots 
+   & . &.  & . & . & . & . & . & . & . & .& .& ? 
+\end{matrix}.
+\end{equation*}
+\setcounter{MaxMatrixCols}{10}
+\end{definition5}
+
+
+To deduce that this Tate resolution comes from a sheaf, we use
+
+\begin{theorem28} Let $\TT $ be a Tate resolution over $E$. Suppose
+ that  $(K \tensor _{E} T^{0})_{j} = 0$  for all $j < 0$.
+Then
+$(K \tensor _{E} T^{l})_{m} = 0$  if
+$ l>0$  and  $ m <l$, or if
+$l<0$ and $m<l-n$.
+\end{theorem28}
+\begin{proof}  Pictorially the statement says that vanishing in a single $T^{e}$ implies vanishing in the
+indicated range:
+\begin{equation*}\begin{matrix}? &? & \vdots & ? &  \ldots \\
+\ldots & ? & 0_{-n} & ? &  \ldots \\
+ & \vdots & \vdots & \vdots & \\
+\ldots & ? &  0_{-2} & ? &\ldots \\
+\ldots & ? &  0_{-1} & ? &\ldots \\
+\ldots & ? & * & ? &\ldots \\
+\end{matrix}
+\quad \Longrightarrow \quad \begin{matrix}0 &0 & \vdots & 0 &  \ldots \\
+\ldots & ? & 0_{-n} & 0 &  \ldots \\
+ & \vdots & \vdots & \vdots & \\
+\ldots & ? &  0_{-2} & 0 &\ldots \\
+\ldots & ? &  0_{-1} & 0 &\ldots \\
+\ldots & ? & * & ? &\ldots \end{matrix}
+\end{equation*}
+
+The first vanishing follows, because  $\myHom _{E}(\TT ,E)$ is also a minimal
+complex. For the second we note for $P=\ker (T^{0} \to T^{1})$
+that $P_{j}=0$ holds for all $j<-v$ by our assumption. By 
+Corollary 5.3,
+$(K \tensor _{E} T^{l})=\Tor ^{E}_{-l-1}(K,P)$, which is a subquotient of 
+$(\Sym _{-l-1} W)^{*} \tensor _{K} P$. Thus this group vanishes
+in all degrees $m<l-v+1$.
+\end{proof}
+\begin{definition6}
+By applying  Lemma 7.4 to a shift of  $\TT (\varphi )$ and\linebreak
+$\myHom (\TT (\varphi ),E)$ we
+see that the $\TT (\varphi )$ has  terms only in the indicated
+range of rows; in particular, the rows with the question marks 
+contain only zeros.  
+So $\TT (\varphi )$ is the Tate resolution of some sheaf $\F $.
+Moreover $\F $ is a bundle, since the middle cohomology has only finitely many
+terms. The $4^{\myth }$ difference function of  $\chi (\F (m))$
+has constant value $2$. So
+$\F $ has rank $2$. It is the famous  bundle on $\myP ^{4}$
+discovered by Horrocks and Mumford \cite{HM}. In Decker and Schreyer \cite{DS1}
+ it
+is proved that any stable rank $2$ vector bundle on $\myP ^{4}$ with the same
+Chern classes equals $\F $ up to projectivities.
+\end{definition6}
+\section*{8. Free monads}
+
+A {\em free monad} $\mathcal{L}$ for a coherent sheaf $\F $ is a finite complex
+\begin{equation*}0 \to \mathcal{L}^{-N} \to \cdots \to \mathcal{L}^{-1} \to 
+\mathcal{L}^{0} \to \mathcal{L}^{1} \to \cdots \to \mathcal{L}^{M} \to 0\end{equation*}
+on $\PP ^{n}=\PP (W)$ whose components $\mathcal{L}^{i}$ are direct sums of line bundles and whose homology
+is $\F $:
+\begin{equation*}\myH ^{\bullet }(\mathcal{L})=\myH ^{0}(\mathcal{L}) \cong \F .\end{equation*}
+The complex of twisted global sections of $\mathcal{L}$ is a complex $L= \Gamma _{*}(\mathcal{L})$
+of free $S$-modules. If $L$ is a minimal complex,  then we speak of a
+minimal free  monad. The most familiar free monads are the sheafifications of the
+minimal free resolutions of the modules $\bigoplus _{m\geq m_{0}}\myH ^{0}\F (m)$
+for various $m_{0}$.
+
+Free monads  have been constructed by Horrocks \cite{Hor},
+Barth \cite{Bar}, Bernstein, Gel'fand and Gel'fand \cite{BGG}
+and Beilinson \cite{Bei},
+mainly for the study of vector bundles on projective spaces.
+Rao \cite{Rao} and
+Martin-Deschamps and Perrin \cite{MP} used free monads in their studies
+of space curves. 
+Fl\o ystad \cite{Flo3} gave a complete classification of a certain class of 
+linear monads on projective spaces.
+The general construction of free monads is the following:
+\begin{theorem29}
+Let $\F $ be a coherent sheaf on $\myP ^{n}$, and let $\TT '$ be a left-bounded
+complex of finite free $E$-modules with $\TT ^{\prime \ge r}=\TT (\F )^{\ge r}$ for some $r$.
+Let  $L =\min \ \LL (\TT ')$ be the minimalized complex of the BGG transform
+$\LL (\TT ')$. Its sheafication
+$\mathcal{L}(\TT ') =\tilde L $
+is a free monad for $\F $. Every minimal free monad $\mathcal{L}$ of $\F $
+arises as $\mathcal{L}=\mathcal{L}(\TT ')$ in this way
+with $\TT '= \min \RR (L)$.
+\end{theorem29}
+\begin{proof}  Suppose $\TT '$ satisfies the assumption. Since $\TT '$ is 
+left-bounded and
+acyclic for large degrees, $L =\min \LL (\TT ')$ is a finite complex by the second statement in Corollary 3.6.
+The cohomology of the complex $L$ can be
+computed  by taking linear parts:
+$\bigoplus _{i} \RR (\myH ^{i}(L ))= \lin (\RR (L ))=
+\lin (\RR (\LL (\TT ')))=\lin (\TT ')$ by Corollary 3.6.
+So $\myH ^{j}(L )$  is of finite length for $j\not =0$, and sheafifying gives
+\begin{equation*}\myH ^{\bullet }(\mathcal{L})=\myH ^{0}(\mathcal{L})=  (\Gamma _{\ge r}\F )\widetilde {} = \F .\end{equation*}
+Conversely, if $\mathcal{L}$ is a free monad for $\F $
+and $L=\Gamma _{*}\mathcal{L}$, then  $\myH ^{j}(L )$
+has finite length for $j\not = 0$. Thus
+$\TT '=\min \RR (L )$ is a left-bounded complex with
+$\TT ^{'\ge r} = \TT (\F )^{\ge r}$ by  Corollary 3.6, and
+$ \min \LL (\TT ')=\min {\LL }(\min \RR (L ))=
+\min {\LL }\RR (L )=\min L =L $.
+\end{proof}
+\begin{definition7}
+Consider $\F = \mathcal{O} _{p}$, the structure sheaf of a
+point in $\PP ^{1}$. Its Tate resolution is periodic:
+\begin{equation*}\cdots \overset {e}{\longrightarrow }\omega _{E}(1) \overset {e}{\longrightarrow }\omega _{E}
+\overset {e}{\longrightarrow }\omega _{E}(-1) \overset {e}{\longrightarrow }\cdots .
+\end{equation*}
+If we take $\TT '$ to be the truncation
+\begin{equation*}0 \longrightarrow \omega _{E} \overset {e}{\longrightarrow }\omega _{E}(-1)\overset {e}{\longrightarrow }
+\cdots, \end{equation*}
+then the monad $\mathcal{L}(\TT ')$ is the sheafified free resolution
+\begin{equation*}0 \longrightarrow \mathcal{O} (-1) \longrightarrow ^{x} \mathcal{O} \longrightarrow 0.
+\end{equation*}
+If instead we take $\TT '$ to be the complex
+\begin{equation*} 0 \longrightarrow \omega _{E} \longrightarrow ^{ef}
+\omega _{E}(-2) \overset {e}{\longrightarrow }\omega _{E}(-3)
+\overset {e}{\longrightarrow }\cdots ,
+\end{equation*}
+then $L(\TT ')$ is the free resolution of
+$S/(x^{2},xy)$,
+which has sheafification $\mathcal{L}(\TT ')$ of the form
+\begin{equation*} 0 \longrightarrow \mathcal{O} (-3) \longrightarrow \mathcal{O} (-2)^{2}
+\longrightarrow \mathcal{O} \longrightarrow 0.
+\end{equation*}
+
+For the rest of this section we will study a class of free monads we
+call {\em partition monads\/} (because they partition the cohomology
+of $\F $ into two simple pieces, which occur as $\myH ^{\bullet }(L)$ and  $\myH ^{\bullet }(L^{*}))$. This class includes
+the sheafified free resolutions and most of the other free monads
+found in the literature.
+\end{definition7}
+\begin{definition8}
+Given a weakly increasing sequence of integers
+\begin{equation*}\mu =(m_{0} \leq m_{1}\leq \cdots \leq m_{n}),
+\end{equation*}
+we define
+$\TT _{\mu }(\F )$ to be the subcomplex of $\TT (\F )$ given by
+\begin{equation*}T_{ \mu }^{e}(\F ) = \bigoplus _{i: e \ge m_{i}} \myH ^{i}\F (e-i) \tensor _{K}
+\omega _{E}(i-e).
+\end{equation*}
+We shall also make use of the complementary complex
+$\TT ^{\mu }$
+defined by the exact sequence
+\begin{equation*}0\to \TT _{\mu }\to \TT \to \TT ^{\mu }\to 0.
+\end{equation*}
+We set
+$L_{\mu }(\F ) : = \min \LL (\TT _{\mu }(\F ))$,
+and write
+$\mathcal{L}_{ \mu }(\F )=\tilde L_{\mu }(\F )$ for the monad which is its
+sheafification.
+\end{definition8}
+\begin{definition9}
+Let
+$m_{0}$ be any integer, and choose
+$m_{1},\dots ,m_{n}$ greater than the Castelnuovo-Mumford
+regularity of $\F $. The complex
+$\TT _{\mu }(\F )$ is $\RR (\bigoplus _{m\geq m_{0}}\myH ^{0}(\F (m)))$.
+Thus by Theorem 2.6 the complex $L_{\mu }(\F )$ is the minimal free
+resolution of $\bigoplus _{m\geq m_{0}}\myH ^{0}(\F (m))$.
+\end{definition9}
+\begin{definition10}
+Consider the case
+$m=m_{0}=m_{1}=\cdots =m_{n}$. In this case $\TT _{\mu }=\TT ^{\ge m}$ is an
+injective resolution of
+$P_{m} = \ker (T^{m} \to T^{m+1})$,
+and $\mathcal{L}_{\mu }= \widetilde \LL (P_{m})$ has only linear maps.
+\end{definition10}
+
+
+Like free resolutions, partition monads enjoy a strong 
+homotopy functoriality:
+\begin{theorem30}
+The partition monad $\mathcal{L}_{\mu }(\F )$ is
+functorial in $\F $ up to homotopy of complexes in such a way that if
+$\phi :\,\F \to \G $ is a map, then $\phi =\myH ^{0}\mathcal{L}_{\mu }(\phi )$. Moreover, any map
+of complexes $\mathcal{L}_{\mu }(\F )\to \mathcal{L}_{\mu }(\G )$ is determined up to homotopy
+by the induced map $\F =\myH ^{0}(\mathcal{L}_{\mu }(\F ))\to \myH ^{0}(\mathcal{L}_{\mu }(\G ))=\G $.
+\end{theorem30}
+\begin{proof}  The first statement follows from the homotopy functoriality
+of $\TT $ and $\LL $. For the second statement, it suffices to show
+that every map $\mathcal{L}_{\mu }(\F )\to \mathcal{L}_{\mu }(\G )$ is homotopic to a map
+of the form $\mathcal{L}_{\mu }(\phi )$. But every map $\TT _{\mu }(\F )\to \TT _{\mu }(\G )$
+is homotopic to a map $\TT _{\mu }(\phi )$, and since $\TT _{\mu }(\G )$ is
+an injective resolution, it is homotopic to $\RR \LL \TT _{\mu }(\G )$.
+Using the adjointness of $\RR $ and $\LL $, we see that, up to 
+homotopy, indeed every map is in the image of the the composite homomorphism
+\begin{equation*}\begin{split}
+\myHom (\F ,\G )&\to \myHom (\TT _{\mu }(\F ),\TT _{\mu }(\G ))\\
+&\to \myHom (\TT _{\mu }(\F ),\RR \LL \TT _{\mu }(\G ))\\
+&=
+\myHom (\LL \TT _{m}u(\F ), \LL \TT _{\mu }(\G ))\\
+&\to \myHom (\mathcal{L}_{\mu }(\F ), \mathcal{L}_{\mu }(\G )).
+\end{split}\end{equation*}
+
+\end{proof}
+\begin{theorem31}
+The cohomology of the complexes $L_{\mu }$ and
+$L_{\mu }^{*}=\myHom _{S}(L_{\mu }, S)$ are given by
+\begin{equation*}\myH ^{i}L_{\mu } = \bigoplus _{d\ge m_{i}-i} \myH ^{i} \F (d); \qquad \myH ^{n-i}L_{\mu }^{*} = 
+\bigoplus _{d< m_{i}-i} \myH ^{i} (\F (d))^{*}\otimes \textstyle{\bigwedge ^{v}}V,
+\end{equation*}
+where $\myH ^{i} \F (d)$ occurs in degree $d$ and 
+$\myH ^{i} (\F (d))^{*}\otimes \bigwedge ^{v}V$
+occurs in  degree $-n-d-1$. In particular, for $j<0$ we
+have $\myH ^{j}L_{\mu }= \myH ^{j}L_{\mu }^{*} = 0$.
+\end{theorem31}
+\begin{proof}  Let $\myP _{\mu }$ be the complex
+\begin{equation*}0\to T_{\mu }^{m_{0}}\to \cdots \to T_{\mu }^{m_{n}}\to \myim (T_{\mu }^{m_{n}}\to T_{\mu }^{m_{n}+1})
+\to 0,
+\end{equation*}
+so that the complex $\TT _{\mu }$ is an injective resolution of $\myP _{\mu }$.
+By part $b)$ of Theorem 3.7 the linear part
+of the injective
+resolution of $\myP _{\mu }$
+is the sum of the
+linear complexes
+$\RR (\myH ^{i}\LL (\myP _{\mu }))$. Thus
+$\myH ^{i}L_{\mu }=\myH ^{i}\LL (\myP _{\mu })= \bigoplus _{e\ge m_{i}} \myH
+^{i} \F (e-i)$,
+by the definition of $\TT _{\mu }$.
+
+For the  proof of the second formula we first observe that
+$L_{\mu }^{*}=\myHom _{S}(L_{\mu }, S)=\min \LL (\myHom _{K}(\myP _{\mu },K))$.
+Since $\TT (\F )$ is exact, the induced map
+$\TT ^{\mu }[-1]\to \TT _{\mu }$ is a quasi-isomorphism.
+Moreover, this map factors through $\myP _{\mu }$.
+Thus $\TT ^{\mu }[-1]$ is a projective resolution of
+$\myP _{\mu }$, and $\myHom _{K}(\TT ^{\mu },K)[1]$ is an
+injective resolution of $\myHom _{K}(\myP _{\mu },K)$.
+The terms with $\myH ^{i}$ on the right-hand side of the desired equality
+correspond to the $(v-1-i)^{\myth }$ linear strand of $\myHom (\TT ^{\mu },K)[1]$.
+Again by Theorem 3.7, the second formula follows.\end{proof}
+\begin{theorem32}
+Any partition monad
+$\mathcal{L}_{\mu }(\F )$ satisfies $\mathcal{L}_{\mu }^{i}=0$ for $|i|>n$.
+\end{theorem32}
+\begin{proof}  If $L_{\mu }^{i}\neq 0$ but $L_{\mu }^{i+1}=0$, then Nakayama's Lemma implies that 
+$\myH ^{i}(L_{\mu })\neq 0$, and similarly for the dual. 
+Proposition 8.7
+completes the argument.\end{proof}
+
+
+It is easy to give bounds on the line bundles that
+can occur in a partition monad.
+Given the sequence  $\mu =(m_{0}\leq \cdots \leq m_{n})$,
+it will be
+convenient to extend the definition of $m_{i}$ to all $i\in \Z $
+by the formulas
+\begin{equation*}m_{i}=\begin{cases}m_{0} &\text{if $i<0$},\\
+          m_{n} & \text{if $i>n$}.\end{cases}
+\end{equation*}
+\begin{theorem33}
+If $\mathcal{O} (-a)$ is a summand of the $i^{\myth }$ term of the partition monad
+$\mathcal{L}_{\mu }(\F )$,  then
+\begin{equation*}m_{i}  \leq a+i \leq m_{i+n},
+\end{equation*}
+where the definition of $m_{i}$ is extended to all $i \in \Z $ as
+above. 
+\end{theorem33}
+\begin{proof}  By Corollary 3.6
+\begin{equation*}\lin \,L_{\mu }=\lin \, \LL ( \TT _{\mu }(\F ))= \bigoplus _{e} \LL (\myH ^{e} \TT _{\mu }(\F )),
+\end{equation*}
+so the $i^{\myth }$ term  of $L_{\mu }$ is
+$ \bigoplus _{e} \myH ^{e}(\TT _{\mu })_{e-i} \tensor S(i-e).$
+For the first inequality we have to show that if
+$\myH ^{e}(\TT _{\mu })_{e-i} \not = 0$, then $m_{i}\leq -(i-e)+i=e$. Since
+\begin{equation*}
+T^{e}_{\mu }= \bigoplus _{j: e \ge m_{j}} \omega _{E}(j-e) \tensor \myH ^{j}\F (e-j)
+\end{equation*}
+and $\omega _{E}$ is zero in negative degrees, the condition
+$(T^{e}_{\mu })_{e-i} \not =0$ implies $j-e+e-i \ge 0$ for some $j$ with $e \ge m_{j}$.
+Thus $i \leq j$ and $m_{i}\leq m_{j}\leq e$, as desired.
+
+For the second inequality we argue similarly, using
+$\myH ^{e}(\TT _{\mu }) \cong \myH ^{e-1}(\TT ^{\mu }).$
+\end{proof}
+
+
+Note that if $\mathcal{L}$ is a monad for a sheaf $\F $, then so is
+$\mathcal{L}\oplus \A $, where
+$\A $ is an acyclic complex---for example, the
+sheafification of the free resolution of a module of finite length.
+
+The main result of this section is that partition monads are
+characterized by the conditions in 
+Corollary 8.8
+and 
+Corollary 8.9 
+up to adding
+a direct sum of copies of the sheafified free resolution of 
+the residue class field of $S$. In most cases, these summands
+cannot occur.
+\begin{theorem34}
+Let $\mathcal{L}$ be a monad for a coherent sheaf $\F $ on $\myP ^{n}$,
+and let
+$\mu = (m_{0}\leq \cdots \leq m_{n})$.
+If 
+$\mathcal{L}^{i}=0$ for $|i|>n$ and the
+terms $\mathcal{L}^{i} =\bigoplus _{j} \mathcal{O} (-a_{ij})$ satisfy 
+$m_{i}\leq a_{ij}+i\leq m_{i+n}$ for
+all $i,j$,
+then
+$\mathcal{L}$ is isomorphic to the direct sum of $\mathcal{L}_{\mu }(\F )$
+and a sum
+$\A =\bigoplus _{i=1}^{n} \widetilde \LL (\omega _{E}^{r_{i}}(-m_{i})[-i])$
+of twisted Koszul complexes.
+Moreover, $r_{i}$ can be nonzero only if $m_{i-1}=m_{i}$.
+In particular, if the $m_{i}$ are strictly increasing,
+or if we assume that no direct summand of $\mathcal{L}$ is a monad for $\F $,
+then  $\mathcal{L}\cong \mathcal{L}_{\mu }(\F )$.
+\end{theorem34}
+\begin{proof}  
+Set $L=\Gamma _{*}\mathcal{L}$, 
+and let $\K ^{i}$ and $\myB ^{i}$ be the  kernel and the image of the differential
+$d^{i}:\mathcal{L}^{i}\to \mathcal{L}^{i+1}$, respectively. We begin by identifying the homology
+of $L$. Note that $(L^{i})_{d}=0$ for $d<m_{i}-i$, so 
+$(\myH ^{i}L)_{d} = 0$ for $d<m_{i}-i$ too.
+
+Since $\mathcal{L}$ is exact at $\mathcal{L}^{-i}$ for
+$i>0$, and $\mathcal{L}^{-n-1}=0$, we
+can use the sequences 
+$ 
+0\to \myB ^{-i-1}\to \mathcal{L}^{-i}\to \myB ^{-i}\to 0
+$
+to show that $\myH ^{1}\myB ^{-i}(d)=0$ for $i\geq 2$ and
+all $d$. Thus $\myH ^{0}\mathcal{L}^{-j}(d)$ surjects onto $\myH ^{0}\myB ^{-j}(d)$ for $j\geq 1$
+and all $d$. It follows that $\myH ^{-i}(L)=0$ for $i>0$, while
+$\myH ^{0}(L)$ is the cokernel of 
+$\bigoplus _{d}\myH ^{0}\myB ^{-1}(d)\to \bigoplus _{d}\myH ^{0}\K ^{0}(d)$. 
+
+For $0\leq i< n$ the space
+$\myH ^{i+1}\myB ^{-1}(d)$ injects into $\myH ^{n}\myB ^{i-n}(d)$.
+But $\myH ^{n}\myB ^{i-n}$ is the image of $\myH ^{n}\mathcal{L}^{i-n}$; the
+hypothesis on the $a_{ij}$ implies that this cohomology vanishes for
+$d\geq m_{i}-i$. In particular, 
+$\myH ^{1}\myB ^{-1}(d)=0$ for $d\geq m_{0}$, and it follows that 
+$\myH ^{0}L=\bigoplus _{d\geq m_{0}}\myH ^{0}\F (d)$.
+
+We next prove that for each $i>0$ there is a short exact sequence
+\begin{equation*}
+0\to k^{r_{i}}(m_{i}-i)  
+\to \myH ^{i}(L) \to \bigoplus _{d\geq m_{i}-i} \myH ^{i} \F (d)\to 0,
+\tag*{($*$)}\end{equation*}
+where $r_{i}=0$ unless $m_{i-1}=m_{i}$.
+In fact we shall identify this sequence with the direct sum,
+over $d\geq m_{i}-i$, of the sequences
+\begin{equation*}\myH ^{i}\myB ^{-1}(d)\to \myH ^{i}\K ^{0}(d)\to \myH ^{i}\F
+(d)\to \myH ^{i+1}\myB ^{-1}(d),
+\end{equation*}
+which come from the sequence
+$0\to \myB ^{-1}\to \K ^{0} \to \F \to 0
+$
+expressing the fact that $\mathcal{L}$ is a monad for $\F $.
+
+We have already seen that $\myH ^{i+1}\myB ^{-1}(d)=0$ for $d\geq m_{i}-i$.
+It follows that the right-hand term of $(*)$ is 0 for
+$d\geq m_{i}-i$, and the left-hand term is 0 unless $m_{i}=m_{i-1}$,
+in which case it is $k^{r_{i}}$, where
+$r_{i}={\mathrm{h}}^{i}\myB ^{-1}(m_{i-1}-(i-1))$.
+
+From the long exact sequences in cohomology---and, in case $i=n=1$, the
+hypothesis on the $a_{1,j}$---we see that 
+$\myH ^{i} L=\bigoplus _{d\geq m_{i}-i}\myH ^{1}\K ^{i-1}(d)$.
+For all $0<i\leq n$ we have 
+\begin{equation*}\bigoplus _{d\geq m_{i}-i} \myH ^{1} \K ^{i-1}(d)=\bigoplus _{d\geq m_{i}-i} \myH ^{i} \K ^{0}(d).
+\end{equation*}
+These identifications and vanishing
+identify the two exact sequences as required.
+
+Set $\TT '=\min \RR (L)$ so that $L= \min \LL (\TT ')$
+by Theorem 8.1.
+Since $\TT '$ is a complex of free $E$-modules which coincides with the
+exact complex $\TT (\F )$
+in large cohomological degrees, we can construct a map of complexes
+$ \TT ' \to \TT (\F ).$
+
+By Corollary 3.6 we have
+$\lin \TT ' = \bigoplus _{i} \RR (\myH ^{i} (L)).$
+By the first part of the proof, the terms of 
+$\lin \TT ' $ can be nonzero only in the
+range of (internal and cohomological) degrees where $\lin \TT _{\mu }$
+is equal to $\TT $.
+Hence $\TT '$ is mapped to $\TT _{\mu }$,
+and we obtain a morphism of monads from the composition
+$L = \min \LL (\TT ') \to \LL (\TT ') \to \LL (\TT _{\mu })
+\to L_{\mu }$.
+The morphism of monads induces an isomorphism in homology
+$\F =\myH ^{0}(\mathcal{L}) \to \myH ^{0}(\mathcal{L}_{\mu })=\F $,
+because by Theorem 8.1 $\TT '$ and $\TT _{\mu }$ coincide in large
+cohomological degrees.
+
+The induced map
+$\myH ^{i}(L) \to \myH ^{i}(L_{\mu })$ 
+is the surjection of the first part of the proof. Hence the
+map  $\TT '\to \TT _{\mu }$ is onto. Its kernel has terms
+$\omega _{E}^{r_{i}}(-m_{i})[-i]$, and degree considerations show that
+it is a trivial complex. Because these terms occur
+in degrees where $\TT _{\mu }$ coincides with the acyclic complex $\TT $,
+the differential of $\TT '$ carries
+the generators of these modules into boundaries of $\TT _{\mu }$.
+Thus, after a change of generators in $\TT '$, we see that 
+$\TT '$ is the direct sum of $\TT _{\mu }$ and the trivial
+complex $\bigoplus _{i=1}^{n}\omega _{E}^{r_{i}}(-m_{i})[-i]$.\end{proof}
+\begin{definition11}
+Beilinson's free monad $\myB $ for $\F $ with terms
+\begin{equation*}\myB ^{i} = \bigoplus _{p} \myH ^{i-p}(\Omega ^{p}(p) \tensor \F
+) \tensor \mathcal{O} (-p)\end{equation*}
+is the partition monad for
+$\mu = (0,1,\ldots , n)$. This follows from 
+Theorem 8.10.
+\end{definition11}
+\begin{definition12}
+Let $c$ be an integer,
+and let $\F $ be a  sheaf such that $\sum _{e} \myH ^{i}\F (e)$ is finitely
+generated for $i \le c$. Choose
+\begin{equation*}m_{0}<m_{1}< \cdots < m_{c} << 0 << m_{c+1} < \cdots < m_{n}\end{equation*}
+such that $\myH ^{i} \F (m-i)=0$ for $m < m_{i}$ and $i \le c$, and $\myH ^{i}\F (m-i)=0$ for $m\ge m_{i}$ and
+$i> c$.
+The monad $\W =\W (\F ,c)=\mathcal{L}_{\mu }(\F )$ does not depend on the precise
+values of the $m_{i}$, and hence has only  terms
+\begin{equation*}0 \to \W ^{c-n+1} \to \cdots \to \W ^{0} \to \cdots \to \W ^{c} \to 0\end{equation*}
+by 
+Proposition 8.9. 
+ By 
+Theorem 8.10 $\W (\F ,c)$ is the unique minimal free
+monad of $\F $ with nonzero components only from $c-n+1$ up to $c$.
+Thus $\W (\F ,c)$ is the monad constructed by 
+Walter \cite{Wal} with cohomology
+$\myH ^{i}(\Gamma _{*}\W )= \sum _{e} \myH ^{i}\F (e) \hbox { for } i=0,\ldots ,c$
+and zero otherwise.
+\end{definition12}
+\begin{definition13}
+Consider a smooth rational surface 
+$X \subset \myP ^{4}$ of degree $d=11$ and sectional
+genus 10. The existence of three families of rational surfaces
+with these invariants is known; see Schreyer \cite{Sch} or Decker and
+Schreyer \cite{DS2}. The Tate resolution of the ideal sheaf of these
+surfaces has shape
+\begin{equation*}\begin{matrix}*\; *  & 1 & . & . & . & . & . & . & \ldots \\
+*\; *  &39 & 30& 10& . & . & . & . &\ldots \\
+\ldots & . &.  & . & 2 & . & . & . &\ldots \\
+\ldots & . &.  & . & 1 & 5 & 5 & . &\ldots \\
+\ldots & . &.  & . & . & . & 5 & 32&*\;* \\
+\end{matrix}
+\end{equation*}
+with $h^{0}\I _{X}(6)=32$ as a reference point.
+We display four  monads for $\I _{X}$. The first two monads are monads with
+only 4 terms:
+\begin{equation*}\begin{matrix}\W (I_{X},2):&&
+ \mathcal{O} (-4)^{10}  \to & \mathcal{O} (-3)^{20}  \to & \mathcal{O}
+(-2)^{11}  \to &\mathcal{O} (-1)^{2},\\
+&&&&&\\
+\W (I_{X},1): & \mathcal{O} (-6)^{2}  \to & \mathcal{O} (-5)^{10} \to &
+\mathcal{O} (-4)^{10} \to & \mathcal{O} (-2).\qquad \
+\end{matrix}
+\end{equation*}
+The first monad is linear because $\W (I_{X},2)=\mathcal{L}(\TT ^{\ge 2})$.
+The two following monads are somewhat more complicated and hence 
+less convenient:
+\begin{equation*}\begin{matrix}\mathcal{L}(\TT ^{\ge 4}): & \mathcal{O} (-7)^{1} 
+\to &\mathcal{O} (-6)^{7} \to &\mathcal{O} (-5)^{20} \to &\mathcal{O} (-4)^{20}
+\to &\mathcal{O} (-3)^{5},\\
+&&&&&\\
+&&&&&\\
+\W (I_{X},0):&  \begin{matrix}\mathcal{O} (-9)^{5} \to \\\\\\\end{matrix}
+&\begin{matrix}\mathcal{O} (-8)^{20}
+\to \\\\\\\end{matrix}
+&
+\begin{matrix}\mathcal{O} (-7)^{26}\to \\\\\\\end{matrix}
+& \begin{matrix}\mathcal{O} (-6)^{7}\\\oplus \\\mathcal{O} (-5)^{5}.\\\quad & \\\end{matrix}
+\end{matrix}
+\end{equation*}
+
+These monads, up to twist,  are  Beilinson monads for $\I _{X}(m)$ for
+$m=1,2,3$ and $5$,
+respectively.
+The construction of such surfaces in \cite{Sch}
+was done by a computer search for monads of
+ shape $\W (I_{X},1)$.
+\end{definition13}
+\begin{remark1}
+The degree of smooth rational surfaces in $\PP ^{4}$ is bounded, according to
+Ellingsrud and Peskine \cite{EPe}. Smooth rational surfaces with sectional genus
+ $\pi >0$ (this excludes the cubic scroll and the projected Veronese  surface)
+have a linear Walter monad. Indeed, by Severi's theorem $\myH ^{1}(I_{X}(1))=0$ and hence $\W (I_{X},2)=\mathcal{L}(\TT ^{\ge 2})$. The numerical type of these monads is
+\begin{equation*}\mathcal{O} (-4)^{\pi }\to \mathcal{O} (-3)^{2\pi +s-2}\to \mathcal{O} (-2)^{\pi +2s-3} \to \mathcal{O} (-1)^{s}\end{equation*}
+with $s=h^{1}\mathcal{O} _{X}(1)=\pi -d+3$.
+
+The conjectured bound is $d \le 15$. Perhaps even $d\le 11$ is true.
+However, at present the best known bound is $d \le 52$; see Decker and 
+Schreyer \cite{DS2}.
+\end{remark1}
+
+
+
+\bibliographystyle{amsalpha}
+\begin{thebibliography}{EPSW}
+
+\bibitem[ABW]{ABW}
+K.~Akin, D.~A.~Buchsbaum, and J.~Weyman: Schur functors and Schur
+complexes. Adv. in Math.~44 (1982) 207--278.
+\MR{84c:20021}
+
+\bibitem[AO]{AO}
+V.~Ancona and G.~Ottaviani: An introduction to the derived
+categories and the theorem of Beilinson. Atti Accademia
+Peloritana dei Pericolanti, Classe I de Scienze Fis. Mat. et Nat.
+LXVII (1989) 99--110.
+\MR{92g:14013}
+
+\bibitem[AAH]{AAH}
+A.~Aramova, L. A.~Avramov, J.~Herzog:
+Resolutions of monomial ideals and cohomology over exterior algebras.
+Trans. Amer. Math. Soc. 352 (2000) 579--594.
+\MR{2000c:13021}
+
+\bibitem[Bar]{Bar}
+W.~Barth: Moduli of vector bundles on the projective plane.
+Invent. Math. 42 (1977) 63--91.
+\MR{57:324}
+
+\bibitem[Bei]{Bei}
+A.~Beilinson: Coherent sheaves on $\mathbf{P} ^{n}$ and problems
+of linear algebra.
+Funct. Anal. and its Appl. 12 (1978) 214--216.
+(Trans. from Funkz. Anal. i. Ego Priloz. 12 (1978) 68--69.)
+\MR{80c:14010b}
+
+\bibitem[BGG]{BGG}
+I.~N.~Bernstein, I.~M.~Gel'fand and S.~I.~Gel'fand:
+Algebraic bundles on $\mathbf{P}^{n}$ and problems of linear algebra.
+Funct. Anal. and its Appl. 12 (1978) 212--214.
+(Trans. from Funkz. Anal. i. Ego Priloz 12 (1978) 66--67.)
+\MR{80c:14010a}
+
+\bibitem[BE]{BE}
+D.~A.~Buchsbaum and D.~Eisenbud: Generic free resolutions and
+a family of generically perfect ideals. Adv.~Math.~18 (1975) 245--301.
+\MR{53:391}
+
+\bibitem[Buc1]{Buc1}
+R.-O.~Buchweitz: Appendix to
+Cohen-Macaulay modules on quadrics, by R.-O. Buchweitz, D. Eisenbud,
+and J. Herzog. In {\sl Singularities,
+representation of algebras, and vector bundles (Lambrecht, 1985),\/}
+Springer-Verlag Lecture Notes in Math. 1273 (1987) 96--116.
+\MR{88h:14001}
+
+\bibitem[Buc2]{Buc2}
+R.-O.~Buchweitz: Maximal Cohen-Macaulay modules and
+Tate-Cohomology over Gorenstein ring
+Preprint (1985).
+
+
+\bibitem[DE]{DE}
+W.~Decker and D.~Eisenbud: Sheaf algorithms using the
+exterior algebra,
+in {\em Computations in Algebraic Geometry with Macaulay2},
+ed.~D.~Eisenbud, D.~Grayson, M.~Stillman, and B.~Sturmfels.
+Springer-Verlag, New York, 2001.
+
+\bibitem[DS1]{DS1}
+W.~Decker and F.-O.~Schreyer: On the uniqueness of the
+Horrocks-Mumford bundle. Math. Ann. 273 (1986) 415--443.
+\MR{87d:14009}
+
+\bibitem[DS2]{DS2}
+W.~Decker and F.-O.~Schreyer: 
+Non-general type surfaces in $\mathbf{P}^{4}$: 
+Some remarks on bounds and constructions. 
+J. Symbolic Comp. 29 (2000), 545--582.
+\MR{2002a:14064}
+
+\bibitem[Dec]{Dec}
+W.~Decker: Stable rank 2 bundles with Chern-classes
+$c_{1}=-1,\ c_{2}=4$. Math. Ann. 275 (1986) 481--500.
+\MR{87j:14017}
+
+
+\bibitem[Eis]{Eis}
+D.~Eisenbud: {\sl Commutative Algebra with a View Toward
+Algebraic Geometry.} Springer-Verlag, New York, 1995.
+\MR{97a:13001}
+
+\bibitem[EG]{EG}
+D.~Eisenbud and S.~Goto: Linear free resolutions and minimal
+multiplicity.  J. Algebra 88 (1984) 89--133.
+\MR{85f:13023}
+
+\bibitem[EPo]{EPo}
+D.~Eisenbud and S.~Popescu:
+Gale Duality and Free Resolutions of Ideals of Points.
+Invent. Math. 136 (1999) 419--449.
+\MR{2000i:13014}
+
+\bibitem[EPSW]{EPSW}
+D.~Eisenbud, S.~Popescu, F.-O.~Schreyer and C.~Walter:
+Exterior algebra methods for the Minimal Resolution Conjecture,
+Duke Math. J. 112 (2002), 379--395.
+
+
+\bibitem[EPY]{EPY}
+D.~Eisenbud, S.~Popescu, and S.~Yuzvinsky: Hyperplane
+arrangements and resolutions of monomial ideals over an
+exterior algebra. Trans. Amer. Math. Soc., this issue.
+
+
+\bibitem[ES1]{ES1}
+D.~Eisenbud and F.-O.~Schreyer: Sheaf cohomology and free resolutions over 
+the exterior algebras,
+{\tt http://arXiv.org/abs/math.AG/0005055}
+Preprint (2000).
+
+\bibitem[ES2]{ES2}
+D.~Eisenbud, F.-O.~Schreyer, and Jerzy Weyman: Resultants and 
+Chow forms via exterior syzygies.
+J. Amer. Math. Soc. 16 (2003) 537--579.
+
+\bibitem[EPe]{EPe}
+G.~Ellingsrud and C.~Peskine: Sur le surfaces lisse de $\mathbf{P}^{4}$.
+Invent. Math. 95 (1989) 1--12.
+\MR{89j:14023}
+
+\bibitem[EW]{EW}
+D.~Eisenbud and J.~Weyman:
+Fitting's Lemma for ${\mathbb{Z}}/{2}$-graded modules.
+Trans. Amer. Math. Soc., this issue.
+
+
+\bibitem[Flo1]{Flo1}
+G.~Fl\o ystad: Koszul duality and equivalences of categories.
+{\tt http://arXiv.org/ abs/math.RA/0012264}
+Preprint (2000a).
+
+\bibitem[Flo2]{Flo2}
+G.~Fl\o ystad: Describing coherent sheaves on projective spaces via Koszul
+duality.
+{\tt http://arXiv.org/abs/math.RA/0012263}
+Preprint (2000b).
+
+\bibitem[Flo3]{Flo3}
+G.~Fl\o ystad: Monads on projective spaces. 
+Communications in Algebra. 28 (2000c) 5503-5516.
+\MR{2002e:14070}
+
+\bibitem[Gel]{Gel}
+S.~I.~Gel'fand: Sheaves on $\mathbf{P}^{n}$ and problems in linear algebra.
+Appendix to the Russian edition
+of [OSS], Mir, Moscow, 1984.
+\MR{86i:14005}
+
+\bibitem[GM]{GM}
+S.~I.~Gel'fand and Yu.~I.~Manin: {\em Methods of Homological Algebra.\/}
+Springer-Verlag, New York, 1996.
+\MR{97j:18001}
+
+\bibitem[GS]{GS}
+D.~Grayson and M.~Stillman: Macaulay2. {\tt
+http://www.math.uiuc.edu/Macaulay2/}.
+
+\bibitem[Gre]{Gre}
+M.~Green: The Eisenbud-Koh-Stillman Conjecture on Linear Syzygies.
+Invent. Math. 136 (1999) 411--418.
+\MR{2000j:13024}
+
+\bibitem[GD]{GD}
+A.~Grothendieck and J.~Dieudonn\'{e}:
+{\em \'{E}l\'{e}ments de la G\'{e}ometrie Alg\'{e}brique IV:
+\'{E}tude locale des sch\'{e}mas et de morphismes de sch\'{e}mas}
+(deuxi\`{e}me partie). Inst. Hautes Etudes Sci. Publ. Math. 24 (1965).
+\MR{33:7330}
+
+\bibitem[Hap]{Hap}
+D.~Happel: {\em Triangulated Categories in the Representation Theory
+of Finite-Dimensional Algebras.\/} London
+Math.~Soc.~Lecture Notes Ser. 119, 1988.
+\MR{89e:16035}
+
+\bibitem[Har]{Har}
+R.~Hartshorne: {\em Algebraic geometry \/}, Springer Verlag, 1977.
+\MR{57:3116}
+
+\bibitem[HR]{HR}
+J.~Herzog and T.~R\"{o}mer: Resolutions of modules over the exterior algebra,
+working notes, 1999.
+
+\bibitem[Hor]{Hor}
+G.~Horrocks: Vector bundles on the punctured spectrum of a local ring, Proc. 
+London Math. Soc.
+(3) 14 (1964), 714--718.
+\MR{30:121}
+
+\bibitem[HM]{HM}
+G.~Horrocks and D.~Mumford: A rank $2$ vector bundle on $\mathbf{P}^{4}$ with 
+15,000 symmetries. Topology 12 (1973) 63--81.
+\MR{52:3164}
+
+\bibitem[Kap1]{Kap1}
+M.~M.~Kapranov:
+On the derived categories of coherent sheaves on some homogeneous spaces.
+Invent. Math. 92 (1988) 479--508.
+\MR{89g:18018}
+
+\bibitem[Kap2]{Kap2}
+M.~M.~Kapranov:
+On the derived category and $K$-functor
+of coherent sheaves on intersections of quadrics. Izv. Akad.
+Nauk SSSR Ser. Mat. 52 (1988) 186--199; English transl., Math. USSR Izv. 32
+(1989), 191--204.
+\MR{89f:14014}
+
+\bibitem[MP]{MP}
+M.~Martin-Deschamps and D.~Perrin: {\sl Sur la classification des courbes 
+gauches.\/}
+Ast\'{e}risque 184--185 (1990).
+\MR{91h:14039}
+
+\bibitem[OSS]{OSS}
+C.~Okonek, M.~Schneider, and H.~Spindler: {\sl Vector Bundles on
+Complex Projective Spaces.\/} Birkh\"{a}user, Boston 1980.
+\MR{81b:14001}
+
+\bibitem[Orl]{Orl}
+D.~O.~Orlov:
+Projective bundles, monoidal transformations,
+and derived categories of coherent sheaves. Izv. Ross. Akad. Nauk
+Ser. Mat. 56 (1992) 852--862; translation in Russian Acad. Sci. Izv. Math.
+41 (1993) 133--141.
+\MR{94e:14024}
+
+\bibitem[Pri]{Pri}
+S.~B.~Priddy: Koszul resolutions. Trans. Amer. Math. Soc. 152
+(1970) 39--60.
+\MR{42:346}
+
+\bibitem[Rao]{Rao}
+P.~Rao: Liaison equivalence classes, Math. Ann. 258 (1981) 169--173.
+\MR{83j:14045}
+
+\bibitem[Sch]{Sch}
+F.-O.~Schreyer: Small fields in constructive algebraic geometry.
+In S.~Maruyama ed.: {\sl Moduli of Vector Bundles, Sanda 1994}. New York, Dekker 1996,
+221--228.
+\MR{97h:14050}
+
+\bibitem[Swa]{Swa}
+R.~G.~Swan: $K$-theory of quadric hypersurfaces. Ann. of Math.
+122 (1985) 113--153.
+\MR{87g:14006}
+
+\bibitem[Wal]{Wal}
+C.~Walter: Algebraic cohomology methods for the normal bundle of algebraic space curves.
+Preprint (1990).
+
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,568 @@
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">   1.
+<a href="pdfs/1970-001.pdf"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Modules over Dedekind prime rings.</b>
+David Eisenbud, J. C. Robson.
+<i>Journal of algebra.</i> 16:1 (1970).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">   2.
+<a href="pdfs/1970-002.pdf"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Hereditary Noetherian prime rings.</b>
+David Eisenbud, J. C. Robson.
+<i>Journal of algebra.</i> 16:1 (1970).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">   3.
+<a href="pdfs/1970-003.pdf"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Subrings of Artinian and Noetherian rings.</b>
+David Eisenbud.
+<i>Mathematische Annalen.</i> 185 (1970).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">   4.
+<a href="pdfs/1973-004.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Three conjectures about modules over polynomial rings.</b>
+David Eisenbud, E. Graham Evans, Jr..
+<i>Lecture notes in mathematics.</i> 311 (1973).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">   5.
+<a href="pdfs/1970-005.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Serial rings.</b>
+David Eisenbud, Phillip Griffith.
+<i>Journal of algebra.</i> 17:3 (1970).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">   6.
+<a href="pdfs/1984-006.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Linear free resolutions and minimal multiplicity.</b>
+David Eisenbud, Shiro Goto.
+<i>Journal of algebra.</i> 88:1 (1984).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">   7.
+<a href="pdfs/1969-007.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Groups of order automorphisms of certain homogeneous ordered sets.</b>
+David Eisenbud.
+<i>Michigan mathematical journal.</i> 16 (1969).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">   8.
+<a href="pdfs/1989-008.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Progress in the theory of complex algebraic curves.</b>
+David Eisenbud, Joe Harris.
+<i>Bulletin of the AMS.</i> 21:2 (1989).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">   9.
+<a href="pdfs/1977-009.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>An algebraic formula for the degree of a C(infinity) map germ.</b>
+David Eisenbud, Harold I. Levine.
+<i>Annals of mathematics.</i> 106 (1977).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  10.
+<a href="pdfs/1975-010.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Generic free resolutions and a family of generically perfect ideals.</b>
+David Eisenbud, David A. Buchsbaum.
+<i>Advances in mathematics.</i> 18 (1975).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  11.
+<a href="pdfs/1971-011.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>The structure of serial rings.</b>
+David Eisenbud, Phillip Griffith.
+<i>Pacific journal of mathematics.</i> 36:1 (1971).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  12.
+<a href="pdfs/1972-012.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Lifting modules and a theorem on finite free resolutions.</b>
+David Eisenbud, David A. Buchsbaum.
+<i>Ring theory.</i>  (1972).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  13.
+<a href="pdfs/1972-013.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Basic elements: theorems from algebraic K-theory.</b>
+David Eisenbud, E. Graham Evans, Jr..
+<i>Bulletin of the AMS.</i> 78:4 (1972).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  14.
+<a href="pdfs/1973-014.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>What makes a complex exact?.</b>
+David Eisenbud, David A. Buchsbaum.
+<i>Journal of algebra.</i> 25:2 (1973).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  15.
+<a href="pdfs/1973-015.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Remarks on ideals and resolutions.</b>
+David Eisenbud, David A. Buchsbaum.
+<i>Symposia Mathematica.</i> XI (1973).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  16.
+<a href="pdfs/1973-016.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Every algebraic set in n-space is the intersection of n hypersurfaces.</b>
+David Eisenbud, E. Graham Evans, Jr..
+<i>Inventiones mathematicae.</i> 19 (1973).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  17.
+<a href="pdfs/1973-017.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Generating modules efficiently: theorems from algebraic K-theory.</b>
+David Eisenbud, E. Graham Evans, Jr..
+<i>Journal of algebra.</i> 27:2 (1973).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  18.
+<a href="pdfs/1974-018.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Some structure theorems for finite free resolutions.</b>
+David Eisenbud, David A. Buchsbaum.
+<i>Advances in mathematics.</i> 12:1 (1974).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  19.
+<a href="pdfs/1974-019.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Adic approximation of complexes and multiplicities.</b>
+David Eisenbud.
+<i>Nagoya mathematical journal.</i> 54 (1974).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  20.
+<a href="pdfs/1974-020.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>A survey of some results on free resolutions.</b>
+David Eisenbud.
+<i>Proceedings of the international congress of mathematicians.</i> 1 (1974).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  21.
+<a href="pdfs/1975-021.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Some directions of recent progress in commutative algebra.</b>
+David Eisenbud.
+<i>Proceedings of symposia in pure mathematics.</i> 29 (1975).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  22.
+<a href="pdfs/1977-022.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Algebra structures for finite free resolutions, and some structure theorems for ideals of codimension 3.</b>
+David Eisenbud, David A. Buchsbaum.
+<i>American journal of mathematics.</i> 99:3 (1977).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  23.
+<a href="pdfs/1977-023.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>What annihilates a module?.</b>
+David Eisenbud, David A. Buchsbaum.
+<i>Journal of algebra.</i> 47:2 (1977).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  24.
+<a href="pdfs/1977-024.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Remarks on regular sequences.</b>
+D. Eisenbud, M. Hermann, W. Vogel.
+<i>Nagoya mathematical journal.</i> 67 (1977).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  25.
+<a href="pdfs/1977-025.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Enriched free resolutions and change of rings.</b>
+David Eisenbud.
+<i>Lecture notes in mathematics.</i> 586 (1977).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  26.
+<a href="pdfs/1977-026.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Solution du problème de Serre par Quillen-Suslin.</b>
+David Eisenbud.
+<i>Lecture notes in mathematics.</i> 586 (1977).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  27.
+<a href="pdfs/1979-027.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>A Nullstellensatz with nilpotents and Zariski's main lemma on holomorphic functions.</b>
+David Eisenbud, Melvin Hochster.
+<i>Journal of algebra.</i> 58:1 (1979).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  28.
+<a href="pdfs/1979-028.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>On the number of generators of ideals in local Cohen-Macaulay rings.</b>
+Maksymillian Boratynski, David Eisenbud, David Rees.
+<i>Journal of algebra.</i> 57:1 (1979).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  29.
+<a href="pdfs/1980-029.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Introduction to algebras with straightening laws.</b>
+David Eisenbud.
+<i>Lecture notes in pure and applied mathematics.</i> 55 (1980).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  30.
+<a href="pdfs/1980-030.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Homological algebra on a complete intersection, with an application to group representations.</b>
+David Eisenbud.
+<i>Transactions of the AMS.</i> 260:1 (1980).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  31.
+<a href="pdfs/1980-031.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Young diagrams and determinantal varieties.</b>
+C. DeConcini, David Eisenbud, C. Procesi.
+<i>Inventiones mathematicae.</i> 56 (1980).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  32.
+<a href="pdfs/1980-032.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Transcanonical embeddings of hyperelliptic curves.</b>
+David Eisenbud.
+<i>Journal of pure and applied algebra.</i> 19 (1980).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  33.
+<a href="pdfs/1981-033.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>On the normal bundles of smooth rational space curves.</b>
+D. Eisenbud, A. Van de Ven.
+<i>Mathematische Annalen.</i> 256 (1981).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  34.
+<a href="pdfs/1981-034.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Projective resolutions of Cohen-Macaulay algebras.</b>
+David Eisenbud, Oswald Riemenschneider, Frank-Olaf Schreyer.
+<i>Mathematische Annalen.</i> 257 (1981).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  35.
+<a href="pdfs/1981-035.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Transverse foliations of Seifert bundles and self homeomorphism of the circle.</b>
+David Eisenbud, Ulrich Hirsch, Walter Neumann.
+<i>Comentarii Mathematici Helvetici.</i> 56 (1981).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  36.
+<a href="pdfs/1982-036.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>On the variety of smooth rational curves with given degree and normal bundle.</b>
+D. Eisenbud, A. Van de Ven.
+<i>Inventiones mathematicae.</i> 67 (1982).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  37.
+<a href="pdfs/1982-037.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Curves of almost maximal genus.</b>
+David Eisenbud, Joe Harris.
+<i>Séminaire de mathématiques supérieures.</i> 85 (1982).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  38.
+<a href="pdfs/1982-038.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Cohen-Macaulay Rees algebras and their specialization.</b>
+David Eisenbud and Craig Huneke.
+<i>Journal of algebra.</i> 81:1 (1982).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  39.
+<a href="pdfs/1983-039.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Rational curves with cusps.</b>
+David Eisenbud.
+<i>Proceedings of symposia in pure mathematics.</i> 40 (1983).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  40.
+<a href="pdfs/1983-040.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Divisors on general curves and cuspidal rational curves.</b>
+David Eisenbud, Joe Harris.
+<i>Inventiones mathematicae.</i> 74 (1983).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  41.
+<a href="pdfs/1983-041.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>A simpler proof of the Gieseker-Petri Theorem .</b>
+David Eisenbud, Joe Harris.
+<i>Inventiones mathematicae.</i> 74 (1983).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  42.
+<a href="pdfs/1983-042.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>On the Brill-Noether Theorem.</b>
+David Eisenbud, Joe Harris.
+<i>Lecture notes in mathematics.</i> 997 (1983).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  43.
+<a href="pdfs/1984-043.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Limit linear series, the irrationality of M_g, and other applications.</b>
+David Eisenbud, Joe Harris.
+<i>Bulletin of the AMS.</i> 10:2 (1984).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  44.
+<a href="pdfs/1985-044.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Recent progress in the study of Weierstrass points.</b>
+David Eisenbud, Joe Harris.
+<i>Progress in mathematics.</i> 60 (1985).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  45.
+<a href="pdfs/1986-045.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Limit linear series: basic theory .</b>
+David Eisenbud, Joe Harris.
+<i>Inventiones mathematicae.</i> 85 (1986).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  46.
+<a href="pdfs/1987-046.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>On varieties of minimal degree (a centennial account).</b>
+David Eisenbud, Joe Harris.
+<i>Proceedings of symposia in pure mathematics.</i> 46 (1987).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  47.
+<a href="pdfs/1987-047.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Existence, decomposition, and limits of certain Weierstrass points .</b>
+David Eisenbud, Joe Harris.
+<i>Inventiones mathematicae.</i> 87 (1987).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  48.
+<a href="pdfs/1987-048.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>The monodromy of Weierstrass points .</b>
+David Eisenbud, Joe Harris.
+<i>Inventiones mathematicae.</i> 90 (1987).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  49.
+<a href="pdfs/1987-049.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>When ramification points meet .</b>
+David Eisenbud, Joe Harris.
+<i>Inventiones mathematicae.</i> 87 (1987).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  50.
+<a href="pdfs/1987-050.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Irreducibility and monodromy of some families of linear series.</b>
+David Eisenbud, Joe Harris.
+<i>Annales Scientifiques de l'École Normale Supérieure.  Quatrième Série.</i> 20 (1987).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  51.
+<a href="pdfs/1987-051.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Cohen-Macaulay modules on quadrics.</b>
+Ragnar-Olaf Buchweitz, David Eisenbud, David, Jürgen Herzog.
+<i>Lecture notes in mathematics.</i> 1273 (1987).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  52.
+<a href="pdfs/1987-052.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>On the resiliency of determinantal ideals.</b>
+David Eisenbud.
+<i>Advanced studies in pure mathematics.</i> 11 (1987).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  53.
+<a href="pdfs/1988-053.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>The classification of homogeneous Cohen-Macaulay rings of finite representation type.</b>
+David Eisenbud, Jürgen Herzog.
+<i>Mathematische Annalen.</i> 280 (1988).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  54.
+<a href="pdfs/1988-054.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Determinantal equations for curves of high degree.</b>
+David Eisenbud, Jee Koh, Michael Stillman.
+<i>American journal of mathematics.</i> 110 (1988).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  55.
+<a href="pdfs/1988-055.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Linear sections of determinantal varieties.</b>
+David Eisenbud.
+<i>American journal of mathematics.</i> 110 (1988).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  56.
+<a href="pdfs/1988-056.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Vector spaces of matrices of low rank.</b>
+David Eisenbud, Joe Harris.
+<i>Advances in mathematics.</i> 70:2 (1988).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  57.
+<a href="pdfs/1988-057.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Varieties cut out by quadrics: scheme-theoretic versus homogeneous generation of ideals.</b>
+Lawrence Ein, David Eisenbud, Sheldon Katz.
+<i>Lecture notes in mathematics.</i> 1311 (1988).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  58.
+<a href="pdfs/1989-058.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Remarks on points in a projective space.</b>
+David Eisenbud, Jee-Heub Koh.
+<i>MSRI publications.</i> 15 (1989).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  59.
+<a href="pdfs/1989-059.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Rank varieties of matrices.</b>
+David Eisenbud, David Saltman.
+<i>MSRI publications.</i> 15 (1989).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  60.
+<a href="pdfs/1989-060.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>The Clifford dimension of a projective curve.</b>
+David Eisenbud, Herbert Lange, Gerriet Martens, Frank-Olaf Schreyer.
+<i>Compositio mathematica.</i> 72 (1989).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  61.
+<a href="pdfs/1989-061.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Irreducibility of some families of linear series.</b>
+David Eisenbud, Joe Harris.
+<i>Annales Scientifiques de l'École Normale Supérieure.  Quatrième Série.</i> 22 (1989).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  62.
+<a href="pdfs/1990-062.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Ideals with a regular sequence as syzygy.</b>
+David Eisenbud, Craig Huneke.
+<i>Progress in mathematics.</i> 86 (1990).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  63.
+<a href="pdfs/1991-063.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>On the Hurwitz scheme and its monodromy.</b>
+David Eisenbud, Noam Elkies, Joe Harris, Robert Speiser.
+<i>Compositio mathematica.</i> 77 (1991).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  64.
+<a href="pdfs/1991-064.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Some linear syzygy conjectures.</b>
+David Eisenbud, Jee Koh.
+<i>Advances in mathematics.</i> 90:1 (1991).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  65.
+<a href="pdfs/1991-065.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Graph curves.</b>
+Dave Bayer, David Eisenbud.
+<i>Advances in mathematics.</i> 86:1 (1991).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  66.
+<a href="pdfs/1992-066.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Direct methods for primary decomposition.</b>
+David Eisenbud, Craig Huneke, Wolmer Vasconcelos.
+<i>Inventiones mathematicae.</i> 110 (1992).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  67.
+<a href="pdfs/1992-067.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Finite projective schemes in linearly general position.</b>
+David Eisenbud, Joe Harris.
+<i>Journal of algebraic geometry.</i> 1 (1992).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  68.
+<a href="pdfs/1992-068.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>An intersection bound for rank 1 loci, with applications to Castelnuovo and Clifford theory.</b>
+David Eisenbud, Joe Harris.
+<i>Journal of algebraic geometry.</i> 1 (1992).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  69.
+<a href="pdfs/1992-069.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>The dimension of the Chow variety of curves.</b>
+David Eisenbud, Joe Harris.
+<i>Compositio mathematica.</i> 83 (1992).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  70.
+<a href="pdfs/1991-070.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Green's conjecture: An orientation for algebraists.</b>
+David Eisenbud.
+<i>Research notes in mathematics.</i> 2 (1991).
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  71.
+<a href="pdfs/1992-071.pdf"><img src="gifs/other.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td><td>
+<b>Regularity of modules over a Koszul algebra.</b>
+Luchezar L. Avramov, David Eisenbud.
+<i>Journal of algebra.</i> 153:1 (1992).
+</td></tr></tbody></table></dt>
+

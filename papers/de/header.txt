@@ -1,0 +1,18 @@
+<html><head><title>Works by David Eisenbud</title>
+<body style="margin:20pt">
+<center>
+<h2>Works by David Eisenbud</h2>
+
+<table>
+<tr>
+<td style="padding-right:10pt; font-size:larger"><a href="#papers">Papers</a></td>
+<td style="padding-left:10pt; padding-right:10pt; font-size:larger"><a href="#books">Books</a></td>
+<td style="padding-left:10pt; font-size:larger"><a href="#arxiv">arXiv</a></td>
+</tr>
+</table>
+</center>
+
+<dl>
+
+<h3><a name="papers">Papers</a></h3>
+

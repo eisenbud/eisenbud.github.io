@@ -1,0 +1,73 @@
+BEGIN {
+
+FS = "\t"
+lastitem = 72
+
+}
+
+(NR == 1) { next }
+(NR == 2) { next }
+
+{
+
+# remove the double-quote string delimiters
+gsub("\"", "")
+
+item = $1 + 0
+
+if (item == 0) exit
+
+year = $2
+
+title = $3
+if (title !~ /\?$/) title = title "."
+
+author = $4
+# remove a final "." because it would print two, e.g., "Jr."
+sub("\.$", "", author)
+
+journal = $5
+
+numelts = split($6, volume, ":")
+vol = volume[1]
+issue = ""
+if (numelts > 1) issue = ", no." volume[2]
+
+pagestr = ""
+pgnumelts = split($7, page, "-")
+if (pgnumelts > 0)
+{
+	numpages = page[2] - page[1] + 1
+	pagestr = ", " $7
+}
+
+filedes = $8
+
+filepath = "pdfs/" filedes ".pdf"
+
+if (!(system("test -r " filepath))) filetype = "pdf"
+else filetype = "other"
+
+altitle = $9
+
+printf("<dt><table cellpadding=\"0\"><tbody><tr valign=\"top\"><td nowrap=\"nowrap\"> %3d.\n", item)
+
+printf("<a href=\"pdfs/%s.pdf\" target=\"_blank\"><img src=\"gifs/%s.gif\" alt=\"[PDF]\" align=\"top\" border=\"1\" height=\"26\" width=\"24\"></a>\n", filedes, filetype) 
+
+printf("</td><td>\n")
+
+printf("<b>%s</b>\n", title)
+
+printf("%s.\n", author)
+
+if (pgnumelts > 0) printf("%d pages.\n", numpages)
+
+if (altitle != "") printf ("%s.\n", altitle)
+
+printf("<i>%s.</i> %s (%s)%s%s.\n", journal, vol, year, issue, pagestr) 
+
+printf("</td></tr></tbody></table></dt>\n\n")
+
+}
+
+END { exit }

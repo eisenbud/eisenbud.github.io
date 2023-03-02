@@ -1,0 +1,4 @@
+#!/bin/sh -v
+rm out.txt temp.html
+nawk -f tryit.awk papers.txt > out.txt
+cat header.txt out.txt books.txt arXiv.txt > temp.html

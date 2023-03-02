@@ -1,0 +1,1978 @@
+%_ **************************************************************************
+%_ * The TeX source for AMS journal articles is the publishers TeX code     *
+%_ * which may contain special commands defined for the AMS production      *
+%_ * environment.  Therefore, it may not be possible to process these files *
+%_ * through TeX without errors.  To display a typeset version of a journal *
+%_ * article easily, we suggest that you retrieve the article in DVI,       *
+%_ * PostScript, or PDF format.                                             *
+%_ **************************************************************************
+%  Author Package
+%% Translation via Omnimark script a2l, September 25, 2002 (all in one day!)
+\controldates{4-JUN-2003,4-JUN-2003,4-JUN-2003,5-JUN-2003}
+ 
+\RequirePackage[warning,log]{snapshot}
+\documentclass{tran-l}
+\issueinfo{355}{11}{November}{2003}
+\pagespan{4451}{4473}
+\dateposted{June 10, 2003}
+\PII{S 0002-9947(03)03198-2}
+\copyrightinfo{2003}{American Mathematical Society}
+
+
+\newcount{\cols}{\catcode`,=\active\catcode`|=\active \gdef\Young(#1){\hbox{$\vcenter{\mathcode`,="8000\mathcode`|="8000 \def,{\global\advance\cols by 1 &}\def|{\cr \multispan{\the\cols}\hrulefill\cr &\global\cols=2 }\offinterlineskip\everycr{}\tabskip=0pt \dimen0=\ht\strutbox \advance\dimen0 by\dp\strutbox \halign {\vrule height \ht\strutbox depth \dp\strutbox## &&\hbox to \dimen0{\hss$##$\hss}\vrule\cr \noalign{\hrule}&\global\cols=2 #1\crcr\multispan{\the\cols}\hrulefill\cr }}$}} }
+
+
+
+
+
+\theoremstyle{plain}
+\newtheorem*{theorem1}{Theorem 1}
+\newtheorem*{theorem2}{Corollary 2}
+\newtheorem*{theorem3}{Proposition 1.1}
+\newtheorem*{theorem4}{Corollary 1.2}
+\newtheorem*{theorem5}{Corollary 1.3}
+\newtheorem*{theorem6}{Proposition 1.4}
+\newtheorem*{theorem7}{Proposition 1.5}
+\newtheorem*{theorem8}{Proposition 1.6}
+\newtheorem*{theorem9}{Proposition 1.7}
+\newtheorem*{theorem10}{Theorem 1(a)}
+\newtheorem*{theorem11}{Proposition 2.1}
+\newtheorem*{theorem12}{Corollary 2.2}
+\newtheorem*{theorem13}{Lemma 2.3}
+\newtheorem*{theorem14}{Lemma 3.1}
+\newtheorem*{theorem15}{Theorem 3.2}
+\newtheorem*{theorem16}{Corollary 3.3}
+\newtheorem*{theorem17}{Conjecture 4.1}
+\newtheorem*{theorem18}{Proposition A1.1}
+\newtheorem*{theorem19}{Proposition A3.1}
+\newtheorem*{theorem20}{Lemma A3.2}
+\newtheorem*{theorem21}{Proposition A3.3}
+\newtheorem*{theorem22}{Lemma A3.4}
+\newtheorem*{theorem23}{Corollary A3.5}
+\newtheorem*{theorem24}{Proposition A3.1$'$}
+\newtheorem*{theorem25}{Lemma A3.2$'$}
+\newtheorem*{theorem26}{Corollary A3.5$'$}
+
+\theoremstyle{remark}
+\newtheorem*{remark1}{Remarks}
+
+\theoremstyle{definition}
+\newtheorem*{definition1}{Example 1}
+\newtheorem*{definition2}{Example 2}
+\newtheorem*{definition3}{Example 3}
+\newtheorem*{definition4}{Definition}
+\newtheorem*{definition5}{Definition}
+
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\Ann}{\operatorname{Ann}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\g}{{\mathfrak g}}
+\newcommand{\gl}{{\mathfrak {gl}}}
+\newcommand{\Sym}{\operatorname {Sym}}
+\newcommand{\Tor}{\operatorname {Tor}}
+\newcommand{\Ext}{\operatorname {Ext}}
+\newcommand{\myS}{{\mathcal S}}
+\newcommand{\F}{{\mathcal F}}
+\newcommand{\FF}{{\mathbf F}}
+\newcommand{\myth}{\operatorname{th}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\ann}{\operatorname{ann}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+\newcommand{\PP}{{\mathbf P}}
+
+
+\begin{document}
+
+\title{Fitting's Lemma for $\mathbb{Z}/2$-graded modules}
+\author{David Eisenbud}
+\address{Department of Mathematics, University of California, 
+Berkeley, California 94720}
+\email{de@msri.org}
+\author{Jerzy Weyman}
+\address{Department of Mathematics, Northeastern  University,
+Boston, Massachusetts 02115}
+\email{j.weyman@neu.edu}
+\thanks{The second named author is grateful to the
+Mathematical Sciences Research Institute for support in the period this
+work was completed. Both authors are grateful
+for the partial support of the National Science Foundation.}
+\date{March 20, 2002 and, in revised form, May 29, 2002}
+\subjclass[2000]{Primary 13C99, 13C05, 13D02, 16D70, 17B70}
+\begin{abstract}Let $\phi :\; R^{m}\to R^{d}$
+be a map of free modules over a commutative ring $R$.
+Fitting's Lemma shows that the ``Fitting ideal,'' the
+ideal of $d\times d$ minors of 
+$\phi $, annihilates the cokernel of $\phi $ and 
+is a good approximation to the whole annihilator in a certain
+sense. In characteristic 0 we define a Fitting ideal
+in the more general case of a map of graded
+free modules over a $\mathbb{Z}/2$-graded skew-commutative algebra 
+and prove corresponding theorems about the annihilator; for
+example, the Fitting ideal and the annihilator of the cokernel are equal
+in the generic case.
+Our results generalize the
+classical Fitting Lemma in the commutative case
+and extend a key result of Green (1999) in the exterior algebra case.
+They depend on the Berele-Regev theory of representations
+of general linear Lie superalgebras. In the purely even and
+purely odd cases we also offer a standard basis approach to
+the module $\operatorname{coker}\phi $ when $\phi $ is a generic matrix.
+\end{abstract}
+\maketitle
+
+\section*{Introduction}
+
+The classical Fitting Lemma (Fitting \cite{Fit}) gives information
+about the annihilator of a module over a commutative ring in terms
+of a presentation of the module by generators and relations.
+More precisely, let
+\begin{equation*}\phi : R^{m} \to R^{d}
+\end{equation*}
+be a map of finitely generated free modules over a commutative ring
+$R$, and for any integer $t\geq 0$ 
+let $I_{t}(\phi )$ denote the ideal in $R$ generated by the 
+$t\times t$ minors of $\phi $.
+Fitting's result says that the module $\coker \phi $
+is annihilated by $I_{d}(\phi )$, and that if $\phi $ is the 
+generic map---represented by a matrix whose entries 
+are distinct indeterminates---then the
+annihilator is equal to $I_{d}(\phi )$. 
+Thus $I_{d}(\phi )$ is the best approximation to the
+annihilator that is compatible with base change. Moreover, 
+$I_{d}(\phi )$ is not too bad an approximation to $\ann \coker \phi $
+in the sense that 
+$I_{d}(\phi )\supset (\ann \coker \phi )^{d}$, or more precisely
+$(\ann \coker \phi )I_{t}(\phi )\subset I_{t+1}(\phi )$ for all $0\leq t<d$.
+In this paper we will
+prove corresponding results in the case 
+of $\ZZ /2$-graded modules over a
+skew-commutative $\ZZ /2$-graded algebra containing a field $K$
+of characteristic 0.
+Let $R$ be a 
+$\ZZ /2$-graded skew-commutative $K$-algebra: that is, $R=R_{0}\oplus R_{1}$ as vector spaces, $R_{0}$ is a commutative central subalgebra,
+$R_{i}R_{j}\subset R_{i+j\ (\operatorname{mod}\ 2)}$, and every element of
+$R_{1}$ squares to 0. Any homogeneous map $\phi $ of $\ZZ /2$-graded free
+$R$-modules may be written in the form
+\begin{equation*}\phi :\quad R^{m}\oplus R^{n}(1)
+\xrightarrow{\left(\begin{smallmatrix} X &A\\ B&Y \end{smallmatrix}
+\right)}
+R^{d}\oplus R^{e}(1),
+\end{equation*}
+where $X, Y$ are matrices of even elements of $R$, and $A, B$ are
+matrices of odd elements. We will define an ideal 
+$I_{\Lambda (d,e)}$ and
+show that it is contained in the
+annihilator of
+the cokernel of $\phi $, with equality 
+in the {\em generic case\/} where the entries of the matrices
+$X,Y,A,B$ are
+indeterminates (that is,
+$R$ is a polynomial ring on the entries of $X$ and $Y$
+tensored with an exterior algebra on the entries of $A$ and $B)$. 
+In the purely even and purely odd cases our results are
+characteristic-free, but in general we 
+give examples to show that the annihilator can look 
+quite different---for example, it might be generated by
+forms of different degrees---in positive characteristic.
+\goodbreak Now let $K$ be a field, and let 
+$U=U_{0}\oplus U_{1}$ and $V=V_{0}\oplus V_{1}$ be $\ZZ /2$-graded vector
+spaces of dimensions
+$(d,e)$ and $(m,n)$ respectively.
+We consider the generic ring
+\begin{equation*}\myS =
+\myS (V\otimes U) := S(V_{0}\otimes U_{0} )\otimes S(V_{1}\otimes U_{1}
+)\otimes \wedge (V_{0}\otimes U_{1}
+)\otimes \wedge (V_{1}\otimes U_{0} ),
+\end{equation*}
+where $S$ denotes the symmetric algebra and $\wedge $ denotes
+the exterior algebra, and the {\em generic\/}, or
+{\em tautological\/}, map
+\begin{equation*}\Phi : \myS \otimes V\to \myS \otimes U^{*}.
+\end{equation*}
+This map $\Phi $ is defined
+by the condition that
+$\Phi |_{V}=1\otimes \eta : V\to V\otimes _{K} U\otimes _{K} U^{*}\subset R\otimes _{K} U^{*}$,
+where $\eta : K\to U\otimes _{K} U^{*}$ is the dual of the contraction
+$U^{*}\otimes _{K} U\to K$.
+We will make use of this notation throughout the paper. 
+We will
+compute the annihilator of the cokernel of $\Phi $. Of course if
+we specialize $\Phi $ to any map of free modules $\phi $ over a
+$\ZZ /2$-graded ring,
+preserving the grading, then we can derive elements in the
+annihilator of the cokernel of $\phi $ by specializing the
+annihilator of the cokernel of $\Phi $.
+
+In the classical case, where $V$ and $U$ have only even parts
+($e=n=0$), the annihilator is an invariant ideal for the action of the
+product of general linear groups $\operatorname{GL}(V)\times \operatorname{GL}(U)$.
+Such invariant ideals have been studied by DeConcini, Eisenbud, and
+Procesi in \cite{DEP} and have a very simple arithmetic.  In the general
+case, Berele and Regev \cite{BR} have developed a highly parallel theory,
+using the $\ZZ /2$-graded Lie algebra $\g ={\gl }(V)\times {\gl }(U)$ in
+place of $\operatorname{GL}(V)\times \operatorname{GL}(U)$.  They show that the generic
+ring $\myS $ is a semisimple representation of $\g $ (even though not all
+the representations of $\g $ are semisimple)  and that the irreducible
+summands of $\myS $ of total degree $t$ are parametrized by certain
+partitions of the integer $t$, just as in the commutative case.
+The Berele-Regev theory is described in detail below, in Section 1 of this
+paper.  
+
+If $\Lambda $ is a partition, we write $I_{\Lambda }$ for the
+ideal of $\myS $ generated by the irreducible representation
+corresponding to $\Lambda $. If $\phi $ is a matrix representing any map
+of $\ZZ /2$-graded free modules over a $\ZZ /2$-graded skew-commutative
+$K$ algebra $R$, then there is a unique ring homomorphism $\alpha :
+\myS \to R$ such that $\phi = \alpha (\Phi )$, and we write
+$I_{\Lambda }(\phi ):=\alpha (I_{\Lambda }(\Phi ))R$ for the ideal generated by
+the image of $I_{\Lambda }=I_{\Lambda }(\Phi )$.
+If $e=n=0$, so that the ring $\myS $ is a polynomial ring,  
+the classical Fitting
+Lemma (see for example Eisenbud \cite[Prop.~20.7]{Eis}) 
+shows that the annihilator of 
+$\coker \Phi $ is the ideal of $d\times d$
+minors $I_{d}(\Phi )$. In representation-theoretic terms,
+this is the ideal 
+generated by the representation 
+\begin{equation*}\wedge ^{d}V_{0}\otimes \wedge ^{d}U_{0}\subset \Sym _{d}(V_{0}\otimes U_{0}),
+\end{equation*}
+the irreducible representation associated to the partition with
+one term $(d)$. In our notation, 
+$I_{d}(\Phi )= I_{(d)} = I_{(d)}(\Phi )$. On the other
+hand, if $d=n=0$, so that the ring $\myS $ is an exterior algebra,
+Green \cite[Proposition 1.3]{Gre} shows that the
+representation 
+\begin{equation*}S_{e}(V_{0})\otimes \wedge ^{e}U_{1} \subset \wedge ^{e}(V_{0}\otimes U_{1})
+\end{equation*} 
+is at least contained in the annihilator of $\coker \Phi $.
+This is the representation associated to the partition
+$(1^{e})=(1,1,\dots ,1)$ with $e$ parts (see Appendix 1 for a
+characteristic-free treatment).
+Here is the common
+generalization of these results,
+which is the main result of this paper:
+
+\begin{theorem1} Suppose that $K$ is a field of characteristic $0$,
+and let  
+\begin{equation*}\phi :\quad R^{m}\oplus R^{n}(1) 
+\overset{\left(\begin{smallmatrix}X&A\\B&Y\end{smallmatrix}\right)}{\longrightarrow}
+R^{d}\oplus R^{e}(1)
+\end{equation*}
+be a $\ZZ /2$-graded map of free modules over a 
+$\ZZ /2$-graded skew-commutative
+$K$-algebra $R$.
+
+{\bf a) } When $R=\myS $ and $\phi =\Phi $, the generic map
+defined above,
+the annihilator of the cokernel of $\Phi $, is
+$I_{\Lambda (d,e)}(\Phi ),
+$
+where
+$\Lambda (d,e)$ is the partition $(d+1,d+1,\dots ,d+1, d)$ of $(d+1)(e+1)-1$
+into $e+1$ parts. In general we have
+$I_{\Lambda (d,e)}(\phi )\subset \ann \ \coker (\phi )$.
+
+{\bf b)} 
+If $x_{1} ,\ldots ,x_{e} \in \ann \ \coker (\phi )$, then
+$x_{1}\ldots x_{e}\in I_{\Lambda (0,e)}(\phi )$.
+Moreover, if  $0\le s\le d-1$, and 
+$x_{1} ,\ldots ,x_{e+1}\in \ann \ \coker (\phi )$, 
+then 
+$x_{1}\ldots x_{e+1}I_{\Lambda (s,e)}(\phi )\subset I_{\Lambda (s+1,e)}(\phi ).
+$
+\end{theorem1}
+
+
+The proof is given in sections 2 and 3 below.
+An alternate approach through standard bases
+is given in Appendix 3 in the purely even and purely
+odd cases, and this approach is characteristic-free. 
+In the classical case ($e=n=0$) we can also describe the
+annihilator of $\coker \Phi $ by saying that it is nonzero only if
+$m\geq d$, and then it is generated, as a
+${\gl }(V)\times {\gl }(U)$-ideal, by an
+$m\times m$ minor of $\Phi $. To simplify the general statement,
+we note that a shift of degree
+by 1 does not change the annihilator of the cokernel of $\Phi $,
+but has the effect of interchanging $m$ with $n$ and $d$ with $e$.
+\begin{theorem2} With notation as above, 
+the annihilator of the cokernel of $\Phi $ is
+nonzero only if
+
+{a)} $m> d$ (or symmetrically $n> e$) or
+
+{b)} $m=d$ and $n=e$.
+
+
+\noindent In each of these cases the annihilator is generated as
+a $\g $-ideal by one element $Z$ of degree $de+d+e$ defined as follows:
+
+
+In case $a)$ when $m>d$,
+\begin{equation*}Z=Z_{1} \cdot X(1,\ldots ,d\ |\ 1,\ldots ,d ),\end{equation*}
+where $X(1,\ldots ,d\ |\ 1,\ldots ,d)$ is the
+$d\times d$ minor of $X$
+corresponding to the first $d$ columns and
+$Z_{1} =\prod _{j\leq e,k\leq d+1}b_{j,k}$ is the product
+of all the elements in the first $d+1$ columns of $B$
+(and symmetrically if $n>e$).
+
+In case $b)$,
+\begin{equation*}Z= W_{1}\cdots W_{e}\cdot \det(X), \end{equation*}
+where $W_{s}$ is the $(d+1)\times (d+1)$ minor of
+$\Phi $ containing $X$ and the entry $y_{s,s}$, that is,
+\begin{equation*}W_{s} = \det(X)y_{s,s}+\sum _{1\le i,\le d}\pm 
+\det(X({\hat i},{\hat j}))a_{i,s}b_{s,j}.\end{equation*}
+\end{theorem2}
+
+
+Corollary 2 follows from intermediate results in the proof of Theorem
+1(a). We next give some examples of Theorem 1(a) and Corollary 2.
+\begin{definition1} Suppose that $d=n=0$, so that the presentation
+matrix $B$ has only odd degree entries.
+A central observation of Green \cite{Gre}
+is that the ``exterior minors'' of $\Phi $ are in the annihilator of
+$\coker \Phi $ (see Appendix 1 for a direct proof of
+Green's result that is different from the one given by Green,
+and can serve as an introduction to the proof we give for Theorem 1(a)
+in general).
+The element $Z$ of Corollary 2 is the product of the elements
+in the first column of $\Phi $. Quite generally, it is not hard to see that the product
+of all elements
+in a $K$-linear combination of the columns of $B$ is an exterior
+minor in Green's sense. 
+The representation corresponding to the
+partition $(1,\dots ,1)$ of $e$ is generated by
+${\binom{m+e-1}{e}}$ such products; so 
+ ${\binom{m+e-1}{e}}$ exterior
+minors generate the annihilator in the generic case.
+For
+example, taking $m=2$ and $e=2$, the annihilator of the
+cokernel of the generic matrix
+\begin{equation*}
+\left(\begin{matrix}
+b_{1,1}&b_{1,2}\\
+b_{2,1}&b_{2,2}\end{matrix}\right)
+\end{equation*}
+where the variables all have odd degree, 
+is minimally generated by the three
+exterior minors
+\begin{equation*}
+b_{1,1}b_{2,1},\quad b_{1,2}b_{2,2},\quad (b_{1,1}+b_{1,2})(b_{2,1}+b_{2,2}).
+\end{equation*}
+\end{definition1}
+\begin{definition2} Now suppose that
+our generic matrix has size $2\times 2$
+with the first row even and the second row odd ($m=2,\; n=0,\; d=e=1$):
+\begin{equation*}
+\left(\begin{matrix}
+x_{1,1}&x_{1,2}\\
+b_{1,1}&b_{1,2}\end{matrix}\right).
+\end{equation*}
+In this case our result shows that the cokernel has annihilator equal
+to the product
+\begin{equation*}(x_{1,1},\quad x_{1,2})(b_{1,1}b_{1,2},\quad x_{1,1}b_{1,2}-x_{1,2}b_{1,1}),
+\end{equation*}
+which is minimally generated by 4 elements. The element $Z$ is
+$x_{1,1}b_{1,1}b_{1,2}$.
+\end{definition2}
+\begin{definition3} As a final $2\times 2$ example, consider the case
+$m=n=d=e=1$, which for simplicity we write as
+\begin{equation*}
+\left(\begin{matrix}
+x&a\\
+b&y\end{matrix}\right).
+\end{equation*}
+Here the annihilator of the cokernel is again minimally generated
+by 4 elements, namely
+\begin{equation*}axy,\quad bxy,\quad (xy-ab)x,\quad (xy+ab)y.
+\end{equation*}
+The element $Z$ is $(xy+ab)x$.
+In Appendix 2 we will explain the action of 
+$\g $ on these elements.
+\end{definition3}
+\subsection*{{Positive characteristics}}As we have remarked, Theorem 1 is
+characteristic-free in
+the purely even or odd cases (and in these cases $\coker \Phi $
+is free over $\ZZ $). But
+already with $m=n=d=e=1$ as in Example 3, the annihilator is different 
+in characteristic 2: in characteristic zero the annihilator is generated by forms of
+degree 3, but in characteristic 2 the
+algebra $R$ is commutative, and so
+the determinant $xy-ab$ is in the annihilator as well.
+The annihilator can differ in other characteristics as well. 
+Macaulay2 computations show that the case
+$d=1,\ e=p-1,\ m=2,\ n=0$ is exceptional in characteristic $p$
+for $p=3, 5$  and 7. Perhaps the same holds
+for all primes $p$.
+The cokernel of the generic matrix over the integers
+can also have $\ZZ $-torsion. For example, 
+Macaulay2 computation shows that if $d=1,\ e=2,\ m=3,\ n=1$,
+then the cokernel of $\Phi _{\ZZ }$ has 2-torsion.
+
+Our interest in extending the Fitting Lemma
+was inspired by Mark Green's paper
+\cite{Gre}. Green's striking use of
+his result on annihilators to prove one of the
+Eisenbud-Koh-Stillman conjectures on
+linear syzygies turns on the fact that if $N$ is a module
+over a polynomial ring $S=K[X_{1},\dots ,X_{m}]$, then $T:=\Tor _{*}^{S}(K,M)$
+is a module over the ring $R=\Ext _{S}^{*}(K,K)$, which is an
+exterior algebra. Green in effect
+translated the hypothesis of the linear syzygy
+conjecture into a statement about the degree 1 part of the $R$-free
+presentation
+matrix of the submodule of $T$ representing the linear part of the
+resolution of
+$N$, and then showed that the exterior minors generated a certain
+power of the maximal ideal of the exterior algebra, 
+which was sufficient
+to prove the conjecture.
+Green's result only gives information on the annihilator in the
+case where the elements of the presentation matrix are all odd.
+Elements of even degree in an exterior algebra can behave (if the
+number of variables is large) very much like variables in a polynomial
+ring, at least as far as expressions of bounded degree are concerned.
+Thus to extend Green's work it seemed natural to deal with the
+case of $\ZZ /2$-graded algebras.
+
+This work is part of a program to study modules and resolutions over
+exterior algebras; see Eisenbud-Fl\o ystad-Schreyer \cite{ES},
+and Eisenbud-Popescu-Yuzvinsky \cite{EPY} for further information.
+
+We would never have undertaken the project reported in this paper
+if we had not had the program Macaulay2 (www.math.uiuc.edu/Macaulay2) of
+Grayson and Stillman as a tool; its ability to compute in skew commutative
+algebras was invaluable in figuring out the pattern that the results should
+have and in assuring us that we were on the right track.
+
+\section*{1. Berele-Regev theory}
+
+For the proof of Theorem 1 we will use the beautiful results of Berele and
+Regev \cite{BR} giving the structure of $R$ as a module over $\g $. For the
+convenience of the reader we give a brief sketch of what is needed. {We make
+use of the notation introduced above: $U=U_{0}\oplus U_{1}$ and $V=V_{0}\oplus
+V_{1}$ are $\ZZ /2$-graded vector spaces over the field  $K$ of characteristic
+0 with $\dim U=(d,e)$ and $\dim V=(m,n)$.}
+
+The
+$\ZZ /2$-graded Lie algebra
+$\gl (V)$ is the vector space of $\ZZ /2$-graded
+ endomorphisms of $V=V_{0}\oplus V_{1}$. Thus
+\begin{equation*}\gl (V)= \gl (V)_{0}\oplus \gl (V)_{1},\end{equation*}
+where $\gl (V)_{0}$ is the set of endomorphisms preserving the grading of $V$
+and $\gl (V)_{1}$ is the set of
+endomorphisms of $V$ shifting the grading by 1. Additively,
+\begin{gather*}\gl (V)_{0} = \End_{K} (V_{0} )\oplus 
+\End_{K} (V_{1} ),\\
+\gl (V)_{1} =\Hom_{K} (V_{0} ,V_{1} )\oplus \Hom_{K} (V_{1} ,V_{0} ).
+\end{gather*}
+The commutator of the pair of homogeneous elements $x,y\in \gl (V)$ is
+defined
+by the formula
+\begin{equation*}[x,y]= xy-(-1)^{\deg(x)\deg(y)}yx.\end{equation*}
+
+By
+a $\gl (V)$-module we mean a $\ZZ /2$-graded vector space $M=M_{0}\oplus M_{1}$
+with a bilinear map of $\ZZ /2$-graded vector spaces
+$\circ :\gl (V)\times M\rightarrow M$   satisfying the identity
+\begin{equation*}[x,y]\circ m = x\circ (y\circ m)-(-1)^{\deg(x)\deg(y)} y\circ (x\circ m))
+\end{equation*}
+for homogeneous elements $x,y\in \gl (V), m\in M$.
+
+In contrast to the classical theory, not every representation of the
+$\ZZ /2$-graded Lie algebra $\gl (V)$ is
+semisimple. For example, its natural action on mixed tensors $V^{\otimes k}\otimes V^{*}{}^{\otimes l}$ is in
+general not completely reducible. However, its action on
+$V^{\otimes t}$ decomposes just as in the ungraded case:
+
+\begin{theorem3} The action of $\gl (V)$ on $V^{\otimes t}$ is
+completely reducible for each $t$.
+More precisely, the analogue of Schur's double centralizer theorem holds,
+and the irreducible $\gl (V)$-modules
+occurring in the decomposition of $V^{\otimes t}$  are in \textup{1-1}
+correspondance with irreducible representations of
+the symmetric group $\Sigma _{t}$ on $t$ letters. These irreducibles are the Schur
+functors
+\begin{equation*}\myS _{\lambda }(V) = e(\lambda )V^{\otimes t}\end{equation*}
+where $e(\lambda )$ is a Young idempotent corresponding to a partition
+$\lambda $ in the group ring of the
+symmetric group $\Sigma _{t}$.
+\end{theorem3}
+
+
+This notation is consistent with the notation above in the sense that the $d$-th
+homogeneous component of the ring $\myS (V)$ is $\myS _{d} (V)$ where $d$ represents the
+partition $(d)$ with one part.
+
+Here we use the symbol $\myS _{\lambda }$ to denote the $\ZZ /2$-graded
+version of the Schur functor $S_{\lambda }$; the latter acts on ungraded vector
+spaces. Recall that the functor $\wedge ^{\lambda }$ is by definition the same
+as the functor $S_{\lambda '}$, where $\lambda '$ denotes the partition
+that is conjugate to $\lambda $. (For example, the
+conjugate partition to $(2)$ is $(1,1)$.)
+We will extend this by writing
+$\bigwedge ^{\lambda }:= \myS _{\lambda '}$ for the $\ZZ /2$-graded version.
+The partition $(d)$ with only one part will be denoted simply $d$; so,
+for example,
+$\myS _{2}(V)=\bigwedge ^{(1,1)}V=S_{2}(V_{0})\oplus (V_{0}\otimes V_{1})\oplus \wedge ^{2}V_{1}$ and similarly
+$\bigwedge ^{2}V=\myS _{(1,1)}V=\wedge ^{2}V_{0}\oplus V_{0}\otimes V_{1}\oplus S_{2}(V_{1})$.
+In each case the decomposition is as representations of the subalgebra
+$\gl (V_{0})\times \gl (V_{1})\subset \gl (V)$. Similar decompositions hold for
+all $\myS _{d}$ and $\bigwedge ^{d}V$. (If we were not working in
+characteristic zero, we would use divided powers in place of
+symmetric powers in the description
+of $\bigwedge V$.)
+
+Proposition 1.1 implies that the parts of the representation theory of $\gl
+(V)\times \gl (U)$ that involve only tensor products of $V$ and $U$ and their
+summands are parallel to the representation theory in the case $V_{1} =U_{1}
+=0$, which is the classical representation theory of a product of the two
+general linear Lie algebras $\mathfrak{gl}(V_{0})\times
+\mathfrak{gl}(U_{0})$.
+
+The proposition also implies that the decompositions into irreducible
+representations of tensor products of the $\myS _{\lambda }(V)$, as well as the
+decompositions of their symmetric
+and exterior powers,  correspond to the
+decompositions in the even case: we just have
+to replace the ordinary Schur functors $S, \wedge $ by their
+$\ZZ /2$-graded analogues $\myS , \bigwedge $.
+
+The
+formulas giving equivariant embeddings or
+equivariant projections may also be derived from the corresponding formulas
+in the even case by
+applying the principle of signs: The formulas in the even case involve many
+terms where the basis elements are
+permuted in a prescribed way. The basis elements have degree $0$. To write
+down a $\ZZ /2$-graded analogue of
+such a formula, we simply allow the basis elements to have even or odd degree
+and we adjust the signs of terms in
+such a way that changing the order of two
+homogeneous elements $x$ and $y$ of
+$V$  in the $\ZZ /2$-graded analogue of the formula
+will cost the additional factor
+$(-1)^{\deg(x)\deg(y)}$.
+
+There is a $\ZZ /2$-graded analogue of the Cauchy decomposition,
+which follows as just described from Proposition 1.1 together with
+the corresponding result in the even case (proven in Macdonald \cite{Mac},
+Chapter 1, and in DeConcini, Eisenbud, and Procesi \cite{DEP}).
+Recall that $\g =\gl (V)\times \gl (U)$.
+
+\begin{theorem4} The $t$-th component
+$\myS _{t} (V\otimes U)$ of $\myS (V\otimes U)$
+decomposes as a $\g $-module as
+\begin{equation*}\myS _{t} (V\otimes U)=\bigoplus 
+_{\lambda ,|\lambda |=t} \myS _{\lambda }(V)\otimes \myS _{\lambda }(U).
+\end{equation*}
+\end{theorem4}
+
+
+Another application of the same principle shows that to
+describe the annihilator of the cokernel of $\Phi $, and what
+generates it, it suffices to describe which
+representations $\myS _{\lambda }V\otimes \myS _{\lambda }U$ it contains:
+
+\begin{theorem5} If $I\subset \myS (V\otimes U)$ is a $\g $-invariant
+ideal, then $I$ is a sum of subrepresentations $\myS _{\lambda }V\otimes \myS _{\lambda }U$.
+Moreover, the ideal generated by $\myS _{\lambda }V\otimes \myS _{\lambda }U$ contains
+$\myS _{\mu }V\otimes \myS _{\mu }U$ if and only if
+$\mu \supset \lambda $.
+\end{theorem5}
+
+
+Although it is not so simple to describe the vectors in $\myS _{t}(V\otimes U)$
+that lie in a given irreducible summand, we can, as
+in the commutative case, define a filtration that has these
+irreducible representations as successive factors.
+We start by defining a map
+$\rho _{t} : \bigwedge ^{t} V\otimes \bigwedge ^{t}
+U\hookrightarrow \myS _{t} (V\otimes U)$ as the composite
+\begin{equation*}\bigwedge ^{t} V\otimes \bigwedge ^{t}U\to \otimes ^{t}V\ \otimes \ \otimes ^{t}U\to \myS _{t}(V\otimes U)
+\end{equation*}
+where the first map is the tensor product of the two diagonal maps
+(here we use the sign conventions for $\ZZ /2$-graded vector spaces)
+and the second map simply pairs corresponding factors. Thus
+\begin{equation*}\rho _{t} (v_{1}\wedge \ldots \wedge v_{t}\otimes u_{1}\wedge \ldots \wedge u_{t}
+)=\sum _{\sigma \in \Sigma _{t}} \pm (v_{1}\otimes u_{\sigma (1)})\cdot \ldots \cdot (v_{t}\otimes u_{\sigma (t)})
+\end{equation*}
+ where the sign $\pm $ is the sign of the
+permutation $\sigma $ adjusted by
+the rule that switching homogeneous elements
+$x, y$ from either $V$ or $U$ means we multiply by $(-1)^{\deg(x)\deg(y)}$.
+For example, if $V$ and $U$
+were both even, the image of this map would be
+the span of the $t\times t$ minors of the generic matrix;
+when $V$ is even and $U$ is odd, the image is the span of the
+space of ``exterior minors" as in Green \cite{Gre}.
+
+For any partition $\lambda =(\lambda _{1},\dots ,\lambda _{s})$
+we define  $\F _{\lambda }$ to be
+the image of the composite map
+\begin{equation*}m\circ (\rho _{\lambda _{1}}\otimes \ldots \otimes \rho _{\lambda _{s}}):\bigwedge ^{\lambda _{1}}
+V\otimes \bigwedge ^{\lambda _{1}}U
+\otimes \ldots \otimes \bigwedge ^{\lambda _{s}}V\otimes \bigwedge ^{\lambda _{s}}U\rightarrow \myS _{|\lambda | }(V\otimes U)
+\end{equation*}
+where $m$ denotes the multiplication map in $\myS (V\otimes U)$.
+
+As in the even case, we order partitions of $t$ by saying $\lambda < \mu $ if
+and only if $\lambda ^{\prime }_{i}
+>\mu ^{\prime }_{i}$ for the smallest number $i$ 
+such that $\lambda ^{\prime }_{i}
+\ne \mu ^{\prime }_{i}$.
+Finally, we define the subspaces
+\begin{equation*}\F _{<\lambda }=\sum _{|\mu |=|\lambda |,\ \mu <\lambda }\F _{\mu }\qquad \subset \qquad \F _{\le \lambda }=\sum _{|\mu |=|\lambda |,\ \mu \le \lambda } \F _{\mu }.
+\end{equation*}
+In the classical case, $\F _{\leq \lambda }$ is spanned by certain products of
+minors of the generic matrix. The {\em straightening law\/} of
+Dubillet, Rota, and Stein
+\cite{DRS} shows that we get a basis if we choose only ``standard'' products of
+these
+types, and the successive quotients in the filtration
+are the irreducible representations of $\operatorname{GL}(V)\times \operatorname{GL}(U)$.
+The analogue
+in our $\ZZ /2$-graded case is
+
+\begin{theorem6} The subspaces $\F _{\le \lambda }$ define a
+$\g $-invariant filtration on
+$\myS _{|\lambda |}(V\otimes U)$. The quotient $\F _{\le \lambda }/ \F _{<\lambda }$ is
+isomorphic to $\bigwedge ^{\lambda }V\otimes \bigwedge ^{\lambda }U=\myS _{\lambda ^{\prime }} V\otimes \myS _{\lambda ^{\prime }} U$.\end{theorem6}
+
+
+There is also one element of each irreducible representation that is easy to
+describe: the {\em highest weight vector.} To speak of highest weight vectors
+we must choose ordered bases $\{u_{1},\dots ,u_{d}\}$ and $\{u'_{1},\dots
+,u'_{e}\}$ of $U_{0}$ and $U_{1}$, and ordered bases  $\{v_{1},\dots ,v_{m}\}$
+and $\{v'_{1},\dots ,v'_{n}\}$ of $V_{0}$ and $V_{1}$.
+
+\begin{theorem7}
+Let
+$\lambda = (\lambda _{1} ,\ldots ,\lambda _{s})$
+be a partition, and let
+$w^{1}_{i}\in \bigwedge ^{\lambda _{i}}(V)$ and
+$w^{2}_{i}\in \bigwedge ^{\lambda _{i}}(U)$ be the elements
+\begin{gather*}
+w_{i}^{1} = \begin{cases}
+v_1\wedge \dotsb \wedge v_{\lambda_i},&\text{if}\ \lambda_i\le m,\\
+v_1\wedge \dotsb \wedge v_m\wedge v_i^{\prime(\lambda_i-m)},&\text{otherwise},
+\end{cases}\\
+w_{i}^{2} = 
+\begin{cases}
+u_1\wedge \dotsb \wedge u_{\lambda_i},&\text{if}\ \lambda_i\le d,\\
+u_1\wedge \dotsb \wedge u_d\wedge u_i^{\prime(\lambda_i-d)},&\text{otherwise}.
+\end{cases}
+\end{gather*}
+The element
+\begin{equation*}c_{\lambda }= \prod _{i=1}^{s} \rho _{\lambda _{i}} (w_{i}^{1}\otimes w_{i}^{2} )
+\quad \in \quad \myS (V\otimes U)
+\end{equation*}
+is the  highest weight vector from the irreducible component
+$\bigwedge ^{\lambda }V\otimes \bigwedge ^{\lambda }U
+= \myS _{\lambda '} V\otimes \myS _{\lambda '} U$,
+where
+$\lambda '$
+is the conjugate partition to $\lambda $.
+\end{theorem7}
+
+
+The Berele-Regev theory allows us to give explicit
+generators for the annihilator, generalizing the 
+ordinary minors of $\Phi $ in the commutative case.
+More generally, we can give generators for arbitrary
+$J_{\lambda }$. 
+
+We start with a double tableau $(S,T)$,
+ that is, two sequences of tensors
+$v_{i,1}\wedge \ldots \wedge v_{i,\lambda _{i} }\in \bigwedge ^{\lambda _{i}} V$ 
+and 
+$u_{i,1}\wedge \ldots \wedge u_{i,\lambda _{i}}\in \bigwedge ^{\lambda _{i}}U$ 
+($1\le i\le s$). We imagine that the elements
+$v_{i,j}\in V$ correspond to the $i$-th row of the tableau 
+$S$ of shape $\lambda $, 
+and the elements $u_{i,j}\in U$ correspond to the $i$-th row of
+another tableau $T$ of shape $\lambda $. 
+We define
+\begin{equation*}\rho (S\otimes T)= 
+\prod _{1\le i\le s} \rho _{\lambda _{i}}(v_{i,1}
+\wedge \ldots \wedge v_{i,\lambda _{i}}\otimes u_{i,1}\wedge \ldots \wedge u_{i,\lambda _{i}}).
+\end{equation*}
+
+We think of $\lambda $ as a Ferrers diagram. If $S$ is a tableau of
+shape $\lambda $ and $\sigma $ is a permutation of the boxes in $\lambda $,
+then $\sigma (S)$ is another tableau of shape $\lambda $ (here we write
+$\sigma $ as a product of transpositions, and introduce a minus sign
+whenever we interchange two elements of odd degree).
+Let $P(\lambda )$ be the group of permutations of the boxes in 
+$\lambda $ that preserve the columns of $\lambda $.
+
+\begin{theorem8}
+The representation
+$\bigwedge ^{\lambda }V\otimes \bigwedge ^{\lambda }U\subset R$
+is generated by elements 
+\begin{equation*}\pi (S, T)=\sum _{\sigma \in P(\lambda )} \rho (\sigma S\otimes T ),
+\end{equation*} 
+or,
+equivalently, by 
+\begin{equation*}\pi ^{\prime }(S, T)=\sum _{\sigma \in P(\lambda )} \rho (S\otimes \sigma T)
+\end{equation*}
+where $S$ and $T$ range over all tableaux of shape $\lambda $.
+\end{theorem8}
+\begin{proof} We show that the $\pi (S,T)$ generate $\bigwedge ^{\lambda
+}V\otimes \bigwedge ^{\lambda }U$; the proof for $\pi '$ is
+similar. 
+Since $\rho (S,T)$ is antisymmetric in the elements appearing
+in each row of $S$, the element 
+$\sum _{\sigma \in P(\lambda )}\rho (\sigma (S), T)$ is 
+the $\gl (V)$-linear projection of $\rho (S,T)$ to the 
+$\bigwedge ^{\lambda }V$-isotypic component of $R$.
+By Corollary 1.2 we have 
+$R=\bigoplus _{\lambda }\bigwedge ^{\lambda }V\otimes \bigwedge ^{\lambda }U$;
+so this isotypic component is 
+$\bigwedge ^{\lambda }V\otimes \bigwedge ^{\lambda }U\subset R$.
+\end{proof}
+
+
+To find a minimal set of generators for
+ $J_{\lambda }$ inside this generating set, choose bases 
+$\{u_{i}\}$,$\{u'_{i}\}$, $\{v_{i}\}$,$\{v'_{i}\}$ as above, and 
+order the bases of $U$ and $V$ by
+$u_{1}<\cdots <u_{d}<u'_{1}<\cdots <u'_{e}$ and
+$v_{1}<\cdots <v_{m}<v'_{1}<\cdots <v'_{n}$.
+A double tableau $(S,T)$ whose entries $u_{i,j}$ and $v_{i,j}$
+come from these bases is called {\em standard\/} if the
+following conditions are satisfied:
+ \begin{gather*}
+v_{i,j}<v_{i,j+1}\ 
+\operatorname{if}\ v_{i,j}\ \operatorname{is\ even},\ 
+v_{i,j}\le v_{i,j+1}\ \operatorname{if}\ v_{i,j}\ \operatorname{is\ odd},\\
+v_{i,j}\le v_{i+1,j}\ \operatorname{if}\ v_{i,j}\ \operatorname{is\ even},\ 
+v_{i,j}< v_{i+1,j}\ \operatorname{if}\ v_{i,j}\ \operatorname{is\ odd},
+\end{gather*}
+and similarly for the $u_{i,j}$.
+
+\begin{theorem9} The ideal $J_{\lambda }$ is
+minimally generated by the elements $\pi (S,T)$ where
+$(S,T)$ ranges over the set of double standard tableaux
+of shape $\lambda $.
+\end{theorem9}
+\begin{proof} Berele and Regev proved that 
+the standard tableaux form a basis of $\bigwedge ^{\lambda }U$.
+\end{proof}
+\section*{2. Proof of Theorem 1(\textup{a})}
+
+In this section
+$U$ and
+$V$ are $\ZZ /2$-graded vector spaces of dimensions $(d,e)$
+and $(m,n)$ respectively, and $\Phi $ is the generic map,
+defined tautologically over $R=\myS (V\otimes U)$.
+
+We write $\Lambda (d,e)$ for the partition with
+$e+1$ parts $((d+1)^{e},d)=(d+1,\dots ,d+1,d)$;
+that is,
+$\Lambda (d,e)$ corresponds to the Ferrers diagram
+that is a
+$(d+1)\times (e+1)$ rectangle minus the box in the lower
+right-hand corner.
+For example, $\Lambda (2,3)$ may be represented by the Ferrers
+ diagram
+\begin{equation*}\Lambda (2,3) =\ \Young (,,|,,|,,|,).
+\end{equation*}
+
+For any
+partition $\lambda $ we denote by $I_{\lambda }$ the
+ideal in $R$ generated
+by the representation $\bigwedge ^{\lambda }V\otimes \bigwedge ^{\lambda }U$.
+With this notation, Theorem 1(a) takes the form
+
+\begin{theorem10} The annihilator of the cokernel of $\Phi $
+is equal to $I_{\Lambda (d,e)}$.
+\end{theorem10}
+
+
+Theorem 1(a) implies that the representations
+appearing in the annihilator of $\coker \Phi $ depend
+only on the dimension of $U$, not the
+dimension of $V$, as long as the dimension of $V_{0}$ is large
+(Corollary 2.2), and we begin by proving this.
+For the precise statement, we will use the following notation:
+Let $V^{\prime }$ be another $\ZZ /2$-graded
+vector space, and let
+$\Phi ^{\prime }$ be the generic map $R^{\prime }\otimes V^{\prime }\to R^{\prime }\otimes U^{*}$
+where $R^{\prime }= \myS (V^{\prime }\otimes U )$.
+If $V$ is a summand of $V'$, so that $V'=V\oplus W$,
+then the ring $R=\myS (V\otimes U)$ can be identified with a subring of
+$R^{\prime }$. We want to compare the
+annihilators of the modules $\coker \Phi $ and
+$\coker \Phi ^{\prime }$.
+
+\begin{theorem11}
+If $V$ is a $\ZZ /2$-graded
+summand of $V'$,
+then
+$\ann \coker \Phi =R\cap \ann \coker \Phi '$. More precisely,
+
+\textup{a)} $\coker \Phi $ is an $R$-submodule of $\coker \Phi ^{\prime }$, and 
+
+\textup{b)} $\coker \Phi '$ is a quotient of
+$(\coker \Phi )\otimes R'$.
+\end{theorem11}
+\begin{proof} The first statement follows
+easily from a) and b).
+
+For the proof of a) and b) we may write
+$V'=V\oplus W$, and we  make
+use of the $\NN $-grading of $R'$ for which $V\otimes U$
+has degree 0 and $W\otimes U$ has degree 1. (This grading
+has nothing to do with the $\ZZ /2$-grading used elsewhere in
+this paper!)
+The map $\Phi ^{\prime }$ is homogeneous of degree 0 if
+we twist the summands of its source appropriately,
+\begin{equation*}\Phi ^{\prime }: R^{\prime }\otimes W(-1)\oplus R^{\prime }\otimes V
+\to ^{(\Phi '_{1},\Phi '_{0})}
+R^{\prime }\otimes U^{*}.
+\end{equation*}
+So we have an induced $\NN $-grading on $\coker \Phi ^{\prime }$.
+Since $\Phi '_{0}=\Phi $, we see that $(\coker \Phi ')_{0}\linebreak
+=\coker \Phi $.
+Since the elements of $R$ have degree 0, this is an $R$-submodule,
+as required for a).
+
+For b) it suffices to note that $\coker \Phi '$ is obtained
+from $(\coker \Phi )\otimes R'$ by factoring out the relations
+corresponding to $W\otimes R'$.\end{proof}
+
+
+\begin{theorem12} With $U,V,V',\Phi ,\Phi '$
+as above, suppose that $V$ is such that $I_{\lambda }\neq 0$
+in $\myS (V\otimes U)$. If $I_{\lambda }\subset \ann \coker \Phi $, then
+$I_{\lambda }\subset \ann \coker \Phi ^{\prime }$.
+\end{theorem12}
+\begin{proof} 
+The inclusion $R=\myS (V\otimes U)\subset R'=\myS (V^{\prime }\otimes U)$ carries
+$\bigwedge ^{\lambda }V\otimes \bigwedge ^{\lambda }U$
+into
+$\bigwedge ^{\lambda }V^{\prime }\otimes \bigwedge ^{\lambda }U$.
+The conclusion now follows from
+Proposition 2.1 a) and b).
+\end{proof}
+\begin{proof}[Proof of Theorem \textup{1(a)}]
+We first show that
+$I_{\Lambda (d,e)}$ is contained in the annihilator of
+$M:=\coker \Phi $. By Corollary 2.2, it is enough, given $U$, to
+produce one nonzero element from
+$\bigwedge ^{\Lambda (d,e)}V\otimes \bigwedge ^{\Lambda (d,e)}
+U\subset \myS (V\otimes U)
+$
+that annihilates the cokernel of $\Phi $ for some space $V$.
+By Corollary 2.2 it suffices to prove this result
+in the case $m=d+1, n=0$, that is,  $\dim V=(d+1,0)$.
+
+Let $u_{1} ,\ldots ,u_{d}$  be a basis of $U_{0}$, let
+$u^{\prime }_{1} ,\ldots ,u^{\prime }_{e}$ be
+a basis of $U_{1}$,  and let $v_{1} ,\ldots ,v_{d+1}$ be a basis
+of $V=V_{0}$.
+We denote the variables from the
+$U_{0}\otimes V_{0}$ block by $x_{i,k}$ ($1\le i\le d,\ 1\le k\le d+1$),
+and the variables from the $U_{1}\otimes V_{0}$ block by
+$b_{j,k}$ ($1\le j\le e,\ 1\le k\le d+1$). Thus:
+\begin{equation*}
+\Phi = \left(\begin{matrix} X\\B\end{matrix}\right),
+\quad X=(x_{i,k}), \quad B=(b_{j,k}).
+\end{equation*}
+
+Let
+\begin{equation*}Z=Z_{1} \cdot X(1,\ldots ,d\ |\ 1,\ldots ,d )\end{equation*}
+where $Z_{1} =\prod _{j,k} b_{j,k}$
+is the product of all the entries of $B$ and
+$X(1,\ldots ,d\ |\ 1,\ldots ,d )$
+is the $d\times d$ minor
+of the matrix $X$ corresponding to the
+first $d$ columns.
+
+We now show that $Z$ annihilates $M$.
+Indeed, by the classical
+Fitting Lemma we know that $X(1,\ldots ,d\ |\ 1,\ldots ,d )$ annihilates
+the even generic module $M/(V\otimes U_{1})M$. Thus
+every basis element $u_{k}$ multiplied by
+$X(1,\ldots ,d\ |\ 1,\ldots ,d )$
+can be expressed modulo the image of $\Phi $
+as a linear combination of $u^{\prime }_{1} ,\ldots ,u^{\prime }_{e}$ with
+coefficients of positive degee in the
+variables $b_{j,k}$. Since these variables are odd,
+$Zu_{k} =0$ in $M$.
+
+To see that $Z u_{l}^{\prime }$ is also 0 in $M$,
+we use the classical 
+Fitting Lemma  again on the
+first $d$ columns of the matrix of $\Phi $ to see that for any
+$1\leq i\leq d$ the element
+$X(1,\ldots ,d\ |\ 1,\ldots ,d )u_{i}$
+can be expressed,
+modulo the image of $\Phi $, as
+a linear combination of the $b_{s,t}u_{j}^{\prime }$.
+On the other hand, if we multiply the last
+column of the matrix of $\Phi $ by the product $Z_{1}'$ of all
+the $b_{j,k}$ except for the $b_{l,d+1}$, we get
+an expression for $Z_{1} u_{l}^{\prime }$, modulo the
+image of $\Phi $, as a linear
+combination of $Z_{1}'u_{1} \ldots ,Z_{1}'u_{d}$.
+Thus $Zu'_{l}=X(1,\ldots ,d\ |\ 1,\ldots ,d )Z_{1}u'_{l}=0$ in $M$,
+as required.
+
+Next we prove that the element $Z$ is a weight vector (not generally
+a highest weight vector) and lies in
+$\bigwedge ^{\Lambda (d,e)} V\otimes \bigwedge ^{\Lambda (d,e)} U$.
+Indeed, $X(1,\ldots ,d\ |\ 1,\ldots ,d)$ is a weight vector in
+$\bigwedge ^{d} V\otimes \bigwedge ^{d} U$.
+The element $Z_{1}$ is a weight vector in the representation
+$\bigwedge ^{(d+1)^{e}}V\otimes \bigwedge ^{(d+1)^{e}}U$.
+The product is thus
+contained in the ideal
+$\F _{\le \Lambda (d,e)}$.
+The element $Z$ has degree $(e+1)(d+1)-1$, but it involves only $d+1$
+elements from $V=V_{0}$. By Proposition 1.5 its
+weight can occur only in representations 
+$\bigwedge ^{\lambda }V\otimes \bigwedge ^{\lambda }U\subset \myS _{\lambda }(V\otimes U)$ 
+with
+$\lambda $ having all parts $\le d+1$. Since
+$\Lambda (d,e)$ is the only partition $\lambda $ with at most
+$e+1$ parts having
+$|\lambda |=(d+1)(e+1)-1$
+and each $\lambda _{i}\le d+1$, we are done.
+This argument shows that
+$I_{\Lambda (d,e)}$ is contained in the annihilator of the cokernel of
+$\Phi $.
+
+Now let $\mu $ be a partition not containing $\Lambda (d,e)$.
+To complete the proof of Theorem 1(a), we must show that
+the ideal $I_{\mu }$ does not
+annihilate $M=\coker \Phi $ or, equivalently, that the highest
+weight vector $c_{\mu }$ does not annihilate $M$.
+
+Since $\mu $ does not contain
+$\Lambda (d,e)$, it does not contain one of the extremal boxes of
+$\Lambda (d,e)$.
+By shifting the gradings of $V, U$ by $1$ we do not alter the
+annihilator of the generic map, but we
+change the notation so that all partitions are changed to their
+conjugates. Thus we may assume that $\mu _{e}\le d$.
+By Corollary 2.2 we may further assume that $n=0$, so
+that $V=V_{0}$, and that $m>>0$.
+To prove the theorem, we will carry out an induction on $d$.
+
+If $d=0$, we must show that the annihilator
+of the cokernel of $\Phi $ is contained in
+$I_{(1^{e} )}$; or, equivalently, that it contains
+no $I_{\lambda }$ where $\lambda $ has fewer than $e$ parts.
+Set
+\begin{equation*}Z_{1}=\prod _{1\le j\le e-1 ,1\le k\le m} b_{j,k}.
+\end{equation*}
+By Proposition 1.5,
+$Z_{1}$ is the highest weight vector in
+$\bigwedge ^{m^{e-1}}V\otimes \bigwedge ^{m^{e-1}}U$.
+The element
+$Z_{1} u_{e}^{\prime }$ is not
+in the image of $\Phi $,
+because the coefficient of
+$u_{e}^{\prime }$ in any element from the image of $\Phi $ is in the
+ideal generated by $b_{e,1},\ldots ,b_{e,m}$,
+while $Z_{1}$ is not in this ideal.
+Since $Z_{1}$ does not annihilate $M$, no $I_{\lambda }$
+such that $\lambda $ has
+$<e$ parts can annihilate $M$.
+
+In case $d>0$ the matrix of $\Phi $ will contain an
+even variable $x_{1,1}$. To complete the induction we will
+invert this variable and use
+\end{proof}
+\begin{theorem13} \textup{a)}
+ Over the ring $R_{1} =R[x_{1,1}^{-1}]$ the map $\Phi $ can be
+reduced by row and column operations to the form
+\begin{equation*}\Phi ^{\prime }\oplus \ id :\
+(V^{\prime }\otimes _{K} R_{1}) \oplus R_{1} \rightarrow U^{\prime }{}^{*}\otimes _{K} \oplus R_{1}
+\end{equation*}
+where $V$ is a $\ZZ /2$-graded vector space of dimension $(m-1,n)$ and
+$U$ is a $\ZZ /2$-graded vector space
+of dimension $(d-1,e)$. Moreover, the ring $R^{\prime }$ generated over $K$ by
+the entries of $\Phi ^{\prime }$ is
+isomorphic to $\myS (V^{\prime }\otimes U^{\prime })$, and $R_{1}$ is a flat
+extension of $R^{\prime }$.
+
+\textup{b)} The localization of the ideal $I_{\mu }$ at $x_{1,1}$ is isomorphic
+to the extension of the ideal
+$J^{\prime }_{\nu }$ from $R^{\prime }$ where $\nu $ is the
+partition obtained from $\mu $ by subtracting $1$ from each nonzero part.
+\end{theorem13}
+\begin{proof}[Proof of Lemma \textup{2.3}]
+Column and row reduction give the following formulas
+for the entries of $\Phi ^{\prime }$:
+\begin{equation*}x_{i,k}^{\prime }=x_{i,k}-{{\frac{x_{1,k} x_{i,1}}{x_{1,1}}}},
+\qquad a_{i,l}^{\prime }=a_{i,l}-{{\frac{a_{1,l} x_{i,1}}{x_{1,1}}}},
+\end{equation*}
+\begin{equation*}b_{j,k}^{\prime }=b_{j,k}-{{\frac{x_{1,k} b_{j,1}}{x_{1,1}}}},
+\qquad y_{j,l}^{\prime }=y_{j,l}-{{\frac{a_{1,l} b_{j,1}}{x_{1,1}}}}.
+\end{equation*}
+Consequently,
+\begin{equation*}R_{1} = R^{\prime }[x_{1,1}, x_{1,1}^{-1}][x_{1,2},\ldots ,x_{1,m},\
+a_{1,1},\ldots ,a_{1,n},\  x_{2,1},\ldots ,x_{d,1},\
+b_{1,1},\ldots ,b_{e,1}]
+\end{equation*}
+in the sense of $\ZZ /2$-graded algebras. This proves part a).
+
+To prove part b), we first observe that the localization of the ideal $I_{(t
+)}(\Phi )$ gives the ideal
+$I_{(t-1)}(\Phi ^{\prime })$. Indeed, the ideal $I_{(t )}(\Phi )$
+is generated by $\ZZ /2$-graded analogues of $t\times t$ minors of $\Phi $. After localization it becomes the ideal $I_{(t
+)}(\Phi ^{\prime }\oplus id_{R_{1}} )$ generated by the $\ZZ /2$-graded analogues
+of $t\times t$ minors of $\Phi ^{\prime }\oplus id_{R_{1}}$. Let us call the row and column of the matrix
+ $\Phi ^{\prime }\oplus id_{R_{1}}$ corresponding to the summand $R_{1}$ the
+distinguished row and column. 
+Every $\ZZ /2$-graded analogue of a $t\times t$ minor of
+$\Phi ^{\prime }\oplus id_{R_{1}}$ is either a $(t-1)\times (t-1)$ minor of
+$\Phi ^{\prime }$ (in case it contains the distinguished row
+and column), zero (if it contains the distinguished row but not the
+distinguished column, or vice versa), or a $t\times t$
+minor of $\Phi ^{\prime }$ if it does not contain the distinguished row or
+column.
+
+To show that the result generalizes to an arbitrary partition
+$\mu $, we order the bases so that the
+distinguished row and column come first. We saw
+in Proposition 6 that the highest weight vectors in $\bigwedge ^{\mu }V\otimes \bigwedge ^{\mu }U$ are the products of minors of the matrix
+$\Phi $ on
+some initial subsets of rows and columns of $\Phi $. So
+after localization each factor 
+will contain both the distinguished row and
+the distinguished column of $\Phi ^{\prime }\oplus id_{R_{1}}$.
+\end{proof}
+
+
+\begin{proof}[Completion of the Proof of Theorem \textup{1(a)}]
+Now suppose that $d>0$ and $n=0$. 
+We may of course assume that $m\neq 0$,
+so that the matrix of 
+$\Phi $ contains the even variable $x_{1,1}$.
+It is enough to prove that 
+$I_{\mu }M\ne 0$ after inverting $x_{1,1}$.
+The ideal
+$I_{\mu }$ will localize to the ideal
+$J^{\prime }_{\nu }$ where $\nu $ is equal to 
+$\mu $ with all parts decreased by
+$1$.  The graded vector space
+$U$ of dimension $(d,e)$ will change to the 
+$\ZZ /2$-graded vector space
+$U^{\prime }$ of dimension
+$(d-1,e)$. The desired conclusion 
+follows by induction on $d$.\end{proof}
+
+
+\section*{3. Proof of Theorem 1(\textup{b})}
+
+If $\phi : R^{m}\to R^{d}$ is a matrix representing a map of free modules
+over a commutative ring, then, as we noted in the introduction, there
+are 
+inclusions  
+$\ann(M)\cdot I_{i}(\phi )\subset I_{i+1}(\phi )$ for $0\leq i<d$, and thus, by induction,
+$\ann(M)^{d}\subset I_{d}(\phi )$;
+see for example Eisenbud \cite{Eis}. 
+To
+prove these inclusions, one first notes that the cokernel of 
+$\phi $ is the same as the cokernel of 
+\begin{equation*}\psi :V_{0}\otimes R\oplus U_{0}^{*}\otimes R\rightarrow U_{0}^{*}\otimes R
+\end{equation*}
+where $\psi =(\phi , \, a\cdot Id )$. Thus $I_{j} (\phi )=I_{j} (\psi )$
+and
+$I_{j+1}(\phi )=I_{j+1}(\psi )\supset a\cdot I_{j} (\phi )$.
+We will carry out the same
+approach in the $\ZZ /2$-graded case. 
+
+In this section we work  with an arbitrary map
+\begin{equation*}\phi :V\otimes R\rightarrow U^{*}\otimes R
+\end{equation*}
+of $\ZZ /2$-graded free modules over a $\ZZ /2$-graded commutative ring $R$.
+The first step is to show that, just as in the classical case, 
+the ideal $I_{\lambda }(\phi )$ depends only on the cokernel of $\phi $ and
+on the number and degrees of the generators chosen.
+
+\begin{theorem14}
+If $\alpha :V'\otimes R\rightarrow V\otimes R$, then 
+\begin{equation*}I_{\lambda }(\phi \alpha )\subset I_{\lambda }(\phi ).
+\end{equation*}
+In particular, if
+$\psi :V'\otimes R\rightarrow U^{*}\otimes R$ has the same cokernel
+as $\phi $, then $I_{\lambda }(\phi )=I_{\lambda }(\psi )$.
+\end{theorem14}
+\begin{proof} The second statement follows from the first, because
+each of the maps $\phi $ and $\psi $ factors through the other.
+
+To prove the first statement, we use the notation of Proposition 1.6.
+For any map $W\otimes R\to U^{*}\otimes R$, and any tableaux $S$ and $T$
+of elements in $W$ and $U$, both of shape $\lambda $, 
+we let
+$\pi '_{\psi }(S,T)$ be the result of specializing the element $\pi '(S,T)$ defined
+for the generic map $\Phi $ when $\Phi $ is specialized to $\psi $.
+By Proposition 1.6,
+it is enough to show that when $W=V'$ the element $\pi '_{\phi \alpha }(S,T)$
+is in $I_{\lambda }(\phi )$. We have
+\begin{align*}
+&\rho _{l}(v_{1}'\wedge \dots v_{l}'\otimes u_{1}\wedge \dots u_{l})\\
+&\qquad =
+\sum _{i_{1}<\cdots <i_{l}}
+\rho _{l}(v_{1}'\wedge \dots v_{l}'\otimes v_{i_{1}}^{*}\wedge \dots v_{i_{l}}^{*})
+\rho _{l}(v_{i_{1}}\wedge \dots v_{i_{l}}\otimes u_{1}\wedge \dots u_{l})
+\end{align*}
+where $v_{1},\dots , v_{m+n}$ and 
+$v_{1}^{*},\dots , v_{m+n}^{*}$ are dual bases of $V$ and $V^{*}$.
+Using this identity to rewrite the formula for
+$\pi '_{\phi \alpha }(S',T)$, 
+where $S'$ is a tableau of shape $\lambda $ with entries in $V'$
+and $T$ is a tableau of shape $\lambda $ with entries in $U$, we see that
+$\pi '_{\phi \alpha }(S',T)$ is a linear combination of elements of the form
+$\pi '_{\phi }(S,T)$, where 
+$S$ is a tableau of shape $\lambda $ with entries in $V$.
+\end{proof}
+
+
+Lemma 3.1 implies, in particular, that two presentations of the same module
+with the same numbers of even and odd generators have the same 
+ideals $I_{\lambda }(\phi )$. Similar arguments show that we can allow
+for presentations with different numbers of generators as long 
+as we change the partitions suitably: if we add $d'$ even and $e'$ odd 
+generators, then we have to expand $\lambda $ by adding $d'$ columns
+of length equal to the length of the first column  and 
+$e'$ rows of length equal to the length of the first row of the
+resulting partition (or vice versa). In this sense 
+the ideals $I_{\lambda }(\phi )$ depend only on the cokernel of 
+$\phi $.
+
+The main result of this section is the following. 
+
+\begin{theorem15} Let $R, U, V, \phi $ be as in 
+the beginning of the introduction, and let $M=\coker \phi $.
+
+\textup{a)} Let $s$ be an integer, $0\le s\le d-1$. 
+If $x_{1} ,\ldots ,x_{e+1}\in \Ann_{R} M$, 
+then 
+\begin{equation*}x_{1}\ldots x_{e+1}I_{\Lambda (s,e)}(\phi )\subset I_{\Lambda
+(s+1,e)}(\phi ). 
+\end{equation*}
+
+\textup{b)} If $x_{1} ,\ldots ,x_{e} \in \Ann_{R} M$, then
+$x_{1}\ldots x_{e}\in I_{\Lambda (0,e)}(\phi )$.
+\end{theorem15}
+
+
+As in the classical case, we derive
+
+\begin{theorem16} Let $M$ be a 
+$\ZZ /2$-graded module over a $\ZZ /2$-graded ring $R$,
+with the presentation
+$\phi :V\otimes R\rightarrow U^{*}\otimes R$. 
+Assume that $\dim U = (d,e), \dim V=(m,n)$. Let
+$x_{1} ,\ldots ,x_{(d+1)(e+1)-1}$ be  homogeneous elements from
+$\Ann_{R} M$. Then $x_{1} \ldots x_{(d+1)(e+1)-1}\in I_{\Lambda (d,e)}(\phi )$.
+\end{theorem16}
+
+\begin{proof}[Proof of Theorem \textup{3.2}]  We begin with part b).  We work
+with a presentation  $(\phi ,\psi ):V\otimes R\oplus W\otimes R\rightarrow
+U^{*}\otimes R$  where $W$ is a $\ZZ /2$-graded vector space of dimension $e$
+with the $i$-th generator $w_{i}$ going to $x_{i}$ times the $i$-th generator
+$u_{i}$ of $U^{*}$. The parity of the generators of $W$ is adjusted so that
+$\psi $ is of degree $0$. Now, taking a double tableau $ (S, T)$ of the shape
+$(1^{e})$ with $w_{i}$ and $u_{i}$ in the $i$-th row, and applying the
+definition above, we see that the generator $\pi (S, T)$ is just $x_{1}\ldots
+x_{e}$.
+
+To prove part a) we distinguish two cases. In the case $s<d-1$ we use the
+presentation $(\phi ,\psi ) :V\otimes R\oplus W\otimes R\rightarrow
+U^{*}\otimes R$ where $W$ is a $\ZZ /2$-graded vector space of dimension $e+1$
+with the $i$-th generator $w_{i}$ going to $x_{i}$ times the $(s+i+2)$-th
+generator $u_{i}$ of $U^{*}$.  The parity of the generators of $W$ is adjusted
+so that $\psi $ is of degree $0$. We can assume without loss of generality that
+$\phi :=\Phi $ is generic. Then it is enough to prove that $c_{\Lambda
+(s,e)}x_{1} \ldots x_{e+1}\in I_{\Lambda (s+1,e)}$, where $c_{\Lambda (s,e)}$
+is the highest weight vector defined as in Proposition 1.5.
+
+We pick a tableau $(S, T)$ of shape $\Lambda (s+1,e )$ as follows. The
+entries $v_{i,j}$, $u_{i,j}$ in the $i$-th row are the same as in the
+canonical tableau, except the last ones. The last entry in the tableau
+$v$ in the $i$-th row is $w_{i}$, and the last entry in the $i$-th row
+is $u_{s+2}$. The element $\pi ^{\prime }(S, T)$ is easily seen to be
+$c_{\Lambda (s,e)}x_{1} \ldots x_{e+1}$.
+
+In the case $s=d-1$ we use the presentation $(\phi ,\psi ) :V\otimes R\oplus
+W\otimes R\rightarrow U^{*}\otimes R$ where $W$ is a $\ZZ /2$-graded vector
+space of dimension $e+1$ with the the $i$-th generator $w_{i}$ going to $x_{i}$
+times the $(d+i)$-th generator $u_{i}$ of $U^{*}$ for $1\le i\le e$ and
+$w_{e+1}$ going to $x_{e+1}$ times $u_{d}$. The parity of the generators of $W$
+is adjusted so that $\psi $ is of degree $0$. We can assume without loss of
+generality that $\phi :=\Phi $ is generic. Then it is enough to prove that
+$c_{\Lambda (d-1,e)}x_{1} \ldots x_{e+1}\in I_{\Lambda (d,e)}$, where
+$c_{\Lambda (d-1,e)}$ is the canonical tableau.
+
+We pick a tableau $(S, T)$ of shape $\Lambda (s+1,e )$ as follows. The entries
+$v_{i,j}$, $u_{i,j}$ in the $i$-th row are the same as in the canonical
+tableau, except the last ones. The last entry in the tableau $v$ in the $i$-th
+row is $w_{i}$, and the last entry in the $i$-th row is $u_{d+i}$ for $1\le
+i\le e$, and $u_{d}$ for the $(e+1)$-st row. The element $\pi ^{\prime }(S, T)$
+is easily seen to be $c_{\Lambda (d-1,e)}x_{1} \ldots x_{e+1}$. 
+\end{proof}
+
+
+\section*{4. The resolution of a generic $\mathbb{Z}/2$-graded module}
+
+In this section we work over the generic ring $R=\myS $ as in the
+introduction, and we conjecture the form of a
+minimal free resolution over $R$ of the cokernel $C$ of the
+generic map $\Phi $. This
+resolution is a natural generalization of the one constructed in \cite{BE} in
+the commutative case. We work over a field $K$
+of characteristic $0$. We define some
+$\ZZ /2$-graded free $R$-modules $\FF _{i}$ as follows:
+\begin{gather*}
+{\FF }_{0} = U^{*}\otimes R,\qquad {\FF }_{1} = V\otimes R,\\
+{\FF }_{i} =\bigoplus _{|\alpha |+|\beta | = i-2}  \myS
+_{\Theta (d,e,\alpha ,\beta )}V\otimes \myS _{\Lambda (d,e,\alpha ,\beta
+)}U\otimes R 
+\end{gather*}
+where $\Lambda (d,e,\alpha ,\beta ) = (d+1+\beta _{1} ,d+1+\beta _{2},\ldots ,
+d+1+\beta _{e} ,e,\alpha ^{\prime }_{1} ,\ldots ,\alpha ^{\prime }_{s} )$,
+$\Theta (d,e,\alpha ,\beta )= (d+1+\alpha _{1} ,d+1+\alpha _{2},\ldots,
+d+1+\alpha _{e} ,e+1,\beta ^{\prime }_{1} ,\ldots ,\beta ^{\prime }_{s} )$, and
+we sum over all pairs of partitions $\alpha ,\beta $ with at most $e$ parts.
+
+\begin{theorem17} There exists an equivariant differential $d_{i} :{\FF
+}_{i}\rightarrow {\FF }_{i-1}$, linear for $i\ge 3$ or $i=1$ and of degree
+$|\Lambda (d,e)|$ for $i=2$, that makes ${\FF }_{\bullet }$ into a minimal
+$R$-free $\ZZ /2$-graded resolution of $C$. \end{theorem17}
+
+In the even case ($U_{1}=V_{1}=0$) the desired complex is the Buchsbaum-Rim
+resolution (see, for example, Buchsbaum and Eisenbud \cite{BE}). We have
+checked the conjecture computationally, using Macaulay2, in a few more cases.
+
+\section*{Appendix 1. Elementary proof of a special case}
+
+In this appendix we consider the case where the entries of  $\Phi $ are all of
+odd degree, and  give the most transparent proof we know of Theorem 1(a), the
+fact that a certain ideal $I$ annihilates $\coker \Phi $. The result and its
+proof in this case are characteristic-free. The ideal $I$ has a simple
+description as the ``ideal of exterior minors" in the sense of Green
+\cite{Gre}, and Proposition A1.1 was originally proved by him in that paper in
+a different way. We give a simple way of generating the ideal of exterior
+minors, which works whenever the ground field $K$ is infinite. This appendix
+will also serve as an introduction to the proof of Theorem 1(a). A different
+method of treating the purely odd and purely even cases, which we do not know
+how to generalize, is given in Appendix 3.
+
+More precisely, we do the
+special case of Theorem 1(a)
+where $d=n=0$ (the other case where $\Phi $
+has odd matrices, namely where $e=m=0$, differs just
+by shifting degrees). Here $U=U_{1}$ and
+$V=V_{0}$, so that the matrix
+$\Phi $ consists of a single block, with odd degree entries,
+and we wish to show that the ideal $I=I_{\Lambda (0,e)}=I_{(1^{e})}$
+annihilates the cokernel of $\Phi $. 
+
+In this special $d=n=0$ case the ring $\myS =\myS (V\otimes U)$ is the ordinary
+exterior algebra $\wedge (V\otimes U)$.  For simplicity, we work throughout
+this appendix with the ordinary Schur functors $\wedge ^{t}$ and $S_{t}$ in
+place of their super analogues $\bigwedge ^{t}$ and $\myS _{t}$. 
+
+Over the integers the representation 
+$S_{e}(V)\otimes \wedge ^{e} U$ is not a summand of $\wedge (V\otimes U)$,
+but its saturation is easy to identify as $D_{e}(V)\otimes \wedge ^{e}(U)$,
+where $D_{e}(V)$ is the $e$-th homogeneous component of the 
+divided power algebra. It is perhaps simplest to think of
+$D_{e}(V)$ as the dual representation of $S_{e}(V^{*})$, and with this
+as definition we can define the embedding 
+$\iota :\ D_{e}(V)\otimes \wedge ^{e}(U)\subset \wedge ^{e}(V\otimes U)
+$
+as the dual of the surjection 
+$\pi :\ \wedge ^{e}(V^{*}\otimes U^{*}) \to S_{e}(V^{*})\otimes \wedge ^{e}(U^{*}),
+$
+which comes in turn by extending the identity map
+$\wedge (V^{*}\otimes U^{*})_{1} = (S(V^{*})\otimes \wedge (U^{*}))_{1,1}
+$
+to an algebra homomorphism
+$\wedge (V^{*}\otimes U^{*})\to S(V^{*})\otimes \wedge (U^{*}),
+$
+using the fact that the elements of 
+$(S(V^{*})\otimes \wedge (U^{*}))_{1,1}$
+square to 0 and anticommute. Explicitly, the map $\pi $ 
+can be specified
+by its action on pure vectors, which is
+\begin{equation*}\pi : \ 
+(\hat v_{1} \otimes \hat u_{1}) \wedge \cdots \wedge (\hat v_{e} \otimes \hat u_{e})
+\mapsto (\hat v_{1} \cdots \hat v_{e})\otimes (\hat u_{1}\wedge \cdots \wedge \hat u_{e}).
+\end{equation*}
+We write
+$a_{i,j}=v_{j}\otimes u_{i}$ for the exterior variables.
+Theorem 1(a) may be stated 
+for the case $d=n=0$ as follows.
+
+\begin{theorem18}
+Let $E$ be the exterior algebra
+on variables $a_{i,j}$, $ i=1,\dots ,e,\ j=1,\dots , m$, over
+a field $K$ of arbitrary characteristic, and let 
+\begin{equation*}\Phi =
+\left(\begin{matrix}
+a_{1,1}&\cdots&a_{1,m}\\
+\vdots&\ddots&\vdots\\
+a_{e,1}&\cdots&a_{e,m}
+\end{matrix}\right)
+\end{equation*}
+be the $e\times m$ generic matrix over $E$. The cokernel
+of $\Phi $ is annihilated by the element
+$b= b_{1}\wedge b_{2}\wedge \cdots \wedge b_{e}$ where
+\begin{equation*} \beta =
+\left(\begin{matrix}
+ b_1\\
+\vdots\\
+ b_e
+\end{matrix}\right)
+ \end{equation*}
+is any $K$-linear combination of the columns of $\Phi $. If
+$K$ is infinite, then these
+elements generate the representation
+\begin{equation*}D_{e}(V)\otimes \wedge ^{e}(U)\subset \wedge ^{e}(V\otimes U).
+\end{equation*}
+\end{theorem18}
+
+\begin{proof}[Proof]
+First consider the case $m=\dim V=1$, 
+where $\Phi $ has
+just one column, and let $\{v_{1}\}$ be a basis for $V$. 
+Let $u_{1},\dots ,u_{e}$ be a basis of 
+$U$ and let $\overline{u}_{i}$ be the image of $u_{i}$ in
+$\coker \Phi $. In this case $V\otimes U$ has
+dimension $e$, and so $\wedge ^{e}(V\otimes U)$ is 1-dimensional,
+equal to $D_{e}(V)\otimes \wedge ^{e}(U)$, and generated by the 
+product $a_{1,1}\wedge \cdots \wedge a_{e,1}$.
+
+We have $\sum a_{i,1}\overline{u}_{i}=0$.
+Thus
+\begin{align*}
+(a_{1,1}\wedge \cdots \wedge a_{e,1}) \overline{u}_{e}
+&=
+(a_{1,1}\wedge \cdots \wedge a_{e-1,1})\wedge a_{e,1}\overline{u}_{e}\\
+&=
+-\sum _{i\neq e}
+(a_{1,1}\wedge \cdots \wedge a_{e-1,1}) \wedge a_{i,1}\overline{u}_{i}
+=0,
+\end{align*}
+since $a_{i,1}\wedge a_{i,1}=0.$
+
+In the general case $\dim V= m$, we note that the cokernel of
+the augmented matrix
+\begin{equation*}
+\left(\begin{matrix}
+a_{1,1}&\cdots&a_{1,m}& b_1\\
+\vdots&\ddots&\vdots&\vdots\\
+a_{e,1}&\cdots&a_{e,m}& b_e
+\end{matrix}\right)
+\end{equation*}
+is the same as the cokernel of $\Phi $, and thus
+is a quotient of the cokernel of the matrix $\beta $.
+By the case $m=1$, the module $\coker \beta $ is annihilated 
+by $ b_{1}\wedge \cdots \wedge b_{e}$;
+so its quotient $\coker \Phi $ is too.
+
+Finally, we must show that, if $K$ is infinite, the products 
+$b$ corresponding to columns $\beta $ generate the representation
+$\iota (D_{e}(V)\otimes \wedge ^{e} U)$. Let $v\in V$ be the
+element corresponding to the linear combination of the 
+columns $b$, and let $V'\subset V$ be the 1-dimensional
+space spanned by $v$. The element $b$ generates the
+image of the composite map 
+\begin{equation*}D_{e}(V')\otimes \wedge ^{e} U\to D_{e}(V)\otimes \wedge ^{e}
+U\to ^{\iota }\wedge ^{e}(V\otimes U). 
+\end{equation*} 
+We must 
+show that the images of all such maps span 
+$\iota (D_{e}(V)\otimes \wedge ^{e} U)$.
+The space $\wedge ^{e}U$ is 1-dimensional. Thus it suffices
+to show that the images of all $D_{e}(V')$ in $D_{e}(V)$ span 
+$D_{e}(V)$. (Note that this would fail for $S_{e}(V)$ in place of
+$D_{e}(V)$ in characteristic $p$ if $e=p$.)
+
+Dually, it suffices to show that the intersection of the  kernels of the maps
+$S_{e}(V^{*})\to S_{e}(V^{'*})$ induced by all 1-dimensional projections
+$V^{*}\to V^{'*}$ is zero. Such a projection is a point in the projective space
+$\PP (V)$, and the kernel is the set of polynomials of degree $e$ vanishing at
+the point. The desired assertion follows because only the zero polynomial
+vanishes at all the points of $\PP (V)$ when $K$ is infinite. \end{proof}
+
+\section*{Appendix 2. Comments on the action of $\mathfrak{g}$}
+
+It may at first be surprising that the generators given in 
+Examples 1-3 of the Introduction are permuted by the action of $\g $.
+So we will make the action explicit in one case, Example 3 (the
+other cases are similar and simpler). 
+
+When we think of $R=\myS (V\otimes U)$ as a $\g $-module, we think of
+$\g $ acting on the left. But we may identify $U\otimes V$
+with $\operatorname{Hom}(V,U^{*})^{*}=\operatorname{Hom}(U^{*},V)$, and thus identify $R$ with the
+coordinate ring of the space $\operatorname{Hom}(V,U^{*})$. In this identification
+it is natural to think of the Lie algebra $\g =\gl (V)\times \gl (U)$
+as $\gl (V)\times \gl (U^{*})$, with the $\gl (U^{*})$ acting on the right.
+To make this identification, we use the {\em supertranspose\/}, which
+is the anti-isomorphism 
+\begin{equation*}
+\gl (U)\to \gl (U^{*});\quad 
+\left(
+\begin{matrix}
+U_{0,0}&U_{0,1}\\
+U_{1,0}&U_{1,1}\end{matrix}
+\right)
+\mapsto
+\left(\begin{matrix}
+U_{0,0}^t&U_{1,0}^t\\
+-U_{0,1}^t&U_{1,1}^t
+\end{matrix}\right).
+\end{equation*}
+
+Now consider the case presented in Example 3 of the Introduction,  whose
+notation we use. To see the action of $\g $, let us act by two elements of the
+Lie algebra on the element $axy$. First we act with the element $v_{0,1}$ from
+$\gl (V)$, changing an odd element to an even one. We get a sum of terms, each
+of which is $axy$ with one changed factor; we can replace $a$ by $x$ or $y$ by
+$b$. Thus we get terms $xxy$ and $axb$. The first comes with positive sign
+($v_{0,1}$ acts from the left and we replaced the first factor, and so there
+are no switches), the second term comes with negative sign (we replaced $y$ by
+$b$, and so had to switch $v_{0,1}$ with $a$). Thus we get $x(xy-ab)$.
+
+Let us also act on $axy$ by the Lie algebra element $u_{1,0}$ from $\gl
+(U^{*})$ exchanging an even element with an odd one. We get a sum of terms
+where each term is $axy$ with one factor changed; we can change $x$ to $b$ and
+$a$ to $y$. We get terms $yxy$ and $aby$. Both come without sign, since
+$u_{1,0}$ acts from the right and $x,y$ have even degree. Thus we get
+$(xy+ab)y$. 
+
+\section*{Appendix 3. A standard basis approach to the generic module}
+
+In this appendix we describe a general method for analyzing the cokernel of the
+generic matrix by giving a {\em standard basis\/} in the case where all the
+variables of $S$ are even or all are odd. It would be very interesting to give
+a generalization to the situation where there are both even and odd variables.
+In the cases treated here, the method, and the results, are
+characteristic-free.
+
+To explain the method in the most familiar setting, we begin with the even
+case---the classical case of the cokernel of a matrix whose entries are
+distinct variables of a commutative polynomial ring. The standard basis
+approach to the ring $S$ itself in this case is due to Doubillet, Rota, and
+Stein \cite{DRS}; see also DeConcini, Eisenbud, and Procesi \cite{DEP}. The
+standard basis for the generic module in the even case was obtained by Bruns
+and Vetter \cite{BV} and by Bruns \cite{Bru}. This standard basis was shown to
+be a Gr\"{o}bner basis by Onn \cite{Onn}. We give the proof based on
+representation theory because it exends to the odd case. Then we  sketch the
+odd case, which is quite parallel. Throughout this appendix we think of
+tableaux as being filled with numbers, not with elements of the numbered basis
+as before.
+
+\medskip \noindent {\bf The even case.} Consider vector spaces $V=K^{m},
+U=K^{d}$ and the generic map $\Phi :V\otimes _{K} S\rightarrow U^{*}\otimes
+_{K} S$  of free modules over the polynomial ring $S = \Sym_{K} (V\otimes U)$.
+We will give a good basis for the module $\coker \Phi $. Let $\lbrace u_{1}
+,\ldots ,u_{d}\rbrace $, $\lbrace v_{1} ,\ldots ,v_{m}\rbrace $ be bases of $U,
+V$ respectively. Let $\lbrace u_{1}^{*} ,\ldots ,u_{d}^{*} \rbrace $ be the
+dual basis of $U^{*}$. Write $\Phi (v_{j} )=\sum _{i=1}^{d} x_{i,j}u_{i}^{*}$.
+The ring $S$ can be identified with the commutative  polynomial ring 
+$K[x_{i,j}]_{1\le i\le d,1\le j\le m}$. Recall that a {\em double  tableau of
+shape $\lambda $,\/} where  $\lambda = (\lambda _{1} \geq \cdots \geq \lambda
+_{r}\geq 0)$,  is a pair of tableaux
+\begin{equation*}P=(P_{1} ,\ldots ,P_{r} ),\quad Q=(Q_{1} ,\ldots ,Q_{r} )
+\end{equation*} 
+with
+$P_{j} = (p_{j,1},\ldots ,p_{j,\lambda _{j}} )$ and
+$Q_{j} = (q_{j,1},\ldots ,q_{j,\lambda _{j}} )$ 
+satisfying 
+$1\le p_{i,j}\le d$ and
+$1\le q_{i,j}\le m$
+(and thus $\lambda _{1}\leq \min (m,d))$. 
+Corresponding to the double tableau $(P,Q)$
+is the
+product $M_{1}\cdots M_{r}\in S$, 
+where $M_{j}$ is the signed minor of the generic matrix
+$\Phi = (x_{i,j})_{1\le i\le d, 1\le j\le m}$ 
+involving the rows indexed by $P$
+and the columns indexed by $Q$. We will henceforward think of 
+the double tableau as elements of $S$. Thus, for example,
+$(p_{1},\dots ,p_{r})\mid (q_{1},\dots ,q_{r})$ denotes an $r\times r$
+minor of $\Phi $.
+
+The tableau $P$ is {\em standard\/} if
+$p_{i,j}<p_{i,j+1}$ for all $i,j$ and $p_{i,j}\le p_{i+1,j}$ for all
+$i, j$. Similarly we define the standardness of $Q$, and a double
+tableau $(P, Q)$ is standard if both $P$ and $Q$ are standard.
+The algebra $S$ has a basis consisting of (the elements corresponding
+to) the {\em double standard tableaux.\/} 
+A $K$-basis of the free module $U^{*}\otimes S$ is given by 
+the products
+$(P, Q)u_{i}^{*}$ where $(P, Q)$ is a standard double tableau and 
+$1\le i\le d$. Thus we can construct a basis for $\coker \Phi $
+by taking an appropriate subset.
+
+\begin{definition4} A product $(P, Q)u_{i}^{*}$ is {\em admissible\/}
+ if the
+double tableau $(P, Q)$ is standard and the first row of $P$ does not
+contain the interval $[1,i]$. Notice that the additional condition
+is really a condition on $P$ and $u_{i}^{*}$,
+and if it is satisfied, we will say that $P u_{i}^{*}$ is admissible.
+\end{definition4}
+\begin{theorem19} The images of the
+admissible products in $\coker \Phi $ form a $K$-basis.
+\end{theorem19}
+\begin{proof}  
+We first show that the
+admissible products span
+$\coker \Phi $.
+Order the bases by setting $u_{1} <\ldots <u_{d}$, $u_{d}^{*}<\ldots <u_{1}^{*}$, $v_{1} <\ldots <v_{m}$. 
+Order the products $(P, Q)u_{i}^{*}$ (where $(P, Q)$ is a double
+tableau, not nessesarily standard) by reading lexicographically,
+first the element
+$u_{i}^{*}$, then $P$ by rows and then $Q$ by rows. It
+suffices to show that if a
+product is not admissible, it is a combination of earlier
+products.
+\renewcommand{\qed}{} \end{proof}
+
+
+The $(i,j)$-th entry of $\Phi $ may be written
+as $(i|j)$. Thus the relations
+$\sum _{i=1}^{d} (i | j)u_{i}^{*} =0$
+hold in $\coker \Phi $. We will use a generalization:
+
+\begin{theorem20} In $\coker \Phi $, 
+\begin{equation*}\sum _{i=1}^{d} 
+(a_{1} ,\ldots ,a_{n-1} ,i, a_{n+1},\ldots ,a_{r} \ |\ b_{1},\ldots ,b_{r} )
+u_{i}^{*} =0.
+\end{equation*}
+\end{theorem20}
+\begin{proof} Use the Laplace expansion with respect to the
+$n$-th row of each minor.
+
+Now assume that the product $(P, Q)u_{i}^{*}$ is not admissible. Use the
+relation from Lemma A3.2 for $n=i$, taking $a_{1} ,\ldots ,a_{i-1},
+a_{i+1},\ldots ,a_{r}$  and  $b_{1},\ldots ,b_{r}$  to be the first row of $P$
+minus $i$ and the first row of $Q$, respectively.  We may assume that the rows
+of $P$ and $Q$ are ordered, so that $a_{1} =1,\ldots , a_{i-1}=i-1$. The
+relation shows that in $\coker \Phi $ the element $(P_{1}|Q_{1})u_{i}^{*}$ is a
+linear combination of $u_{i+1}^{*}, \ldots ,u_{d}^{*}$ with polynomial
+coefficients, because the other terms involve minors with repeated rows. These
+are earlier terms in our order.  We multiply this  relation by the other rows
+of $(P, Q)$, and we see that $(P, Q)u_{i}^{*}$ is a linear combination of
+earlier terms in the same way.
+  
+It remains to show that the admissible products are linearly independent over
+$K$. It is enough to prove this over $\mathbf{Z}$, and thus it is enough to
+prove the linear independence over $\mathbf{Q}$. We will show that in a given
+degree the dimension of the module $\coker \Phi $ is at least equal to the
+number of admissible products.  To do this we use the representation theory of
+$\GL(U)$. 
+
+We label the irreducible
+representation $S_{\lambda }U$ of $\GL(U)$ by its highest weight. This
+means they are labeled by the sequences $\lambda = (\lambda _{1} ,\ldots
+,\lambda _{d} )$ of integers such that $\lambda _{1}\ge \ldots \ge \lambda
+_{d}$,
+but we do not assume $\lambda _{d}\ge 0$. Irreducible representations of
+$\SL(U)$ correspond to weights $\lambda $ with $\lambda _{d} =0$ and are
+called Schur functors. We have
+\begin{equation*}S_{(\lambda _{1} +1,\ldots ,\lambda _{d} +1 )}U
+= 
+S_{\lambda }U\otimes \wedge ^{d} U.
+\end{equation*}
+
+With this notation $\wedge ^{i} U = S_{(1^{i} ,0^{d-i})}U$ and
+$\wedge ^{i} U^{*} = S_{(0^{d-i}, (-1)^{i} )}U$; in particular,
+the naturally isomorphic representations $\wedge ^{i} U=\wedge ^{d} $ and
+$U\otimes \wedge ^{d-i}U^{*}$ both have highest weight $(1^{i} ,0^{d-i})$.
+The representation with general $\lambda _{n}$
+can be expressed as a Schur functor tensored with an
+integer
+power of $\wedge ^{d} U$. We can now express
+$\coker \Phi $ as a representation:
+
+\begin{theorem21}
+If $K$ is a field of
+characteristic zero, then
+the decomposition of $\coker \Phi $ into irreducible
+representations of $\GL(V)\times \GL(U)$ is
+\begin{equation*}\coker \Phi = \bigoplus _{\lambda = (\lambda _{1} ,\ldots
+,\lambda _{d-1})} S_{\lambda }V\otimes S_{(\lambda _{1} ,\ldots ,\lambda
+_{d-1}, -1 )}U. 
+\end{equation*}
+\end{theorem21}
+
+\begin{proof}[Proof of Proposition \textup{A3.3}]
+The free module 
+$U^{*}\otimes S$ 
+decomposes as 
+\begin{equation*}U^{*}\otimes S =\bigoplus _{\lambda = (\lambda _{1} ,\ldots ,\lambda _{d}),\ \lambda _{d}\ge 0}
+\ S_{\lambda }V\otimes S_{\lambda }U\otimes U^{*} .
+\end{equation*}
+Let us look at the isotypic component of $S_{\lambda }V$. 
+Using Pieri's formula, we can decompose 
+$S_{\lambda }U\otimes U^{*}$. 
+Using the isomorphism $U^{*} =\wedge ^{d-1} U\otimes \wedge ^{d} U^{*}$, we get
+\begin{equation*}S_{\lambda }U\otimes U^{*} =
+\bigoplus _{i{\text{ such\ that }} \lambda _{i}>\lambda _{i-1}}
+S_{\lambda _{1} ,\ldots ,\lambda _{i+1}\lambda _{i} -1,\lambda _{i-1}\ldots ,
+\lambda _{d} }U.
+\end{equation*}
+The representation $V\otimes S$
+contains only representations $S_{\lambda }U$ of $\GL(U)$
+with all entries of $\lambda $ nonnegative.
+On the other hand, if $\lambda _{d} =0$, then 
+$S_{\lambda }U\otimes U^{*}$ contains the representation $S_{\lambda _{1}
+,\ldots ,\lambda _{d-1}, -1}U$. Thus this representation must occur in
+$\coker \Phi $.
+
+The following
+lemma concludes the proof of Proposition A3.3 and also gives
+the linear independence necessary to finish
+the proof of Proposition A3.1.
+\renewcommand{\qed}{} \end{proof}
+
+\begin{theorem22}
+The dimension of 
+$S_{(\lambda _{1} ,\ldots ,\lambda _{d-1},-1)}U$ 
+is equal to the number of the products $P u_{i}^{*}$ where
+$P$ is a standard tableau of shape $\lambda $ and the first row of
+$P$ does not contain the interval $[1,i]$.
+\end{theorem22}
+
+\begin{proof} 
+The representation
+$S_{(\lambda _{1} ,\ldots ,\lambda _{d-1},-1)}U$ 
+has the same dimension as 
+\[S_{(\lambda _{1},\ldots ,\lambda _{d-1} ,-1)}U\otimes \bigwedge ^{d} U 
+= S_{(\lambda _{1} +1,\ldots ,\lambda _{d-1}+1,0)}U.\]
+This is equal to the number of
+standard tableaux of shape 
+$(\lambda _{1} +1,\ldots ,\lambda _{d-1}+1,\allowbreak 0)$. 
+
+On the other hand, the admissibility condition on the product $P u_{i}^{*}$ is
+the same as the standardness condition on the tableau of shape  $\lambda $
+starting with the row $1,2,\ldots ,i-1,i+1,\ldots ,d$ and continuing with the
+rows of $P$. Thus the number  of  admissible products $P u_{i}^{*}$ is equal to
+the dimension of the representation  $S_{\lambda _{1},\ldots ,\lambda _{d-1},
+-1}U$  in $S_{\lambda }U\otimes U^{*}$.   
+\end{proof}
+
+This also completes the proofs of Lemma A3.2 and Proposition A3.1.
+\end{proof}
+
+
+\begin{theorem23}
+\textup{a)} The ideal $I_{d}$ generated by $d\times d$ minors
+of $\Phi $ annihilates $\coker \Phi $.
+
+\textup{b)} $\coker \Phi $ is a torsion free module over the determinantal
+ring $S/I_{d}$.
+\end{theorem23}
+\begin{proof} To prove a), consider the relation from 
+Lemma A3.2
+with $r=d$,  
+\begin{equation*}\lbrace a_{1} ,\ldots , a_{n-1}, a_{n+1},\ldots ,a_{d}\rbrace
+= \lbrace 1,2,\ldots , n-1,n+1,\ldots ,d\rbrace .\end{equation*} 
+ It says that
+\begin{equation*}(1,2,\ldots ,d\ |\ 
+b_{1} ,\ldots ,b_{d} )u_{i}^{*}=0 .\end{equation*}
+
+To prove b) we define an embedding of $\coker \Phi $ into a free
+$S/I_{d}$-module. We define the homomorphism
+\begin{equation*}\Psi :\coker \Phi \rightarrow \wedge ^{d-1}V^{*}\otimes \wedge ^{d}
+U^{*}\otimes S/I_{d}
+\end{equation*}
+by setting 
+\begin{equation*}\Psi (u_{i}^{*} ) =\sum _{i=1}^{d} (a_{1} ,\ldots , a_{d-1}\ |b_{1} ,\ldots ,b_{d-1} ) u_{a_{1}}^{*}\wedge \ldots \wedge u_{a_{d-1}}^{*}\wedge u_{i}^{*}\otimes v_{b_{1}}^{*}\wedge \ldots \wedge v_{b_{d-1}}^{*} .
+\end{equation*}
+Consider the complex
+\begin{equation*}V\otimes S/I_{d} 
+\xrightarrow{\Phi \otimes 1} U^{*}\otimes S/I_{d} 
+\xrightarrow {\Psi }\wedge ^{d-1}V^{*}\otimes \wedge ^{d}
+U^{*}\otimes S/I_{d}.
+\end{equation*}
+One shows easily that 
+$\Psi (\Phi \otimes 1)=0$ (the coefficient of 
+every image is a combination of
+$d\times d$ minors, so is zero in $S/I_{d}$).
+To prove the exactness of our complex, we notice 
+that it is enough to prove the exactness over 
+$\mathbf{Q}$. Indeed,
+our straightening law showed that the cokernel of 
+$\Phi \otimes 1$ is a free module
+over $\mathbf{Z}$. 
+
+To prove the exactness over $\mathbf{Q}$ we use representation theory
+methods by decomposing to irreducibles. Let us look at our complex,
+and for a partition $\nu $ let us look at the $\GL(V)$-isotypic
+component of $S_{\nu }V$, with $\nu = (\nu _{1} ,\ldots ,\nu _{d-1})$. It is
+enough to look at such components, since no other representations occur
+in the middle term of the complex. We get the following complex:
+\begin{equation*}S_{\nu /(1)}U\rightarrow U^{*}\otimes S_{\nu }
+U\rightarrow \bigwedge ^{d} U^{*}\otimes S_{(\nu _{1}+1,\ldots ,\nu _{d-1}+1 )}.
+\end{equation*}
+The cokernel of the first map consists of the sole irreducible
+representation 
+\[S_{(\nu _{1} ,\ldots ,\nu _{d-1},-1)}U\]
+which occurs in
+the right-hand-side term. It is therefore enough to show that the map
+$\Psi $ is nonzero on our isotypic component. The best way to do it is
+to see that the image of $\Psi $ on the corresponding highest weight
+vector is nonzero. This highest weight vector is, however, easy to
+calculate, since it equals $(C_{\nu },C_{\nu })u_{d}^{*}$ where $C_{\nu }$ is the
+canonical tableau of shape $\nu $ having $(1,2,\ldots ,\nu ^{\prime }_{i} )$
+in the $i$-th row.
+\end{proof}
+\begin{remark1}
+Bruns and Vetter (\cite{BV}, chapter 13) show that $\coker \Phi $ is
+torsion free over $S/I_{d}$ by a different argument. 
+What is more, they show that $\coker \Phi $ is
+reflexive over $S/I_{d}$. 
+This can also be proved by our method, by extending
+our sequence by one term:
+\begin{align*}
+V\otimes S/I_{d} \,&{\overset{{\Phi \otimes 1}}{\longrightarrow }} U^{*}\otimes
+S/I_{d} \\
+&{\overset{\Psi }{\longrightarrow }}\wedge ^{d-1}V^{*}\otimes \wedge
+^{d} U^{*}\otimes S/I_{d} {\overset{\Theta }{\longrightarrow }} 
+\wedge ^{d}V^{*}\otimes \wedge ^{d} U^{*}\otimes U^{*}\otimes S/I_{d}
+\end{align*}
+where $\Theta $ is defined on generators by the map 
+\begin{align*}
+\wedge ^{d-1}V^{*}\otimes \wedge ^{d} U^{*}&\rightarrow \wedge 
+^{d-1}V^{*}\otimes \wedge ^{d} U^{*}\otimes V^{*}\otimes V\otimes 
+U^{*}\otimes U\\
+&\rightarrow \wedge ^{d} V^{*}\otimes \wedge ^{d} U^{*}\otimes U^{*}\otimes
+(V\otimes U) ,
+\end{align*}
+and then identifying $V\otimes U$ with $S_{1}$. We prove the exactness
+of the extended complex in the same way as above.  This shows 
+that $\coker \Phi $ is a second syzygy over $S/I_{d}$, and therefore reflexive. 
+The dual module of $\coker \Phi $ turns out to be 
+\[\wedge ^{m-d+1}(\coker \Phi ^{*}).\]
+\end{remark1}
+
+
+\noindent {\bf The odd case.}
+The results in this case are very similar; so we only sketch the proofs.
+
+Again, let $K$ be a field  of arbitrary
+characteristic. Consider the vector spaces $V=K^{n}, U=K^{d}$. We
+consider the odd generic map $\Phi :V\otimes _{K} E\rightarrow U^{*}\otimes _{K} E$  of free modules over the exterior algebra $E =
+\wedge ^{\bullet }_{K} (V\otimes U)$. We are interested in the generic
+module $\coker \Phi $.
+
+Let $\lbrace u_{1} ,\ldots ,u_{d}\rbrace $, $\lbrace v_{1} ,\ldots
+,v_{n}\rbrace $ be bases of $U, V$ respectively. Let $\lbrace u_{1}^{*} ,\ldots
+,u_{d}^{*} \rbrace $ be the dual basis of $U^{*}$.
+
+Let us write $\Phi (v_{j} )=\sum _{i=1}^{d} a_{i,j}u_{i}^{*}$. The ring $E$
+can be identified with the exterior algebra
+$\wedge ^{\bullet }[a_{i,j}]_{1\le i\le d,1\le j\le n}$.
+
+It is shown in Akin, Buchsbaum, and Weyman \cite{ABW} that  $E$ has a basis
+consisting of double standard tableaux, where now the notion of double standard
+tableaux is interpreted as follows: Suppose that $(P, Q)$ is a double  tableau
+of shape $\lambda $, where  $\lambda = (\lambda _{1} ,\ldots , \lambda _{r})$, 
+and  $P=(P_{1} ,\ldots ,P_{r} ), Q=(Q_{1} ,\ldots ,Q_{r} )$  with $P_{j} =
+(p_{j,1},\ldots ,p_{j,\lambda _{j}} )$,  $Q_{j} = (q_{j,1},\ldots ,
+q_{j,\lambda _{j}} )$,  for $1\le p_{i,j}\le d$, $1\le q_{i,j}\le m$. The
+corresponding element of $E$ is the product $M_{1}\ldots M_{r}$ where $M_{j}$
+is an exterior  minor of the generic matrix  ${\tilde X} = (a_{i,j})_{1\le i\le
+d, 1\le j\le n}$ corresponding to the rows  $P_{j} = (p_{j,1},\ldots
+,p_{j,\lambda _{j}} )$ and (maybe repeated) columns  $Q_{j} = (q_{j,1},\ldots
+,q_{j,\lambda _{j}} )$.  Recall that $P$ is standard if $p_{i,j}<p_{i,j+1}$ for
+all $i,j$ and $p_{i,j}\le p_{i+1,j}$ for all $i, j$. The standardness of $Q$ is
+defined by the conditions  $q_{i,j}\le q_{i,j+1}$ for all $i,j$ and $q_{i,j}<
+q_{i+1,j}$ for all $i, j$. $(P, Q)$ is standard if both $P$  and $Q$ are
+standard.
+
+From the representation-theoretic point of view, the map given by
+exterior minors of size $s$ is the embedding
+\begin{equation*}D_{s} V\otimes \wedge ^{s} U\rightarrow \wedge ^{s} (V\otimes U),
+\end{equation*}
+which is the specialization of our $\rho _{s}$ to the odd case. Here $D_{s} V$
+is the divided power of $V$.
+
+The $K$-basis of the free module $U^{*}\otimes E$ is given by products
+$(P, Q)u_{i}^{*}$ where $(P, Q)$ is a standard double tableau and $1\le i\le d$. 
+
+\begin{definition5} A product $(P, Q)u_{i}^{*}$ is admissible if the double
+tableau $(P, Q)$ is standard and the first row of $P$ does not contain the
+interval $[1,i]$. Notice that the additional condition is really a condition on
+$P$ and $u_{i}^{*}$. So we can also talk about admissible products $P
+u_{i}^{*}$.
+
+In the sequel we denote the exterior minor of $X$ corresponding to
+the rows $a_{1} ,\ldots ,a_{r}$ and columns $b_{1} ,\ldots ,b_{r}$ by
+$(a_{1} ,\ldots ,a_{r} |b_{1} ,\ldots ,b_{r} )$.
+\end{definition5}
+\begin{theorem24} The admissible products form a $K$-basis of
+$\coker \Phi $.
+\end{theorem24}
+\begin{proof} The proof proceeds as in the even case.
+The representation-theoretic 
+content is identical; only the representation on the $V$
+side changes from $S_{\lambda }V$ to $S_{\lambda ^{\prime }}V$. 
+The essential point is that in $\coker \Phi $ we have relations on
+the $u_{i}^{*}$ that are analogous to those in Lemma A3.2:
+\end{proof}
+\begin{theorem25} In $\coker \Phi $ we have the relations
+\begin{equation*}\sum _{j=1}^{d} 
+(a_{1} ,\ldots ,a_{n-1} ,j, a_{n+1},\ldots ,a_{r} |
+ b_{1},\ldots ,b_{r} ) u_{j}^{*} =0.
+\end{equation*}
+\end{theorem25}
+\begin{proof} By linearity and the argument at the
+end of the proof of Proposition A1.1, it suffices to treat the case where
+$b_{1}=b_{2}=\cdots =b_{r}$. But, again as in A1.1, we have
+\begin{equation*}(a_{1} ,\ldots ,a_{n-1} ,j, a_{n+1},\ldots ,a_{r} |
+ b_{1},\ldots ,b_{1} )
+=
+(a_{1}|b_{1})\wedge (a_{2}|b_{1})\wedge \cdots \wedge (a_{r}|b_{1}).
+\end{equation*}
+So the given relation is a multiple of the relation
+$\sum _{j=1}^{d} (j|b_{1} ) u_{j}^{*} =0
+$
+given by column number $b_{1}$ of $\Phi $.
+\end{proof}
+
+
+\begin{theorem26}
+\textup{a)} The ideal $I_{(d)}$ generated by $d\times d$ exterior minors
+of $\Phi $ annihilates $\coker \Phi $. Moreover, $u_{d}^{*}$ generates
+a free $E/I_{(d)}$-module in $\coker \Phi $. So the annihilator
+of $\coker \Phi $ is exactly $I_{(d)}$.
+
+\textup{b)} $\coker \Phi $ is a second syzygy over the
+ring $E/I_{(d)}$.
+\end{theorem26}
+\begin{proof} To prove a), consider the relation from 
+Lemma A3.2$'$
+with $r=d$,  
+\begin{equation*}\lbrace a_{1} ,\ldots , a_{u-1}, a_{u+1},\ldots ,a_{d}\rbrace = \lbrace 1,2,\ldots , i-1,i+1,\ldots ,d\rbrace .
+\end{equation*}
+ It says that
+\begin{equation*}(1,2,\ldots ,d\ |b_{1} ,\ldots ,b_{d} )u_{i}^{*}=0 .
+\end{equation*}
+The last statement of a) follows because 
+$(P|Q)u_{d}^{*}$ is admissible
+for every standard double tableau of shape $\lambda $
+with $\lambda _{1}<d$, while
+$E/I_{(d)}$ is spanned by those with $\lambda _{1}<d$.
+
+To prove b) we define an embedding of $\coker \Phi $ into a free
+$E/I_{(d)}$-module. We define the homomorphism
+\begin{equation*}\Psi :\coker \Phi \rightarrow S_{d-1}V^{*}\otimes \wedge ^{d}
+U^{*}\otimes E/I_{(d)}\end{equation*}
+by setting 
+\begin{equation*}\Psi (u_{i}^{*} ) =\sum (a_{1} ,\ldots , a_{d-1}\ |b_{1} ,\ldots ,b_{d-1} ) u_{a_{1}}^{*}\wedge \ldots \wedge u_{a_{d-1}}^{*}\wedge u_{i}^{*}\otimes v_{b_{1}}^{*}\ldots v_{b_{d-1}}^{*} .\end{equation*}
+Consider the complex
+\begin{equation*}V\otimes E/I_{(d)} {\overset{{\Phi \otimes 1}}{\longrightarrow }}
+U^{*}\otimes E/I_{(d)} {\overset{\Psi }{\longrightarrow }}S_{d-1}V^{*}\otimes \wedge ^{d}
+U^{*}\otimes E/I_{(d)}. \end{equation*}
+ One shows easily that $\Psi (\Phi \otimes 1)=0$ (the coefficient of every image is a combination of
+$d\times d$ minors, hence zero in $E/I_{(d)}$).
+To prove the exactness of our complex, we notice that this exactness is clear over
+$\mathbf{Q}$ by counting representations in an isotypic component of $S_{\lambda }V$. But
+our straightening law showed that the image of $\Phi \otimes 1$ is a free module
+over $\mathbf{Z}$ and that $(U^{*}\otimes E/I_{(d)} )/
+\operatorname{Im}(\Phi \otimes 1)$ is also free over
+$\mathbf{Z}$. This proves the exactness of our complex, 
+and so $\coker \Phi $ is torsion free.
+
+We can extend our sequence to a longer sequence
+\begin{align*}
+V\otimes E/I_{(d)} &{\overset{{\Phi \otimes 1}}{\longrightarrow }} 
+U^{*}\otimes E/I_{(d)} {\overset{\Psi }{\longrightarrow }}S_{d-1}V^{*}\otimes
+\wedge ^{d} 
+U^{*}\otimes E/I_{(d)} \\
+&{\overset{\Theta }{\longrightarrow }}S_{d}V^{*}\otimes
+\wedge ^{d} U^{*}\otimes U^{*}\otimes E/I_{(d)}\end{align*} 
+where $\Theta $ is defined on generators by the map 
+\begin{align*}S_{d-1}V^{*}\otimes \wedge ^{d} U^{*}&\rightarrow
+S_{d-1}V^{*}\otimes \wedge ^{d} U^{*}\otimes V^{*}\otimes V\otimes U^{*}\otimes
+U\\
+&\rightarrow S_{d} V^{*}\otimes \wedge ^{d} U^{*}\otimes U^{*}\otimes (V\otimes
+U)\end{align*} 
+and then identifying $V\otimes U$ with $E_{1}$. 
+The exactness of the longer complex
+is proven in the same way as the analogous 
+result in the even case.\end{proof}
+
+
+
+\bibliographystyle{amsalpha}
+\begin{thebibliography}{ABW} 
+
+\bibitem[ABW]{ABW}{K.~Akin, D.~A.~Buchsbaum, and J.~Weyman}: Schur functors and
+Schur complexes, Adv. Math. 44 (1982), 207-278. \MR{84c:20021}
+
+\bibitem[BR]{BR}{A. Berele and A. Regev}: Hook Young diagrams with applications
+to combinatorics and to representations of Lie superalgebras. Adv. in Math. 64
+(1987) 118--175.
+\MR{88i:20006}
+
+\bibitem[Bru]{Bru}{Bruns, Winfried}: Generic maps and modules, Compositio 
+Math. 47 (1982), 171-193. \MR{84j:13011}
+
+\bibitem[BV]{BV}{Bruns, Winfried} and Udo Vetter: Determinantal rings.  Spinger
+Lecture Notes in Math.~1327. Springer-Verlag, Berlin/Heidelberg/NY 1988.
+\MR{89i:13001}
+
+\bibitem[BE]{BE}{D. A. Buchsbaum and D. Eisenbud}: Generic free
+resolutions and a family of generically perfect
+ideals. Advances in Math. 18  (1975), no. 3, 245-301. \MR{53:391}
+
+\bibitem[DEP]{DEP}{C. DeConcini, D. Eisenbud and C. Procesi}: Young
+diagrams and determinantal varieties, Invent.
+Math. 56  (1980), 129--165.  \MR{81m:14034}
+
+\bibitem[DRS]{DRS}{P. Doubilet, G.-C. Rota and Joel Stein}:
+On the foundations of combinatorial theory. IX.
+Combinatorial methods in invariant theory.
+Studies in Appl. Math. 53 (1974), 185--216. \MR{58:16736}
+
+\bibitem[Eis]{Eis}{D. Eisenbud}: {\em Commutative Algebra with a View Toward
+Algebraic Geometry}. Springer-Verlag, New York, 1995. \MR{97a:13001}
+
+\bibitem[EPY]{EPY}{D. Eisenbud, S. Popescu and S. Yuzvinsky}: Hyperplane
+arrangement cohomology and monomials in the exterior algebra. Preprint, 2000.
+
+\bibitem[ES]{ES}{D. Eisenbud, G. Fl\o ystad and F.-O. Schreyer}: Free resolutions and
+sheaf cohomology over exterior algebras. Preprint, 2000.
+
+\bibitem[Fit]{Fit} {H.~Fitting}: Die Determinantenideale eines Moduls. Jahresbericht
+der Deutschen Math.-Vereinigung 46 (1936) 195-229.
+
+\bibitem[GS]{GS}{D.~Grayson and M.~Stillman}: {\em Macaulay2}, a
+software system devoted to supporting research in algebraic geometry
+and commutative algebra.  Contact 
+the authors, or download 
+from\hfill \linebreak {\tt http://www.math.uiuc.edu/Macaulay2}.
+
+\bibitem[Gre]{Gre}{M. Green}: The Eisenbud-Koh-Stillman conjecture on linear
+syzygies. Invent. Math. 136 (1999) 411--418. \MR{2000j:13024}
+
+\bibitem[Mac]{Mac}{I. G. MacDonald}: {\em Symmetric functions and Hall
+polynomials.} Second edition. With contributions by A. Zelevinsky. Oxford
+Mathematical Monographs, Oxford University Press, New York, 1995. \MR{96h:05207}
+
+\bibitem[Onn]{Onn}{S. Onn}: Hilbert Series of 
+Group Representations and Gr\"{o}bner Bases for Generic Modules,
+Journal of Algebraic Combinatorics, vol. 3, pp. 187-206, 1994. \MR{95b:20010}
+
+\end{thebibliography}
+
+\end{document}
+

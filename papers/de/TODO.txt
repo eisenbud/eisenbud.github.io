@@ -1,0 +1,2 @@
+add djvu type
+add grayed gifs?

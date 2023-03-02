@@ -1,0 +1,1877 @@
+% **************************************************************************
+% * The TeX source for AMS journal articles is the publisher's TeX code    *
+% * which may contain special commands defined for the AMS production      *
+% * environment.  Therefore, it may not be possible to process these files *
+% * through TeX without errors.  To display a typeset version of a journal *
+% * article easily, we suggest that you either view the HTML version or    *
+% * retrieve the article in DVI, PostScript, or PDF format.                *
+% **************************************************************************
+% Author Package file for use with AMS-LaTeX 1.2
+%\controldates{10-APR-1996,10-APR-1996,10-APR-1996,23-APR-1996}
+\documentclass{bull-l}
+\usepackage{graphicx} 
+%\issueinfo{33}{3}{JUL}{1996}
+
+\usepackage{amssymb}
+\usepackage{upref}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Ann}{\operatorname{Ann}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\MM}{\operatorname{m}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Sym}{\operatorname{Sym}}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}[prop]{Theorem}
+\newtheorem{cor}[prop]{Corollary}
+
+\newtheoremstyle{pplain}%
+{}%                                   leave usual amount of space above
+{}%                                   leave usual amount of space below
+{\itshape}%                                   text is italic font
+{}%                                   indent the head 0pt
+{\bfseries}%                          print the heading bold
+{.}%                                  print  .  at the end of the head
+{.5em}%                               leave .5em space after the head
+{%
+\thmname{#1}%                         print the theorem name first
+\thmnumber{ CB#2}%                     print theorem number second 
+                                      % Note, space before open parens; no space
+\thmnote{ {\mdseries(#3)}}%   print any theorem note medium series, in parens
+}
+
+\theoremstyle{pplain}
+\newtheorem{thmcb}{Theorem}
+\newtheorem{concb}[thmcb]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem*{dfn}{Definition}
+
+%\newtheorem{thmcb}{Theorem CB}
+
+\begin{document}
+
+\title{Cayley-Bacharach theorems and conjectures}
+\author[D. Eisenbud]{David Eisenbud}
+\address {Department of Mathematics, Brandeis University, Waltham, Massachusetts
+02254-9110} 
+\email{eisenbud@math.brandeis.edu}
+\author[M. Green]{Mark Green}
+\address{Department of Mathematics, University of California, Los Angeles, Los
+Angeles, California 90095-1555}
+\email{mlg@math.ucla.edu}
+\author[J. Harris]{Joe Harris}
+\address{Department of Mathematics, Harvard University, Cambridge,
+Massachusetts 02138-2901}
+\email{harris@abel.math.harvard.edu}
+\subjclass{Primary 14N05, 14H05, 14-02; Secondary 13-03, 13H10}
+\date{March 24, 1995, and, in revised form, November 3, 1995}
+\begin{abstract}
+A theorem of Pappus of Alexandria, proved in the fourth century A.D., began a
+long development in algebraic geometry.  In its changing expressions one can
+see reflected the changing concerns of the field, from synthetic geometry to
+projective plane curves to Riemann surfaces to the modern development of
+schemes and duality.  We survey this development historically and use it to
+motivate a brief treatment of a part of duality theory.  We then explain one of
+the modern developments arising from it, a series of conjectures about the 
+linear conditions imposed by a set of points in projective space on the forms
+that vanish on them. We give a proof of the conjectures in a new special case.
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+%\contentsline{section}
+% {\numberline{}{Introduction}}{}
+% {\numberline {Part I:}The past}{}
+%\contentsline{subsection} 
+% {\numberline{1.1}Pappus, Pascal, and Chasles}{}
+% {\numberline{1.2}Cayley and Bacharach}{}
+% {\numberline{1.3}The twentieth century}{}
+% {\numberline{1.4}Proof of the final Cayley-Bacharach Theorem}{}
+%\contentsline{section}
+% {\numberline{Part II:}The future?}{}
+%\contentsline{subsection} 
+% {\numberline{2.1}Cayley-Bacharach Conjectures}{} 
+% {\numberline{2.2}A proof of the conjecture for $r\le 7$}{}
+%\contentsline{section}
+% {\numberline{}References}{}
+
+
+
+\section*{Introduction}
+Suppose that $\Gamma$ is a set of $\gamma$ distinct points in $\mathbb{R}^n$
+(or $\mathbb{C}^n)$.  In fields ranging from applied mathematics (splines and 
+interpolation) to transcendental numbers, and of course also in algebraic
+geometry, it is interesting to ask about the polynomial functions that vanish
+on $\Gamma$.  If we substitute the coordinates of a point $p$ of $\Gamma$ for
+the variables, then the condition that a polynomial $f$ vanishes at $p$ becomes
+a nontrivial linear condition on the coefficients of $f$.  Thus the vanishing
+of $f$ on $\Gamma$ is ensured by $\gamma$ linear conditions on the coefficients
+of $f$.  These $\gamma$ conditions are linearly independent when applied to the
+space of $\mathbb{R}[x_1,\dots,x_n]$ of all polynomials because, as is easily
+seen, there is a polynomial vanishing at all but any given point of $\Gamma$.
+
+However, we are usually interested in some finite-dimensional subspace of 
+\linebreak  
+$\mathbb{R}[x_1,\dots,x_n]$, typically the space of polynomials of degree at
+most a given number $d$.  In this case the $\gamma$ conditions are generally
+not independent.  As a trivial example, consider the three conditions imposed by
+three collinear points in $\mathbb{R}^2$, and take $m=1$.  A linear polynomial
+vanishing on any two of the points vanishes on the line joining them and thus
+automatically vanishes on the third point.  Thus the three points impose only
+two independent conditions on the polynomials of degree $\le 1$.  In general,
+if $\lambda$ of the $\gamma$ conditions imposed by $\Gamma$ suffice to imply
+all of them, and $\lambda$ is the least such number, then we say that $\Gamma$
+imposes $\lambda$ independent conditions on polynomials of degree $\le m$. 
+Since $\lambda\le \gamma$, and the natural first estimate for $\lambda$
+is that it should be ``near'' $\gamma$, we concentrate on the
+difference $\gamma-\lambda$, the ``failure of $\Gamma$ to impose independent 
+conditions on polynomials of degree $\le m$''.  There are of course many
+variants of the question.  Perhaps the most basic (and useful) is to take the 
+points in projective space and to ask about homogeneous forms of degree $m$
+instead of polynomials of degree at most $m$.
+
+The Cayley-Bacharach Theorem, in its classical form, may be seen as a result
+about the number of independent  conditions imposed on polynomials of given
+degree by certain sets of points in the plane.  The idea is that if the points
+lie on some algebraic plane curve $X$ of low degree, then the number of 
+conditions imposed by the points can be related to the geometry of $X$.  The
+result has a long and interesting history, starting with a famous result by
+Pappus of Alexandria, proved in the fourth century A.D.    As the methods and
+substance of algebraic geometry have changed over the years, the result has
+been successively generalized, improved, and reinterpreted, and this
+development continues today.
+
+The first part of this paper is purely expository: in it, we shall trace the
+evolution of the Cayley-Bacharach Theorem.  We give altogether nine versions of
+the result beginning with Pappus's Theorem and continuing with results of
+Pascal, Chasles, Cayley, and Bacharach.  The modern versions of the
+Cayley-Bacharach Theorem are many; the ideas used have to do with Gorenstein
+rings and are due to Macaulay, Gorenstein, Serre, and Bass.  We shall give a
+proof of Chasles's version of the theorem using the methods of projective
+geometry from the middle of the nineteenth century similar to those used 
+by Chasles,
+a  proof of Bacharach's version using the classical algebraic geometry of 
+linear series on curves in the style of the late nineteenth century, and the
+current proof by commutative algebra.   This last connects the geometric
+statement of the theorem to the Gorenstein property of the polynomial ring; the
+Cayley-Bacharach Theorem is finally part of duality theory, and Gorenstein
+rings seem to intervene in all modern treatments of duality in algebraic
+geometry.  (A little warning about our style of history is in order:  We have
+NOT preserved the terminology and ``look'' of the old works; rather, we try to
+interpret what the mathematicians of the last century were doing in modern
+terms.  We realize that such ``interpretations'' are often more accurately
+described as ``fictions''.  Our excuse is that our purpose is didactic rather
+than truly historical.)
+
+Our goal in this part of the paper is to show, in this example, how
+the ideas used in the modern treatment of the Cayley-Bacharach Theorem flow
+from classical techniques.  In particular we introduce some of the basic
+developments of modern commutative algebra---the Cohen-Macaulay and Gorenstein 
+properties, the Ext functor and the like---in the context of a concrete
+geometric problem, which may serve to motivate and explain them.
+
+One difficulty we have had in writing this report is that while the beginning
+of our story is accessible with only the most elementary considerations of
+curves in the plane, the latter part requires much more advanced ideas; in
+short, the level is uneven.  There are really three distinct stages in the
+proofs that we describe.  The first, as we have said, requires almost nothing
+but the definitions of projective space and polynomials.  The second uses the
+machinery of linear systems on curves, and ultimately the Riemann-Roch theorem.
+We have given a fairly complete but very quick description of what we need, so
+that the exposition is almost self-contained.  The third part uses the language
+of commutative algebra and  schemes.   
+We have tried to provide elementary definitions and have included
+proofs of results that are certainly well known to experts and accessible in
+advanced textbooks rather than referring the reader elsewhere.  In particular
+we have tried to define and motivate the ideas of commutative algebra that are
+necessary to understand the first properties of Gorenstein rings.  The second
+and third levels are treated independently---the reader can skip either of them
+without losing logical continuity.
+
+When reviewing the past, it is always tempting to try to predict the future. 
+In the second part of this paper, we propose a possible next step in
+Cayley-Bacharach theory, in the form of a conjecture.  This conjecture is
+itself a special case of a more general conjecture on the Hilbert functions of 
+points (or, more generally, zero-dimensional schemes) in projective space, which
+is described in \cite{EGH1} and \cite{EGH2}.
+
+To understand what this conjecture says, observe that the earliest forms of the
+Cayley-Bacharach Theorem may be interpreted as saying that certain sets of 
+points $\Gamma$ impose independent conditions on forms of certain degrees $d$. 
+Later forms compute the number of independent conditions in terms of the number
+of conditions imposed by some related set of points $\Lambda$.  One problem in
+using these statements is that one may know no more about $\Lambda$ than about
+$\Gamma$!   Thus it is interesting to return and ask what sets of points 
+actually impose independent conditions on forms of degree $d$.  Our conjectures
+are related to this question.  To understand the form they take, note first
+that if a set of points $\Gamma$ fails to impose independent conditions on
+forms of degree $d$, then any larger set of points fails too.  Thus it is
+interesting to ask about the minimal sets of points that fail to impose
+independent conditions on forms of degree $m$.  In the classical 
+Cayley-Bacharach setting the points in question are always given as a subset of
+the intersection of two curves of given degrees without common components.  Our 
+conjectures correspondingly concern subsets of sets of points that are
+intersections of $n$ hypersurfaces of given degrees $d_1,\dots,d_n$ in
+$\mathbb{P}^n$, whose intersection contains no curves.  Conjecturally they give
+the smallest number of points in such an intersection that can fail to impose
+independent conditions on forms of given degree $m$.
+
+We have succeeded in verifying this conjecture in a number of cases; we
+conclude the paper by giving the proof in one of these cases.
+
+There is another direction in which current activity is extending the 
+Cayley-Bacharach Theorem: Davis, Geramita, Robbiano, Kreuzer, and others have
+defined ``Cayley-Bacharach schemes'' and studied their properties.  For an idea
+of what is going on, the reader may consult Geramita, Kreuzer, and Robbiano
+\cite{GKR}.  We have  excluded this material only because nine versions of the 
+theorem seemed enough, and our purpose of introducing some of the commutative 
+algebra associated with Gorenstein rings was already served by what is here.
+
+In what follows we have used the term \emph{plane curve} always for algebraic
+plane curve.  The field of definition is actually unimportant.  Of course it
+was taken as $\mathbb{R}$ originally, and later as $\mathbb{C}$, and the naive
+reader would do well to think of these cases, but the expert will have no
+difficulty in adapting our arguments to the general case.
+
+\section*{Part I: The past} 
+\subsection*{{\rm 1.1.} Pappas, Pascal, and Chasles}
+The first case of the Cayley-Bacharach Theorem to have been discovered is
+literally ancient: it appears as Proposition 139 of Book VII of the
+\emph{Mathematical Collection} of Pappus of Alexandria in the fourth century
+A.D. (see Coxeter \cite{Co}).
+
+\begin{thmcb}[Pappus's Theorem] \label{thmcb1}
+Let $L$ and $M$ be two lines in the plane.  Let $p_1,p_2$, and $p_3$ be
+distinct points of $L$, and let $q_1,q_2$, and $q_3$ be distinct points of $M$,
+all distinct from the point $L\cap M$.  If for each $j\ne k\in\{1,2,3\}$ we let
+$r_{jk}$ be the point of intersection of the lines $\overline{p_jq_k}$ and $
+\overline{p_kq_j}$, then the three points $r_{jk} $ are collinear \textup{(}see
+Figure \textup{1)}.
+\end{thmcb}
+
+\begin{figure}
+\includegraphics{bull666l-fig-1}\label{fig:one}
+\caption{}
+\end{figure}
+
+Pappus's original proof used, in Coxeter's words, ``a laborious development of
+Euclid's methods.''  It is interesting to note that some notion of the
+projective plane (not formally introduced until very much later) is necessary if
+the statement we have given of Pappus's Theorem is to be true in all cases: It
+is perfectly possible to choose the points so that the lines
+$\overline{p_1q_2}$ and $\overline{p_2q_1}$ are parallel, in which case we
+would say that the ``point'' $r_{12}$ is on the line at infinity; the
+appropriate statement can be made in nonprojective terms by saying that in this
+case the line through the points $r_{13}$ and $r_{23}$ is parallel to the lines
+$\overline{p_1q_2}$ and $\overline{p_2q_1} $.  A still more degenerate case
+occurs when both the pairs of lines $\overline{p_1q_2}, \overline{p_2q_1}$ and
+$\overline{p_1q_3},\overline{p_3q_1}$ are parallel; then the statement is that
+all three of the points $r_{jk}$ lie on the line at infinity or, in elementary
+terms, that the last pair of lines---$\overline{p_2q_3},
+\overline{p_3q_2}$---is parallel too.  It may be seen from this simple example
+what a simplification the projective plane introduced!  We shall not give a
+separate proof of Pappus's Theorem, since it is an immediate special case of
+the following theorem.
+
+In the early part of the seventeenth century there was a new interest in
+geometry.  It included the geometry of perspective, which in the hands of
+Desargues became the geometry of projective space: Desargues's fundamental work
+of 1639 formally introduced the points at infinity and the line made from them.
+There was also a new reason to be interested in the geometry of conics, coming
+from Kepler's amazing discoveries about the orbits of planets in 1609.  The
+second avatar of the Cayley-Bacharach Theorem that appeared is a famous result
+of Pascal (again, see Coxeter \cite{Co}) that built on both these developments. 
+The statement was for Pascal a fundamental tool, by means of which he proved
+many properties of conics.  It was published under the title ``Essay Pour Les
+Coniques'' in a \emph{petit placard en forme d'affiche}---that is, a one page
+handbill---in 1640 and is reproduced in Struik \cite{S}.  The proof was
+not included.  Leibniz reports in a letter in 1676 that he studied it when he
+visited Paris, so we know that Pascal had a proof, but the manuscript has
+disappeared.
+
+\begin{figure}[t]
+\includegraphics{bull666l-fig-2}
+\caption{}\label{fig:two}
+\end{figure}
+
+\begin{thmcb}[Pascal's Theorem] \label{thmcb2}
+If a hexagon is inscribed in a conic in the projective plane, then the opposite
+sides of the hexagon meet in three collinear points.
+\end{thmcb}
+
+The line at infinity of the projective plane is again required, as the
+reader may see by considering the case of a regular hexagon inscribed in a
+circle.  Pascal was immediately inspired by Desargues's work and seems to have
+been quite aware of this situation.\footnote{Pascal wrote in his \emph{Essai}: 
+``$\dots$ M.\ Desargues of Lyons [is] one of the great minds of this time, and
+one of the best versed in mathematics, particularly in conics, whose writings
+on this subject, although few in number, give abundant proof of his knowledge to
+those who seek for information.  I should like to say that I owe the little
+that I have found on this subject to his writings, and that I have tried
+to imitate his method, as far as possible, in which he has treated the 
+subject.\ $\dots$'' (translation from Struik \cite{S}).}
+
+A little notation will make the relation of Pascal's Theorem to Pappus's 
+Theorem more transparent: Let $C$ be the plane conic, and let $p_1,p_2,p_3$ and
+$q_1,q_2$, and $q_3$ be six distinct points on $C$.  These points determine an
+inscribed hexagon if we join adjacent points in the order
+$p_1,q_2,p_3,q_1,p_2,q_3,p_1$.  This order is chosen so that the ``opposite
+sides'' are the pairs of lines $\overline{p_jq_k}$ and $\overline{p_kq_j}$
+where $i\ne j\in\{1,2,3\}$.  If we denote by $r_{jk}$ the point of intersection
+of these opposite sides, then the assertion is that the three points $r_{jk}$
+are collinear, as in Figure \ref{fig:two}.
+
+
+Pappus's Theorem becomes a special case of Pascal's Theorem if we allow the
+word ``conic'' to refer not only to an irreducible conic such as an ellipse or
+hyperbola but also to the union of two straight lines $L$ and $M$, which is a
+kind of limiting position of a hyperbola; the six points $p_i$ and $q_i$ must
+be taken with all the $p_i$ on one line and all the $q_i$ on the other, and all
+distinct from the intersection of the two lines, or the statement of Pascal's 
+Theorem becomes indeterminate (two of the lines $\overline{p_jq_k}$ and $
+\overline{p_kq_j}$ coincide)  or trivial (all the points lie on one of $L$ and
+$M)$.  From the algebraic point of view, this is natural because then a
+``conic'' is simply the zero locus of any nonzero quadratic polynomial,
+including products of linear forms.  The proof we shall give below applies to
+all such cases, though we could also deduce Pappus's Theorem from Pascal's by
+``continuity'', an important if slightly imprecise method of the early
+projective geometers, arguing that the six lines $\overline{p_jq_k}$ and $
+\overline{p_kq_j}$ appearing in Pappus's Theorem are the limiting positions of
+the sides of a hexagon inscribed in a conic as in Pascal's Theorem.
+
+\begin{figure}
+\includegraphics{bull666l-fig-3}
+\caption{Pascal's construction of the tangent line (at $p_1=q_1)$ to a conic.}
+\label{fig:three}
+\end{figure}
+
+One of Pascal's many applications of his theorem concerns the ``degenerate''
+case $p_1=q_2$: In this case he interprets the line $\overline{p_1q_2}$ of the
+``hexagon'' to be tangent to the conic at $p_1=q_2$; see Figure
+\ref{fig:three}.
+Since the theorem constructs two further lines that meet at a point of the line
+$\overline{p_1q_2}$, namely, $\overline{p_2q_1}$, and the line through $r_{13}$
+and $r_{23}$, it can be used to construct the tangent to the conic at $p_1$. 
+This application reflects a modern concern for what happens in the degenerate
+cases of geometric theorems; the justification for treating the degenerate
+chord as a tangent line would have been phrased by Pascal in terms of
+continuity, but would now be justified in the language of schemes.  In all the
+subsequent Cayley-Bacharach theorems that we shall discuss, such degenerate
+cases are allowed, and the proofs that we shall give in the most general
+cases explicitly include them.
+
+A third development in the first half of the seventeenth century put the work
+on the geometry of projective conics into the shade: this was the introduction
+by Descartes of coordinate geometry.  Perhaps because of the excitement
+generated by this development, along with the infinitesimal calculus, geometry
+moved in other directions, and it was about two hundred years before Pascal's 
+Theorem was fundamentally reexamined and extended.
+
+To understand the nature of the extension, note that in the transition from
+Pappus's Theorem to Pascal's Theorem the two lines $L$ and $M$ are confounded
+into a single conic and the two separate groups of points $\{p_1,p_2,p_3\}$ and
+$\{q_1,q_2,q_3\}$ are seen to be an arbitrary subdivision of a single group of
+six points on the conic, the vertices of the hexagon.  In both theorems we
+construct three further points $r_{ij}$ and a line on which they lie.  It was
+the beautiful insight of Michel Chasles, published in his \emph{Trait\'e des
+Sections Coniques} \cite{Ch},  that this last line could be combined with the
+conic in Pascal's Theorem and confounded into a cubic plane curve and that the
+group of six points and the remaining three could be taken to be any nine
+points on the cubic, with none distinguished from another.  It seems plausible
+that coordinates for the projective plane, which had recently been defined by 
+M\"obius and (in a way closer to the modern one) by Pl\"ucker, were necessary
+before arbitrary plane curves of higher degree, such as cubics, became
+attractive.  In any case, Chasles's result is both simpler and more powerful
+than Pascal's.  It is the result that commonly (though incorrectly) goes under
+the name Cayley-Bacharach.
+
+\begin{thmcb}[Chasles] \label{thmcb3}
+Let $X_1,X_2\subset \mathbb{P}^2$ be cubic plane curves meeting in nine points
+$p_1,\dots,p_9$.  If $X\subset \mathbb{P}^2$ is any cubic containing
+$p_1,\dots,p_8$, then $X$ contains $p_9$ as well.
+\end{thmcb}
+
+Pascal's Theorem follows if we take the cubics $X_1$ and $X_2$ to be the
+triangles formed by alternate edges of the hexagon,  $X_1=\overline{p_1q_2}
+\cup\overline{p_2q_3}\cup \overline{p_3q_1}$ and $X_2=\overline{p_1q_3}\cup 
+\overline{p_2q_1}\cup \overline{p_3q_2}$ in Figure \ref{fig:three}, and take
+$X$ to be the union of $C$ with the line $\overline{r_{12}r_{13}}$. The point
+$r_{23}$ also lies on $X_1\cap X_2$, so Chasles's Theorem says it must lie on
+the union of $C$ and $\overline{r_{12}r_{13}}$.  Since it does not lie on $C$,
+it must lie on $\overline{r_{12}r_{13}}$; that is, $r_{23}$ is collinear with
+$r_{12}$ and $r_{13}$; as required.  The theorem of Pappus is the degenerate
+case in which $X$ is the union of $L,M$, and $\overline{r_1r_2}$.
+
+Chasles's Theorem is the last in the sequence of theorems stated here that can
+be proved by purely elementary means, i.e., without invoking the residue 
+theorem or some other form of duality theory.  We shall prove it without making
+any assumptions about the smoothness or irreducibility of $X_1$ and
+$X_2$---that is, they can be the zero loci of any homogeneous cubic polynomials
+$F_1,F_2$ on $\mathbb{P}^2$.  All we shall need is the classical theorem of
+B\'ezout: Plane curves of degrees $d$ and $e$ cannot meet in more than $d\cdot
+e$  points unless they have a component in common (that is, unless the
+equations defining them have a common factor).  A refined form of B\'ezout's
+Theorem says that if the curves have no common component and meet in $d\cdot e$
+distinct  points, then the curves must each be nonsingular at these points and
+must meet transversely.  In particular the hypotheses of Theorem CB\ref{thmcb3} 
+rule out the possibility of $X_1$ or $X_2$ having multiple components, that is,
+$F_1$ or $F_2$ having repeated factors.  (In fact, the later versions of
+Cayley-Bacharach will apply to give very interesting and nontrivial statements
+even in these cases.)
+
+\begin{proof}[Proof of Chasles's Theorem]
+We introduce a piece of classical terminology: If $\Gamma=\{p_1,\dots,p_m\}
+\subset \mathbb{P}^2$ is any collection of $m$ distinct points, we shall say
+that $\Gamma$ \emph{imposes} $l$ \emph{conditions} on polynomials of degree $d$
+if in the vector space of polynomials of degree $d$ on $\mathbb{P}^2$ the
+subspace of those vanishing at $p_1,\dots,p_m$ has codimension $l$, or 
+equivalently if in the projective space of curves of degree $d$ the subspace of
+those containing $\Gamma$ has codimension $l$. We denote the number of 
+conditions imposed by $\Gamma$ on forms of degree $d$ by $h_\Gamma(d)$, and
+call $h_\Gamma$ the \emph{Hilbert function} of $\Gamma$.
+
+With this language, Chasles's Theorem is equivalent to the following statement:
+If $\Gamma=\{p_1,\dots,p_9\}$ is the intersection of two plane cubics and $
+\Gamma'=\{p_1,\dots,p_8\}$ is any subset omitting one point, then $\Gamma$ and
+$\Gamma'$ impose the same number of conditions on cubics.  We shall actually
+prove the stronger statement that $\Gamma$ and $\Gamma'$ each impose exactly
+eight conditions on cubics; that is, that the eight points of $\Gamma'$ impose
+independent conditions on cubics and the ninth point in $\Gamma$ imposes a 
+condition dependent on these eight.
+
+Part of this is obvious: the nine points of $\Gamma$ visibly fail to impose
+independent conditions on cubics, since the 10-dimensional vector space of
+cubic polynomials contains at least a two-dimensional subspace of polynomials
+vanishing on $\Gamma$, namely, that spanned by the defining equations $F_1,F_2$
+of $X_1$ and $X_2$.  The remaining ingredient of the proof is the ``only if''
+part of the $d=3$ case of the following proposition, which for clarity we shall
+state and prove for arbitrary $d$.
+\renewcommand{\qed}{}
+\end{proof}
+
+\begin{prop} \label{prop:one}
+Let $\Omega=\{p_1,\dots,p_n\}\subset \mathbb{P}^2$ be any
+collection of $n\le 2d+2$ distinct points.  The points of $\Omega$ fail to
+impose independent conditions on curves of degree $d$ if and only if either
+$d+2$ of the points of $\Omega$ are collinear or $n=2d+2$ and $\Omega$ is
+contained in a  conic.
+\end{prop}
+
+This line of thought leads to the numerical character of Gruson-Peskine and to
+a theorem of Ellia-Peskine \cite{EP} giving a general criterion forcing a
+subset of a set of points in the projective plane to lie on a curve of low
+degree.
+
+To complete the proof of Chasles's Theorem using Proposition \ref{prop:one}, it
+suffices by what we have already said to show that if $\Gamma'$ consists of
+eight of the nine points in which two plane cubics intersect, then $\Gamma'$
+imposes independent conditions on cubics.  We take $\Omega=\Gamma'$, so $n=8$,
+and $d=3$ in Proposition \ref{prop:one}.  By B\'ezout's Theorem, if $\Gamma'$ lay
+on a conic $C$, then both $X_1$ and $X_2$ would have to contain (a component
+of) $C$; and similarly if four or more points of $\Gamma$ lay on a line $L$,
+then $X_1$ and $X_2$ would necessarily contain $L$.  Since we have supposed
+that $X_1$ and $X_2$ have no component in common, this is impossible.
+
+\begin{proof}[Proof of Proposition \ref{prop:one}]
+The ``if'' direction of the proposition is easy: If $d+2$ of the points of $
+\Omega$ lie on a line $L$, then by B\'ezout's Theorem any curve of degree $d$
+containing $\Omega$ must contain $L$.  The subset of curves of degree $d$
+containing $L$ has the same dimension as the set of curves of degree $d-1$, so
+the codimension of the set of curves containing $L$ is only
+$\binom{d+2}{2}-\binom{d+1}{2}=d+1$. The remaining $n-(d+2) $ points of
+$\Omega$ impose at most $n-(d+2)$ conditions on curves of degree $d$, so we see
+that $\Omega$ imposes at most $n-1$ conditions.  A similar argument, using the
+fact that it is only $2d+1$ conditions to contain an irreducible conic, works
+in the second case.
+
+For the more serious ``only if'' direction, we do induction first on the degree
+$d$ and second on the number $n$ of points.  By the induction hypothesis on
+the number $n$ of points we may assume that any proper subset of $\Omega$ does
+impose independent conditions on curves of degree $d$.  Thus the statement that
+$\Omega$ itself fails to impose independent conditions amounts to saying that
+\emph{any plane curve of degree $d$ containing all but one of the points of $
+\Omega$ contains} $\Omega$.
+
+To start the inductions, we note first that Proposition \ref{prop:one} is
+trivial for $d=1$: any set $\Omega$ of $n\le 4$ points in the plane fails to
+impose independent conditions on lines if and only if either $n=3=d+2$ and the
+points of $\Omega$ are all collinear, or $n=4$.  Second, for arbitrary $d$, the
+result is easy for $n\le d+1$: it suffices by the remark above to exhibit a
+curve of degree $d$ containing all but one given point $p_n$ of $\Omega$, and
+we may do this by taking the union of general lines  $L_i$ through $p_i$ for
+$i=1,\dots,n-1$ and an arbitrary plane curve of degree $d-n+1$ not passing
+through $p_n$.
+
+We now take $d$ arbitrary and suppose that $n>d+1$.  Suppose first that
+$\Omega$ contains $d+1$ points lying on a line $L$.  Assume that no further 
+point of $\Omega$ lies on $L$, and let $\Omega'\subset \Omega$ be the
+complementary set of $n-d-1\le d+1$ points of $\Omega$.  We claim that
+$\Omega'$ must fail to impose independent conditions on curves of degree $d-1$;
+otherwise, we could find a curve of $X$ degree $d-1$ containing all but any one 
+point of $\Omega'$, and then the union $L\cup X$ would be a curve of degree $d$
+containing all but one point of $\Omega$.  By induction $\Omega'$ must consist
+of exactly $d+1$ points on a line $M$.  Thus either $L$ contains $d+2$ points
+of $\Omega$ or $n=2d+2$ and $\Omega$ lies on the conic $L\cup M$.
+
+Next suppose only that some line $L$ contains $l\ge 3$ points of $\Omega$.  By
+the same argument as in the last paragraph, the remaining $n-l$ points of $
+\Omega$ must fail to impose independent conditions on curves of degree $d-1$
+and so must include at least $d+1$ collinear points.  We are thus back in the
+case considered in the preceding paragraph.
+
+We are now done except in the case where $\Omega$ contains no three collinear 
+points.  Choose any three points $p_1,p_2,p_3\in \Omega$, and let $\Omega'$ be
+the complement of these three.  If for any $i$ the points of
+$\Omega'\cup\{p_i\}$ impose independent conditions on curves of degree $d-1$,
+we are done: for then we can find a curve $C$ of degree $d-1$ containing $
+\Omega'$ but not $p_i$, and the union of this curve and the line joining $p_j$
+and $p_k$ is a curve of degree $d$ containing all but exactly one point of $
+\Omega$.  Thus we may assume that $\Omega'\cup\{p_i\}$ fails to impose
+independent conditions on curves of degree $d-1$.  Since it cannot contain
+$d+1$ collinear points, we have by induction $n=2d+2$, and for each $i$ the set
+$\Omega'\cup\{p_i\}$ lies on a conic $C_i$.  Note that in case $d=2$ we are
+done, since six points fail to impose independent conditions on conics if and
+only if they lie on a conic.  On the other hand, if $d\ge 3$, then $\Omega'$
+contains at least five points, no three collinear, and so there can be at most
+one conic containing $\Omega$.  Thus all the conics $C_i$ must be equal to a
+single conic curve $C$, which then contains all of $\Omega$.
+\end{proof}
+
+There is a much quicker proof of Theorem CB\ref{thmcb3}, which exploits the
+relation of the theorem to residue theory; since this relation belongs to the
+next part of our story, we shall give it there.
+
+\subsection*{{\rm 1.2.} Cayley and Bacharach}
+Arthur Cayley, probably the most distinguished mathematician in this story,
+does not play a glorious role in it.  Chasles's book appeared when he was
+sixteen.  In 1843, when he was twenty-two, he published a note stating an
+extension of Chasles's result to the case of intersections of curves of degree
+higher than 3.  The basis of this extension was again the idea of counting 
+conditions imposed by sets of points.  His first observation was that if curves
+$X_1$ and $X_2$ of degrees $d$ and $e$ meet in a collection $\Gamma$ of $d\cdot
+e$ points, then for any $k$ the number $h_\Gamma(k)$ of conditions imposed by $
+\Gamma$ on forms of degree $k$ is independent of the choice of curves $X_1$ and
+$X_2$; it can be written down explicitly as
+\[h_\Gamma(k)=\binom{k+2}{2} -\binom{k-d+2}{2}-\binom{k-e+2}{2}+\binom
+{k-d-e+2}{2}\]
+where the binomial coefficient $\binom{a}{2}$ is to be interpreted as 0 if
+$a<2$.  He went on to conclude that if $\Gamma'$ is any subset of $h_\Gamma(k)$ 
+points of $\Gamma$, then a form of degree $k$ vanishing on the points of $
+\Gamma'$ must vanish on $\Gamma$.  (The case $d=e=k=3$ is Chasles' Theorem.)
+
+Both parts of Cayley's statement are rather remarkable.  The first part is
+equivalent to a special case of the whole: any curve $X$ passing through all
+the points of the intersection of $X_1$ and $X_2$ is defined by a polynomial
+that is a linear combination (with polynomial coefficients) of the polynomials
+defining $X_1$ and $X_2$.  That is, if $F=0,G=0$, and $H=0$ are the equations
+of $X_1,X_2$, and $X$ respectively, then there exist polynomials $A$ and $B$
+such that $H=AF+BG$.  This assertion was used by Cayley in the case where the
+two curves meet transversely.  He apparently regarded it as evident; he applies
+it without comment or reference.  But the statement is rather subtle: in modern
+language, it says that the polynomial ring in three variables is
+Cohen-Macaulay.  It was finally given a proof by Max Noether, first in the
+special case Cayley used \cite[p.\ 314]{Ca} and then in general \cite{No} in a
+paper devoted to filling this gap\footnote{Noether writes, ``In einer Reihe von
+geometrischen und functionentheoretischen Arbeiten findet sich eine L\"ucke, die
+das Folgende auszuf\"ullen bestimmt ist.''  (``In a series of geometric and 
+function-theoretic papers there is a gap, which the following is intended to
+fill.'')  It would be interesting to know just when and how, in between 1843 and
+1873, it came to be considered a gap.}, under the name of the ``Fundamental
+Theorem of Algebraic Functions'' (now often---and perhaps
+unfortunately---called ``Max Noether's $AF+BG$ Theorem'').
+
+Given Noether's Theorem and the fact that the dimension of the space of all
+forms of degree $k$ in three variables is $\binom{k+2}{2}$, the formula for $h_
+\Gamma$ given above is easy: it just says that the vector space of forms of
+degree $k$ that can be written as $AF+BG$ is the sum of the dimension of the
+space of possible $A$'s (of degree $k-d)$ and the space of possible $B$'s (of
+degree $k-e)$, minus the dimension of the space of pairs $(A,B)$ such that
+$AF+BG=0$.  Since $F$ and $G$ have no factors in common, $AF+BG=0$ can hold
+only if $A$ is a multiple of $G$, and $B$ is minus the corresponding multiple
+of $F$, and the multiplier has degree $k-d-e$.   Thus the dimension of the
+space of these pairs is the dimension of the space of forms of degree $k-d-e$.
+
+By the argument given in the proof of Chasles's Theorem above, the second part
+of Cayley's statement amounts to a broad generalization of 
+Proposition~\ref{prop:one}---but without any hypotheses!  What is necessary is
+precisely the assertion that the points of the subset $\Gamma'$ impose
+independent conditions on forms of degree $k$.  This would of course be true if
+the points were general points.  Cayley does comment on this point.  He says, 
+``$\dots$and though the $[\dots]$ points are not perfectly arbitrary, 
+there appears
+to be no reason why the relation between the positions of these points should
+be such as to prevent'' the conditions from being independent.
+
+Despite this ``appearance'', points may have their own reasons and can indeed
+fail to impose independent conditions.  The conclusion of Cayley's Theorem is
+simply false!  Perhaps the first example is the following: Let $L$ be a line in
+the plane, and let $\Gamma'=\{p_1,p_2,p_3\}$ be three points on $L$.  Let $X_1$
+and $X_2$ be two nonsingular cubic curves containing $\Gamma'$.  It is easy to
+arrange that $X_1$ and $X_2$ meet in a collection of nine distinct points $
+\Gamma$. We have $h_\Gamma(1)=3$ (that is, $\Gamma$ does not lie on any lines),
+and thus if the points of $\Gamma'$ imposed independent conditions on lines,
+every line containing them would contain all of $\Gamma$ (that is, there would
+be no lines containing them).  This is of course nonsense: The points of $
+\Gamma'$ do lie on the line $L$, and none of the other points of
+$X_i$ lie on $L$, or $L$ would be a component of $X_i$.
+
+What is needed is a way of measuring the dependence of the conditions imposed
+by the points of $\Gamma'$. More powerful tools were soon to be available.  
+Riemann's remaking of complex function theory led Brill and Noether to an
+extensive theory of linear series on algebraic curves; Noether's Fundamental 
+Theorem of Algebraic Functions was in fact one of the tools they developed for
+ the purpose.  This theory was powerful enough to supply the missing term in 
+Cayley's equation; the fundamental paper of Brill and Noether appeared in 1874,
+and its tools were used by Bacharach to correct Cayley's error.  Bacharach's
+work seems to have earned him a professorship in Erlangen.  He presented
+his findings in 1881 in his inaugural dissertation.  Perhaps the problem with
+Cayley's ``Theorem'' had been recognized for some time.  Bacharach published a
+somewhat extended version of his results in \cite{Ba}: this paper contains the
+subtle missing term, and we shall give his statement below.  In the case just
+given it amounts to the observation that the fact that the points of $\Gamma'$
+impose dependent conditions on lines is equivalent to the statement that the
+``residual'' set $\Gamma'':=\Gamma-\Gamma'$ imposes dependent conditions on
+conics; that is, the other six points of $\Gamma$ actually lie on a conic.
+
+It may be illuminating to see the ideas of linear series applied first in the
+simple case studied by Chasles; in fact, without any analysis or struggle, the
+method shows that if two curves of any degree $d$ intersect a curve of degree
+$e\ge 3$ in sets $\Gamma$ and $\Gamma'$ differing by at most one point, then
+in fact $\Gamma=\Gamma'$.  We shall give the easy proof after developing the
+ideas from the theory of curves on which it is based.
+
+For simplicity, the reader may assume at this point that the ground field is
+the complex numbers, although the expert will have no trouble adapting the
+argument to the general case.  If $X\subset \mathbb{P}^2$ is a nonsingular 
+algebraic plane curve of degree $d$, then by a \emph{divisor} $D$ on $X$ we
+mean a formal linear combination, with integer coefficients, of the points of
+$X$; by the \emph{degree} of $D$ we will mean the sum of the coefficients.  The
+divisor is called effective if all the coefficients are nonnegative.  Any
+rational function $f$ on $X$ determines a divisor (f), the divisor of its zeros
+minus the divisor of its poles.  Divisors $D$ and $D'$ are said to be \emph{
+linearly equivalent}, written $D\sim D'$, if they differ by the divisor of a
+rational function.
+
+The same notions can be defined for an arbitrary plane curve $X$ (and even for
+more general curves), but some care is necessary.  First, if $X$ is irreducible
+and singular and the divisors in question involve only smooth points, the most
+interesting situation for us, we need only change the definition of linear
+equivalence to require the rational function $f$ to be regular and nonzero at
+the singular points of the curve, so that the linear equivalence takes place
+entirely inside the smooth locus.  If $X$ is reducible, then in addition we
+must require that the rational functions have only isolated zeros and poles on
+the curve, not along a whole component.  If we wish to include the singular 
+points as divisors in some way, there is an additional complication, one that
+was not faced squarely in the nineteenth century: divisors must be interpreted
+as what are now called \emph{Cartier} divisors.  For this final refinement see
+any modern book on algebraic geometry, for example Hartshorne \cite{H}.
+
+For example, if $C$ is any plane curve intersecting $X$ only in isolated smooth 
+points of $X$, we define the \emph{divisor cut on} $X$ \emph{by} $C$ to be the
+divisor $C\cdot X:=\Sigma a_ip_i$, where the $p_i$ are the points of
+intersection of $C$ with $X$ and $a_i$ is the multiplicity of intersection of
+$C$ with $X$ at $p_i$.  If $C$ and $C'$ are plane curves of the same degree not
+containing $X$, defined by homogeneous polynomials $F$ and $F'$, the divisors
+$C\cdot X$ and $C'\cdot X$ are linearly equivalent: their difference is the
+divisor of the rational function $F/F'$ restricted to $X$.  In this context we
+may give a refined version of the B\'ezout Theorem:
+
+\begin{thm}[B\'ezout]\label{thm:two}
+If $C$ is a plane curve of degree $e$ not containing $X$, the degree of
+the divisor cut on $X$ by $C$ is $d\cdot e$.
+\end{thm}
+
+One of the central results proved by Brill and Noether was the following.  The
+original version takes the curve $X$ to be irreducible, but the difference is
+mostly a matter of how the definitions are formulated.
+
+\begin{thm}[Restsatz: Brill-Noether \cite{BN}] \label{thm:three}
+If $X$ is a plane curve, then the linear series cut on $X$ by plane curves of
+any degree $d$ is complete\textup{:} that is, given a plane curve $C$ of degree
+$d$ not containing any component of $X$ and a divisor $D$ linearly equivalent
+to $C\cdot X$, there is a plane curve $C'$ of degree $d$ not containing any 
+component of $X$ such that $C'\cdot X=D$.
+\end{thm}
+
+\begin{proof}  %[Proof of Proposition~\ref{prop:five}]
+We need the following form of Max Noether's $AF+BG$ Theorem (which itself is a
+consequence of Lasker's Unmixedness Theorem; see Theorem~\ref{thm:eight}
+below): If a curve $Y$ contains $C\cdot X$, then the equation $H$ of $Y$ may be
+written as $AF+BG$, where $F$ is the equation of $C$ and $G$ is the equation of
+$X$.  It follows that the curve $Y'$ with equation $H-BG$ meets $X$ in the same
+way $Y$ does; that is, $Y'\cdot X=Y\cdot X$, and $Y'$ contains $C$ as a 
+component.
+
+The hypothesis of Corollary~\ref{cor:five} asserts that there is a rational 
+function $\varphi$ on $X$ whose divisor $(\varphi)$ satisfies $C\cdot
+X-\Gamma=D+(\varphi)$. Adding $\Gamma$ to both sides, we reduce at once to the
+case where $\Gamma=0$.  The rational function $\varphi$ may be expressed as
+$P/Q$ where $P$ and $Q$ are homogeneous polynomials in three variables of the
+same degree.  Let $Y$ and $Z$ be the curves defined in the plane by $P$ and $Q$
+respectively.  We have $C\cdot X+Z\cdot X=D+Y\cdot X$.  Multiplying together
+the equations of $C$ and $Z$, we get the equation of a curve $Z'$ such that
+$Z'\cdot  X=D+Y\cdot X$.  In particular, $Z'$ contains $Y\cdot X$.  By Max
+Noether's Theorem, we may replace $Z'$ by a curve $Z''$ containing $Y$ and such
+that $Z''\cdot X=Z'\cdot X=D+Y\cdot X$.  If $S$ is the equation of $Z''$, then
+since $Z''$ contains $Y$ we see that $P$ divides $S$.  If we write $C'$ for the
+curve defined by $S/P$, which we may represent as $C'=Z''-Y$, then $C'\cdot
+X=D$.
+\end{proof}
+
+Noether's Fundamental Theorem of Algebraic Functions mentioned above was a
+fundamental tool in the proof of Theorem~\ref{thm:three} given by Brill and
+Noether.  From a modern point of view, this is not surprising. 
+Theorem~\ref{thm:three} is the statement that the homogeneous coordinate ring
+of the curve $X$ has the Cohen-Macaulay property, which is equivalent to saying
+that the polynomial ring itself has this property, and Noether's Fundamental 
+Theorem is essentially equivalent to this assertion too!  See the discussion
+after Theorem~\ref{thm:eight} for more information.
+
+Given this, the proof of Chasles's Theorem CB\ref{thmcb3}, and even its
+generalization given above, becomes trivial: If $X$ is a plane curve of degree
+$e\ge 3$ and $C$ and $C'$ are plane curves of some degree $d$ meeting $X$
+in divisors $D$ and $D'$ that differ by at most one smooth point, say,
+$D-D'=p-q$, then $p$ and $q$ are linearly equivalent.  Choose a general line
+$L$ through $p$; we will show that $L$ passes through $q$, and thus $p=q$.  By
+the Restsatz there is some line $L'$ that cuts out the divisor  $L\cdot X-p+q$. 
+Because $e\ge 3$, the divisor $L\cdot X-p$ already contains at least two
+points, and thus spans $L$, so $L=L'$ as required.  (Chasles's Theorem is the
+special case $d=e=3$.)
+
+In fact a much stronger statement, still short of the full version of
+Bacharach, can be derived by related methods and will play a role in the
+sequel, so we pause to examine it.  
+
+\begin{thmcb}  \label{thmcb4}
+Let $X_1,X_2\subset \mathbb{P}^2$ be plane curves of degrees $d$ and $e$
+respectively, meeting in a collection of $d\cdot e$ distinct points
+$\Gamma=\{p_1,\dots,p_{de}\}$.  If $C\subset \mathbb{P}^2$ is any plane curve
+of degree $d+e-3$ containing all but one point of $\Gamma$, then $C$ contains
+all of $\Gamma$.
+\end{thmcb}
+
+In the terms of Bacharach's Theorem CB\ref{thmcb5}, this result is true because
+any set $\Gamma'$ consisting of all but one point of $\Gamma$ really does
+impose independent conditions on forms of degree $d+e-3$.
+
+To apply the Brill-Noether theory in a naive form to this result, we shall have
+to assume that one of the curves  $X_i$, say, $X_1$, is nonsingular.  (The
+expert could avoid this hypothesis, either by using a more subtle version of 
+Riemann-Roch or by using Bertini's Theorem: Since we are assuming  that $\Gamma$
+consists of $d\cdot e$ distinct points, the refined form of B\'ezout's Theorem
+shows that $X_1$ and $X_2$ meet transversely, and then a classic theorem  of
+Bertini says that (if $d>e)$ we can find a nonsingular curve $X'_1$ that meets
+$X_2$ in the same set of points $\Gamma$ by adding to the equation of $X_1$ an
+appropriate multiple of the polynomial defining $X_2$.  But since later
+versions of the theorem will be more general anyway, we shall not go further
+into this here.)  This is in fact not the approach we shall adopt ultimately to
+prove the final and most general version of the Cayley-Bacharach theorem, and
+the reader who wishes to can certainly skip the proofs of statements
+CB\ref{thmcb4}--CB\ref{thmcb7} or just glance at them to get a sense of the
+ingredients without suffering any logical gaps.
+
+Using the language of the theory of curves and denoting by $H$ the divisor cut
+on a plane curve $X$ by a line $L\subset \mathbb{P}^2$, we can state a
+surprising property of the divisor $(d-3)H$, from which Theorem CB\ref{thmcb4}
+will follow immediately.
+
+\begin{prop}\label{prop:four}
+Let $X\subset \mathbb{P}^2$ be a nonsingular plane curve of degree $d$, and let
+$p$ be a point of $X$.  Every effective divisor linearly equivalent to
+$(d-3)H+p$ actually contains $p$.
+\end{prop}
+
+This baffling statement loses (some of) its mystery when viewed as a very
+special case of the Riemann-Roch Theorem (in fact, of Riemann's Theorem itself,
+though we shall not worry about this distinction).  To explain this, we first
+note that any two rational differential forms on $X$ have a ratio that is a
+rational function on $X$, and thus the divisor of zeros minus the divisor of
+poles of any rational differential form is a well-defined divisor class on $X$,
+called the \emph{canonical divisor class}, and denoted $K_X$.   Abusing
+notation in a traditional way, we shall also denote by $K_X$ any divisor in
+this class.  Next, we recall that if the ground field is $\mathbb{C}$, then $X$
+may be viewed as a Riemann surface, and as such it has a genus $g$ (the
+``number  of handles''); this invariant and the fact that it is a compact
+orientable surface specifies its topology completely.  There is a miraculous
+connection between the topology of $X$ and the geometry on $X$: the degree of
+$K_X$ is $2g-2$.  (In the case of a general ground field, this can be taken as
+the definition of the genus.) Now for a plane curve it is not hard to compute
+$K_X$ by writing down a specific rational differential form.  The result is a
+special case of what algebraic geometers call the \emph{adjunction formula},
+and it tells us that
+\[K_X\sim (d-3)\cdot H.\]
+The divisor $(d-3)H$ that appears in Proposition~\ref{prop:four} is ``really''
+$K_X$.  It is worth noting another consequence of the adjunction formula in
+passing.  By B\'ezout's Theorem the degree of the divisor $(d-3)H$ is $d(d-3)$,
+so we get $2g-2=(d-3)d$, or $g=(d-1)(d-2)/2$.
+
+To exploit the identification of $(d-3)H$ with $K_X$, we must use the 
+Riemann-Roch Theorem, which we now introduce.  For any divisor $D$ on $X$, we
+shall denote by $L(D)$ the vector space of rational functions $f$ such that $D$
+plus the divisor of $f$ is effective.  We denote the vector space dimension of
+$L(D)$ by $l(D)$.  For example, Liouville's Theorem asserts that the only
+rational functions with no zeros or poles are the constant functions, so 
+$l(0)=1$.
+
+With these definitions, the Riemann-Roch Theorem asserts that for any
+divisor $D$ of degree $n$ on $X$,
+\[l(D)=n-g+1+l(K_X-D)\]
+where $g=(d-1)(d-2)/2$ is the genus of  $X$.  For example,
+$l(K_X)=(2g-2)-g+1+l(0)=g-1+1=g$.
+
+\begin{proof}[Proof of Proposition~\ref{prop:four}]
+Let $p$ be a point of $X$.  The degree of the divisor $K_X+p$ is $2g-1$, so by 
+Riemann-Roch we have 
+\[l(K_X+p)=(2g-1)-g+1+l(-p)=g+l(-p).\]
+But the degree of $-p$ is $-1$, so no effective divisor can be equivalent to
+$-p$; thus $l(-p)=0$.  It follows that $l(K_X+p)=g=l(K_X)$.  But given any
+effective divisor $D$ linearly equivalent to $K_X$, we may make a divisor $D+p$ 
+linearly equivalent to $K_X+p$, the map $D\mapsto D+p$, as a map  $L(D)\to
+L(D+p)$, is actually a vector space homomorphism.  It is obviously injective,
+and since the two spaces have the same dimension, they must be equal.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \rm CB\ref{thmcb4} 
+(under the assumption  that
+$X_1$ is nonsingular)]\hspace{\fill}Suppose\linebreak  
+$C\subset \mathbb{P}^2$ is a plane curve of degree $d+e-3$ containing
+all of $X_1\cap  X_2$ except for the point $p=p_{de}$.  We can write the
+divisor cut on $X_1$ by $C$ as
+\[C\cdot X_1=p_1+\dots+p_{de-1}+q_1+\dots+q_{d(d-3)+1}.\]
+We have $K_{X_1}\sim (d-3)\cdot H$, while $p_1+\dots+p_{de}\sim e\cdot H$ and
+$C\cdot X_1\sim (d+e-3)\cdot H$.  Thus we can rewrite the equation as
+\[(d+e-3)\cdot H\sim e\cdot H-p+q_1+\dots+q_{d(d-3)+1}\]
+or, equivalently,
+\begin{equation*} 
+\begin{split}
+q_1+\dots +q_{d(d-3)+1}&\sim (d-3)\cdot H+p\\
+&\sim K_{X_1}+p.
+\end{split}
+\end{equation*} 
+By Proposition~\ref{prop:four}, we get $p\in\{q_1,\dots,q_{d(d-3)+1}\}$.  In
+particular, $p\in C$.
+\end{proof}
+
+Another way to express this last argument, more explicitly invoking  the
+Residue Theorem, is to choose $(x,y)$ affine coordinates on the plane; let
+$f(x,y),g(x,y)$, and $h(x,y)$ be the equations of the curves $X_1,X_2$, and $C$
+in these coordinates; and consider the differentials
+\[\omega=\frac {dx}{\partial f/\partial y}\]
+and
+\[\varphi=\frac{h(x,y)} {g(x,y)}\omega\]
+on $X_1$. The form 
+$\omega$ itself is regular and nonzero on the affine part of $X_1$,
+having zeros of order $d-3$ along the divisor cut on $X_1$ by the line at
+$\infty$.  It follows that $\varphi$ is regular at the points at $\infty$, with
+simple poles exactly at the points of $X_1$ contained in $X_2$ but not in $C$. 
+There is at most one such point, namely, $p$.  By the Residue Theorem, the sum
+of the residues of any differential form must be 0, so a differential on a
+curve cannot have exactly one simple pole.  We conclude that $p\in C$.
+
+A more careful application of Riemann-Roch yields the version of
+Cayley-\linebreak  
+Bacharach that was actually proved in Bacharach \cite{Ba}.  It relates
+the number of conditions imposed on curves of various degrees by two
+complementary subsets of the intersection of two plane curves.  We need one
+more fact from the general theory of plane curves: Let $X$ be a nonsingular
+plane curve of degree $d$, and let $C$ be a plane curve of degree $k$.  The
+refined form of B\'ezout's Theorem says that by counting each point with an
+appropriate multiplicity, we may regard the intersection of $C$ and $X$ as a
+divisor on $X$ of degree $d\cdot k$, which we will denote by $C\cdot X$.  The
+fact we want is a corollary of Theorem \ref{thm:three}. We may express it in
+classical language as 
+%expressed in classical language by saying that the family of
+%plane curves containing $\Gamma$ ``cuts out the complete linear series of
+%divisors equivalent to $C\cdot X-\Gamma$''.  In our terms this says:
+
+\begin{cor}\label{cor:five}
+Let $X$ be a nonsingular plane curve, and let $C$ be any plane curve not
+containing any component of $X$.  Let $\Gamma$ be any effective divisor on $X$. 
+The family of plane curves containing $\Gamma$ cuts out on $X$ the complete 
+linear series of divisors linearly equivalent to 
+%If an effective divisor $D$ on $X$ is linearly equivalent to 
+$C\cdot X-\Gamma$. %,
+%then $D=C'\cdot X-\Gamma$ for some other plane curve $C'$.
+\end{cor}
+
+
+We shall exploit Corollary~\ref{cor:five} to express the number of
+conditions imposed on forms of degree $m$ by a set of points of $X$ in
+terms that are accessible to the Riemann-Roch Theorem.  The precise result is:
+
+\begin{cor} \label{cor:six}
+Let $X$ be a smooth plane curve of degree $d$, and let $\Lambda\subset X$ be a
+set of $\lambda$ points, regarded as a divisor on $X$.  The number of linear 
+conditions imposed by $\Lambda$ on forms of degree $m$ is equal to $l(mH)-l(mH-
+\Lambda)$.  In particular, the \textup{``}failure of $\Lambda$ to impose
+independent conditions on forms of degree $m$\textup{''} is 
+$\lambda-(l(mH)-l(mH-\Lambda))$.
+\end{cor}
+
+\begin{proof} The ``number of linear conditions imposed by $\Lambda$ on forms
+of degree $m$'' is the dimension $t$ of the vector space of forms of degree $m$
+modulo those vanishing on $\Lambda$.  The number $l(mH)$ is the dimension of
+the vector space $L(mH)$, which by Corollary~\ref{cor:five} (applied in the
+case when $\Gamma$ is the empty set) is the dimension of the space of forms of
+degree $m$ modulo those vanishing on $X$.  Similarly, the number
+$l(mH-\Lambda)$ is by Corollary~\ref{cor:five} the dimension of the space of
+forms of degree $m$ vanishing on $\Lambda$ modulo those vanishing on all of
+$X$.  Thus $t=l(mH)-l(mH-\Lambda)$.  The ``failure of $\Lambda$ to impose
+independent conditions is simply the number of points $\lambda$ of $\Lambda$
+(the maximal number of conditions that $\Lambda$ could impose) minus the number
+of conditions actually imposed, or $\lambda-(l(mH)-l(mH-\Lambda))$.
+\end{proof}
+
+\begin{thmcb}[Bacharach] \label{thmcb5}
+Let $X_1,X_2\subset \mathbb{P}^2$ be plane curves of degrees $d$ and $e$
+respectively, intersecting in $d\cdot e$ points  $\Gamma=X_1\cap
+X_2=\{p_1,\dots,p_{de}\}$, and suppose that $\Gamma$ is the
+disjoint union of subsets $\Gamma'$ and $\Gamma''$.  Set $s=d+e-3$.  If $k\le
+s$ is a nonnegative integer, then the dimension of the vector space of forms of
+degree $k$ vanishing on $\Gamma'$ \textup{(}modulo those containing all 
+of $\Gamma)$ is equal to the failure of $\Gamma''$ to impose independent 
+conditions on forms of degree $s-k$.
+\end{thmcb}
+
+This theorem is one possible departure point for a beautiful series of 
+mathematical developments known as liaison theory.   Liaison is the equivalence
+relation gotten by allowing a variety $X'$ to be replaced by the variety $X''$
+residual to it for some complete intersection $X$ containing $X'$.
+
+Note that Theorem CB\ref{thmcb4} is just the case where $k=s$ and $\Gamma''$ is
+a single point $p=p_{de}$: Since any point $p\in \Gamma$ imposes one 
+independent condition on polynomials of degree 0, the conclusion is that there
+are no hypersurfaces of degree $k$ containing $\Gamma-\{p\}$ except those
+containing $\Gamma$.  Theorem CB\ref{thmcb5} says further that any curve of
+degree $s-1=d+e-4$ containing all but two points of $\Gamma$ contains $\Gamma$
+and there exists a curve of degree $s-1$ containing all but three points
+$p,q,r\in \Gamma$ but not containing $\Gamma$ if and only if $p,q$, and $r$ are 
+collinear, and so on.
+
+Once again we give the proof under the assumption that $X_1$ is nonsingular;
+the more general case may be treated using Bertini's Theorem, as indicated
+before.
+
+\begin{proof}[Proof \rm (under the assumption that $X_1$ is nonsingular)]
+As before, denote by $H$ the hyperplane divisor on $X_1$; we shall consider $
+\Gamma,\ \Gamma'$, and $\Gamma''$ as divisors on $X_1$ as well.   The dimension
+of the family of curves of degree $k$ containing $\Gamma'$, modulo those
+containing all of $\Gamma$, is the same as the number of conditions imposed by
+$\Gamma$ on curves of degree $k$ minus the number of conditions imposed by $
+\Gamma'$, that is, $h_\Gamma(k)-h_{\Gamma'}(k)$.  By
+Corollary~\ref{cor:five}, the families of plane curves of degree $k$
+containing $\Gamma$ and containing  $\Gamma'$ cut on $X_1$ the linear series of
+divisors equivalent to $k\cdot H-\Gamma'$ and $k\cdot H-\Gamma=(k-e)\cdot H$
+respectively.   By Riemann-Roch we have
+\begin{equation*} 
+\begin{split}
+&l(k\cdot H-\Gamma')-l((k-e)\cdot H)\\
+&\qquad =kd-\gamma'-g+l((d-3-k)\cdot H+\Gamma')\\
+&\qquad \quad -[(k-e)d-g+l((d-3-k+e)\cdot H)]\\
+&\qquad =d\cdot e-\gamma'-[l((d-3-k)\cdot H+\Gamma')-l((d-3-k+e)\cdot H)].
+\end{split}
+\end{equation*}
+Now, since the divisors $\Gamma'$ and $\Gamma''$ add up to $e\cdot D$ and their
+degrees  correspondingly add up to $e\cdot d$, we can rewrite this as
+\[=\gamma-[l((s-k)\cdot H)-l((s-k)H-\Gamma'')]\]
+which is the failure of $\Gamma''$ to impose independent conditions on curves
+of degree $s-k$.
+\end{proof}
+
+There is an immediate generalization of Theorem CB\ref{thmcb5} to a statement
+about the transverse intersection of $n$ hypersurfaces $X_i$ of degrees $d_i$
+in $\mathbb{P}^n$.  Here the role of the number $d+e-3$ in the preceding
+statement is played by $s=\Sigma d_i-n-1$.
+
+\begin{thmcb} \label{thmcb6}
+Let $X_1,\dots, X_n$ be hypersurfaces in $\mathbb{P}^n$ of degrees
+$d_1,\dots,d_n$ respectively, meeting transversely, and suppose that the
+intersection $\Gamma=X_1\cap \dots \cap X_n$ is the disjoint union of subsets $
+\Gamma'$ and $\Gamma''$.  Set $s=\Sigma d_i-n-1$.  If $k\le s$ is a nonnegative
+integer, then the dimension of the family of curves of degree $k$ containing $
+\Gamma'$ \textup{(}modulo those containing all of $\Gamma)$ is equal to the
+failure of $\Gamma''$ to impose independent conditions of curves of
+\textup{``}complementary\textup{''} degree $s-k$.
+\end{thmcb}
+
+\begin{proof}[Proof \rm (in case $X=X_1\cap \dots\cap X_{n-1}$ is nonsingular)]
+The proof follows exactly the lines of the proof of the last version, modulo
+the following changes: in the setting of the current theorem we have
+$\Gamma\sim d_n\cdot H$, so we replace $e$ in the previous proof with $d_n$. 
+In the new setting the adjunction formula tells us that
+\begin{equation*} 
+\begin{split}
+K_X&\sim \left(\sum^{n-1}_1 d_i-n-1\right) \cdot H\\
+&=(s-d_n)\cdot H,
+\end{split}
+\end{equation*}
+so we replace $d-3$ in the previous proof by $s-d_n$.
+\end{proof}
+
+\subsection*{{\rm 1.3.} The twentieth century}
+The next stage in the evolution of the Cayley-Bacharach Theorem may seem in
+some sense a purely technical advance: we shall eliminate the hypothesis that
+the hypersurfaces $X_i$ intersect transversely and replace it with the weaker
+one that they intersect in isolated points; that is, in modern language, we no
+longer assume that the scheme $\Gamma=X_1\cap \cdots \cap X_n$ of intersection
+of the $X_i$ is reduced, only that it is zero-dimensional.  In fact, though,
+this is the generalization that in our view transforms the problem and
+ultimately unifies the approaches above.
+
+Unfortunately, the geometric content of the new version is slightly less
+intuitive; the intersections must be treated as \emph{schemes}.  Some would
+even claim that what we are about to do amounts to nothing other than
+forgetting geometry and working directly in algebra.  But we feel that the
+geometric language still carries the clearest picture.  
+So to read further the reader will have to accept the notion that
+\emph{every} ring (or at least every finitely generated algebra over our still
+unnamed ground field) corresponds to some geometric object, a scheme, in a way
+extending the correspondence of reduced finitely generated algebras over an 
+algebraically closed field with algebraic sets.  For a relatively simple
+introduction to this notion, the reader may consult Eisenbud-Harris
+\cite{EH2}.  In any case, we shall not use any deep property of this notion,
+and the algebra that we need we shall introduce from scratch.
+
+Before we can state this version of the Cayley-Bacharach Theorem, we have to
+generalize the notion of expressing the intersection $X_1\cap \dots \cap X_n=
+\Gamma$ as a disjoint union $\Gamma'\cup \Gamma''$ to the case where $\Gamma$
+is an arbitrary zero-dimensional scheme.  In general, we would like to define a
+notion of ``residual subscheme'' $\Gamma''$ to a subscheme $\Gamma'$ of a 
+zero-dimensional scheme $\Gamma$.  This should play the role of a
+``complementary subset'', except that the support of $\Gamma''$ may overlap
+with that of $\Gamma'$.  We want this definition to have two basic properties:
+the degrees of the two subschemes $\Gamma'$ and $\Gamma''$ should add up to
+that of $\Gamma$, and the process should be symmetric; i.e., $\Gamma'$ should
+be in turn the subscheme of $\Gamma$ residual to $\Gamma''$.  An obvious
+desideratum for the residual subscheme is that the product of a function
+vanishing on $\Gamma'$ and one vanishing on $\Gamma''$ should vanish on
+$\Gamma$.  We shall define the residual subscheme as the maximal subscheme with
+this property.  In other terms:
+
+\begin{dfn}
+Let $\Gamma$ be a zero-dimensional scheme with coordinate ring $A(\Gamma)$. 
+Let $\Gamma'\subset \Gamma$ be a closed
+subscheme and $I_{\Gamma'}\subset A(\Gamma)$ its ideal.  
+By the subscheme of $\Gamma$ \emph{residual} to $\Gamma'$ we shall
+mean the subscheme defined by the ideal
+\[I_{\Gamma''}=\Ann (I_{\Gamma'}/I_\Gamma).\]
+\end{dfn}
+
+The problem is simply that in general this definition has neither of the 
+properties we desire, as can be seen already in the case of $\Gamma\subset
+\mathbb{A}^2$ a ``fat point'', that is, 
+\[I_\Gamma=(x^2,xy,y^2)\subset k[x,y].\]
+If we take $\Gamma'$ the reduced point---that is, $I_{\Gamma'}=(x,y)$---then by
+our definition the residual scheme $\Gamma''$ will again be the reduced point,
+which violates the degree condition.  (There are also more complicated examples
+in which $\deg(\Gamma')+\deg (\Gamma'')>\deg (\Gamma)$.) At the same time, if
+we take $\Gamma'$ a subscheme of degree 2---say, for example,
+$I_{\Gamma'}=(x,y^2)$---then the residual scheme $\Gamma''$ to $\Gamma'$ will
+be again the reduced point, violating the requirement that the residual to the
+residual be the original subscheme.  These examples suggest 
+the impossibility of any definition satisfying the 
+conditions we have set.
+
+We are saved in the present circumstance because $\Gamma$ is not an arbitrary
+zero-dimensional scheme; it is a complete intersection.  In particular, the 
+local rings $\mathcal{O}_{\Gamma,p}$ (which are the localizations of
+$A(\Gamma)$ at its maximal ideals) are \emph{Gorenstein} rings, which is
+exactly the property we need for the definition of residuation to work.
+
+Although Gorenstein rings are quite commonplace in commutative algebra, their
+usual rather abstract definition has given them the reputation in some
+geometric circles of being arcane and only for experts.  In the present
+circumstance, however, we do not need the general definition: since $\Gamma$ is
+zero-dimensional and the rings $\mathcal{O}_{\Gamma,p}$ 
+are correspondingly finite-dimensional vector spaces over the ground field, 
+we can say in concrete terms what it means for the local 
+ring $A=\mathcal{O}_{\Gamma,p}$ at a point 
+$p\in \supp(\Gamma)$ to be Gorenstein.  To start with the
+simplest definition:
+
+\begin{dfn} 
+Let $A$ be a local Artinian ring, $\mathfrak{m}\subset A$ its maximal ideal.  We
+say that $A$ is \emph{Gorenstein} if the annihilator of $\mathfrak{m}$ has 
+dimension one as a vector space over $K=A/\mathfrak{m}$.
+\end{dfn}
+
+%(The Cohen Structure Theorem guarantees that any ring $A$ as in the definition
+%contains a copy of its residue class field $K$, and we shall regard $A$ as a
+%$K$-algebra.  The naive reader might simply want to assume that $A$ is a 
+%$K$-algebra from the outset; this will be the case in the geometric situation
+%coming from Cayley-Bacharach theorems for projective space over an
+%algebraically closed field.)
+
+In general, for any local Artinian ring $A$ with maximal ideal $\mathfrak{m}$, 
+the annihilator of $\mathfrak{m}$ as an $A$-module is called the \emph{socle}
+of $A$.  To see what the condition that the socle of $A$ have length 1 means,
+observe first of all that we know $\mathfrak{m}^k=0$ for $k$ large, and let $
+\mathfrak{m}$ be the largest integer $k$ such that $\mathfrak{m} ^k\ne 0$. 
+Certainly everything in $\mathfrak{m}^m$ annihilates $\mathfrak{m}$, so that
+the Gorenstein condition above at least implies that $\mathfrak{m}^m$ has
+length one, i.e.,
+\begin{equation}\label{eq:ast}
+\mathfrak{m}^{\MM}\cong K. \tag {$*$}
+\end{equation}
+In fact, it says more: given any nonzero $f\in A$, we claim there exists a
+$g\in A$ such that the product is nonzero, but $fg\in \mathfrak{m}^{\MM}$.  
+This is easy: if $l$ is the largest integer such that $f\cdot \mathfrak{m}^l\ne
+0$, then any element of $f\cdot \mathfrak{m}^l$ annihilates $\mathfrak{m}$ and
+so must lie in $\mathfrak{m}^{\MM}$.  
+
+Now suppose that $A$ contains a field.  It follows from the Cohen Structure 
+Theorem (\cite[Theorem 7.7]{E}) that $A$ contains a copy of its residue field
+$K$.  (The reader might simply assume that $K$ is the ground field, the usual
+geometric situation.)  
+The condition that the annihilator of
+$\mathfrak{m}$ is one-dimensional thus also implies that
+\begin{equation} \label{eq:astast}
+\begin{split}
+&\text{Given any $K$-linear map $\rho A\to \mathfrak{m}^{\MM}$ that restricts to}\\
+&\text {the identity on $\mathfrak{m}^{\MM}$, the pairing }\\
+&\text{$A\times A\to A\rho \mathfrak{m}^{\MM}\cong K$ 
+given by multiplication}\\
+&\text{is 
+a nondegenerate pairing on $A$ as  a vector
+space over $K$.}
+\end{split} \tag {$**$}
+\end{equation}
+
+In fact, it is the case conversely that the two assertions \eqref{eq:ast}
+and \eqref{eq:astast} together are equivalent to the Gorenstein condition.  To
+see this, observe that \eqref{eq:ast} and \eqref{eq:astast} together in turn
+imply that there exists a $K$-linear map $A\to K$ such that the composition
+\[Q:A\times A\to A\to K\]
+is a nondegenerate pairing on the $K$-vector space $A$. On the other hand, we
+see that this implies the Gorenstein condition: Since the maximal ideal 
+$\mathfrak{m} \subset A$ has codimension one as a $K$-vector space, the 
+orthogonal complement $\mathfrak{m}^\perp$ of $\mathfrak{m}$ with respect to
+the pairing $Q$ on $A$ will have dimension one, and this certainly contains the
+annihilator of $\mathfrak{m}$.  We thus have an alternative characterization of
+Gorenstein Artinian rings:
+
+\begin{prop}\label{prop:seven}
+Let $A$ be an Artinian ring with residue field $K$.  The ring $A$ is Gorenstein
+iff there exists a $K$-linear map $A\to K$ such that the composition
+\[Q:A\times A\to A\to K,\]
+where the first map is multiplication in $A$, is a nondegenerate pairing on the
+$K$-vector space $A$.
+\end{prop}
+
+It may possibly be easier to visualize the Gorenstein condition in case $A$ is
+a graded ring.  The Gorenstein condition then says that 
+
+The top graded component $A_m$ of $A$ has length $1$,
+
+\noindent
+and
+
+for every pair $k,l$ of nonnegative integers with $k+l=m$, the pairing
+\[A_k\times A_l\to A_m=K\]
+
+given by multiplication is a nondegenerate pairing of $K$-vector spaces.
+
+Having described the Gorenstein condition for Artinian rings, it is
+possible to state the condition for general local rings.  One bit of
+terminology: if $S$ is any local ring with maximal ideal $\mathfrak{m}$, we say
+that a sequence $(F_0,\dots, F_k)$ of elements of $\mathfrak{m}$ 
+is \emph{regular} if for
+each $i=0,\dots,k$, $F_i$ is a nonzerodivisor in $S/(F_0,\dots,F_{i-1})$; we
+say that $(F_0,\dots,F_k)$ is a maximal regular sequence if it cannot be
+extended to a regular sequence $(F_0,\dots,F_{k+1})$, 
+i.e., if every element of the maximal ideal of $S/(F_0,\dots,F_k)$ is a
+zerodivisor.  We then make the 
+
+\begin{dfn}
+A local ring $S$ is Gorenstein if for every maximal regular sequence
+$(F_0,\dots,F_k)$ of elements of $S$ the quotient $A=S/(F_0,\dots,F_k)$ is a
+Gorenstein Artinian ring, in the sense above.
+\end{dfn}
+
+For the reader's interest we mention that the ring $S$ is called Cohen-Macaulay
+if, in the situation above, the quotient $A$ is simply assumed Artinian; thus
+the Gorenstein property includes Cohen-Macaulay.
+
+It follows from Proposition \ref{prop:nine} below that the Gorenstein condition
+on the quotient 
+$S/(F_0,\dots,F_k)$ is independent of the maximal regular sequence 
+$(F_0,\dots,F_k)$, so that we could just as well replace the ``every'' in 
+the preceding definition with ``some''.  We shall put off until section
+1.4 a proof that the local
+rings of a zero-dimensional complete intersection scheme $\Gamma$ are 
+Gorenstein. (For a general
+discussion of the definitions and properties of Gorenstein rings, see Eisenbud
+\cite[Ch.\ 21]{E}; for a different discussion of the connection with
+Cayley-Bacharach, see Davis-Geramita-Orecchia \cite{DGO}.)
+
+
+The point is that if the local rings of $\Gamma$ are Gorenstein, then our  
+definition of the residual subscheme to a subscheme of $\Gamma$ does 
+satisfy the two conditions we laid down: we simply observe that the ideal
+of the residual subscheme $\Gamma''$ to a given subscheme $\Gamma'\subset
+\Gamma$ is the orthogonal complement, with respect to the pairing $Q$, of the
+ideal $I_{\Gamma'}$ of $\Gamma'$.  This tells us immediately that $I_{\Gamma'}$
+and $I_{\Gamma''}$ have complementary dimensions as vector subspaces of $A$, so
+that $\deg(\Gamma')+\deg(\Gamma'')=\deg(\Gamma)$; and of course since the 
+orthogonal complement of the orthogonal complement of $I_{\Gamma'}$ will again
+be $I_{\Gamma'}$, the residual subscheme of the residual subscheme of $\Gamma'$
+will again be  $\Gamma'$.  With this said, we may state the next version of
+Cayley-Bacharach.
+
+\begin{thmcb} \label{thmcb7}
+Let $X_1,\dots,X_n$ be hypersurfaces in $\mathbb{P}^n$ of degrees
+$d_1,\dots,d_n$, and suppose that the intersection $\Gamma=X_1\cap \dots\cap
+X_n$ is zero-dimensional. Let $\Gamma'$ and $\Gamma''$ be subschemes of
+$\Gamma$ residual to one another in $\Gamma$, and set $s=\Sigma d_i-n-1$. If
+$k\le s$ is a nonnegative integer, then the dimension of the family of curves
+of degree $k$ containing $\Gamma'$ \textup{(}modulo 
+those containing all of $\Gamma)$ is
+equal to the failure of $\Gamma''$ to impose independent conditions of curves
+of complementary degree $s-k$.
+\end{thmcb}
+
+A proof of this statement could be given along the lines of the preceding proof
+by introducing the \emph{dualizing sheaf} $\omega_X$ of the curve (that is, 
+one-dimensional scheme) $X=X_1\cap \dots\cap X_{n-1}$ and proving a
+Riemann-Roch/duality type theorem relating the global sections of a sheaf $
+\mathcal{F}$ on $X$ to the first cohomology of the sheaf $\Hom(\mathcal{F},
+\omega_X)$.  But we don't have to do this: Theorem CB\ref{thmcb7} suggests yet
+a further (and, for now, final) generalization, from which the last statement
+will follow readily and which admits a relatively elementary proof!  We shall
+now state this final version of Cayley-Bacharach and then indicate 
+how it implies the last version.
+
+Our final generalization of the Cayley-Bacharach Theorem will be expressed in
+terms of the homogeneous coordinate ring of $\Gamma$.  We first introduce some
+notation.  As before, we let $X_1,\dots,X_n\subset \mathbb{P}^n$ be
+hypersurfaces intersecting in a zero-dimensional scheme $\Gamma$.  We let
+$S=K[Z_0,\dots,Z_n]$ be the homogeneous coordinate ring of $\mathbb{P}^n$ and
+let $F_i(Z)$ be the homogeneous polynomial of degree $d_i$ defining the
+hypersurface $X_i$. We write $I(\Gamma)\subset S$ for the ideal of homogeneous 
+polynomials vanishing on  $\Gamma$ and set $R=S/I(\Gamma)$, the homogeneous
+coordinate ring of $\Gamma$.  In keeping with our algebraic point of view, we
+will now write $h_R(k)$ for what we used to call $h_\Gamma(k)$, the number of 
+conditions imposed by $\Gamma$ on forms of degree $k$; it is just the vector
+space dimension of $R_k$, the $k$th graded component of $R$.
+
+We have had occasion to use Max Noether's $AF+BG$ theorem several times
+already, and we shall need a more powerful version of it in the sequel.  This
+is the Lasker's Unmixedness Theorem, which extends Noether's Theorem to an
+assertion about homogeneous \emph{sequences of parameters}.  We say that a 
+sequence of homogeneous forms $F_1,\dots,F_s$ is a sequence of parameters if
+the algebraic set defined by the vanishing of $F_1,\dots,F_s$ (either in
+$\mathbb{A}^{n+1}$ or in $\mathbb{P}^n$, it comes to the same thing) has 
+codimension $s$, the number of forms.
+
+\begin{thm}[Lasker] \label{thm:eight}
+If $F_1,\dots,F_s\in S$ is a sequence of parameters and $\Gamma\ne \varnothing
+$ is the scheme
+in $\mathbb{P}^n$ that is the intersection of the hypersurfaces defined by the
+$F_i$, then every polynomial vanishing on $\Gamma$ is a linear combination of
+the $F_i$; equivalently \textup{(}in case the ground field is
+infinite\textup{)} there exists a linear form $L$ that is a nonzerodivisor
+modulo $(F_1,\dots,F_s)$.  
+\end{thm}
+
+Noether's Theorem is just the case $n=2$. (The
+development of Noether's Theorem does not end here: it was extended by Macaulay
+\cite[sections 48--53]{M} to systems of parameters in other rings and became
+the basis of the theory of Cohen-Macaulay rings, which may be defined as local
+rings for which the Unmixedness Theorem is true; see Nagata \cite{Na}.)
+
+Next, we do something that may strike the geometrically oriented reader as a
+bit odd: we let  $H\subset \mathbb{P}^n$ be a general hyperplane (specifically,
+one not meeting the support of $\Gamma)$, $L$ the linear form defining $H$,
+and introduce the quotient ring
+\[A=R/(L)=S/(L,F_1,\dots,F_n).\]
+Now, if we think of $R$ simply as the homogeneous coordinate ring of the
+projective scheme $\Gamma$, this makes no apparent sense: the ideal
+$(L,F_1,\dots,F_n)$ defines the empty set.  It makes much more sense if we
+think of $R$ as the affine coordinate ring of the cone $\widetilde \Gamma$ over
+$\Gamma$  in affine space $\mathbb{A}^{n+1}$ (Figure 
+\ref{fig:four}): then $A$ is the coordinate ring
+of the hyperplane section of $\widetilde \Gamma$ corresponding to a hyperplane
+meeting $\widetilde \Gamma$ at the origin, and it is not unreasonable to hope
+that the scheme structure of this intersection reflects the global geometry of
+$\Gamma$.
+
+\begin{figure}
+\includegraphics{bull666l-fig-4}
+\caption{}
+\label{fig:four}
+\end{figure}
+
+To see how this works, observe that $R$ and $A$ are graded rings and that $L$
+is a nonzerodivisor in $R$.  It follows that the Hilbert function of $A$
+(which is again a graded ring) will be the first difference function of the
+Hilbert function of $R$:
+\[h_A(m)=h_R(m)-h_R(m-1).\]
+Moreover, the same is true for any quotient $R'=R/I'$ and corresponding
+$A'=R/(I',L)$, as long as $L$ is a nonzerodivisor modulo $I'$.  Thus for any 
+subscheme  $\Gamma'\subset \Gamma$ we let $\overline{I'}$ be the image in 
+$A=R/(L)$ of the ideal $I'$ of $\Gamma$ and write
+\begin{equation*} 
+\begin{split}
+&h^0(\mathbb{P}^n,I_{\Gamma'}(k)) -h^0(\mathbb{P}^n,I_\Gamma(k))\\ 
+&\qquad=h_R(k)-h_{R'}(k)\\
+&\qquad =\sum^k_{j=0} (h_A(j)-h_{A'}(j))\\
+&\qquad =\sum^k_{j=0}\dim _{K} (\overline {I'}_j).
+\end{split}
+\end{equation*}
+
+Now let $i(l)$ denote the failure of the subscheme $\Gamma'$ to impose
+independent conditions on hypersurfaces of a given degree $l$.  It is likewise
+the case that we can measure $i(l)$ in terms of the ring $R'$: we have
+\[i(l)=\deg (\Gamma')-h_{R'}(l)\]
+so that the successive differences
+\[i(l)-i(l+1)=h_{R'}(l+1)-h_{R'}(l).\]
+Thus
+\[i(l)=\sum^\infty_{j=l+1}h_{R'/(L)}(l).\]
+Of course, the sum need only extend over the finite range of $j\ge l+1$ for
+which $\overline{I'}_j\subsetneqq R_j$, that is, $h_{R'/(L)}(l)\ne 0$.  
+
+The crucial result, which we prove in the next section, is that the ring $A$ is
+itself Gorenstein, with socle in degree $m$.  This means that we get a
+nondegenerate pairing
+\[Q:A\times A\to A\to A_m\cong K.\]
+Let $\Gamma''\subset \Gamma$ be the subscheme residual to $\Gamma$, and let
+$I''\subset R$ be its idea; let $\overline{I''}$ in $A$.  We observe that the
+ideal $\overline{I''}\subset R$ is just the annihilator of $\overline{I'}$ with
+respect to the pairing $Q$: clearly they annihilate each other, and the sum of
+their codimensions (as $K$-vector spaces) in $A$ is equal to the dimension $d$
+of $R$.  In particular, the dimension of the $j$th graded piece of
+$\overline{I'}$ is the codimension of the $(m-j)$th graded piece of
+$\overline{I''}$.
+
+Summing this equality over $j=0,1,\dots,l$ yields the statement: \emph{the
+number of hypersurfaces of degree $l$ containing $\Gamma'$} (\emph{modulo those
+containing} $\Gamma)$ \emph{is equal to the failure of $\Gamma''$ to impose
+independent conditions on hypersurfaces of degree} $m-1-l$.  This, of course,
+is exactly the statement of our last version of Cayley-Bacharach! 
+Cayley-Bacharach thus turns out to be simply the statement that the ring $A$ is
+Gorenstein, in other words, the special case $d_0=1$ of the 
+
+\begin{thmcb} \label{thmcb8}
+If $F_0,\dots,F_n\in K[Z_0,\dots,Z_n]$ are homogeneous polynomials of degrees
+$d_0,\dots,d_n$ forming a sequence of parameters \textup{(}i.e., having no
+common zeros in $\mathbb{P}^n)$, then the ring
+\[A=K[Z_0,\dots,Z_n]/(F_0,\dots,F_n)\]
+is Gorenstein, with socle in degree $\Sigma d_i-n-1$.
+\end{thmcb}
+
+Note that in terms of the definition of the Gorenstein condition this statement
+is equivalent (modulo specifying the degree of the socle, which is elementary)
+to the shorter
+
+\begin{thmcb} \label{thmcb9}
+The polynomial ring $K[Z_0,\dots,Z_n]$ is Gorenstein.
+\end{thmcb}
+
+This is our final version of the Cayley-Bacharach Theorem.  Whether it does in
+fact convey a deeper understanding of the phenomena expressed in the original 
+theorems of Pappus, Pascal, and Chasles, or represents merely the addition of a
+layer of technical machinery, we leave to the reader.  Perhaps the best
+criterion is the simplicity of the proof, which appears in the following
+section.
+\subsection*{{\rm 1.4.} Proof of the final Cayley-Bacharach Theorem}
+\label{subsec:onefour}
+In this section we \nolinebreak 
+shall, \linebreak  
+as advertised, give a proof ``from scratch'' of the
+final version of the Cayley-Bacharach Theorem.  We also owe the reader the
+verifications of two statements made along the way: that the local rings of a 
+zero-dimensional complete intersection subscheme $\Gamma\subset\mathbb{P}^n$
+are Gorenstein (the reader will recognize this as a weaker version of 
+the final Cayley-Bacharach Theorem) and that the ideal
+$(F_1,\dots,F_k)\subset K[Z_1,\dots,Z_n]$ generated by a sequence of parameters
+is saturated.
+
+As for the proofs, these involve properties of the Ext functor.  They are
+nonetheless elementary in spirit: in fact, all we shall use is the basic 
+definition of the Ext functors as right-derived functors of the functor Hom. 
+In particular, we do not actually calculate any Ext groups (other than Hom) or
+use any of their geometric or algebraic properties.  Rather, as is often the
+case with homological functors, we simply use the exact sequences associated to
+them to transport information from one setting to another, in this case, from
+one quotient of the polynomial ring to another.
+
+To begin with, one piece of terminology.  Let $S$ be any local ring with
+maximum ideal $\mathfrak{m}$ and residue field $K$, and $M$ any finitely
+generated graded $S$-module.  We say that a sequence $(F_0,\dots,F_k)$  of 
+elements of $\mathfrak{m}$ is an $M$-\emph{regular sequence} (or just 
+$M$-\emph{sequence}) if for each $i=0,\dots,k$, $F_i$ is a non-zero-divisor for
+the module $M/(F_0,\dots,F_{i-1})M$.  Of course, we say that $(F_0,\dots,F_k)$
+is a maximal $M$-sequence if it cannot be extended to an $M$-sequence
+$(F_0,\dots,F_{k+1})$ that is, if every element of $\mathfrak{m}$ is a
+zerodivisor for $M/(F_0,\dots,F_k)M$.
+
+All the needed results will follow directly from
+
+\begin{prop} \label{prop:nine}
+With the above notation, if $(F_0,\dots,F_k)$ is a maximal $M$-sequence, then
+\begin{align*}
+\Ext^i(K,M)&=0 \qquad  \text{for all }i\le k, \text{ and}\\
+\Ext^{k+1}(K,M)&=\Hom (K,M/(F_0,\dots,F_k)M)\ne 0.
+\end{align*}
+\end{prop}
+
+Before we prove this, let's see how it implies all the assertions made so far
+about the algebra of the rings $R$ and $A$ associated to a complete
+intersection in $\mathbb{P}^n$.
+
+To begin with, the most immediate implication is simply that \emph{all maximal
+$M$-sequences contain the same number $k$ of elements}, $k$ being characterized
+as the smallest integer such that $\Ext^k(K,M)\ne 0$.  In particular, in case
+$M=S$ we see that all maximal regular sequences in the ring $S$ have the same
+number of elements; this number is called the \emph{depth} of $S$. Now, in 
+case $S=K[Z_0,\dots,Z_n]$ is the polynomial ring, $(Z_0,\dots,Z_n)$ is visibly
+a maximal regular $S$-sequence, and it follows then that \emph{all maximal
+regular sequences in $K[Z_0,\dots,Z_n]$ have $n+1$ elements}.  This, finally,
+means that any regular sequence $(F_1,\dots,F_n)$ is \emph{not} maximal, i.e.,
+that the ring $K[Z_0,\dots,Z_n]/(F_1,\dots,F_n)$ contains nonzerodivisors of
+positive degree, i.e., that the ideal $(F_1,\dots,F_n)\subset S$ is saturated.
+
+Next, observe that the socle of a local Artinian ring $A$ with residue field
+$K$ is the module $\Hom(K,A)$; thus in particular $A$ will be Gorenstein if and
+only if $\Hom(K,A)\cong K$.  Now, applying the Proposition with $M=S$, we see
+that if $S$ is any local ring with residue field $K$ and $(F_0,\dots,F_k)$ is a
+maximal regular sequence in $S$, then
+\[\Hom_A(K,A)=\Hom_S(K,A)=\Ext^{k+1}(K,S)\]
+is independent of the particular maximal regular sequence!  Thus one quotient
+$S/(F_0,\dots,F_k)$ will be Gorenstein only if any such quotient is.  We have
+thus verified the remark made immediately following the definition of
+Gorenstein rings.  In particular, since the quotient
+$K[Z_0,\dots,Z_n]/(Z_0,\dots,Z_n)\cong K$ is trivially Gorenstein, it follows
+that $K[Z_0,\dots,Z_n]/(F_0,\dots,F_n)$ is  Gorenstein for any maximal regular 
+sequence $(F_0,\dots,F_n)$, thus completing the proof of Theorem CB\ref{thmcb9}.
+
+\begin{proof}[Proof of Proposition~\ref{prop:nine}]
+The argument here will be by induction on $k$, the inductive step being easy
+and the hard part being the first case $k=0$.  For the inductive step, we just
+observe that since $F_0$ is a nonzerodivisor for the module $M$, we have an
+exact sequence of $S$-modules
+\[0\to M\to M\to M/F_0M\to 0\]
+where the first map is multiplication by $F_0$. Moreover, since $F_0\in
+\mathfrak{m}$ annihilates the module $K=S/\mathfrak{m}$, the induced map on
+$\Ext^*(K,M)$ is zero.  Thus we have for each $l$ a three-term exact sequence
+\[0\to \Ext^l(K,M)\to \Ext^l(K,M/F_0M)\to \Ext^{l+1}(K,M)\to 0\]
+which establishes the inductive step: assuming the result for the module
+$M/F_0M$, with its maximal regular sequence $F_1,\dots,F_k$, we deduce first
+that $\Ext^i(K,M)=0$ for $i\le k$ and then that
+\begin{equation*} 
+\begin{split}
+\Ext^{k+1}(K,M)&\cong  \Ext^k(K,M/F_0M)\\
+&\cong \Hom(K,M/(F_0,\dots,F_k)M)\ne 0.
+\end{split}
+\end{equation*}
+
+The hard part, as we indicated, is the initial step.  We know that if $k\ge
+0$---i.e.,  $\mathfrak{m}$ does contain a nonzerodivisor for $M$---then
+$\Hom(K,M)=0$; we have to establish that conversely if $k=-1$---that is, if
+every element of $\mathfrak{m}$ is a zerodivisor for $M$---then $\Hom(K,M) \ne
+0$.  This amounts to the statement of
+\renewcommand{\qed}{}
+\end{proof}
+
+\begin{prop} \label{prop:ten}
+If every element $F\in \mathfrak{m}$ kills some element of $M$, then there
+exists an element $\alpha\in M$ killed by all of $\mathfrak{m}$.
+\end{prop}
+
+\begin{proof} For each element $\alpha\in M$, let $I_\alpha\subset S$ be the
+ideal $\Ann(\alpha)$ of elements of $S$ that kill $\alpha$; our hypothesis is
+that $\mathfrak{m}$ is the union of the ideals $I_\alpha$.  Of course, we need
+only look at the maximal elements of the set of ideals $\{I_\alpha\}$, and
+these are prime ideals: if $I_\alpha$ is maximal, and $FG\in I_\alpha$ and
+$G\notin I_\alpha$ (i.e., $G\alpha\ne 0)$, then $I_{G\alpha}\supset I_\alpha$,
+and hence $I_{G\alpha}=I_\alpha$ and $F\in I_{G\alpha}=I_\alpha$.  In general,
+maximal elements of the set of annihilators of elements of a module $M$ are
+called \emph{associated primes} of $M$.
+
+We claim next that since $S$ is Noetherian and $M$ is finitely generated, there
+can be only finitely many such primes: if $I_\alpha$ is any such prime, we have
+a sequence
+\[0\to A\cdot \alpha\cong A/I_\alpha\to M\to M'\to 0.\]
+Note that since $A/I_\alpha$ is an integral domain, if $\beta\in A\cdot \alpha$
+is any nonzero element, then $I_\beta=I_\alpha$.  Thus, if $I_\gamma$ is any
+other such prime, $A\cdot \alpha\cap A\cdot \gamma=(0)$, so that $\gamma$ is an
+associated prime of $M'$.  If $M'$ has only finitely many associated primes,
+then it follows that $M$ does, and the result follows by Noetherian induction.
+
+We have thus expressed the maximal ideal $\mathfrak{m}$ of $S$ as a finite
+union of prime ideals $I_\alpha$. It follows that $\mathfrak{m}=I_\alpha$ for
+some $\alpha$, i.e., there exists an element of $M$ killed by all of
+$\mathfrak{m}$.  If $S$ contains an infinite field, as in the original
+geometric case, this is trivial, as a vector space over an infinite field
+cannot be the union of finitely many proper subspaces; otherwise, it is
+what is called in commutative algebra the ``prime avoidance lemma''.  See, for
+example, Eisenbud \cite[section 3.2]{E}.
+\end{proof}
+
+\section*{Part II: The future?}
+\subsection*{{\rm 2.1.} Cayley-Bacharach Conjectures}
+The statement of Theorem CB\ref{thmcb9} represents our best understanding (to
+date) of the phenomena observed in the various formulations of Cayley-Bacharach
+preceding it; having expressed the result as a relationship between the Hilbert 
+functions of residual subsets of an arithmetically Gorenstein subscheme of
+$\mathbb{P}^n$, we do not see at present how to extend it to any larger class
+of objects.  What we would like to propose instead is an extension of the 
+theorem in a different direction, toward a collection of inequalities on the
+Hilbert function of a subscheme of a complete intersection.
+
+To see this most clearly, we restrict our attention to the case of a complete
+intersection $\Gamma\subset \mathbb{P}^n$ of $n$ quadrics; we shall give the
+general version at the end.  Cayley-Bacharach says that any homogeneous 
+polynomial of degree $2n-(n+1)=n-1$ on $\mathbb{P}^n$ containing a subscheme $
+\Gamma_0$ of colength 1 of $\Gamma$ (that is, of degree $2^n-1)$ must contain
+all of $\Gamma$; we consider now what can be said about hypersurfaces of other
+degrees.  Of course, Cayley-Bacharach also says that $\Gamma$ does impose
+independent conditions on polynomials of degree $n$, so there will exist 
+polynomials of degree $n$ vanishing on a subscheme of $\Gamma$ of colength 1 but
+not on $\Gamma$.  On the other hand, by B\'ezout, a hyperplane in $\mathbb{P}^n$
+can contain a subscheme of $\Gamma$ of degree at most $2^{n-1}$.
+
+To summarize what we know, define for any given $n$ a function $d$ by saying
+that $d(k)$ is the largest degree of a subscheme $\Gamma_0$ of a complete
+intersection $\Gamma$ such that there is a polynomial $F(Z)$ of degree $k$
+vanishing on $\Gamma_0$ but not on $\Gamma$.  Throwing in the trivial case of
+degree 0, we have then the four values of $d$:
+\begin{align*}
+&\text{If }k=n, \text{ then }d(k)=2^n-1\\
+&\text{If }k=n-1, \text{ then }d(k)=2^n-2\\
+&\cdot\\
+&\cdot\\
+&\cdot\\
+&\text{If }k=1, \text{ then }d(k)=2^n-2^{n-1}\\
+&\text{If }k=0, \text{ then }d(k)=2^n-2^n
+\end{align*}
+and the pattern is clear.  We may make, accordingly, the 
+
+\begin{concb} \label{concb10}
+Let $\Gamma$ be a complete intersection of $n$ quadrics in $\mathbb{P}^n$.  If
+$X\subset \mathbb{P}^n$ is any hypersurface of degree $k$ containing a
+subscheme $\Gamma_0$ of degree strictly greater than $2^n-2^{n-k}$, then $X$
+contains $\Gamma$.
+\end{concb}
+
+Note that this conjecture is sharp, if true: for any $k<n$, we can find a
+complete intersection $\Gamma\subset \mathbb{P}^n$ containing a complete
+intersection $\Omega\subset\mathbb{P}^{n-k}\subset \mathbb{P}^n$; by 
+Cayley-Bacharach the residual scheme $\Gamma_0$ to $\Omega$ in $\Gamma$ will
+then lie on a hypersurface of degree $k$ not containing $\Gamma$. In fact,
+these are the only known examples of equality; we may make the further 
+conjecture that if $X$ is a hypersurface of degree $k$ with $\deg(X\cap
+\Omega)=2^n-2^{n-k}$, the scheme residual to $X\cap \Omega$ in $\Omega$ is a
+complete intersection of quadrics in a subspace $\mathbb{P}^{n-k}$.
+
+It should be said that taking $\Gamma$ a complete intersection of quadrics
+specifically is not essential; there is a form of the conjecture applicable to
+arbitrary zero-dimensional complete intersection subschemes of $\mathbb{P}^n$. 
+As might be expected, though, this form is substantially more complicated, and
+the pattern of known results less apparent \cite{EGH2}.
+
+It should also be said that we did not arrive at this conjecture by trying to
+extrapolate (or interpolate) from the classical statement of Cayley-Bacharach,
+as we do above; rather, as described in Eisenbud-Green-Harris \cite{EGH1}, we
+were led to this by extending a series of results and conjectures in
+Castelnuovo  theory from  Eisenbud-Harris \cite{EH1} and made the connection to
+the  Cayley-Bacharach Theorem after the fact.
+
+In the remainder of this paper we shall be concerned with proving cases of the 
+Cayley-Bacharach conjecture.  In order to do this, we start by introducing a
+related conjecture.
+
+\begin{concb} \label{concb11}
+Let $\Gamma$ be any subscheme of a zero-dimensional complete intersection of
+quadrics in any projective space $\mathbb{P}^r$. If $\Gamma$ fails to impose
+independent conditions on hypersurfaces of degree $m$, then
+\[\deg(\Gamma)\ge 2^{m+1}.\]
+\end{concb}
+
+Here again this statement is sharp, if true: a complete intersection in
+$\mathbb{P}^{m+1}$ provides examples of equality for each $m$.  As in the case
+of Conjecture CB\ref{concb10}, moreover, these are the only examples, and we
+may conjecture further that equality holds in Conjecture CB\ref{concb11} if and
+only if $\Gamma$ is itself a complete intersection of quadrics in
+$\mathbb{P}^{m+1}$.
+
+\begin{thm} \label{thm:eleven}
+The following are equivalent\textup{:}
+
+\textup{a.} Conjecture \textup{CB\ref{concb10}} for all $k$ and $n$\textup{;}
+
+\textup{b.} Conjecture \textup{CB\ref{concb11}} for all $m$.
+\end{thm}
+
+\begin{proof} 
+We first prove that Conjecture CB\ref{concb11} for a given value of $m$ implies 
+Conjecture CB\ref{concb10} in case $k=n-m-1$.  We do this simply  by applying
+the seventh version of the Cayley-Bacharach Theorem.  To begin with, assume
+Conjecture CB\ref{concb11} for a given value  of $m$, and let $\Omega\subset
+\mathbb{P}^n$ be a complete intersection of quadrics.  Let $X$ be any
+hypersurface of degree $k=n-m-1$ not containing $\Omega$, and let $\Gamma$ be
+the subscheme of $\Omega$ residual to the intersection $\Omega\cap X$.  By 
+Cayley-Bacharach $\Gamma$ must fail to impose independent conditions on
+hypersurfaces of degree $m=n-1-k$.  By assumption $\deg(\Gamma)\ge 2^{n-k}$ and
+correspondingly $\deg(X\cap\Omega)\le 2^n-2^{n-k}$.
+
+Now assume Conjecture CB\ref{concb10} for all $n$ and $k$.  Let $\Gamma$ be any
+subscheme of a complete intersection of quadrics, and suppose that $\Gamma$
+fails to impose independent conditions on hypersurfaces of degree $m$. 
+Assuming that $\Gamma$ spans a projective space $\mathbb{P}^n$, take $\Omega$ a
+complete intersection of quadrics in $\mathbb{P}^n$ containing $\Gamma$, and
+let $\Gamma'\subset \Omega$ be the subscheme of $\Omega$ residual to $\Gamma$. 
+By Cayley-Bacharach, $\Gamma'$ lies on a hypersurface of degree $n-1-m$ not
+containing $\Omega$; it follows that $\deg(\Gamma')\le 2^n-2^{m+1}$ and hence
+that $\deg(\Gamma)\ge 2^{m+1}$.
+\end{proof}
+
+Note as well that, by the proof of Theorem~\ref{thm:eleven}, Conjecture 
+CB\ref{concb11} for all $m\le m_0$ implies Conjecture CB\ref{concb11} for all
+$k$ and $n$ such that
+\[n-k\le m_0+1;\]
+and since Conjecture CB\ref{concb10} is immediate in case $k=n$ or $n-1$, it
+follows that Conjecture CB\ref{concb11} for all $m\le m_0$ implies Conjecture 
+CB\ref{concb10} for all $k$ and $n$ with $n\le m_0+3$.
+
+Finally, we formulate a general version of our Conjecture CB\ref{concb11} that
+does not require quadrics.
+
+\begin{concb} \label{concb12}
+Let $\Gamma$ be any subscheme of a zero-dimensional complete intersection of
+hypersurfaces of degrees $d_1\le \dots\le d_n$ in a projective space
+$\mathbb{P}^n$.  If $\Gamma$ fails to impose independent conditions on
+hypersurfaces of degree $m$, then
+\[\deg(\Gamma)\ge e\cdot d_s\cdot d_{s+1} \cdot\, \cdots\, \cdot d_n\]
+where $e$ and $s$ are defined by the relations
+\[\sum^n_{i=s} (d_i-1)\le m+1<\sum^n_{i=s-1} (d_i-1)\]
+and
+\[e=m+1-\sum^n_{i=s}(d_i-1).\]
+\end{concb}
+
+Note that this is the analogue of our second Cayley-Bacharach conjecture.  It
+may in turn be translated, by an argument generalizing
+Theorem~\ref{thm:eleven}, into a statement analogous to Conjecture
+CB\ref{concb10}.
+
+\subsection*{{\rm 2.2.} A proof of Conjecture CB\ref{concb10} in case  $r\le 7$}
+We shall here prove Conjecture CB\ref{concb11} in case $m\le 4$ and
+correspondingly Conjecture CB\ref{concb10} when $r\le 7$.
+
+We start with an arbitrary zero-dimensional subscheme $\Gamma\subset
+\mathbb{P}^r$.  As before, we introduce the coordinate ring $S=S(\Gamma)$ of $
+\Gamma$, and we let $R=S/(L)$ be the quotient of $S$ by a general linear form
+$L$.  $R$ is then a graded local Artinian ring over the field $K$, generated by
+its first graded piece $R_1$, whose dimension as a vector space over $K$ we
+shall call $n$. By the \emph{ideal} of $R$ we shall mean the ideal of relations
+among the generators of $R$, that is, the kernel $I$ of the surjection from
+$\Sym^*R_1$ onto $R$.  We may then translate our geometric hypotheses on the
+scheme $\Gamma\subset \mathbb{P}^r$ into statements about the ring $R$ as
+follows:
+
+The degree of $\Gamma$ is the length of $R$ (i.e., the dimension of $R$ as a
+vector space over $K)$.
+
+The dimension $n$ of $R_1$ as a vector space over $K$ is the dimension of the
+span of $\Gamma$ in $\mathbb{P}^r$.
+
+The statement that $\Gamma$ fails to impose independent conditions on
+hypersurfaces of degree $m$ is equivalent to the statement that the $(m+1)$st
+graded piece $R_{m+1}$ of $R$ is nonzero.
+
+The statement that $\Gamma$ is a subscheme of a complete intersection of
+quadratics amounts to the assertion that the ideal of $R$ contains a regular 
+sequence of length $n$ in degree 2.
+
+With these conventions, the result from which our conjecture will follow in
+case $r\le 7$ is the 
+
+\begin{prop} \label{prop:twelve}
+Let $R$ be a graded local Artinian ring over the field $K$, generated by its
+first graded piece $R_1$\textup{;} suppose that the ideal of $R$ contains a
+regular sequence of length $n=\dim_{K}(R_1)$ in degree $2$.  For $k\le 5$, if
+the $k$th graded piece $R_k$ of $R$ is nonzero, then the length of $R$ is at
+least $2^k$.
+\end{prop}
+
+\begin{proof} 
+Note first that we may as well assume $R$ to be Gorenstein: if the socle of $R$
+has vector space dimension strictly bigger than 1, we could simply replace $R$
+by the quotient of $R$ by any subspace of the socle not containing $R_k$ to
+obtain a ring of smaller length.
+
+Now, we break up the argument into two cases: If we assume that the ideal $I$
+of $R$ contains a reducible quadric, then as we shall see we may reduce the
+problem to one of rings $R'$ with socles in lower degree and proceed by
+induction.  If, on the other hand, $I$ contains no such element, we obtain lower
+bounds on the Hilbert function of $R$ that suffice, at least in case $k\le 5$,
+to establish the desired inequality on the length of $R$.
+
+Assume first that the ideal $I$ of $R$ contains a reducible quadric, that is,
+that we have $xy=0$ for some pair of nonzero elements $x,y\in  R_1$ (we do not
+assume $x$ and $y$ are linearly independent).  From the exact sequence of
+$R$-modules 
+\[0\to (x)\to R\to R/(x)\to 0\]
+we have the obvious equality
+\[l(R)=l((x))+l(R/(x))\]
+where $l$ denotes length.  On the other hand, the ideals $(x)$ and $(y)$ in $R$
+have as well the structure of quotient rings of $R$: for example, $(y)$ is just
+the image of the map $m_y:R\to R$ of $R$-modules given by multiplication by $y$
+and so is isomorphic to the quotient ring $R/\Ann(y)$. Moreover, since $xy=0$
+in $R$, $x$ is in the kernel of $m_y$, so that in fact the ring $(y)$ is a
+quotient of the ring $R(x)$.  In particular, the length of $(y)$ is less than
+or equal to that of $R/(x)$, so that we have
+\[l(R)\ge l((x))+l((y)).\]
+
+Now, the rings $(x)$ and $(y)$, being quotients of the ring $R$, are likewise
+generated by their first graded pieces; similarly, their ideals contain regular 
+sequences of maximal length in degree 2.  Moreover, they are again Gorenstein. 
+To see this, observe that every ideal of $R$ contains the socle $R_k$ of $R$,
+so that for example $R_k\subset (x)$ and is indeed contained in the socle of
+the ring $(x)$.  At the same time, since $(x)$ is a submodule of the $R$-module
+$R$, any element of the socle of $(x)$ is killed by any element of $R_1$ and so
+is an element of the socle of $R$.  Indeed, we see that $(x)$ and $(y)$ have
+socles in degree exactly $k-1$, and by induction we may conclude that each has
+length at least $2^{k+1}$.  Thus
+\[l(R)\ge l((x))+l((y))\ge 2^k,\]
+and we are done in this case.
+
+Suppose now that the ideal of $R$ contains no reducible element in degree 2. 
+If as before we let $n$ denote the dimension of the vector space $R_1$, then in
+the projective space $\mathbb{P}(\Sym^2(R_1))$ the locus $\Sigma$ of reducible 
+elements has dimension $2n-2$.  Inasmuch as the kernel $I_2$ of the map
+\[\Sym^2(R_1)\to R_2\]
+does not meet  $\Sigma$, we may immediately conclude that the codimension of
+$I_2$ in $\Sym^2(R_1)$ is at least $2n-1$.  We have thus
+\[\dim_K(R_2)\ge 2n-1.\]
+
+Now, under the hypothesis that the ideal of $R$ contains a regular sequence
+$f_1,\dots,f_n$ of maximal length in degree $2$, it is a quotient of the ring
+\[\Sym^*(R_1)/ (f_1,\dots,f_n),\]
+ which has length $2^n$ and socle in degree $n$. 
+Thus we must have $n\ge k$, and the result we are after is immediate if $n=k$,
+so we may as well assume that $n\ge k+1$.  The Hilbert function $h_R$ thus
+satisfies
+\begin{align*}
+h_R(0)&=1\\
+h_R(1)&=n\ge k+1\\
+h_R(2)&\ge 2n-1
+\end{align*}
+from which we conclude immediately that $k\ge 4$: if $k=1$, we would have
+$h_R(2)=0$; if $k=2$, we would have $h_R(2)=1$; and if $k=3$, we would have
+$h_R(2)=h_R(1)$.  Moreover, in case $k=4$ or 5 the entire Hilbert function is
+determined by the first three values above, and we can just add up the 
+inequalities we have to obtain the result.  For example, in case $k=4$ we have
+$h_R(3)=h_R(1)=n\ge k+1$ and $h_R(4)=1$.  Adding it all up, we see that the
+length of $R$ must be
+\begin{equation*} 
+\begin{split}
+l(R)&=\sum h_R(k)\\
+&\ge1+n+2n-1+n+1\\
+&=4n+1\\
+&\ge 4k+5\\
+&=21\\
+&>2^k,
+\end{split}
+\end{equation*}
+so we are done.  Similarly, in case $k=5$ we have $h_R(3)=h_R(2)\ge 2n-1,
+h_R(4)=h_R(1)=n$, and $h_R(5)=1$, so that
+\begin{equation*} 
+\begin{split}
+l(R)&=\sum h_R(k)\\
+&\ge 1+n+2n-1+2n-1+n+1\\
+&=6n\\
+&\ge 6k+6\\
+&=36\\
+&>2^k. \qquad  \qed
+\end{split}
+\end{equation*}
+\renewcommand{\qed}{}
+\end{proof}
+
+\bibliographystyle{amsalpha}
+\begin{thebibliography}{EGH2}
+
+\bibitem[Ba]{Ba}
+I. Bacharach, \emph{Uber den Cayley'schen Schnittpunktsatz}, Math.
+Ann. \textbf{26} (1886), 275--299.
+
+\bibitem[BM]{BM} C. B. Boyer and U. Merzbach, \emph{A history of mathematics},
+second ed., Wiley, New York, 1991. \MR{92a:01003}
+
+\bibitem[BN]{BN} A. Brill and M. Noether, \emph{Uber die algebraischen
+Functionen und ihre Anwendung in der Geometrie}, Math. Ann. \textbf{7}
+(1874), 269--310.
+
+\bibitem[Co]{Co} H. S. M. Coxeter, \emph{Projective geometry}, second ed.,
+Univ. of  Toronto Press, Toronto, 1974. \MR{49:11377}
+
+\bibitem[Ca]{Ca} A. Cayley, \emph{On the intersection of curves}, Cambridge
+Math. J. \textbf{3} (1843), 211--213; \emph{Collected math papers} I, vols.
+25--27, Cambridge Univ. Press, Cambridge, 1889.
+
+%\bibitem[Ch1]{Ch1} M. Chasles, \emph{Apercu Historique sur l'origine et la
+%d\'evelopment des m\'ethodes en g\'eometrie} (1837), third ed.,
+%Gauthier-Villars, Paris, 1889.
+
+\bibitem[Ch]{Ch} M. Chasles, %\bysame, 
+\emph{Trait\'e des sections coniques},
+Gauthier-Villars, Paris, 1885.
+
+\bibitem[DGO]{DGO} E. Davis, A. V. Geramita, and F. Orecchia, \emph{Gorenstein 
+algebras and the Cayley-Bacharach Theorem}, Proc. Amer. Math. Soc. 
+\textbf{93} (1985), 593--597. \MR{86k:14034}
+
+\bibitem[E]{E} D. Eisenbud, \emph{Commutative algebra.  With a view toward 
+algebraic geometry}, Springer-Verlag, New York, 1994. \MR{1:322\ 960}
+
+\bibitem[EH1]{EH1} D. Eisenbud and J. Harris, \emph{Castelnuovo theory}, Curves
+in Projective Space, Univ. of Montreal Press, Montreal, 1982. \MR{84g:14024}
+
+\bibitem[EH2]{EH2} \bysame, \emph{Schemes}: \emph{The language of modern 
+algebraic geometry}, Wadsworth, Belmont, CA, 1992. (To be republished in
+revised form by Springer-Verlag with the title \emph{Why schemes}?)
+\MR{83k:14001}
+
+\bibitem[EGH1]{EGH1} D. Eisenbud, M. Green, and J. Harris, \emph{Some conjectures
+extending Castelnuovo Theory}, Ast\'erisque \textbf{218} (1993), 187--202.
+\MR{95a:14057}
+
+\bibitem[EGH2]{EGH2} \bysame, \emph{Hilbert functions and complete
+intersections} (in
+preparation).
+
+\bibitem[EP]{EP} P. Ellia and C. Peskine, \emph{Groupes de points de $P^2:$
+Caract\'ere et position uniforme}, Algebraic Geometry (L'Aquila 1988), A.
+Sommese, A. Biancofiore, E. Livorni, Springer Lect. Notes in Math. 
+\textbf{1417} (1990), 111--116.\MR{91f:14025}
+
+\bibitem[GKR]{GKR} A. V. Geramita, M. Kreuzer, and L. Robbiano, \emph{
+Cayley-Bacharach schemes and their canonical modules},  Trans. Amer. Math. Soc.
+\textbf{339} (1993), 163--189. \MR{93k:14065}
+
+\bibitem[H]{H} R. Hartshorne, \emph{Algebraic geometry}, Springer-Verlag, New
+York, 1977. \MR{57:3116}
+
+\bibitem[K]{K} M. Kline, \emph{Mathematical thought from ancient to modern 
+times}, Oxford Univ. Press, Oxford, 1972. \MR{57:12010}
+
+\bibitem[M]{M} F. S. Macaulay, \emph{Algebraic theory of modular systems},
+Cambridge Tracts in Math., vol. 19, Cambridge Univ. Press, Cambridge, 1916.
+
+\bibitem[Na]{Na} M. Nagata, \emph{The theory of multiplicity in general local
+rings}, Proc. Internat.  Sympos. (Tokyo-Nikko, 1955), Sci.  Council of Japan,
+Tokyo, 1956, pp. 191--226. \MR{18:637b}
+
+\bibitem[No]{No} M. Noether, \emph{Uber ein Satz aus der Theorie der
+algebraischen Funktionen}, Math. Ann. \textbf{6} (1873), 351--359.
+
+\bibitem[S]{S} D. Struik, \emph{A source book in mathematics}, 1200--1800,
+Harvard Univ. Press, Cambridge, MA, 1969. \MR{39:11}
+\end{thebibliography}
+
+
+\end{document}
