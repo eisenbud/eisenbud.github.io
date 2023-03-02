@@ -1,0 +1,176 @@
+
+<p style="font-size:125%"><a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Papers from Front arXiv</a></p>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">1. <a href="http://front.math.ucdavis.edu/math.AG/0506391"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/0506391.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/0506391.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/0506391">math.AG/0506391</a> <b>Relative Beilinson Monad and Direct Image for Families of Coherent Sheaves.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Frank-Olaf <a href="http://front.math.ucdavis.edu/author/Schreyer-F*">Schreyer</a>.
+30 pages.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">2. <a href="http://front.math.ucdavis.edu/math.AC/0405373"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AC/0405373.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AC/0405373.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AC/0405373">math.AC/0405373</a> <b>The Regularity of Tor and Graded Betti Numbers.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Craig <a href="http://front.math.ucdavis.edu/author/Huneke-C*">Huneke</a>, Bernd <a href="http://front.math.ucdavis.edu/author/Ulrich-B*">Ulrich</a>.
+<a href="http://front.math.ucdavis.edu/math.AC">AC</a> (<a href="http://front.math.ucdavis.edu/math.AG">AG</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">3. <a href="http://front.math.ucdavis.edu/math.AG/0404517"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/0404517.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/0404517.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/0404517">math.AG/0404517</a> <b>Small schemes and varieties of minimal degree.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Mark <a href="http://front.math.ucdavis.edu/author/Green-M*">Green</a>, Klaus <a href="http://front.math.ucdavis.edu/author/Hulek-K*">Hulek</a>, Sorin <a href="http://front.math.ucdavis.edu/author/Popescu-S*">Popescu</a>.
+27 pages.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.AC">AC</a> <a href="http://front.math.ucdavis.edu/math.CO">CO</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">4. <a href="http://front.math.ucdavis.edu/math.AG/0404516"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/0404516.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/0404516.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/0404516">math.AG/0404516</a> <b>Restricting linear syzygies: algebra and geometry.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Mark <a href="http://front.math.ucdavis.edu/author/Green-M*">Green</a>, Klaus <a href="http://front.math.ucdavis.edu/author/Hulek-K*">Hulek</a>, Sorin <a href="http://front.math.ucdavis.edu/author/Popescu-S*">Popescu</a>.
+26 pages.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.AC">AC</a> <a href="http://front.math.ucdavis.edu/math.CO">CO</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">5. <a href="http://front.math.ucdavis.edu/math.AG/0302167"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/0302167.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/0302167.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/0302167">math.AG/0302167</a> <b>A note on the Intersection of Veronese Surfaces.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Klaus <a href="http://front.math.ucdavis.edu/author/Hulek-K*">Hulek</a>, Sorin <a href="http://front.math.ucdavis.edu/author/Popescu-S*">Popescu</a>.
+15 pages.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a>.</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">6. <a href="http://front.math.ucdavis.edu/math.AC/0209187"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AC/0209187.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AC/0209187.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AC/0209187">math.AC/0209187</a> <b>What is the Rees Algebra of a Module?.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Craig <a href="http://front.math.ucdavis.edu/author/Huneke-C*">Huneke</a>, Bernd <a href="http://front.math.ucdavis.edu/author/Ulrich-B*">Ulrich</a>.
+8 pages.  <a href="http://front.math.ucdavis.edu/math.AC">AC</a> (<a href="http://front.math.ucdavis.edu/math.AG">AG</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">7. <a href="http://front.math.ucdavis.edu/math.AC/0209186"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AC/0209186.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AC/0209186.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AC/0209186">math.AC/0209186</a> <b>A Simple Proof of some Generalized Principal Ideal Theorems.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Craig <a href="http://front.math.ucdavis.edu/author/Huneke-C*">Huneke</a>, Bernd <a href="http://front.math.ucdavis.edu/author/Ulrich-B*">Ulrich</a>.
+6 pages.  <i>Proceedings of the AMS</i> 129 (2001) 2535--2540.  <a href="http://front.math.ucdavis.edu/math.AC">AC</a> (<a href="http://front.math.ucdavis.edu/math.AG">AG</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">8. <a href="http://front.math.ucdavis.edu/math.AC/0209184"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AC/0209184.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AC/0209184.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AC/0209184">math.AC/0209184</a> <b>Heights of Ideals of Minors.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Craig <a href="http://front.math.ucdavis.edu/author/Huneke-C*">Huneke</a>, Bernd <a href="http://front.math.ucdavis.edu/author/Ulrich-B*">Ulrich</a>.
+21 pages.  <a href="http://front.math.ucdavis.edu/math.AC">AC</a> (<a href="http://front.math.ucdavis.edu/math.AG">AG</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">9. <a href="http://front.math.ucdavis.edu/math.AC/0205275"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AC/0205275.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AC/0205275.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AC/0205275">math.AC/0205275</a> <b>Order Ideals and a Generalized Krull Height Theorem.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Craig <a href="http://front.math.ucdavis.edu/author/Huneke-C*">Huneke</a>, Bernd <a href="http://front.math.ucdavis.edu/author/Ulrich-B*">Ulrich</a>.
+20 pages.  formerly math.AG/0205275.  <a href="http://front.math.ucdavis.edu/math.AC">AC</a> (<a href="http://front.math.ucdavis.edu/math.AG">AG</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">10. <a href="http://front.math.ucdavis.edu/math.AG/0202227"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/0202227.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/0202227.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/0202227">math.AG/0202227</a> <b>A Fitting Lemma for Z/2-graded modules.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Jerzy <a href="http://front.math.ucdavis.edu/author/Weyman-J*">Weyman</a>.
+14 pages.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.RA">RA</a> <a href="http://front.math.ucdavis.edu/math.RT">RT</a> <a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">11. <a href="http://front.math.ucdavis.edu/math.AG/0111040"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/0111040.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/0111040.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/0111040">math.AG/0111040</a> <b>Resultants and Chow forms via Exterior Syzygies.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Frank-Olaf <a href="http://front.math.ucdavis.edu/author/Schreyer-F*">Schreyer</a>.
+38 pages.  <i>Report</i>-No: MSRI 2001-037.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.RA">RA</a> <a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">12. <a href="http://front.math.ucdavis.edu/math.AG/0104203"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/0104203.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/0104203.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/0104203">math.AG/0104203</a> <b>Sheaf Cohomology and Free Resolutions over Exterior Algebras.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Gunnar <a href="http://front.math.ucdavis.edu/author/Floystad-G*">Floystad</a>, Frank-Olaf <a href="http://front.math.ucdavis.edu/author/Schreyer-F*">Schreyer</a>.
+36 pages.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.RA">RA</a> <a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">13. <a href="http://front.math.ucdavis.edu/math.AG/0011236"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/0011236.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/0011236.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/0011236">math.AG/0011236</a> <b>Exterior algebra methods for the Minimal Resolution Conjecture.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Sorin <a href="http://front.math.ucdavis.edu/author/Popescu-S*">Popescu</a>, Frank-Olaf <a href="http://front.math.ucdavis.edu/author/Schreyer-F*">Schreyer</a>, Charles <a href="http://front.math.ucdavis.edu/author/Walter-C*">Walter</a>.
+15 pages.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.RA">RA</a> <a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">14. <a href="http://front.math.ucdavis.edu/math.AG/0005055"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/0005055.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/0005055.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/0005055">math.AG/0005055</a> <b>Sheaf Cohomolog and Free Resolutions over Exterior Algebras.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Frank-Olaf <a href="http://front.math.ucdavis.edu/author/Schreyer-F*">Schreyer</a>.
+29 pages.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.RA">RA</a> <a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">15. <a href="http://front.math.ucdavis.edu/math.AG/0001159"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/0001159.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/0001159.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/0001159">math.AG/0001159</a> <b>Cohomology on Toric Varieties and Local Cohomology with Monomial Supports.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Mircea <a href="http://front.math.ucdavis.edu/author/Mustata-M*">Mustata</a>, Mike <a href="http://front.math.ucdavis.edu/author/Stillman-M*">Stillman</a>.
+23 pages.  <i>J. Symbolic Comput.</i> 29 (2000), no. 4-5, 583-600.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">16. <a href="http://front.math.ucdavis.edu/math.AG/9912212"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/9912212.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/9912212.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/9912212">math.AG/9912212</a> <b>Hyperplane Arrangement Cohomology and Monomials in the Exterior Algebra.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Sorin <a href="http://front.math.ucdavis.edu/author/Popescu-S*">Popescu</a>, Sergey <a href="http://front.math.ucdavis.edu/author/Yuzvinsky-S*">Yuzvinsky</a>.
+22 pages.  MSRI 1999-057.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.AT">AT</a> <a href="http://front.math.ucdavis.edu/math.CO">CO</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">17. <a href="http://front.math.ucdavis.edu/math.AG/9906171"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/9906171.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/9906171.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/9906171">math.AG/9906171</a> <b>Enriques Surfaces and other Non-Pfaffian Subcanonical Subschemes of Codimension 3.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Sorin <a href="http://front.math.ucdavis.edu/author/Popescu-S*">Popescu</a>, Charles <a href="http://front.math.ucdavis.edu/author/Walter-C*">Walter</a>.
+24 pages.  MSRI 1999-037.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">18. <a href="http://front.math.ucdavis.edu/math.AG/9906170"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/9906170.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/9906170.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/9906170">math.AG/9906170</a> <b>Lagrangian Subbundles and Codimension 3 Subcanonical Subscheme.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Sorin <a href="http://front.math.ucdavis.edu/author/Popescu-S*">Popescu</a>, Charles <a href="http://front.math.ucdavis.edu/author/Walter-C*">Walter</a>.
+35 pages.  MSRI 1999-036.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">19. <a href="http://front.math.ucdavis.edu/math.AG/9807127"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/math.AG/9807127.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/math.AG/9807127.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/math.AG/9807127">math.AG/9807127</a> <b>The Projective Geometry of the Gale Transform.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Sorin <a href="http://front.math.ucdavis.edu/author/Popescu-S*">Popescu</a>.
+43 pages.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">20. <a href="http://front.math.ucdavis.edu/alg-geom/9606018"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/alg-geom/9606018.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/alg-geom/9606018.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/alg-geom/9606018">alg-geom/9606018</a> <b>Gale Duality and Free Resolutions of Ideals of Points.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Sorin <a href="http://front.math.ucdavis.edu/author/Popescu-S*">Popescu</a>.
+25 pages.  <a href="http://front.math.ucdavis.edu/math.AG">AG</a> (<a href="http://front.math.ucdavis.edu/math.AC">AC</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">21. <a href="http://front.math.ucdavis.edu/alg-geom/9511008"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/alg-geom/9511008.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/alg-geom/9511008.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/alg-geom/9511008">alg-geom/9511008</a> <b>Evolutions, Symbolic Squares, and Fitting Ideals.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Barry <a href="http://front.math.ucdavis.edu/author/Mazur-B*">Mazur</a>.
+<a href="http://front.math.ucdavis.edu/math.AC">AC</a> (<a href="http://front.math.ucdavis.edu/math.AG">AG</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">22. <a href="http://front.math.ucdavis.edu/alg-geom/9401001"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/alg-geom/9401001.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/alg-geom/9401001.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/alg-geom/9401001">alg-geom/9401001</a> <b>Binomial Ideals.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Bernd <a href="http://front.math.ucdavis.edu/author/Sturmfels-B*">Sturmfels</a>.
+44 pages.  <a href="http://front.math.ucdavis.edu/math.AC">AC</a> (<a href="http://front.math.ucdavis.edu/math.AG">AG</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">23. <a href="http://front.math.ucdavis.edu/alg-geom/9310007"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/alg-geom/9310007.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/alg-geom/9310007.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/alg-geom/9310007">alg-geom/9310007</a> <b>Initial ideals, Veronese subrings, and rates of algebras.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Alyson <a href="http://front.math.ucdavis.edu/author/Reeves-A*">Reeves</a>, Burt <a href="http://front.math.ucdavis.edu/author/Totaro-B*">Totaro</a>.
+24 pages.  <a href="http://front.math.ucdavis.edu/math.AC">AC</a> (<a href="http://front.math.ucdavis.edu/math.AG">AG</a>).</td></tr></tbody></table>
+</dt><dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">24. <a href="http://front.math.ucdavis.edu/alg-geom/9305010"><img src="gifs/abs.gif" alt="[Abs]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/ps/alg-geom/9305010.gz?front&amp;dpi=300&amp;font=bitmapped"><img src="gifs/ps.gif" alt="[PS]" align="top" border="1" height="26" width="24"></a>
+ <a href="http://arxiv.org/pdf/alg-geom/9305010.pdf?front"><img src="gifs/pdf.gif" alt="[PDF]" align="top" border="1" height="26" width="24"></a>
+</td>
+<td><a href="http://front.math.ucdavis.edu/alg-geom/9305010">alg-geom/9305010</a> <b>Finding Sparse Systems of Parameters.</b>
+David <a href="http://front.math.ucdavis.edu/author/Eisenbud-D*">Eisenbud</a>, Bernd <a href="http://front.math.ucdavis.edu/author/Sturmfels-B*">Sturmfels</a>.
+15 pages.  <a href="http://front.math.ucdavis.edu/math.AC">AC</a> (<a href="http://front.math.ucdavis.edu/math.AG">AG</a>).</td></tr></tbody></table>
+</dt>
+
+</dl>
+
+</body></html>

@@ -1,0 +1,657 @@
+%_ **************************************************************************
+%_ * The TeX source for AMS journal articles is the publishers TeX code     *
+%_ * which may contain special commands defined for the AMS production      *
+%_ * environment.  Therefore, it may not be possible to process these files *
+%_ * through TeX without errors.  To display a typeset version of a journal *
+%_ * article easily, we suggest that you retrieve the article in DVI,       *
+%_ * PostScript, or PDF format.                                             *
+%_ **************************************************************************
+%  Author Package
+%% Translation via Omnimark script a2l, November 29, 2001 (all in one day!)
+\controldates{29-AUG-2002,29-AUG-2002,29-AUG-2002,30-AUG-2002}
+ 
+\RequirePackage[warning,log]{snapshot}
+\documentclass{proc-l}
+\issueinfo{131}{03}{March}{2003}
+\pagespan{701}{708}
+\dateposted{September 17, 2002}
+\PII{S 0002-9939(02)06575-9}
+\copyrightinfo{2002}{American Mathematical Society}
+
+\renewcommand{\labelenumi}{(\theenumi)}
+
+
+\theoremstyle{plain}
+\newtheorem*{theorem1}{Theorem 0.2}
+\newtheorem*{theorem2}{Proposition 1.3}
+\newtheorem*{theorem3}{Theorem 1.4}
+\newtheorem*{theorem4}{Proposition 1.5}
+\newtheorem*{theorem5}{Theorem 1.6}
+\newtheorem*{theorem6}{Lemma 1.7}
+\newtheorem*{theorem7}{Proposition 1.8}
+\newtheorem*{theorem8}{Theorem 2.2}
+\newtheorem*{theorem9}{Proposition 2.4}
+
+\theoremstyle{definition}
+\newtheorem*{definition1}{Definition 0.1}
+\newtheorem*{definition2}{Example 1.1}
+\newtheorem*{definition3}{Definition 1.2}
+\newtheorem*{definition4}{Example 1.1 continued}
+\newtheorem*{definition5}{Definition 2.1}
+\newtheorem*{definition6}{Definition 2.3}
+
+
+\newcommand{\R}{\mathcal R}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\m}{\mathbf m}
+\newcommand{\ra}{\rightarrow }
+\newcommand{\Hom}{\hbox {\rm Hom}}
+\newcommand{\Sym}{\hbox {\rm Sym}}
+\renewcommand{\refname}{Bibliography}
+
+\begin{document}
+
+\title[Rees algebra of a module]{What is the Rees algebra of a module?}
+\author{David Eisenbud}
+\address{Mathematical Sciences Research Institute, 1000 Centennial Dr.,
+Berkeley, California 94720}
+\email{de@msri.org}
+\author{Craig Huneke}
+\address{Department of Mathematics, University of Kansas, Lawrence, Kansas
+66045}
+\email{huneke@math.ukans.edu}
+\author{Bernd Ulrich}
+\address{Department of Mathematics, Purdue University, West Lafayette, Indiana
+47907}
+\email{ulrich@math.purdue.edu}
+\thanks{All three authors were partially supported by the NSF}
+\subjclass[2000]{Primary 13A30, 13B21; Secondary 13C12}
+\keywords{Rees algebra, module, integral dependence}
+\date{May 2, 2001 and, in revised form, October 19, 2001}
+\commby{Wolmer V. Vasconcelos}
+\begin{abstract}
+In this paper we show that the Rees algebra can be made
+into a functor on modules over a ring in a way that extends its
+classical definition for ideals.  The Rees algebra of a module $M$
+may be computed in terms of a ``maximal'' map $f$ from $M$ to a
+free module as the image of the map induced by $f$ on symmetric
+algebras.  We show that the analytic spread and reductions of $M$
+can be determined from any embedding of $M$ into a free module,
+and in characteristic 0---but not in positive
+characteristic!---the Rees algebra itself can be computed from any
+such embedding.
+\end{abstract}
+\maketitle
+
+
+
+The Rees algebra of an ideal $I$ in a ring $R$, namely $\R =\bigoplus _{n=0}^{\infty }I^{n}=R[It]\subset R[t], $ plays a major role
+in commutative algebra and in algebraic geometry since
+$\text{Proj}(\R )$ is the blowup of $\text{Spec}(R)$ along the
+subscheme defined by $I$. Several authors have found it useful to
+generalize this construction from ideals to modules; see for
+instance Gaffney and Kleiman \cite{GK}, Katz \cite{K}, Katz and
+Kodiyalam \cite{KK}, Kleiman and Thorup \cite{KT}, Kodiyalam \cite{Ko},
+ Liu \cite{L}, Rees \cite{R}, Simis, Ulrich, and Vasconcelos 
+\cite{SUV1}, \cite{SUV2},
+and Vasconcelos \cite{V},
+who define the Rees algebra of a module satisfying one or another
+hypothesis. Usually this hypothesis was tailored to approach the
+problem(s) the authors were interested in solving.
+
+The goal of this paper is to clarify the definition for arbitrary
+finitely generated modules over a Noetherian ring $R$. Our
+interest in this clarification arose through our work on
+generalized prinicipal ideal theorems and the heights of ideals of
+minors, where we heavily use Rees algebras (see
+Eisenbud-Huneke-Ulrich \cite{EHU1}, \cite{EHU2}). It seems worthwhile to
+understand the differences and similarities of the various
+approaches from the papers above, and to make the definition as
+functorial as possible. Even for ideals there is a problem: in the
+grade 0 case it is not clear from the definition above whether the
+Rees algebra depends on the embedding of $I$ in $R$.
+
+A natural approach is to define the Rees algebra of a module as
+the symmetric algebra modulo  $R$-torsion (that is, modulo elements
+killed by non-zerodivisors of $R)$. This does  not provide a
+satisfactory definition in all cases in the sense that it may give
+the wrong answer even for an ideal, if the ring is not a domain.
+In general, as was well-known, it is a good definition when the
+module $M$ ``has a rank'', i.e., when $M$ is free of constant rank
+locally at the associated primes of $R$. This hypothesis is
+sufficient for many applications; however, for example, it is not
+necessarily preserved replacing $M$ by $M/xM$ and $R$ by $R/xR$
+even if $x$ is a non-zerodivisor on $M$ and $R$.
+
+Another alternative is to consider a module $M$ together with an
+embedding into a free module $G$, and define the Rees algebra of
+$M$ to be the subalgebra of the symmetric algebra of $G$ generated
+by $M$. More generally, for any homomorphism $g \colon M\to N$ we
+define $\R (g)$, the Rees algebra of $g$, to be the graded
+$R$-algebra which is the image of the map $\Sym (g) \colon \Sym (M)\to \Sym (N)$. One may then try to define the Rees algebra
+of $M$ as $\R (g)$ for an embedding $g$ of $M$ into a free module
+$G$.
+
+However, the result may depend on the chosen embedding  $g$. In Section 1 we
+give as example a principal ideal $I$ in an Artinian ring of characteristic
+$p>0$, and an embedding $g \colon I\to R^{2}$ such that $\R (g)$ is not
+isomorphic to $\R (I)=\bigoplus _{n= 0}^{\infty }I^{n}$. Of course $\R (I)$ may
+also be expressed as $\R (i)$, where $i$ is the inclusion of $I$ as an ideal of
+$R$.  Thus $\R (g)$ depends on $g$, not only on $M$.
+
+Here we take a third alternative:
+
+\begin{definition1} If $R$ is a ring and $M$ is an
+$R$-module, we define the {\em Rees algebra\/} of $M$ to be
+\begin{equation*}\R (M)=\Sym (M)/(\bigcap _{g}L_{g})
+\end{equation*}
+where the intersection is taken over all homomorphisms $g$ from
+$M$ to free $R$-modules, and $L_{g}$ denotes the kernel of
+$\Sym (g)$.
+\end{definition1}
+
+
+Although the definition may at first appear somewhat complicated,
+it is at least obviously functorial: if $h \colon M\to N$ is a
+homomorphism of $R$-modules, then for every homomorphism from $N$
+to a free module $g \colon N\to G$ the map $gh$ is a homomorphism
+from $M$ to a free module, so $\Sym (h) \colon \Sym (M)\to \Sym (N)$
+induces an $R$-algebra homomorphism $\R (M)\to \R (N)$.  As the
+symmetric algebra functor preserves epimorphisms, so does the Rees
+algebra functor.
+
+In Section 1 we solve the problem of computing $\R (M)$ (if $M$ is
+finitely generated) by showing that $\R (M)=\R (f)$ for any
+homomorphism from $M$ to a free module $F$ such that the dual map
+$F^{*}\to M^{*}$ is surjective. This implies that forming the Rees
+algebra of a finitely generated module over a Noetherian 
+ring commutes with flat base
+change.  We also show that if $g \colon M\to R$ is an embedding in
+a free module of rank 1, then $\R (M)=\R (g)$, so that $\R (M)$
+agrees with the classical definition for ideals (in particular,
+this shows that the classical definition is independent of the
+choice of representation of $M$ as an ideal). Moreover, we show
+that in many cases $\R (M)$ can be computed from any embedding.
+The following is a special case of what we prove:
+
+\begin{theorem1} Let $R$ be a Noetherian ring and let $M$ be
+a finitely generated $R$-module. If $R$ is torsion free over
+$\ZZ $, or $R$ is unmixed and generically Gorenstein, or $M$ is
+free locally at each associated prime of $R$, then
+$\R (M)\cong \R (g)$ for any embedding $g \colon M\to G$ of $M$ into
+a free module $G$.
+\end{theorem1}
+
+
+In Section 2 we use our Rees algebra construction to introduce
+analytic spread and integral dependence for arbitrary modules. We
+prove that for any embedding $g$ of $M$ into a free module, the
+natural map $\R (M)\to \R (g)$  has nilpotent kernel. It follows
+that analytic spread and integral dependence can be determined in
+$\R (g)$.
+
+In two subsequent papers \cite{EHU1}, \cite{EHU2} we apply the notions
+developed here to obtain new generalized principal ideal theorems
+and results on heights of ideals of minors of a matrix.
+
+\section*{1. Rees algebras}
+
+We begin with an example showing that the Rees algebra of a module
+cannot be defined from an arbitrary embedding into a free module,
+even when the module is an ideal:
+
+\begin{definition2} Let $k$ be a field of characteristic
+$p$, let
+\begin{equation*}R= k[X,Y,Z]/((X^{p},Y^{p}) + (X,Y,Z)^{p+1}),
+\end{equation*}
+write $x,y,z$ for the images of $X,Y,Z$ in $R$, and take $M$ to be
+the ideal $M = Rz \cong R/(x,y,z)^{p}$. Write $g_{1} \colon M\to R$
+for the inclusion $M=Rz\subset R$, and let $g_{2} \colon M\to R^{2}=Rt_{1}\oplus Rt_{2}$ be the homomorphism sending $z$ to
+$xt_{1}+yt_{2}$. It is easy to see that $g_{2}$ is also an embedding.
+The algebra $\R (g_{1})$ is the same as the classical Rees algebra
+$\R =\bigoplus _{n=0}^{\infty }(z^{n})$, and has $p^{\text{th}}$ graded
+component $(z^{p})\neq 0$. On the other hand
+\begin{equation*}\R (g_{2})_{p} = R(x^{p} t^{p}_{1} + y^{p} t^{p}_{2}) = 0,
+\end{equation*}
+and it follows that $\R (g_{2})$ cannot surject onto the classical
+$\R =\R (g_{1})$ by any graded homomorphism, so $\R (g_{2})\not \cong \R (M)$
+as graded  rings. 
+\end{definition2}
+
+
+To compute the Rees algebra of a module, we use the following
+notion.
+
+\begin{definition3} Let $R$ be a ring and let  $M$ be
+an $R$-module. We say that $f \colon M \to F$ is a {\em versal map
+to a free module}, if $F$ is a free
+$R$-module, $f$ is a homomorphism, and every homomorphism 
+from $M$ to a free module factors through $f$.
+\end{definition3}
+
+
+It follows at once from the definition that 
+if $f \colon M\to F$ is a versal map to a free $R$-module
+$F$, then $\R (M)=\R (f)$. With a finiteness assumption it is easy
+to find such a map:
+
+\begin{theorem2} Let $R$ be a ring and let $M$ be a
+finitely generated $R$-module. Let $f \colon M\to F$ be a
+homomorphism to a free $R$-module $F$ so that the dual map 
+$F^{*}\to M^{*}$ is surjective (such $f$ can be obtained by 
+composing the natural
+map $M\to M^{**}$ with the dual of any epimorphism from a finitely
+generated free module onto $M^{*}$). One has that $f$ is versal and
+$\R (M)=\R (f)$. In particular, formation of
+the Rees algebra of a finitely generated module over a Noetherian
+ring commutes with flat base change.
+\end{theorem2}
+
+
+\begin{proof} Let $g \colon M\to G$ be a homomorphism to a free
+$R$-module. We must show that $g$ factors through $f$. Since $M$
+is finitely generated, $g$ factors through a finitely generated
+free summand of $G$, and we may assume that $G$ is finitely
+generated. It follows that the dual $G^{*}$ is free. Consequently we
+may write $g^{*}=f^{*}h$. We may also suppose that $F$ is finitely
+generated. Since $F$ and $G$ are reflexive, the desired
+factorization is $g=h^{*}f$.
+
+The equality $\R (M)=\R (f)$ has been observed just
+before the Proposition. Finally
+assume that $R$ is Noetherian and let $f$ be any homomorphism
+satisfying our hypothesis. If $S$ is a flat $R$-algebra, then
+$\Hom _{S} (S\otimes _{R} M,S)=S\otimes _{R} \Hom _{R}(M,R)$ because $M$ is
+finitely presented. Thus $S\otimes _{R} f$ has a surjective $S$-dual,
+and it follows that $\R (S\otimes _{R} M)=\R (S\otimes _{R} f)=S\otimes _{R}
+\R (f)=S\otimes _{R} \R (M)$, as required. \end{proof}
+
+
+\begin{definition4} By Proposition 1.3 the map
+$g_{2}$ is not versal. It is easy to check that $M^{*}$ requires 3
+generators and a versal map from $M$ to $R^{3}$ may be written as
+\begin{equation*}f \colon M=Rz \ra R^{3} = Rt_{1} \oplus Rt_{2} \oplus Rt_{3},
+\quad z\mapsto xt_{1}+yt_{2}+zt_{3}.
+\end{equation*}
+We have
+\begin{equation*}\R (f)_{p} = R(x^{p} t_{1}^{p} + y^{p} t_{2}^{p}  + z^{p} t_{3}^{p}) = Rz^{p}t^{p}_{3} =
+\R (M)_{p},
+\end{equation*}
+as implied by Proposition 1.3.
+\end{definition4}
+
+
+Next we show that our definition of the Rees algebra agrees with
+the classical notion for ideals, which is thus independent of the
+embedding of the ideal into $R$.
+
+\begin{theorem3} Let $R$ be a ring, let $M$ be a finitely
+generated ideal of $R$, and let $g \colon M\to R$ be the inclusion
+map. The natural map  from $\R (M)$ to the classical Rees algebra
+$\R =\bigoplus _{n=0}^{\infty }I^{n}=\R (g)$ is an isomorphism.
+\end{theorem3}
+
+
+\begin{proof} Let $f \colon M\to F$ be a versal map to a free
+module $F$, of rank $n$, say. Since $f$ is versal we may find a
+homomorphism $h \colon F\to R$ so that $g = hf$. We must show that
+$\phi \colon =\Sym (h)$ is a monomorphism on the subring of
+$\Sym (F)$ generated by $f(M)$.
+
+Write $\Sym (F)=R[t_{1},\dots ,t_{n}]$, and $\Sym (R)=R[z]$. Let
+$m_{1},\dots ,m_{s}$ be generators of $M$, and write $a_{i}=g(m_{i})\in R$,
+so that $\phi(f(m_{i}))=a_{i}z$. Let $S=R[x_{1},\dots ,x_{s}]$ be a polynomial
+ring, and consider the homomorphism $\psi \colon S\to \Sym (F)$
+sending $x_{i}$ to $f(m_{i})$. We must show that the kernel of $\psi $
+is the same as the kernel of $\phi \psi $. Giving each $x_{i}$ degree
+1, the kernel of $\phi \psi $ is homogeneous, so it suffices to show
+that if $u\in S$ is a form of degree $d$ such that $\phi \psi (u)=0$,
+then $\psi (u) =0$. We do induction on $d$, the case $d=0$ being
+obvious.
+
+We may write ${u = \sum ^{s}_{i=1} x_{i}u_{i}}$ where the $u_{i}$ are forms
+of degree $d-1$. We see that
+\begin{equation*}0 =\phi \psi (u) =\phi \psi (\sum _{i}x_{i}u_{i}) =\phi \psi (\sum _{i}a_{i}u_{i})z,
+\end{equation*}
+so $\phi \psi (\sum _{i}a_{i}u_{i})=0$. By our induction hypothesis,
+$\psi (\sum _{i}a_{i}u_{i})=0$, too.
+
+We may expand each $\psi (u_{i})$ in the form $\psi (u_{i})=\sum _{\alpha }r_{i,\alpha }t^{\alpha }$, where the sum runs over all multi-indices
+$\alpha $ of weight 
+$d-1$, and thus $\sum _{i}\sum _{\alpha }a_{i}r_{i,\alpha }t^{\alpha }= 0$. Since the distinct monomials
+$t^{\alpha }$ are linearly independent, we have
+$\sum _{i}a_{i}r_{i,\alpha }=0$ for each $\alpha $. By our hypothesis
+that $g$ is an embedding, the $f(m_{i})$ satisfy the same linear
+relations as the $a_{i}$, so we get $\sum _{i}f(m_{i})r_{i,\alpha }=0$ for
+each $\alpha $, and finally $\psi (u)=\sum _{i}\sum _{\alpha }f(m_{i})r_{i,\alpha }t^{\alpha }= 0$, as required.  \end{proof}
+
+
+For the proofs that follow we need to identify the minimal and the
+associated primes of $\R (M)$.
+
+\begin{theorem4} Let $R$ be a Noetherian ring and let
+$M$ be a finitely generated $R$-module. There is a one-to-one
+correspondence between the associated primes of $\R (M)$ and the
+associated primes of $R$ given by $P\mapsto R\cap P$, and likewise
+for minimal primes.
+\end{theorem4}
+
+
+\begin{proof} Notice that $\R (M)$ is an $R$-subalgebra of a
+polynomial ring $S$ in finitely many variables over $R$. Every
+associated prime of $R$ is the contraction of an associated prime
+of $\R (M)$, and every associated prime of $\R (M)$ is the
+contraction of an associated prime of the polynomial ring $S$,
+which in turn is extended from an associated prime of $R$. Since
+the resulting one-to-one correspondence between $\text{Ass}(\R (M))$ and
+$\text{Ass}(R)$ is order preserving, we have also proved
+the claim about minimal primes.   \end{proof}
+
+
+\smallskip Note that a versal map from a finitely generated module 
+$M$ to a free module has the same
+image as the natural map from $M$ to its double dual. This image
+is called the {\em torsionless quotient\/} of $M$. Any homomorphism from
+$M$ to a free module factors uniquely through the torsionless
+quotient of $M$. The following result gives conditions under which the Rees
+algebra of a torsionless module can be deduced from any inclusion
+into a free module. For convenience in applications we will state
+it without the torsionless hypothesis. 
+
+\begin{theorem5}  Let $R$ be a Noetherian ring, let $M$ be a
+finitely generated $R$-module, and let $g \colon M \to G$ be a 
+homomorphism to
+a free $R$-module $G$ inducing an inclusion on the torsionless
+quotient of $M$. If for
+each associated prime $Q$ of $R$ either $R_{Q}$ is Gorenstein,  or 
+$M_{Q}$ is free, or $R_{Q}$ is ${\mathbb{Z}}$-torsion free, then the
+natural epimorphism $\R (M) \to \R (g)$ is an isomorphism.
+\end{theorem5}
+
+
+\begin{proof} Replacing $M$ by its torsionless quotient,
+we may assume that $g \colon M\to G$ is an inclusion.
+
+Let $f \colon M \to F$ be a versal map from $M$ to a free module, and let
+$\R =\R (M)=\R (f)$ be the Rees algebra of $M$. Let $h \colon F\to G$ be a
+homomorphism with $g=hf$ and let $\phi \colon \R \to \R (g)$ be the induced
+epimorphism. By Proposition 1.5 every associated prime of $\R $ contracts
+to an associated prime of $R$. Hence to prove the injectivity 
+of $\phi $ we may replace $R$
+by $R_{Q}$, where $Q$ is an associated prime of $R$.
+
+If $R$ is Gorenstein (and hence Artinian), then free modules are
+injective, and therefore any monomorphism from a module to a free
+module is versal.  Similarly, if $M$ is free, then since $R$ has
+depth 0, any monomorphism from $M$ to a free module splits, and
+thus again is versal. In either case we see that $f$ and $g$ are
+both versal, and the injectivity of $\phi $ follows from the
+functoriality of the Rees algebra.
+
+Finally, we treat the case where $R$ is ${\mathbb{Z}}$-torsion free.
+It suffices to consider the case where $F = G \oplus H$ is
+finitely generated with $H$ free, and $h$ is the natural
+projection. Set $J=H\cdot \Sym (F)$, the kernel of $\Sym (h)$. Since
+$g$ is an inclusion,  $\phi $ is an injection in degree 1, and we
+must show that $\phi $ is an injection in every degree, or
+equivalently $J\cap \R =0$. This follows from the next Lemma:
+
+
+\begin{theorem6}  Let $R$ be a ring  and let $F$ be a finitely
+generated free $R$-module. Let $M$ be a submodule of $F$, and let
+$\R $ be the subalgebra of $\Sym (F)$ generated by $M$. Let $H$ be a
+summand of $F$ with $H\cap M=0$. If $d!$ is a non-zerodivisor in
+$R$, then $(H\cdot \Sym (F))\cap \R _{d}=0$.
+\end{theorem6}
+
+
+\begin{proof} It is enough to prove that the Lemma holds after
+localizing at each maximal ideal of $R$, so we may assume that $R$
+is local.
+
+Let $t_{1},\dots ,t_{n}$ be a basis of $F$. Since $R$ is local we may
+suppose that $H$ is generated by $t_{m+1},\dots ,t_{n}$.  Set
+$J=H\cdot \Sym (F)$.  We may assume that $d > 1$.  Since $(d-1)!$
+is a non-zerodivisor as well, we know by induction that $J \cap \R _{d-1} = 0$.  Writing $\partial _{i} = \frac{\partial }{\partial t_{i}}$, one has $\partial _{i} (\R ) \subset \R $ for every $i$ because
+the $R$-algebra $\R $ is generated by linear forms, $\partial _{i}(J)
+\subset J$ for every $i \le m$, and $\partial _{i}(J^{2}) \subset J$
+for every $i$.
+
+Now if $u \in J \cap \R _{d}$, then $\partial _{i} (u) \in J \cap \R _{d-1}
+= 0$ for every $i \le m$.  Since $d!$ is a non-zerodivisor on $R$,
+it follows that $u \in R[t_{m+1}, \dots , t_{n}]_{d} \subset J^{2}$. Thus
+$\partial _{i}(u) \in J \cap \R _{d-1} = 0$ for every $i$, and hence
+$u = 0$ because $d!$ is a non-zerodivisor. \end{proof}
+
+
+\smallskip To connect our definition of the Rees algebra with the torsion in
+the symmetric algebra, suppose that $R$ is a Noetherian ring, $M$
+is a finitely generated $R$-module, and $\mathcal{A}$ is the
+$R$-torsion of Sym$(M)$.  If $M_{Q}$ is free for every associated
+prime $Q$ of $R$ and if $f \colon M\to F$ is a versal map to a
+free module, then Sym$(f)$ induces an isomorphism Sym$(M)/{\mathcal{A}}
+\tilde {\ra } \R (M)$. This follows from Proposition 1.5 and the fact
+that Sym$(f)_{Q}$ is injective for every associated prime $Q$ of
+$R$.
+
+If we are only interested in the reduced structure of the Rees
+algebra of $M$, then we can compute it from any embedding of the
+torsionless quotient of $M$.
+
+\begin{theorem7} Let $R$ be a Noetherian ring, let $M$
+be a finitely generated $R$-module, and let $g \colon M \to G$ be
+a homomorphism to a free $R$-module $G$ inducing an inclusion on
+the torsionless quotient of $M$.
+The kernel of the natural epimorphism $\R (M)\to \R (g)$ is
+nilpotent.
+\end{theorem7}
+
+
+\begin{proof} By Proposition 1.5 every minimal prime of $\R (M)$
+contracts to a minimal prime of $R$, so  it is enough to prove the
+result after localizing at a minimal prime of $R$. Thus we may
+assume that $(R,\m )$ is Artinian and local. We may also suppose
+that $G$ is finitely generated and we may replace $M$ by its
+torsionless quotient to assume that $g$ is a monomorphism.
+
+Let $f \colon M\to F$ be a versal map from $M$ to a free module,
+and let $K$ be the kernel of the natural epimorphism
+$\R (M)=\R (f)\to \R (g)$. Suppose first that $M$ has no free
+summand. Because $R$ is local, it follows that $\operatorname{Im} f\subset \m F$. The kernel $K$ must be contained in the positive degree part
+of $\R (M)$, which is contained in $\m \Sym (F)$. As $\m $ is
+nilpotent, $K$ is nilpotent as well.
+
+In the general case, let $H$ be a maximal free submodule of $M$.
+Since any inclusion of finitely generated free modules over an
+Artinian ring splits, we may write  $G=G'\oplus H$ and $M=M'\oplus H$ in such a way that $g=g'\oplus 1_{H}$. The map $\R (M)\to \Sym (G)$
+is obtained from the map $\R (M')\to \Sym (G')$ induced by $g'$ by
+adjoining polynomial variables. As the kernel of the latter map is
+nilpotent, the desired result follows. \end{proof}
+\renewcommand{\qed}{} \end{proof} 
+
+\section*{2. Integral dependence}
+
+In this section we introduce general definitions of integral
+dependence and of analytic spread for modules that we will apply
+elsewhere.
+
+\begin{definition5}  Let $R$ be a ring, $M$
+an $R$-module, and $U \subset L$ submodules of $M$. \begin{enumerate}
+
+\item Let $U',L'$ be the images of $U,L$ in ${\R }(M)$ and consider
+the subalgebras $R[U'] \subset R[L']\subset {\R }(M)$.  We say $L$
+is {\em integral} over $U$ {\em in} $M$ if the ring extension
+$R[U'] \subset R[L']$ is integral.
+\item We say $M$ is {\em integral} over $U$ or $U$ is a {\em reduction} of
+$M$, if $M$ is integral over $U$ in $M$.
+\end{enumerate}\end{definition5}
+
+In the situation of Definition 2.1(1) the Rees algebra of $L$ maps
+to the Rees algebra of $M$, so if $L$ is integral over $U$, 
+then $L$ is integral over $U$ in $M$.
+
+\begin{theorem8}  Let $R$ be a Noetherian ring, $M$ a
+finitely generated $R$-module, $U \subset L$ submodules of $M$,
+and $f \colon M \ra F$ a versal map from $M$ to a free
+$R$-module.  The following are equivalent: \begin{enumerate}
+\item $L$ is integral over $U$ in $M$.
+\item For every minimal prime $Q$ of $R$, the module
+$L'$ is integral over $U'$ in $M'$, where $'$ denotes images in
+$F/QF$.
+\item For every homomorphism
+$M\to G$ to a free $R$-module and for every homomorphism $R \ra S$
+to a domain $S$, the module $L'$ is integral over $U'$ in $M'$,
+where $'$ denotes tensoring with $S$ and taking images in
+$S\otimes _{R}G$.
+\item For every homomorphism $R \ra V$ to a rank one discrete valuation
+ring $V$ whose kernel is a minimal prime of $R$, we have $U' =
+L'$, where $'$
+denotes tensoring with $V$ and taking images in $V\otimes _{R}F$.
+\item (Valuative Criterion of Integrality)
+For every homomorphism $M\to G$ to a free $R$-module and every
+homomorphism $R \ra V$ to a rank one discrete valuation ring $V$,
+we have $U' = L'$, where $'$ denotes tensoring with $V$ and taking
+images in $V\otimes _{R}G$.
+\end{enumerate}\end{theorem8}
+
+
+\begin{proof} By the functoriality of the Rees algebra, we may
+assume $G=F$ in parts (3) and (5). As ${\R }(M)$ embeds into
+${\R }(F) = \text{Sym}(F)$, we may replace $M$ by $F$ in (1).  In
+parts (2)--(5), the rings $R/Q, S, V$ are domains, and hence by
+Theorem 1.6 the embedding of $L'$ and $M'$ into the free modules $F/QF,
+S\otimes _{R}F, V\otimes _{R}F$, respectively, can be used to define $\R(L')$
+and 
+${\R }(M')$.  In particular we may replace $M$ by $F$ in these parts as
+well.
+
+Now it is obvious that (1) implies (3).  Part (1) follows from (2)
+since ${\R }(F)/\sqrt {0} \subset \prod _{Q} {\R }(F/QF)$, where $Q$
+ranges over all minimal primes of $R$ and $F/QF$ is considered as
+a module over $R/Q$. Finally, the equivalence of (2) and (4) and
+of (3) and (5) has been shown in Rees \cite[1.5(ii)]{R}. \end{proof}
+
+
+We see from Theorem 2.2 that our definition of integrality differs
+from that of Rees \cite[p. 435]{R} when $R$ is not a domain. Rees'
+definition amounts to saying that for every minimal prime $Q$ of
+$R$, the module $L'$ is integral (in our sense or his) over $U'$
+in $M'$, where now $'$ denotes images in $M/QM$. If, for example,
+$k$ is a field, $R = k[x]/(x^{2})$, and $U = 0 \subset L = M =
+(x)/(x^{2})$, then $M$ is integral over $U$ in our sense but not in
+the sense of Rees.
+
+\begin{definition6} Let $R$ be a local ring
+with residue field $k$ and let $M$ be a finitely generated
+$R$-module.  The {\em analytic spread} $\ell (M)$ of $M$ is the
+Krull dimension of $k \otimes _{R} \R (M)$.
+\end{definition6}
+
+
+By way of illustration, we remark that the analytic spread of a
+finitely generated module $M$ over an Artinian local ring $(R,\m ,
+k)$ is equal to the rank $r$ of a maximal free summand $H$ of $M$
+(and is also equal to the dimension of the Rees algebra of the
+module). Indeed, writing $M=M'\oplus H$  we have that any
+homomorphism from $M$ to a free module $F$ carries $M'$ into $\m F$, which generates a nilpotent ideal of $\Sym (F)$. Thus
+$(\R (M)/\m \R (M))_{\text{red}}=\R (M)_{\text{red}}$ is a
+polynomial ring over $k$ in $r$ variables.
+
+If $k$ is infinite one can show as in the case of ideals, using a
+homogeneous Noether normalization of $k \otimes _{R} {\R }(M)$ and
+Nakayama's Lemma, that
+\begin{equation*}\ell (M) = \min \{\mu (U) \mid U \hbox { is a reduction of }M\}.
+\end{equation*}
+Furthermore, $\ell (M) \leq \mu (M)$ and equality holds if and only
+if $M$ has no proper reduction.
+
+\begin{theorem9} Let $R$ be a Noetherian local ring with
+residue field $k$, let $M$ be a finitely generated $R$-module,
+and let $g \colon M\to G$ be a homomorphism to a free $R$-module
+$G$. If $g$ induces an inclusion on the torsionless quotient of
+$M$, then $\ell (M)=\dim k\otimes _{R}\R (g)$.
+\end{theorem9}
+
+
+\begin{proof} Proposition 1.8 shows that $\R (M)$ differs from
+$\R (g)$ only by a nilpotent ideal, and thus the same holds after
+tensoring with $k$. \end{proof}
+
+
+ 
+\bibliographystyle{amsalpha}
+\begin{thebibliography}{EHU1}
+
+
+
+
+\bibitem[EHU1]{EHU1}
+D.~Eisenbud, C.~Huneke and B.~Ulrich, {\em Order
+ideals and a generalized Krull height theorem}, to appear in Math. Ann. 
+
+
+\bibitem[EHU2]{EHU2}
+\bysame , {\em Heights of ideals of minors}, preprint, 2001.
+
+
+
+\bibitem[GK]{GK}
+T.~Gaffney and S.~Kleiman, {\em Specialization of
+integral dependence for modules}, Invent. Math. {\bf 137} (1999), 541--574.
+\MR{2000k:32025}
+
+
+
+\bibitem[K]{K}
+D.~Katz, {\em Reduction criteria for modules}, Comm.~in Algebra {\bf 23}
+(1995), 4543--4548. \MR{96j:13022}
+
+
+
+\bibitem[KK]{KK}
+D.~Katz and V.~Kodiyalam, {\em Symmetric powers of
+complete modules over a two-dimensional regular local ring},
+Trans.~Amer.~Math.~Soc. {\bf 349} (1997), 747--762. \MR{97g:13041}
+
+
+
+\bibitem[KT]{KT} S.~Kleiman and A.~Thorup, {\em Conormal geometry of maximal
+minors}, J. Algebra {\bf 230} (2000), 204--221. \MR{2001h:13006}
+
+
+
+\bibitem[Ko]{Ko} V.~Kodiyalam, {\em Integrally closed modules over
+two-dimensional regular local rings}, Trans.~Amer.~Math.~Soc. {\bf 347} (1995),
+3551--3573. \MR{95m:13015}
+
+
+
+\bibitem[L]{L} J.-C.~Liu, {\em Rees algebras of finitely generated torsion-free
+modules over a two-dimensional regular local ring}, Comm.~in Algebra {\bf 26}
+(1998), 4015--4039. \MR{99k:13003}
+
+
+
+\bibitem[R]{R}
+D. Rees, {\em Reduction of modules}, Math. Proc.
+Camb. Phil. Soc. {\bf 101} (1987), 431--449. \MR{88a:13001}
+
+
+\bibitem[SUV1]{SUV1}
+A. Simis, B. Ulrich and W. V. Vasconcelos, {\em Codimension, multiplicity and integral
+extensions}, Math. Proc. Camb. Phil.~Soc. {\bf 130} (2001), 237--257.
+\MR{2002c:13017}
+
+\bibitem[SUV2]{SUV2}
+\bysame, \emph{Rees algebras of modules}, to appear in Proc. London Math. Soc. 
+
+
+
+\bibitem[V]{V} W. V. Vasconcelos, {\em Arithmetic of Blowup Algebras}, London
+Math. Soc. Lect. Notes, vol.~195, Cambridge University Press, Cambridge, 1994.
+\MR{95g:13005}
+
+
+\end{thebibliography}
+
+\end{document}

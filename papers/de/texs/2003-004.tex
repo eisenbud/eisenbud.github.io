@@ -1,0 +1,1673 @@
+%_ **************************************************************************
+%_ * The TeX source for AMS journal articles is the publishers TeX code     *
+%_ * which may contain special commands defined for the AMS production      *
+%_ * environment.  Therefore, it may not be possible to process these files *
+%_ * through TeX without errors.  To display a typeset version of a journal *
+%_ * article easily, we suggest that you retrieve the article in DVI,       *
+%_ * PostScript, or PDF format.                                             *
+%_ **************************************************************************
+% Author Package file for use with AMS-LaTeX 1.2
+\controldates{10-JUL-2003,10-JUL-2003,10-JUL-2003,10-JUL-2003}
+ 
+\RequirePackage[warning,log]{snapshot}
+\documentclass{tran-l}
+\issueinfo{355}{11}{November}{2003}
+\pagespan{4365}{4383}
+\dateposted{July 10, 2003}
+\PII{S 0002-9947(03)03292-6}
+\copyrightinfo{2003}{American Mathematical Society}
+\usepackage{amssymb}
+\usepackage[cmtip,all]{xy}
+
+\newdir{ >}{{}*!/-5pt/\dir{>}}
+\newdir{ ^(}{{}*!/-5pt/\dir^{(}}
+\newdir{ _(}{{}*!/-5pt/\dir_{(}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+
+\theoremstyle{remark}
+\newtheorem*{nota}{Notation}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\thh}{{^{\mathrm {th}}}}
+\newcommand{\st}{{^{\mathrm {st}}}}
+
+
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\newcommand{\PP}{{\mathbb{P}}}
+
+\newcommand{\Acal}{{{\mathcal A}}}
+
+\newcommand{\baa}{{\mathbf{a}}}
+\newcommand{\bb}{{\mathbf{b}}}
+\newcommand{\cc}{{\mathbf{c}}}
+\newcommand{\ee}{{\mathbf{e}}}
+\newcommand{\FF}{{\mathbf{F}}}
+\newcommand{\LL}{{\mathbf{L}}}
+\newcommand{\RR}{{\mathbf{R}}}
+\newcommand{\xx}{{\mathbf{x}}}
+\newcommand{\mm}{{\mathbf{m}}}
+\newcommand{\uu}{{\mathbf{u}}}
+\newcommand{\kVect}{{{k{\mathbf{Vect}}}}}
+
+\newcommand{\F}{{\mathcal{F}}}
+\newcommand{\Ocal}{{\mathcal{O}}}
+
+\newcommand{\gm}{{\mathfrak m}}
+
+\newcommand{\set}[1]{{\{#1\}}}
+\newcommand{\setdef}[2]{{\{\;#1\;\,|\allowbreak  \;\,#2\;\}}}
+
+\newcommand{\rsf}{\mathop{\rm sf}\nolimits}
+
+\newcommand{\depth}{\mathop{\rm depth}\nolimits}
+\newcommand{\cx}{\mathop{\rm cx}\nolimits}
+\newcommand{\reg}{\mathop{\rm reg}\nolimits}
+\newcommand{\sing}{\mathop{\rm sing}\nolimits}
+\newcommand{\ann}{\mathop{\rm Ann}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\Ext}{\mathop{\rm Ext}\nolimits}
+\newcommand{\Tor}{\mathop{\rm Tor}\nolimits}
+\newcommand{\tor}{\mathop{\rm Tor}\nolimits}
+\newcommand{\rH}{{\mathrm H}}
+\newcommand{\link}{\mathop{\rm lk}\nolimits}
+\newcommand{\rstar}{\mathop{\rm star}\nolimits}
+\newcommand{\core}{\mathop{\rm core}\nolimits}
+\newcommand{\abs}[1]{{\left| #1 \right|}}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\initial}{\mathop{\rm in }\nolimits}
+
+\newcommand{\B}{{\mathcal B}}
+\newcommand{\E}{{\mathcal E}}
+\newcommand{\Sym}{\mathop{\rm Sym}\nolimits}
+
+\newcommand{\mtext}[1]{\;\,\allowbreak\hbox{#1}\allowbreak\;\,}
+
+
+\begin{document}
+\title[Hyperplane Arrangement Cohomology and Monomials]{Hyperplane arrangement
+cohomology\linebreak[1] and monomials in the exterior algebra}
+
+\author{David Eisenbud}
+\address{Department of Mathematics, University of California Berkeley, 
+Berkeley, California 94720}
+\email{de@msri.org} 
+\thanks{The first two authors are grateful to the NSF for 
+support during the preparation of this work. The authors would like 
+to thank the Mathematical Sciences Research Institute in Berkeley 
+for its support while part of this paper was being written}
+
+
+\author{Sorin Popescu}
+\address{Department of Mathematics, SUNY at Stony Brook,  
+Stony Brook, New York 11794}
+\email{sorin@math.sunysb.edu}
+
+\author{Sergey Yuzvinsky}
+\address{Department of Mathematics, University of Oregon, 
+Eugene, Oregon 97403}
+\email{yuz@math.uoregon.edu}
+
+\subjclass[2000]{Primary 15A75, 52C35, 55N45; Secondary 55N99, 14Q99} 
+\date{April 1, 2001}
+
+\begin{abstract}
+We show that if $X$ is the complement of a complex hyperplane
+arrangement, then the homology of $X$ has linear free resolution as
+a module over the exterior algebra on the first cohomology of $X$.
+We study invariants of $X$ that can be deduced from this resolution.
+A key ingredient is a result of Aramova, Avramov, and Herzog (2000) on
+resolutions of monomial ideals in the exterior algebra. We
+give a new conceptual proof of this result.
+\end{abstract}
+
+\maketitle
+
+Let $X$ be the complement of a complex hyperplane arrangement $\Acal$.
+In this paper we study the singular homology $\rH_*(X)$ as a module
+over the exterior algebra $E$ on the first singular cohomology
+$V:=\rH^1(X)$ always with coefficients in a fixed field $K$.  Our first
+main result (Section \ref{cohoofhyparr}) asserts that $\rH_*(X)$ is
+generated in a single degree and has a linear free resolution; this
+amounts to an infinite sequence of statements about
+the multiplication in the Orlik-Solomon algebra
+$\rH^*(X)$. We also analyze other topological examples from the  
+point of view of resolutions over the exterior algebra.
+
+In Section \ref{OSrank-var} we study an invariant of an $E$-module $N$ called
+the {\it singular variety\/}, the algebraic subset of $V$ consisting
+of those elements $x$ whose annihilator in $N$ is not equal to $xN$.
+The singular variety is the same for $N$ and for $N^*$, and thus for
+the homology and cohomology of $X$.  Aramova, Avramov and Herzog
+\cite{AAH} show that the codimension of the singular variety (called by
+them the {\it rank variety\/}) gives the rate of growth of the free
+resolution of $N$.  We compute the singular variety of 
+$\rH^*(X)$ (or $\rH_*(X)$): it
+is a linear subspace of codimension equal to the number of central arrangements
+in an expression of $\Acal$ as a product of irreducible arrangements.
+
+One way to use the linearity of the resolution of $\rH_*(X)$ is through
+the Bernstein-Gel'fand-Gel'fand correspondence, which produces a
+graded module $F(\Acal)$ over the symmetric algebra on $W:=V^*=\rH_1(X)$
+corresponding to $X$, whose associated sheaf $\F(\Acal)$ is supported on
+the singular variety.  In Section \ref{S-module} we compute this invariant of
+$X$ (really an invariant of the intersection poset of the
+arrangement).  We compute some homological invariants of $F(\Acal)$ and
+we use its properties to show that the cones over a generic hyperplane
+arrangement may be characterized as the arrangements for which the defining
+ideal (the Orlik-Solomon ideal) of $\rH^*(X)$ also has a linear free
+resolution.
+
+If $e\in E_1$, then $e$ corresponds to a local system on the complement
+of the hyperplane arrangement $\Acal$ (see Esnault-Schechtman-Viehweg 
+\cite{ESV},
+Yuzvinsky \cite{Yu}, and Libgober-Yuzvinsky \cite[Section 4]{LY}). 
+If we set $A=\rH^*(X)$ and $\ann_A e=\setdef{a\in A}{ea=0}$, 
+then the homology 
+\[
+\rH(e, A):=(\ann_A e)/eA
+\]
+of the complex
+defined through multiplication by $e$ is the cohomology of $X$ with
+supports in that local system, for $e$ subject to a certain mild genericity  
+condition (Esnault-Schechtman-Viehweg \cite{ESV}).
+In Section \ref{localsys} we show how to compute $\rH(e,A)$. In terms of the sheaf
+$\F(\Acal)$ we have
+\[
+\rH(e, A)=\Tor^{\Ocal_{\PP,e}}_*(\kappa(e),\F(\Acal)_e)
+\]
+where $\PP=\PP(E_1^*)$ is the projective space of one-dimensional
+subspaces of $E_1$, and $\kappa(e)$ is the residue field of the local
+ring $\Ocal_{\PP,e}$ at the point corresponding to $e$.  (We prove in
+Theorem \ref{singularvectorsofastandardmodule} a more general 
+corresponding result,
+for arbitrary modules $A$ with linear injective
+resolution.)  It follows, for example, that when $e$ is singular on
+$A$ the module $\rH(e,A)$ has nonzero components in every degree up to
+the codimension of $F(\Acal)$, 
+cf.\ Theorem \ref{singularvectorsofastandardmodule} (b).  This generalizes 
+Theorem 4.1 (i) of Yuzvinsky  \cite{Yu};
+see also Libgober and Yuzvinsky \cite{LY}.
+
+A key ingredient in the proof of our main theorem is the theorem of
+Aramova, Avramov, and Herzog \cite{AAH} (later improved by R\"omer \cite{Ro})
+relating the resolutions of square-free monomial ideals (and some more
+general modules) over symmetric and exterior algebras. This allows us to
+apply the results on resolutions and Alexander duality due to Eagon and
+Reiner \cite{ER}.   The proof given by Aramova, Avramov and Herzog depends
+on an intricate computation. In Section \ref{Appendix} we offer a conceptual
+description of the relationship which leads to a transparent proof.
+
+We are pleased to acknowledge the essential role of the computer
+algebra system written by Grayson and Stillman \cite{GS} in the
+genesis of this paper: It was only through ``playing" with this
+program that we were led to guess at the main result (Theorem \ref{cohores})
+and most of the other results were checked for plausibility
+before we looked for proofs.
+
+\begin{nota} Throughout this paper, $\Acal$ will denote an essential affine complex
+hyperplane arrangement, that is, a set of $n$ affine hyperplanes in
+$\CC^\ell$ whose intersection poset has rank $\ell$. We will denote the
+complement of the union of the hyperplanes in $\Acal$ by  $X$. We denote
+by $K$  an arbitrary field.
+
+We use the notation in Orlik and Terao \cite{OT}.  In particular, we write
+$A:=A(\Acal)$ for the Orlik-Solomon algebra of $\Acal$, isomorphic to the
+singular cohomology of $X$ with coefficients in $K$.  
+The vector space $E_1=V=\rH^1(X)$ has basis $e_1,\ldots,e_n$
+corresponding to the hyperplanes of $\Acal$. Writing
+$E$ for the exterior algebra on $E_1$ we have
+$A=\rH^*(X)=E/I$ where
+$I\subset E$ is the {\it Orlik-Solomon ideal\/} generated by the
+elements
+\[
+\partial(e_{i_1}\wedge\cdots\wedge e_{i_t})=
+\sum_j (-1)^j
+e_{i_1}\wedge\cdots \wedge e_{i_{j-1}}\wedge \widehat {e_{i_j}}
+                   \wedge e_{i_{j+1}}\wedge \cdots \wedge e_{i_t}
+\]
+for which
+$\{ H_{i_1},\dots,H_{i_t}\}$ 
+is a minimal linearly dependent set of hyperplanes of $\Acal$,
+and the monomials $e_{i_1}\wedge\cdots\wedge e_{i_t}$ for which
+$\{ H_{i_1},\dots,H_{i_t}\}$ 
+have empty intersection. For all this see Orlik and Solomon \cite{OS}.
+
+We grade $E$ by taking the elements of $V$ to have degree $1$
+(this is the opposite convention from that of  Eisenbud and
+Schreyer \cite{ES}). The homology module $\rH_*(X)$ is dual to $E/I$, and
+thus is graded in negative degrees. We denote its component of degree
+$-p$ by $\rH_p(X)$ ($p\geq 0$).
+
+We will write
+$\chi(\Acal,-)$ for the characteristic polynomial 
+of the arrangement $\Acal$.
+For our purposes $\chi$ may be defined by the relation
+\[
+\chi(\Acal,t)=t^{\ell}\pi(A,-1/t),
+\] 
+where $\pi$ is the Poincar\'e polynomial  of $X$, that is,
+\[
+\pi(t)=\sum_j\dim_K\rH^j(X)t^j;
+\] 
+see Orlik and Terao \cite[Definition 2.52 and Theorem 3.68]{OT}.
+
+If $A$ is a skew commutative algebra, we write $A\langle e\rangle$
+and $A[t]$  to denote the skew-commutative algebra obtained by
+adjoining a variable of degree 1 or 2 respectively; thus $A[t]$
+is an ordinary polynomial ring on one commuting variable over
+$A$, while if $E$ is the exterior algebra of $V$, then 
+$E\langle e\rangle$ is the exterior algebra of $V\oplus Ke$.
+\end{nota}
+
+\section{The cohomology of hyperplane arrangements}\label{cohoofhyparr}
+
+\begin{theorem}\label{cohores} 
+The minimal free resolution of $\rH_*(X)$,
+regarded as a module over the exterior algebra $E=\wedge(\rH^1(X))$
+by means of the cap product, has the form
+\[
+\FF:
+\dots\to 
+E^{\beta_2}(\ell-2)\to 
+E^{\beta_1}(\ell-1)\to 
+E^{\beta_0}(\ell)\to 
+\rH_*(X)\to 0.
+\]  
+The ranks $\beta_i$ may be computed from the formula
+\[
+\sum_{i=0}^\infty \beta_it^i={(-1)}^{\ell}\frac{\chi(\Acal,t)}{{(1-t)}^n}.
+\]
+\end{theorem}
+
+In general we will say that a graded $E$-module $M$ has a {\it linear
+resolution\/} if $M$ is generated in a single degree $s$ and has
+free resolution with $d^\thh$ syzygy
+module generated in degree $s+d$; the theorem asserts that $H_*(X)$
+has a linear resolution with $s=-\ell$.  
+
+We can interpret 
+the statement that a
+module of the form $E^{\beta_0}(\ell)$ can map onto $\rH_*(X)$ in more
+familiar language:
+
+\begin{corollary}\label{socle} 
+An element $c\in \rH^*(X)$ is annihilated by
+the (cup) product with every element of $\rH^1(X)$ if and only if
+$c\in \rH^\ell(X)$.
+\end{corollary}
+
+\begin{proof}
+Because $E^{\beta_0}(\ell)$ maps onto $\rH_*(X)$, we see that $\rH_*(X)$
+is generated as an $E$-module by $\rH_\ell(X)$. In particular, we
+recover the well-known fact that $\rH^j(X)= (\rH_j(X))^*= 0$ for
+$j>\ell$, so that every element of $\rH^\ell(X)$ is annihilated by
+$\rH^1(X)$.
+
+Conversely, let $c\in\rH^*(X)$ be annihilated by $\rH^1(X)$.  The
+Orlik-Solomon description shows that $\rH^*(X)$ is generated as an
+algebra by $\rH^1(X)$. So $c$ is annihilated by $\rH^+$, the ideal of
+elements of positive degree in $\rH^*(X)$. In particular, $c \cdot
+(\rH^+\cdot \rH_*(X))=0$.  Because $\rH_*(X)$ is generated by
+$\rH_\ell(X)$ we have $\rH^+\cdot \rH_*(X)=\sum_{j<\ell}\rH_j(X)$. 
+Since each $\rH_j(X)$ is dual to $\rH^j(X)$ by the multiplication pairing,
+it follows that $c\in \rH^\ell(X)$.\end{proof}
+
+
+For the proof of Theorem \ref{cohores} it is convenient to reduce to
+the central case. Recall that an arrangement is {\it central\/} 
+if the intersection of its hyperplanes is nonempty.
+Given a (not necessarily central) arrangement 
+$\Acal$ of $n$ hyperplanes in $\CC^\ell$, we can projectivize and add the
+hyperplane at infinity to get an arrangement in ${\PP}^\ell_\CC$;
+the affine cone over this arrangement is a central arrangement 
+$\B=c\Acal$ of $n+1$ hyperplanes in $\CC^{\ell+1}$,
+called the {\it cone over} $\Acal$. Conversely, given a central
+arrangement $\B$ of $n+1$ hyperplanes in $\CC^{\ell+1}$, 
+and a chosen hyperplane $H$ in it, 
+we may form the corresponding arrangement of $n+1$ hyperplanes
+in projective $\ell$-space. Removing $H$, we get a (not necessarily
+central) arrangement $\Acal=d\B$ of $n$ hyperplanes in 
+$\CC^\ell$, which we call the {\it deconing\/} of $\B$
+with respect to $H$. For example, $\Acal$ is the deconing
+of $c\Acal$ with respect to the ``new'' hyperplane.
+
+The Orlik-Solomon algebras
+of $\B$ and $d\B$ are closely related. Topologically,
+the complement of
+the projective arrangement associated to $\B$ is the same as the
+complement of the arrangement associated to any of the deconings of $\B$;
+thus the complement of $\B$ is a $\CC^*$-bundle over the 
+complement of any of the deconings of $\B$. It follows
+that the cohomology algebra of any deconing is
+canonically isomorphic to the cohomology algebra of the
+complement of $\B$ modulo a degree $1$ form.
+The following result gives this identification
+algebraically. For
+this it is convenient to factor the Orlik-Solomon
+relations as products of linear forms:
+
+\begin{proposition}\label{deconing}
+ Suppose $\B=\{H_0,\dots,H_n\}$ 
+is a central hyperplane arrangement, 
+with Orlik-Solomon ideal $I$ in the exterior algebra
+$E=K\langle e_0,\dots,e_n\rangle$ whose generators
+$e_i$ correspond to the hyperplanes $H_i$. 
+Let $E'$ be the subalgebra generated by the differences
+$e_i-e_j$. Let $I'\subset E'$ be 
+the ideal generated by
+\[
+\{ (e_{i_1}-e_{i_2})(e_{i_2}-e_{i_3})
+\cdots(e_{i_s-1}-e_{i_s})\mid
+H_{i_1},\dots,H_{i_s}\hbox{\ are linearly dependent}\}.
+\]
+The Orlik-Solomon ideal of $\B$ is $I=I'E$, and
+$E/I\cong (E'/I')\langle e_j\rangle$ for any $j$. Furthermore,
+if $\Acal$ is the deconing of $\B$ with respect to
+$H_j$, then the Orlik-Solomon algebra of $\Acal$ is 
+$E/(I+(e_j))\cong E'/I'$.
+\end{proposition}
+
+\begin{proof} One checks directly that
+$
+(e_{i_1}-e_{i_2})\cdots(e_{i_s-1}-e_{i_s})= 
+{(-1)}^s\partial(e_{i_1}\wedge\cdots\wedge e_{i_s}).
+$
+It follows that $I=I'E$. The rest
+of the statements are consequences.\end{proof}
+   
+\begin{proof}[Proof of Theorem \ref{cohores}] To prove
+that the resolution of $\rH_*(X)$ is linear, we first
+reduce to the central case. By Proposition \ref{deconing},
+the Orlik-Solomon algebra of $c\Acal$ is 
+$A\langle e_0\rangle=A\otimes_KK\langle e_0\rangle$
+as skew-commutative algebras, and it follows that the
+free resolution of the homology of the complement of $c\Acal$
+is deduced from that of $\Acal$ by tensoring over $K$ with
+$K\langle e_0\rangle$. In particular, one is linear if and only if the
+other one is, and we may assume that $\Acal$ is central to begin with.
+
+With respect to
+the lexicographic order on the monomials of $E$, taking
+$e_i<e_j$ if $i<j$, the
+initial (largest) terms of the generators for the Orlik-Solomon ideal (as
+given in the introduction) are
+\[
+\begin{split} 
+\{  
+e_{i_1}\wedge\cdots\wedge e_{i_s} &\mid i_1<\dots <i_s,\ \{H_{i_1},
+\dots,H_{i_s}\}
+\hbox{ is an independent set of}\\
+&\hbox{hyperplanes, and there exists $i_0<i_1$ such that }\\
+                     &\{H_{i_0},\dots,H_{i_s}\} 
+                        \hbox{ is dependent} \}. 
+\end{split}
+\]
+The subsets
+that appear in this expression are exactly the broken circuits
+of $c\Acal$. By Bj\"orner \cite{Bjo1}, the monomials that are not
+divisible by broken circuits are a basis for $A$. It follows that the
+generators of $I$ given in the introduction form a Gr\"obner basis.
+\pagebreak
+Consequently the initial ideal of $I$ is the ideal $I_0$ generated by the
+monomials in the display. $I_0$
+is the {\it broken circuit ideal\/} of 
+the matroid defined by the dependence relations among the hyperplanes
+of $\Acal$. 
+
+From the general theory of Gr\"obner bases (as, for example, 
+in Eisenbud \cite{Ei} where the completely parallel theory is treated for
+ideals in a polynomial ring) we see that $I_0$ is a flat degeneration
+of $I$. More formally, there is an ideal 
+$I_t\subset K[t]\otimes_K E$ 
+such that the algebra 
+$ K[t]\otimes_K E/I_t$ is free (and thus flat) over $ K[t]$, and
+$I_0:=(I+(t))/(t)\subset  K[t]\otimes_K E/(t)=E$ 
+is the initial ideal $\initial(I)$, while for $0\neq a\in  K$ we have
+$I_a:=(I+(t-a))/(t-a)\subset  K[t]\otimes_K E/(t-a)=E$
+is conjugate to $I$ by a linear automorphism of $E$.
+
+The module structure on $\rH_*(X)$ comes
+from the identification $\rH_*(X)=
+\linebreak  
+\Hom_K(\rH^*(X), K))$.
+So $\rH_*(X)$ degenerates flatly to
+$M_0=\Hom_K(E/I_0,  K)$. More formally, the module
+$M=\Hom_{ K[t]}(E/I_t,  K[t])$ is free (and thus flat)
+over $ K[t]$, and has special fiber $M/(t)M\cong M_0$,
+whereas for $a\neq 0$ the fiber $M_a:=M/(t-a)M$ is conjugate to 
+$\rH_*(X)$ by an automorphism of $E$.
+
+The first statement of Theorem \ref{cohores} amounts to saying that the
+$k^\thh$ graded component, $\Tor_j^E(\rH_*(X), K)_k,$ vanishes for all $j>0$
+and  $k\neq \ell-j$. The vanishing of any one of these vector spaces is an open
+condition in flat families. So it suffices to show that  $M_0=\Hom_K(E/I_0, 
+K)$ satisfies the conditions of  Theorem \ref{cohores}. 
+
+The algebra $E$ is Gorenstein (injective as a module over itself) with
+socle in degree $n$. So
+$M_0=\Hom_K(E/I_0,  K)=\Hom_E(E/I_0, E)(n)$ as $E$-modules. 
+On the other hand, $\Hom_E(E/I_0, E)$ may be identified with the
+annihilator $J_0$ of $I_0$, and we see that it suffices to show
+that $J_0$ has free resolution of the form
+\[
+\FF(-n):
+\dots\to 
+E^{\beta_2}(\ell-2-n)\to 
+E^{\beta_1}(\ell-1-n)\to 
+E^{\beta_0}(\ell-n)\to 
+J_0\to 0.
+\]
+
+Since $I_0$ is generated by monomials, so is the ideal $J_0$.
+Following Aramova, Avramov, and Herzog \cite{AAH} (see also 
+Section \ref{Appendix} below for more details) we let $_SI_0$ and $_SJ_0$
+be the ideals of $S= K[e_1,\ldots,e_n]$ generated by the monomials
+corresponding to the generators of $I_0$ and $J_0$, respectively, so
+that $_SI_0$ and $_SJ_0$ are square-free monomial ideals of $S$.
+Aramova, Avramov, and Herzog \cite{AAH} show that $J_0$ has a free
+resolution as above with $d^\thh$ syzygies generated in degree
+$d+n-\ell$ if and only if $_SJ_0\subset S$ has a resolution with this
+same property; for another proof, see Section \ref{Appendix}, below.
+
+Any square-free monomial ideal $J$ corresponds to a simplicial
+complex $\Delta(J)$. Since $I_0$ and $J_0$ are
+annihilators of one another in $E$, the simplicial complex
+$\Delta(I_0)$ is the Alexander dual of $\Delta(J_0)$; that is, the
+faces of $\Delta(J_0)$ are the complements of the nonfaces of
+$\Delta(I_0)$. By Eagon and Reiner \cite{ER}, $_SJ_0$ has a (linear) resolution 
+as above if and only if $_SI_0$ has codimension $n-\ell$ and $S/(_SI_0)$ is
+Cohen-Macaulay or, in combinatorial terms, the simplicial complex
+$\Delta(I_0)$ is Cohen-Macaulay of dimension $\ell-1$. (See also the
+later papers of Terai \cite{Te}, Bayer-Charalambous-Popescu \cite{BCP},
+Musta\c t\v a \cite{Mu}, and Yanagawa \cite{Ya} for
+more sophisticated versions of this result.)
+
+It was observed by Hochster \cite{Ho1} and Stanley \cite{St2}
+that the Cohen-Macaulay property of
+a simplicial complex follows from a simpler geometric property called {\it
+shellability\/}; see also Stanley \cite[Theorem 2.5]{St1} and 
+Bruns-Herzog \cite[Theorem 5.1.13]{BH1}.  It is known that the
+simplicial complex corresponding to the broken circuits of a matroid
+of rank $\ell$ is shellable of dimension $\ell-1$ (Provan \cite{Pr};
+see also Bj\"orner \cite[7.4.2(ii) and 7.4.3]{Bjo2} and his reference
+Billera and Provan \cite{BP}),
+concluding the proof of the first statement.
+
+In order to prove the second statement we note that, from the
+given resolution, 
+\[\begin{split}
+\pi(\rH_*(X), t)&=\sum_i (-1)^i\pi(E^{\beta_i}(\ell-i),t)\\
+                  &=\sum_i (-1)^i\beta_it^{-\ell+i}(1+t)^n.
+\end{split}
+\]                  
+On the other hand, since homology and cohomology are dual,
+$
+\pi(\rH_*(X), t)=\pi(A,1/t)=(-1)^\ell\chi(A,-t)/t^\ell,
+$
+whence the desired formula.\end{proof}
+
+In general, we do not know how to write the free resolution of the
+Orlik-Solomon ideal explicitly; this seems to be an interesting problem. 
+
+\begin{remark}\label{surfaces} Here are a few other topological examples
+treated from the point of view of resolutions over
+the exterior algebra: 
+
+$a)$ Perhaps the most familiar topological spaces with
+cohomology generated in degree one are compact orientable
+surfaces. If $Y$ is an
+orientable compact connected surface of genus
+$g>0$, then the homology $\rH_*(Y)$ {\it does not\/}
+satisfy Theorem \ref{cohores}, though it comes close: 
+by Poincar\'e duality the homology
+$\rH_*(Y)$ is isomorphic as a module over $E=\wedge \rH^1(Y)$
+to $\rH^*(Y)$, which
+has relations of degree $>1$. 
+However, if we write $\rH^*(Y)=E/I$, then one can check that
+(with respect
+to any monomial order on $E$) the initial ideal of $I$
+is the square-free
+stable ideal consisting of all but the last monomial of degree 
+$2$ in $E$.
+By Aramova, Herzog, and Hibi \cite[Corollary
+2.5]{AHH}, the initial ideal, and with it
+$I$ itself, has linear resolution.  It follows that the  minimal free
+resolution of the homology module has the form
+\[
+\FF:
+\dots\to 
+E^{\beta_3}(-2)\to 
+E^{\beta_2}(-1)\to 
+E^{\binom{2g}{2}-1}\to 
+E(2)\to 
+\rH_*(Y)\to 0.
+\]
+
+$b)$ A result analogous to
+Theorem \ref{cohores} holds for the homology module of an essential
+arrangement of real subspaces of codimension two in ${\mathbb R}^{2n}$
+with even-dimensional intersections. In this case the cohomology ring of
+the complement has again the shape of an Orlik-Solomon algebra. However,
+in contrast with the complex case, it is not determined merely by the
+intersection lattice,  but requires the knowledge of extra information
+on sign patterns (computed as determinants of linear relations, or as
+linking numbers in the sense of knot theory); see Bj\"orner-Ziegler
+\cite{BZ} and Ziegler \cite{Zi} for details.
+
+$c)$ The complements of codimension two subspace arrangements in 
+${\mathbb R}^{4}$ 
+are equivalent to the link complements obtained
+by intersecting them with the three-sphere $S^3$.
+More generally, consider
+the case of an arbitrary tame link $L=\bigcup_{i=1}^n L_i$ in $S^3$,
+and let $X$ be the compact manifold with boundary that
+is the complement of a tubular neighborhood of $L$.
+Alexander duality gives
+$\dim
+\rH^1(X)=n$,
+$\dim \rH^2(X)=n-1$ and $\rH^{\ge 3}(X)=0$.
+More explicitly, let $e_i\in\rH^1(X)$ be the dual of the meridian
+of the $i^\thh$ boundary component, and let
+$f_{i,j}\in\rH^2(X)$ be the Alexander dual of the (relative)
+homology class of an arc $\gamma_{i,j}$ connecting
+the $i^\thh$ and $j^\thh$ components of the boundary.
+The elements $e_i$ form a basis of $\rH^1(X)$ and
+(with the conventions $f_{i,i}=0$ and $f_{i,j}=-f_{j,i}$)
+the $f_{i,j}$ generate $\rH^2(X)$.
+
+A Mayer-Vietoris argument shows
+that the cohomology ring of $X$ has a presentation
+\[
+\rH^*(X) = \wedge V'/(e_i\wedge e_j - l_{i,j} f_{i,j},\,
+f_{i,j} + f_{j,k} + f_{k,i},\, e_k\wedge f_{i,j},\, f_{i,j}\wedge f_{k,l}),
+\]
+where $V'=\rH^1(X)\oplus \rH^2(X)$,
+the numbers $i$ and $j$ run from $1$ to $n$,
+ and 
+$l_{i,j}:=\link(L_i,L_j)$  is the linking number of $L_i$ and
+$L_j$. In particular, the cohomology algebra
+$\rH^*(X)$ depends only on the linking numbers 
+(for most of this, see Milnor \cite{Mi}).
+
+Let $G$ be the graph whose vertices are
+the components $L_i$, $i=1,\ldots, n$, and where
+two vertices $L_i$ and $L_j$ are connected by an edge if their
+linking number $l_{i,j}$ is nonzero. Assume that $G$
+is connected and the ground field has characteristic $0$. 
+The given relations then suffice to eliminate all the $f_{i,j}$,
+and it
+follows that
+$\rH^*(X)$ is generated in degree $1$ (see also
+Massey-Traldi \cite[Theorem 1 and Proposition 4.1]{MT},
+or Matei-Suciu \cite{MS}).
+\end{remark}
+
+Under these hypotheses, the cohomology ring behaves very
+nicely:
+
+\begin{theorem}\label{links} 
+If $G$ is connected and the ground field has characteristic $0$, then
+both the homology module $\rH_*(X)$ and the presentation ideal $I$ of
+the cohomology ring $\rH^*(X)$ have linear free resolutions over the
+exterior algebra $E=\wedge\rH^1(X)$.
+\end{theorem}
+
+\begin{proof}[Sketch of proof]
+With these hypotheses the presentation ideal $I\subset E$ is 
+generated by the monomials 
+$e_i\wedge e_j$, where $i$ and $j$ are vertices not connected by an 
+edge in $G$, together with elements
+$\sum_k (1/l_{i_k,i_{k+1}})e_{i_k}\wedge e_{i_{k+1}}$, where the
+sum is over a cycle in the graph $G$. In particular, $E/I$ is a
+quotient ring of the  (exterior algebra) Stanley-Reisner ring of the
+graph $G$, regarded as a $1$-dimensional simplicial complex on the vertex
+set $\{e_1,\ldots,e_n\}$.
+  
+Now suppose we have chosen a spanning tree $T$ of the connected graph
+$G$,  and a total order on the edges of $G$. Recall that an edge $e\in
+G\setminus T$ is called {\it externally active} in $T$ if it is the
+largest edge in the unique cycle $C_e$ contained in $T\cup \{e\}$. It is
+a standard fact that for each enumeration of the edges of $G$ (say
+corresponding to  the choice of a monomial order in $E$) there exists a
+spanning tree $T_0$ of $G$ such that every edge of $G$ not in $T_0$ is
+externally active in $T_0$ (see Bollob\'as \cite[proof of Theorem 10,
+p. 351 and Exercise 8, p. 372]{Bo}). Since the  cycles $C_e$
+form a basis of the cycle space of $G$ (see, for
+example, Bollob\'as \cite[proof of Theorem 9, p. 53]{Bo}), it follows that  
+the ideal $I$ has an initial ideal $I_0$, which is the Stanley-Reisner 
+ideal of the chosen spanning tree $T_0$ in $G$. 
+
+The fact that the Stanley-Reisner ideal
+$I_0$ has a linear resolution follows from Hochster's
+formula for the Betti numbers of a square-free monomial ideal (see
+Hochster \cite{Ho2} or, for an exposition, Stanley \cite{St1}) since any
+subcomplex of a tree is a forest, which is acyclic in all positive
+homological degrees. The  linearity of the injective resolution of
+$\rH^*(X)$ follows from the fact that 
+$T$ is a Cohen-Macaulay simplicial complex as in the proof of
+Theorem \ref{cohores}.\end{proof}
+
+
+
+\section{The singular variety of an Orlik-Solomon algebra}\label{OSrank-var}
+
+An element $x\in V= E_1$ is said to be singular on a module $M$ if the
+set of elements of $M$ annihilated by $x$ is not the same as $xM$.
+The set $\sing(M)$ of singular elements is an algebraic subset of $V$
+called the {\it singular variety\/} $\sing(M)$ of $M$; 
+see Aramova, Avramov, and
+Herzog \cite{AAH} for a discussion (but note that the term 
+{\it rank variety\/} is used in place of singular variety). 
+These authors prove, among other
+things, that the dimension of $\sing(M)$ is
+the {\it complexity\/} of $M$, defined as the exponent of growth of
+the Betti numbers of $M$. This complexity plays, for
+modules over an exterior algebra, a role analogous to that of the
+projective dimension for modules over a polynomial ring. In this
+section we will compute the singular variety of the Orlik-Solomon algebra $A$
+of an arrangement $\Acal$. It follows at once from the definition that
+the singular variety of a module $M$ is the same as that of $\Hom_K(M,
+K)$; so this also gives the singular variety of $\rH_*(X)$.
+
+
+Recall that the product $\Acal_1\times\Acal_2$ of
+arrangements $\Acal_i$ in $ \CC^{\ell_i}$ is the arrangement $\Acal$
+in $\CC^{\ell_1+\ell_2}$ consisting of the hyperplanes
+$H\times \CC^{\ell_2}$ for $H\in \Acal_1$ and the hyperplanes
+$\CC^{\ell_1}\times H$ for $H\in \Acal_2$. Any arrangement can
+be expressed uniquely as the product of irreducible arrangements.
+The following well-known remark shows that to compute the singular variety
+of the Orlik-Solomon algebra as a module over $E$, it suffices to
+treat the irreducible case:
+
+\begin{proposition}\label{tensorproduct} 
+The Orlik-Solomon algebra of a product
+$\Acal=\Acal_1\times\Acal_2$ of two arrangements is given by
+$A(\Acal)=A(\Acal_1) \otimes_K A(\Acal_2)$, the tensor product
+in the category of graded skew-commutative $K$-algebras. Thus
+$\sing(A(\Acal))=\sing(A(\Acal_1))\times \sing(A(\Acal_2))$.
+\end{proposition}
+
+\begin{proof} A minimal dependent set of hyperplanes
+in $\Acal$, or a minimal set with empty intersection, comes from
+a similar set either in $\Acal_1$ or in $\Acal_2$,
+proving the first statement. The second follows because 
+$A(\Acal)_1$ is the direct sum of the corresponding spaces for
+$\Acal_1$ and $\Acal_2$. A linear form $x=(x_1,x_2)$ is singular for
+$A(\Acal)$ if $x_i$ is singular on $A(\Acal_i)$ for both $i=1,2$.\end{proof}
+
+The main result of this section is:
+
+\begin{theorem}\label{rankofirr} Let $\Acal$ be an irreducible 
+hyperplane arrangement with Orlik-Solomon algebra
+$A$ and elements $e_i\in V:=A_1$ corresponding to the hyperplanes
+of $\Acal$. 
+
+{$a)$} If $\Acal$ is noncentral, then the singular variety of
+$A$ is $V$.
+
+{$b)$} If $\Acal$ is central, then the singular variety of
+$A$ is the hyperplane spanned by the elements $e_i-e_j$.
+\end{theorem}
+\begin{proof}
+If the singular variety of the Orlik-Solomon algebra $A$ of
+an arrangement $\Acal$ does not contain an element $e\in V$,
+then $A$ is a free module over the subring $K[e]/e^2$. It
+follows that the Poincar\'e polynomial $1+t$
+of $K[e]/e^2$ divides the Poincar\'e
+polynomial
+$\pi(A,t)$  of $A$.
+
+On the other hand, 
+Crapo \cite{Cr} 
+(see also Schechtman-Terao-Varchenko \cite[Sect.~2]{STV})
+shows that if $\B$ is an irreducible central arrangement with
+deconing
+$\Acal$, then
+\[
+{\pi(A(\B),t)/(1+t)}_{\mid_{t=-1}}\not=0.
+\] 
+It follows that in this case the singular variety of $A(\Acal)$  contains
+everything of degree $1$. In particular, if $\Acal$ is
+an irreducible noncentral arrangement, we may 
+apply this remark to $\B=c\Acal$. Part $a)$ now follows from
+Proposition \ref{deconing}.
+
+If now $\B$ is an irreducible central arrangement, then
+the formula $A(\B)=A(d\B)[e]$ from  Proposition \ref{deconing} implies that
+the singular variety of $A(\B)$ is equal to the singular variety
+of $E'/I'\cong A(d\B)$; that is, it consists of precisely the elements
+of $V'$ as required.\end{proof}
+
+From Theorem \ref{rankofirr} and Proposition \ref{tensorproduct} we get the general
+case:
+
+\begin{corollary}\label{codimofrankvar}
+The singular variety of the Orlik-Solomon algebra $A$ of any
+arrangement $\Acal$ is a linear space of $V$ given in dual coordinates to
+the canonical basis $\{e_H\}_{H\in\Acal}$ by the system of equations
+\[\sum_{H\in\Acal_j} x_H=0,\]
+for each central factor $\Acal_j$. In particular, the 
+codimension of the singular variety of $A$ equals  
+the number of central factors in an irreducible 
+decomposition of $\Acal$.\qed
+\end{corollary}
+
+\begin{example}\label{genericexample}
+A central arrangement $\Acal$ 
+in $\CC^\ell$ is called {\it generic\/}
+if no set of $\ell$ or fewer hyperplanes of $\Acal$ is dependent.
+Analogously, a noncentral arrangement is called generic 
+if every set of $\ell+1$ or fewer hyperplanes meet transversely
+(in particular, they do  not meet if the number of hyperplanes
+is $\ell+1$). 
+In the generic noncentral case it follows immediately
+from the definition that the Orlik-Solomon ideal $I$ is the 
+$(\ell+1)^\st$ power $\gm^\ell$ of the maximal ideal $\gm$
+of $E$. From Proposition \ref{deconing} it follows from this that in the 
+generic central case the
+Orlik-Solomon ideal is the $\ell^\thh$ power of the maximal ideal of the
+subalgebra $E'$ generated by the differences $e_i-e_j$ of the
+generators of $E$.\end{example}
+
+The homology module $\rH_*(X)$
+is, as for every arrangement, given by
+\[
+\rH_*(X)=\Hom_K(E/I, K)\cong \Hom_E(E/I,E(n))=(0:_EI)(n),
+\]
+the $n^\thh$ twist of the annihilator of $I$.
+If $I=\gm^\ell$, then $(0:_EI)(n)=\gm^{n-\ell+1}$.
+An explicit computation of the resolution of this ideal is given in
+terms of Schur functors in  Eisenbud and Schreyer \cite[Corollary 5.3]{ES}; 
+in particular, the resolution is linear.
+
+
+\section{The module $F(\mathcal{A})$}\label{S-module} 
+
+Let $W=V^*=\rH_1(X)$ be the dual vector space to $V$, and let $S=\Sym(W)$
+be the symmetric algebra of $W$, a polynomial ring over $ K$.
+
+As usually stated, the Bernstein-Gel'fand-Gel'fand 
+correspondence (BGG) is an isomorphism between the derived category
+of bounded complexes of coherent sheaves on ${\PP}(V^*$) and the
+derived category of bounded complexes of finitely generated graded
+modules over $E=\wedge V$.  But if one examines the proof, one can
+extract a functor ${\RR}$ from the category of graded modules
+over $S$ and the category of linear
+free complexes over $E$, and also a functor $\LL$
+from the category of graded $E$-modules to the category
+of linear free complexes over $S$. These functors are equivalences of
+categories; see Eisenbud and Schreyer \cite[Proposition 2.1]{ES}.
+
+Starting with a graded $E$-module $P$, the corresponding complex $\LL(P)$
+over $S$ is
+\[
+\cdots \to S\otimes P_i\to S\otimes P_{i+1} \to \cdots
+\]
+with differential $1\otimes p\mapsto\sum x_i\otimes e_ip$, where
+$x_i$ and $e_i$ are dual bases of $W$ and $V$. Starting with
+a graded $S$-module $M$ the corresponding complex $\RR(M)$ over $E$ is
+\[
+\cdots \to \Hom_K(E, M_i)\to \Hom_K(E, M_{i+1})\to \cdots ,
+\]
+with differential defined similarly.
+
+Starting from a hyperplane arrangement $\Acal$, we
+consider the injective resolution of $A$ as an $E$-module.
+Recall that since $E$ is
+Gorenstein, injective resolutions over $E$ are simply
+the duals (with respect to $E$ or to $ K$) 
+of free resolutions. Thus the
+injective resolution of $A$ is the $ K$-dual of the free resolution of
+$\rH_*(X)$. By Theorem \ref{cohores}, this free resolution, and with it the 
+injective resolution of $A$, is linear. 
+
+Thus we may define
+$F(\Acal)$  to be the graded $S$-module that is mapped by
+$\RR$ to the injective resolution of $A$ as an $E$-module.
+The reason for choosing the injective
+resolution over the free resolution in the definition of $F(\Acal)$
+is to make
+$F(\Acal)$ finitely generated. 
+
+The following result, which is Theorem 3.7 of Eisenbud and Schreyer
+\cite{ES} 
+allows us to derive some basic properties of $F(\Acal)$:
+
+\begin{theorem}\label{reciprocity}
+If $M$ is a
+graded $S$-module and $P$ is a finitely generated graded
+$E$-module, then $\LL(P)$ is a free resolution of $M$ 
+if and only if $\RR(M)$ is an injective resolution of $P$. 
+\qed
+\end{theorem}
+
+\begin{corollary}\label{Fproperties} 
+$F(\Acal)$ is generated over $S$ in degree $\ell$ and
+has linear free resolution equal to $\LL(A)$. In particular,
+
+{$a)$}
+$F(\Acal)$ has projective dimension $\ell$ and $\Ext^\ell_S(F(\Acal), S)= K$.
+
+{$b)$}
+ The support of $F(\Acal)$ is a linear space whose codimension is the 
+number of central arrangements in an irreducible decomposition of $\Acal$.
+
+{$c)$}
+The Hilbert function of $F(\Acal)$ is 
+\[
+\sum_{i=0}^{\infty}\dim_K(F(\Acal)_i)t^i=
+(-1)^{\ell}{{\chi(\Acal,t)}\over{(1-t)^n}}.
+\]\end{corollary}
+
+\begin{proof} By
+Theorem \ref{cohores} the injective resolution of $A$ over $E$, which
+is dual to the free resolution of $H_*(X)$, is linear. 
+By Theorem  \ref{reciprocity},
+\[
+\LL(A):\quad 
+0\to S\otimes_K A_0\to\cdots\to 
+S\otimes_K A_\ell \to F(\Acal)\to 0
+\] 
+is a (linear) free resolution of $F(\Acal)$, proving the first
+statement and computing the projective dimension.
+
+$a)$: The degree 0 and 1 parts of $A$ coincide with those
+of $E$; thus the left-hand terms of the resolution above
+are the same as those in $\LL(E)$, the Koszul complex. This
+allows us to compute the $\Ext$ in part a).
+
+$b)$: Aramova, Avramov and Herzog \cite{AAH} show in general that
+the singular variety of an $E$-module $P$ 
+is the support of the $S=\Ext_E^*( K, K)$-module
+$\Ext_E^*(P, K)$, which is the same (since $E$ is
+Gorenstein) as the support of the module $\Ext_E^*( K,P)$.
+By  Eisenbud and Schreyer \cite[Proposition 2.3]{ES}
+this is the module $F(\Acal)$.
+
+$c)$: Knowing the free resolution of $F(\Acal)$ allows us to
+compute its Hilbert series, just as in 
+the proof of Theorem \ref{cohores}.\end{proof}
+
+\begin{example}\label{genericexamplecontinued}
+If $\Acal$ is a generic noncentral arrangement of $n$ hyperplanes in
+$ K^\ell$, then $A$ is $E/\gm^{\ell+1}$. Thus the
+free resolution of $F(\Acal)$ is a truncation of the Koszul complex,
+and $F(\Acal)$ is isomorphic to the $(v-\ell)^\thh$ syzygy module
+of the trivial $S$-module $ K$.\qed
+\end{example}
+
+We have already seen that if $\Acal$ is a generic noncentral arrangement,
+then the Orlik-Solomon ideal of $\Acal$ is a power of the maximal
+ideal of $E$, and thus has a linear free resolution. We will
+show that this property characterizes generic arrangements and
+their cones. We begin with a general result characterizing
+deformations of powers of the maximal ideal:
+
+
+\begin{theorem}\label{characterizationofpowers}
+Let $I\subset E$
+be an ideal in the exterior algebra. Both $I$ and $(E/I)^*$
+admit linear free resolutions if and only if $I$ reduces to
+a power of the maximal ideal modulo some (respectively any)
+maximal $E/I$ regular sequence of linear forms of $E$.
+\end{theorem}
+
+\begin{proof} If $f_1,\dots,f_s\in E_1$ is a regular sequence on
+$E/I$, then $I$ and $(E/I)^*
+\linebreak  
+=\Hom_K(E/I,K)$ are also free
+over 
+$K\langle f_1,\dots,f_s\rangle$. The freeness of
+$E/I$ over\linebreak  
+ $K\langle f_1,\dots,f_s\rangle$ implies that
+the image of $I$ in $E/(f_1,\dots,f_s)$ is
+isomorphic to\linebreak 
+$I/(f_1,\dots,f_s)I$, and also that the dual
+of $E/(I+(f_1,\dots,f_s))$ is $(E/I)^*\otimes_E\linebreak E/(f_1,\dots,f_s)$.
+Thus the minimal  free
+resolutions of $I$ and $(E/I)^*$ are linear if and
+only if the minimal resolutions of 
+$I/(f_1,\dots,f_s)I$ and $(E/(I+(f_1,\dots,f_s)))^*$
+are linear, and it follows from  Eisenbud and 
+Schreyer \cite[Section 5]{ES} that if the image of
+$I$ in $E/(f_1,\dots,f_s)$ is a power of the maximal ideal,
+then the minimal free resolutions of $I$ and $(E/I)^*$ are
+linear.
+
+To prove the converse, the argument given above
+reduces to our showing, in the case where the singular variety
+of $E/I$ is $V$, that if the resolutions of $I$ and $(E/I)^*$
+are linear, then $I$ is itself a power of the maximal ideal.
+
+Our hypothesis implies, in particular, that  the module $(E/I)^*$ is generated
+in a single degree. It follows by Nakayama's Lemma and duality 
+that the socle of $E/I$ (the annihilator in $E/I$ of $\gm$)
+is generated in a single degree, say degree $s$. Thus 
+$I_j=E_j$ for $j>s$,
+and it suffices to show that $I_j=0$ for $j\leq s$.
+
+By Theorem \ref{reciprocity}, both $\LL(E/I)$ and 
+$\LL(I^*)$ are free resolutions; let $F$ be the
+module whose resolution is $\LL(E/I)$. 
+By Aramova, Avramov, and Herzog \cite{AAH} its support is
+the singular variety of $E/I$, that is, $V$.
+
+Duality (into $ K$) over the 
+exterior algebra gives an exact sequence
+$0\to (E/I)^*\to E^*\to I^*\to 0$. Taking duals commutes
+with the functor $\LL$ (up to shifts). So we get an exact sequence
+of complexes
+$0\to \LL(E/I)^*\to \LL(E)^*\to \LL(I^*)\to 0$, where
+now the duals denote $\Hom_S(-, S)$. The homology
+of $\LL(E/I)^*$ at $S\otimes_K ((E/I)_s)^*$
+is $\Ext_S^0(F,S)$, which is nonzero because $F$
+has support $V$. It follows from the exact sequence that 
+$\LL(I^*)$ has nonzero homology at the term
+$S\otimes (I_{s+1})^*$. Since $\LL(I^*)$ is a resolution,
+this must be the last term of the complex---that is,
+$I_j=0$ for $j\leq s$, as required.
+\end{proof}
+
+\begin{example}\label{nontrivialdefo} The ideals characterized in
+Theorem \ref{characterizationofpowers} include  powers of the maximal ideal 
+in subalgebras generated by linear forms (this will be the
+case for cones over hyperplane arrangements) but also
+many that are {\it not\/} of this form. Here is
+the simplest concrete example: Let 
+\[
+I:=(ab+cd, ac, bc)\ \subset \ E:=K\langle a,b,c,d\rangle .
+\]
+It is easy to check that the three given quadrics form
+a Gr\"obner basis with respect to any order with $ab>cd$.
+Since $d$ is a regular element on $E$ modulo the initial
+ideal $(ab,ac,bc)$, it follows that $d$ is regular on $E/I$.
+It is evident that $I$ reduces modulo $d$ to the square of the maximal 
+ideal. To see that $I$ is not the square of the maximal ideal
+of any exterior subalgebra on 3 variables, note that the quadrics
+in 3 variables are all of rank 2, where $I$ contains an element
+of rank 4 (here the rank is defined via the identification between
+elements of $E_2$ and skew-symmetric $4\times 4$ matrices).
+\end{example}
+
+\begin{corollary}\label{characterizationofgeneric} 
+The Orlik-Solomon
+ideal of $\Acal$ admits a linear free resolution over $E$ if and only if
+$\Acal$ is obtained by successively coning a generic noncentral 
+arrangement.\end{corollary}
+
+\begin{proof} We have already seen that the property holds for generic
+noncentral arrangements. If $I$ is the Orlik-Solomon ideal
+of $\Acal$, then the Orlik-Solomon ideal of $c\Acal$ in $E[e_0]$
+is $IE[e_0]=I\otimes_EE[e_0]$, which has free resolution obtained
+from that of $I$ by tensoring with $E[e_0]$; in particular,
+the linearity is not affected. 
+
+Deconing $\Acal$ as many times as possible,  it now suffices to show 
+that if $\Acal$ is noncentral and $I$ has a linear resolution, then
+$\Acal$ is generic. Since $\Acal$ is noncentral, it can have
+no central factors in its irreducible decomposition, and
+thus the singular variety of $\Acal$ is the whole of the vector space
+$V$ of linear forms. 
+
+The theorem now follows from a more general result. Recall 
+from Aramova, Avramov, and Herzog \cite{AAH} that a sequence
+of elements $f_1,\dots,f_s\in E_1$ is called a regular sequence on an
+$E$-module
+$M$ if $M$ is free over $K\langle f_1,\dots,f_s\rangle$ or,
+equivalently, if the annihilator of $f_i$ in $M/(f_1,\dots,f_s)M$
+is $f_iM/(f_1,\dots,f_s)M$ for every $i$. In this case
+the minimal free resolution of $M/(f_1,\dots,f_s)M$ over
+$E/(f_1,\dots,f_s)$ is obtained by reducing the minimal 
+$E$-free resolution of $M$ modulo $(f_1,\dots,f_s)$. The
+length of any maximal regular sequence on $M$ is equal
+to the codimension of the singular variety of $M$ in $V$.
+\end{proof}
+
+\begin{remark}\label{horrocks} 
+Theorem \ref{characterizationofpowers} is 
+actually equivalent to 
+the Theorem of Horrocks that characterizes the bundle
+$\Omega_{\PP(W)}^i(i)$ as the unique indecomposable sheaf ${\mathcal F}$ 
+such that the only nonzero intermediate
+cohomology of any twist of ${\mathcal F}$ is $\rH^i({\mathcal F})=K$.
+To see this one uses the correspondence between powers of
+the maximal ideal of $E$ and the twisted exterior powers of
+the cotangent sheaf $\Omega_{\PP(W)}^i(i)$, as well as the relation
+between resolutions over $E$ and cohomology of sheaves on
+$\PP(W)$, all explained in  Eisenbud and Schreyer \cite{ES}.
+\end{remark}
+
+
+
+
+
+\section{How singular is a singular element?}\label{localsys} 
+
+We keep the notation $W=V^*$ and $S=\Sym(W)$ from the last
+section. Let $N$ be a graded $E$-module, such as $\rH^*(X)$.  Denote
+the homology of $N\xrightarrow{e}N\xrightarrow{e}N$ by $\rH(e,N)$; that is,
+$\rH(e,N)=(\ann_N e)/eN$, so that $\rH(e,N)\neq 0$ if and only if $e$ is
+in the singular variety of $N$. In general, it is not easy to say in
+which degrees the homology $\rH(e,N)$ will occur, but if $N$ has a
+linear injective resolution and socle in one degree, say degree $0$, as
+is the case of $\rH^*(X)(l)$, then the following result shows that
+$\rH(e,N)\neq 0$ if and only if $e:\ N_1\to N_0$ fails to be
+surjective, or equivalently if and only if $e$ annihilates a degree $0$
+element of $N^*$.
+
+\begin{theorem}\label{singularvectorsofastandardmodule} 
+Let $N$ be a finitely generated $E$-module with socle in degree $0$
+having a linear injective resolution, and let $F$ be the 
+ $S$-module such that the resolution of $N$ is $\RR(F)$. For
+any $e\in V$ we have
+
+{$a)$} For each $i$,
+\[
+\rH(e,N)_i=\Tor^{\Ocal_{\PP,e}}_i(\kappa(e),\F_e),
+\] where $\kappa(e)$ denotes the residue class field of $\PP=\PP(W)$ at
+$e$, and $\F_e$ denotes the stalk at $e$ of the sheaf $\F$ on $\PP$
+corresponding to the module $F$.  
+
+{$b)$} $\rH(e,N)_i\neq 0$ if and
+only if $i$ is between $0$ and the projective dimension of $\F_e$ as
+an $\Ocal_{\PP,e}$-module.  In particular, $\rH(e,N)\neq 0$ if and only if
+$\rH(e,N)_0\neq 0$.  
+
+{$c)$} Suppose $e\in \sing(N)=X$ is a generic
+point of the component of $X$ in which it lies.  If the codimension of
+$X\subset \PP$ at $e$ is $c$, then $\rH(e,N)_i\neq 0$ precisely for
+$0\leq i\leq c$.\end{theorem}
+
+\begin{problem}
+Characterize, in terms of the arrangement,
+the subset of $\sing(\rH^*(X))$ consisting
+of those $e$ for which the projective dimension of $\F(\Acal)_e$ is
+greater than the codimension of the largest component of 
+$\sing(\rH^*(X))$ on which $e$ lies. See Yuzvinsky \cite{Yu}, Falk \cite{Fa},
+Cohen-Suciu \cite{CS} and Libgober-Yuzvinsky \cite{LY} for related computations. 
+\end{problem}
+
+\begin{proof}  Everything follows from the formula given in $a)$.
+To prove this formula, recall that if $t\in W$ is any
+element outside $e^\perp$, then $\F_e$ may be represented as the
+degree $0$ part of the localization, at $(e^\perp)$, 
+of the module $F[t^{-1}]$. Thus if we write $R=S[t^{-1}]_0$, then
+the Tor that we are concerned with may be represented
+as $\tor^R_i(R/(e^\perp)_0, F[t^{-1}]_0)$. Since localizing
+and taking the degree 0 part are both exact functors, we
+may rewrite this as $\tor^S_i(S/(e^\perp)[t^{-1}], F[t^{-1}])_0$.
+By Theorem \ref{reciprocity}, $\LL(N)$ is a free resolution of $F$,
+and thus $\tor^S_i(S/(e^\perp)[t^{-1}], F[t^{-1}])_0$ is
+the $i^\thh$ homology of $\LL(N)\otimes_S R_e$, where 
+$R_e= K[t,t^{-1}]$ has
+$S$-module structure coming from the
+map $S\to K[t,t^{-1}]$ derived from $e:W\to K=Kt$. 
+But $\LL(N)\otimes_S R_e$ is nothing but the complex
+\[
+\cdots\xrightarrow{t\otimes e}
+R_e\otimes_K N_{i-1}\xrightarrow{t\otimes e}
+R_e\otimes_K N_{i}\xrightarrow{t\otimes e}
+R_e\otimes_K N_{i+1}\xrightarrow{t\otimes e}\cdots
+\] 
+whose degree 0 part is
+\[
+\cdots\xrightarrow{t\otimes e}
+Kt^{-i-1}\otimes_K N_{i-1}\xrightarrow{t\otimes e}
+Kt^{-i}\otimes_K N_{i}\xrightarrow{t\otimes e}
+Kt^{-i+1}\otimes_K N_{i+1}\xrightarrow{t\otimes e}\cdots,
+\]
+a complex computing $\rH(e,N)_i$.
+\end{proof}
+
+\begin{example} Each part of Theorem \ref{singularvectorsofastandardmodule} 
+fails for a module whose resolution is linear for $d$ steps, no
+matter how large $d$ is. To see this,
+note first that if we have an exact sequence
+\[0\to N'\to F\to N\to 0,\]
+such that $F$ is free, then the homology under multiplication by $e$
+satisfies $\rH(e,N') = \rH(e,N)(1)$, Thus a module whose
+linear syzygy chain ends at a certain point cannot have a
+minimal generator annihilated by a linear form! Perhaps the
+simplest example is the dual of the $d^\thh$ module of syzygies
+of $E/(ab)$, where $a,b$ are independent linear forms.
+\end{example}
+
+Restating part of this in the case of a hyperplane arrangement,
+we get:
+
+\begin{corollary}\label{highesthom}
+An element $e\in V$ is singular
+for $A$ (or equivalently for $\rH_*(X)$) 
+if and only if
+there is a nonzero element of $\rH_\ell(X)$ 
+annihilated by $e$.\end{corollary}
+
+\begin{proof} We have shown that $\rH^*(X)$ has socle in degree $\ell$
+(note that the signs are opposite to those of Eisenbud and Schreyer \cite{ES})
+and linear injective resolution. Thus $N=\rH^*(X)(\ell)$ satisfies
+the hypothesis of Theorem \ref{singularvectorsofastandardmodule}.
+Thus $e$ is singular for $N$ if and only if 
+$e: H^{\ell-1}(X)\to H^\ell(X)$ fails to be surjective, or,
+dually, $e:H_\ell(X)\to H_{\ell-1}(X)$ fails to be injective.
+\end{proof}
+
+\section{Syzygies of monomial ideals in the exterior algebra}\label{Appendix}
+
+In this section we give a conceptual description and proof of the
+correspondence between free resolutions of certain modules over exterior
+and symmetric algebras first proved by Aramova, Avramov, and Herzog
+\cite{AAH} and R\"omer \cite{Ro}.  The main idea is an isomorphism between
+certain subcategories of the categories of modules over these two
+algebras. Our approach provides a simple explanation for the shape of the
+formula relating the corresponding multigraded Betti numbers 
+(Corollary \ref{betti}).
+
+Let $V$ be an $n$-dimensional vector space over the field $K$, with
+basis $x_1,\ldots,x_n$. We will denote by $S=\Sym(V)$ 
+the symmetric algebra over $V$,  which we identify with 
+the ring of polynomials over $K$ in the $n$ variables $x_1,\ldots,x_n$,
+and by $E=\Lambda(V)$ the exterior algebra of the vector space 
+$V$. Both of these algebras have a natural $\Z^n$ grading in which each
+monomial (product of the $x_i$) generates a homogeneous component.
+(Note that in earlier sections we wrote $S=\Sym(W)$, where
+$W$ was the dual of $V$. Since we have explicitly chosen
+a basis of $V$, we may identify $V$ with $W$.)
+
+We say that a $\Z^n$-graded module $M$ over $E$ or $S$ is
+{\it square-free\/} if it admits a free presentation 
+$F\to G\to M\to 0$ where each generator of $F$ and $G$ has the 
+degree of a square-free monomial. Note that the presentation map
+$F\to G$ is represented by a matrix whose entries are scalars
+times monomials. Examples include the 
+Stanley-Reisner rings $S/I$ where $I$ is an ideal generated by
+square-free monomials, but also such things as the cokernel of 
+the matrix
+\[\begin{pmatrix}
+x_0 &0 \\
+-x_1 &x_1 \\
+0 & -x_2\end{pmatrix},
+\]
+the canonical module of the cone over 3 points in the plane.
+
+There is a one-to-one correspondence between square-free modules over $S$ and
+over $E$ obtained by interpreting the presentations as matrices over $S$ or
+over $E$; we will write $_SM$ and $_EM$ for the two. 
+
+We can describe the correspondence of resolutions in a simple way
+as follows:
+
+Start from a free resolution of a square-free module $_SM$. Replace
+each free module in the resolution by a module made from the sum of
+the vector spaces of its multihomogeneous elements of square-free
+degree. It turns out---this is the main point---that this complex
+of vector spaces has the structure both of a complex of
+$S$-modules and of a complex of $E$-modules. The modules in this
+complex are not free, but they have simple and functorial free
+resolutions. The free resolutions of the
+$E$-modules in the complex fit together to make a double complex,
+whose total complex is the minimal free resolution of $_EM$. A
+similar procedure allows us to pass in the opposite direction. 
+
+The correspondence described above works,
+with appropriate definitions, in a more general setting,
+in which $E$ is replaced by one 
+of the algebras
+\[
+R_q:={K\{\,x_1,\ldots , x_n\,\}\over
+({\langle 
+x_jx_i-qx_ix_j \mid 1\le i<j\le n\rangle
++
+\langle (1-q)x_i^2\mid 1\le i\le n\rangle})}
+\] 
+where $K\{\,x_1,\ldots , x_n\,\}$ denotes the free
+ $K$-algebra on
+$x_1,\ldots , x_n$, and $q\ne 0$. We leave the details of this
+generalization to the interested reader.
+
+All modules and free resolutions considered will
+be assumed $\Z^n$-graded. We identify $\N^n\subset\Z^n$ with the set
+of monomials of $S$. By the support of a monomial in either $E$ or $S$,
+we will mean the collection of variables present in it.
+A square-free monomial (or multidegree) is an element
+$\baa\in\{0,1\}^n\subset\NN^n$; so $\supp(\baa)=\setdef
+{x_j} {a_j\ne 0}$.  
+
+\subsection*{Modules with square-free presentation} The following result is due
+to Bruns and Herzog \cite[Theorem 3.1 a)]{BH2}:
+
+\begin{proposition}\label{sfbettis} Let $\Gamma$ be any set of monomials of $S$
+closed under taking least common multiples. If $M$ is an $S$-module
+with generators and relations having degrees in $\Gamma$, then all the
+free modules in a minimal free resolution of $M$ have degrees in
+$\Gamma$.\end{proposition}
+
+\begin{proof} 
+We give a new proof using Gr\"obner bases, which will
+easily extend to give Proposition \ref{sfbettisexterior} as well.
+Let 
+$F\xrightarrow{\phi} G\to M\to 0$
+be a $\Z^n$-graded free presentation with degrees of $F$ and $G$ 
+in $\Gamma$. 
+\pagebreak
+We may replace $F\xrightarrow{\phi} G$ by a map $F'\xrightarrow{\phi'} G$ 
+so that the generators
+of $F'$ map to a Gr\"obner basis of $\ker(G\to M)$ by using the Buchberger
+algorithm; this involves adding free generators whose
+degrees are the least common multiples of pairs of generators
+already present, and thus still in $\Gamma$.
+Schreyer's theorem 
+(Eisenbud \cite[Theorem 15.10]{Ei}) shows that in the symmetric
+case the
+kernel of $\phi'$ is generated by elements of degrees equal
+to the least common multiples of pairs of degrees of generators of $F'$.
+
+
+It follows as in Eisenbud \cite[Theorem 20.2]{Ei} 
+that the minimal presentation of $M$  also  has 
+degrees in $\Gamma$, and iterating this process 
+we see that the same is true for
+the whole syzygy chain.
+\end{proof}
+
+If $M$ is a square-free module in the sense above, then
+we say that the {\it square-free part\/} of $M$ is the 
+module obtained by factoring out all the homogeneous elements
+of $M$ with non-square-free degrees. Thus, for example,
+the square-free part of $S$ itself is the factor ring
+$R:=S/(x_1^2,\ldots,x_n^2)$.  More generally, if $\baa$ is
+any square-free monomial, then
+$S(-\baa)$ has square-free part $R/\supp(\baa)(-\baa)$. 
+
+\begin{corollary}\label{sfparts} If $M$ is a square-free module over $S$,
+then the square-free part of $M$ 
+admits a resolution by direct sums of modules of the
+form $R/\supp(\baa)(-\baa)$. 
+\qed
+\end{corollary}
+
+An analogous result also holds over $E$:
+
+\begin{proposition}\label{sfbettisexterior} If $M$ is a module over $E$ whose
+generators and relations have square-free  degrees, 
+then the square-free part of
+$M$ admits a finite resolution by modules of the form 
+$E_\baa:= E/\supp(\baa)(-\baa)$.\end{proposition}
+
+\begin{proof} Because the generators and relations of $M$ have square-free degrees,
+we may write $M$ as the cokernel of a map (always $\Z^n$-homogeneous)
+between finite direct sums of modules of the form $E_\baa$, and it thus
+suffices to show that the kernel of such a map is generated in
+square-free degrees. Using Gr\"obner bases we may reduce as above to
+the monomial case. Exactly as in Eisenbud \cite[Lemma 15.1]{Ei}, one
+shows that all the relations among monomials are generated by those
+determined by the fact that any monomial $\baa$ is annihilated by the
+variables in the support of $\baa$, and the two-at-a-time relations
+coming from the least common multiples (``divided Koszul
+relations''). The desired result follows.\end{proof}
+
+\subsection*{The common subcategory}
+The category of modules
+over $E$ and the category of modules over $R=S/(x_1^2,\dots,x_n^2)$ 
+have much in common.
+We make one such connection precise as follows:
+
+Let $\baa$ and $\bb$ be two monomials in $E$ such that
+$\supp(\baa)\subseteq\supp(\bb)$, and let $E_\baa$ and $E_\bb$
+be the cyclic $E$-submodules generated by these monomials.
+The natural inclusion $E_\bb\subseteq E_\baa\subseteq E$ induces
+a functorial commutative diagram
+\[
+\begin{xy}
+\xymatrix{
+E/\supp(\baa)(-\baa)\ar[r]^(.7)\cong & E_\baa \ar@{^{(}->}[r]& E\ar@{=}[d]\\ 
+E/\supp(\bb)(-\bb)\ar[u]^{\cdot \bb\baa^{-1}}\ar[r]^(.7)\cong& 
+E_\bb\ar@{^{(}->}[u]\ar@{^{(}->}[r] &E  
+}
+\end{xy}
+\]
+where the horizontal isomorphisms are defined by sending 1
+to the distinguished generator, and the upper left
+monomorphism is induced by right multiplication in $E$
+by $\bb\baa^{-1}$, 
+\pagebreak
+the signed exterior monomial such that
+$(\bb\baa^{-1})\baa=\bb$.
+
+The same commutative diagram holds if we replace
+$E$ by $R$. In fact,
+identifying square-free monomials in $E$ with the corresponding
+monomials in $R$ defines an equivalence of categories. More precisely:
+
+\begin{proposition}\label{equivER} Let $\Acal$ denote the $K$-additive extension of the
+category of $\Z^n$-graded submodules of $R$, with morphisms given
+by inclusions, let $\B$ denote the $K$-additive extension of the
+category of $\Z^n$-graded submodules of $E$, also with morphisms given
+by inclusions, and let $\kVect$ be the category of $K$-vector spaces.
+
+The above identification of square-free monomials in $E$ with those of $R$ 
+induces an equivalence $\Psi:\Acal \to \B$ of categories 
+whose restriction (via the natural forgetful functors) 
+to the underlying $K$-vector spaces is the
+identity functor. 
+In particular, the functor $\Psi$ preserves acyclic complexes.\qed
+\end{proposition}
+
+Notice that if $\baa$ is a square-free monomial, then the square-free part of 
+$S(-\baa)$ is $R/\supp(\baa)(-\baa)=(\baa)R$, an object of $\Acal$.
+Similarly, the square-free part $E_\baa=E/\supp(\baa)(-\baa)=(\baa)E$
+of $E(-\baa)$ is an object of $\B$.
+
+
+\subsection*{Resolutions over $S$ and $E$}
+We let $\Acal_0$ and $\B_0$ be the
+additive subcategories generated by these modules and the inclusion
+morphisms $(\baa)R\subset(\bb)R$ and $(\baa)E\subset(\bb)E$ when
+$\baa|\bb$ as monomials in $S$.
+
+Certain free complexes over $S$ and $E$ correspond to complexes 
+in the categories $\Acal_0\cong\B_0$. We describe the connection
+with $S$ first:
+
+To a given $\Z^n$-graded complex ${\mathbf F}_\bullet$ of free $S$-modules
+\[
+{\mathbf F}_\bullet: \quad 0  \to F_r 
+\to \ldots \to F_1 \to  F_0, 
+\] 
+with generators in square-free degrees,
+we associate a complex $\rsf({\mathbf F}_\bullet)$ of
+$R$-modules that we may regard as a complex in $\Acal_0$. Namely
+we define $\rsf({\mathbf F}_\bullet)$ as the complex of
+square-free degrees of ${\mathbf F}_\bullet$, that is,
+\[
+{\rsf({\mathbf F}_\bullet)}_i=
+\bigoplus_{\bb\in\set{0,1}^n}{({\mathbf F}_i)}_\bb,
+\]
+for all $i$, and where the differentials are induced by the
+differentials of the original complex ${\mathbf F}_\bullet$.
+It is easy to see that $\rsf$ 
+defines a functor from the category of $\Z^n$-graded complexes
+of free $S$-modules to the category of complexes in $\Acal_0$.
+
+It follows from Proposition \ref{sfbettis}
+that ${\mathbf F}_\bullet$ is square-free acyclic (that is, it has
+no homology in square-free multidegrees) if and only if the complex
+$\rsf({\mathbf F}_\bullet)$ is acyclic. It is also clear that
+${\mathbf F}_\bullet$ is minimal if and only if
+$\rsf({\mathbf F}_\bullet)$ is minimal.
+
+We have proven:
+
+\begin{proposition}\label{StoA} The functor $\rsf$ is an equivalence between the category
+of square-free complexes of free $S$-modules and the category of
+complexes in $\Acal_0$. It preserves minimality and acyclicity.\end{proposition}
+
+Now we turn to complexes over $E$. For functorial constructions,
+we will use the divided power algebra.
+If $U$ is a finite-dimensional graded vector space, we write 
+$D_l(U)$ for the $l\thh$-divided power of $U$.  It is convenient to define
+$D_l(U)$ as the dual of the $l\thh$-symmetric power of the dual space,
+that is, $D_l(U) = (\Sym_l(U^*))^*$.  The divided powers $D_l(U)$ have
+``diagonal'' maps 
+$D_{l+1}(U) \to D_l(U)\otimes U$,
+which are the monomorphisms dual to the surjective 
+natural multiplication map in the symmetric algebra
+$\Sym_l (U^*)\otimes U^* \to \Sym_{l+1} (U^*).$ 
+
+We can now go from complexes in the category $\B_0$ to 
+free complexes over $E$ using the
+Cartan Resolution.
+
+\begin{proposition}\label{equivEE} There exists a functor $\Phi$ from the
+category of complexes in $\B_0$ to the category of complexes of free
+modules over $E$ whose inverse is obtained by taking
+square-free parts. $\Phi$ preserves acyclicity and minimality.
+Applied to an acyclic complex in $\B_0$ with homology
+$M$, the functor $\Phi$ provides an $E$-free resolution of $M$.
+\end{proposition}
+
+\begin{proof}  We first define $\Phi$ on modules in $\B_0$.
+It associates, to a cyclic module 
+$E_\baa\cong E/\supp(\baa)(-\baa)$, 
+the (resolution) 
+$\Phi(E_\baa):=D(L_\baa)\otimes E$, 
+where 
+\[L_\baa:=\bigoplus_{x_i\in\supp(\baa)}k(-\ee_i)\]
+is the $\Z^n$-graded subspace of $V$ spanned by 
+$\supp(\baa)$, and whose  differentials are induced by 
+the diagonals followed by multiplication in $E$. 
+
+More precisely, $\Phi(E_\baa)$ is the complex
+\[\Phi(E_\baa):
+\ldots\to D_2(L_\baa)\otimes E(-\baa)\to L_\baa\otimes E(-\baa)\to
+E(-\baa),\]
+which is a minimal free resolution of  the cyclic module $E_\baa$.
+We see at
+once that $E_\baa$ is the square-free part of $\Phi(E_\baa)$.
+
+If $\baa$ and $\bb$ are two monomials in $E$ such that
+$\supp(\baa)\subseteq\supp(\bb)$, then 
+\[D(L_\bb)\otimes E(-\bb)\xrightarrow{\pi\otimes(\cdot \bb\baa^{-1})}
+D(L_\baa)\otimes E(-\baa),\] 
+where $\pi$, the map induced to divided powers by the 
+canonical projection $\pi: L_\bb\to L_\baa$, is a morphism of
+chain complexes lifting the inclusion
+$E_\bb\subseteq E_\baa\subseteq E$.
+
+Given a complex ${\mathbf F}_\bullet$ in $\B$, we may apply $\Phi$
+to obtain a double complex of free $E$-modules, and we
+set $\Phi({\mathbf F}_\bullet)$ to be the total complex of
+this double complex. Because of the way $\Phi$ is defined on each
+object of $\B_0$, this functor preserves minimality. The spectral
+sequences of the double complex shows that it also preserves 
+acyclicity.\end{proof}
+
+As Aramova, Avramov, Herzog \cite{AAH} and R\"omer \cite{Ro}
+observe, the existence of such a construction
+shows that an $S$-module $M$
+has a linear free resolution over $S$ if and only if the
+corresponding $E$-module has a linear free resolution over $E$.
+Our version of the construction also ``explains'' these authors'
+formula for Betti numbers:
+
+\begin{corollary}\label{betti} The  following equality holds among  Poincar\'e 
+series:
+\[\sum_{i=0}^\infty\sum_{\baa\in\NN^n}\beta_{i,\baa}^E(_EM)t^i\uu^\baa=
+\sum_{i=0}^\infty\sum_{\baa\in\NN^n}\beta_{i,\baa}^S(_SM)
+{{t^i\uu^\baa}\over{\prod_{j\in\supp(\baa)}(1-tu_j)}},\]
+where $\beta_{i,\baa}^E(_EM)$ denotes the dimension of the 
+degree $\baa$ part of $\tor^E_i(M,K)$, and similarly for
+$\beta_{i,\baa}^S(_SM)$.\end{corollary}
+
+
+\begin{thebibliography}{Bjo2}
+\bibitem[AAH]{AAH} A.~Aramova, L. A.~Avramov, J.~Herzog: 
+Resolutions of monomial ideals and cohomology over exterior algebras, 
+{\sl Trans. Amer. Math. Soc.} \textbf{352} (2000), no. 2, 579--594.
+\MR{2000c:13021}
+
+\bibitem[AHH]{AHH} A.~Aramova, J.~Herzog, T.~Hibi: 
+Squarefree lexsegment ideals, 
+{\sl Math. Z.} \textbf{228}, (1998), 353--378.
+\MR{99h:13013}
+
+
+\bibitem[BCP]{BCP} D.~Bayer, H.~Charalambous, S.~Popescu:
+Extremal Betti Numbers and  Applications to Monomial Ideals,
+{\sl J. Algebra} \textbf{221}, (1999), 497--512.
+\MR{2001a:13020}
+
+\bibitem[BP]{BP}  L.~J.~Billera, J.~S.~Provan:  Decompositions of simplicial 
+complexes related to diameters of convex polyhedra, 
+{\sl Math. Oper. Res.} \textbf{5}, (1980), 576--594.
+\MR{82c:52010}
+
+
+\bibitem[Bj\"o1]{Bjo1} A.~Bj\"orner: On the homology of geometric lattices, 
+{\sl   Algebra Univ.}  \textbf{14}, (1982), 107--128.
+\MR{83d:05029}
+
+
+\bibitem[Bj\"o2]{Bjo2} A.~Bj\"orner: The homology and shellability of matroids
+and
+geometric lattices, Chapter 7 of {\it Matroid Applications}, ed.
+Neil White, 226--283, Encyclopedia Math. Appl., \textbf{40}, Cambridge
+Univ. Press, Cambridge, 1992.  
+\MR{94a:52030}
+  
+\bibitem[BZ]{BZ} A.~Bj\"orner, G.~Ziegler: 
+Combinatorial stratification of complex arrangements, 
+{\sl J. Amer. Math. Soc.} \textbf{5}, (1992), no. 1, 105--149. 
+\MR{92k:52022}
+
+\bibitem[Bo]{Bo}
+B.~Bollob\'as: {\it Modern Graph Theory}, Graduate Texts
+in Mathematics \textbf{184}, Springer-Verlag, New York, 1998.
+\MR{99h:05001}
+
+\bibitem[BH1]{BH1} W.~Bruns, J.~Herzog: {\it Cohen-Macaulay Rings}, Cambridge
+Studies in Advanced Mathematics, \textbf{39}, Cambridge University
+Press, 1993.  
+\MR{95h:13020}
+  
+\bibitem[BH2]{BH2} W.~Bruns, J.~Herzog: On multigraded resolutions, 
+{\sl Math. Proc. Cambridge Philos. Soc.}, \textbf{118}, (1995), 245--257.  
+\MR{96g:13013}
+
+
+\bibitem[CS]{CS} D.~Cohen, A.~Suciu: Characteristic varieties of arrangements,
+{\sl Math. Proc. Cambridge Philos. Soc.} \textbf{127} (1999), no. 1, 33--53.
+\MR{2000m:32036}
+
+
+\bibitem[Cr]{Cr} H.~Crapo: A higher invariant for matroids, {\sl J. of
+Combinatorial Theory} \textbf{2}, (1967), 406--417.  
+\MR{35:6579}
+
+\bibitem[ER]{ER} J.~Eagon, V.~Reiner: Resolutions of Stanley-Reisner rings and 
+Alexander duality, {\sl J. Pure Appl. Algebra} \textbf{130}, (1998), no.
+3, 265--275. 
+\MR{99h:13017}
+
+\bibitem[Ei]{Ei} D.~Eisenbud:
+{\sl Commutative Algebra with a View Toward Algebraic Geometry},
+Springer-Verlag, New York, 1995.
+\MR{97a:13001}
+
+\bibitem[ES]{ES}  D.~Eisenbud, F.-O.~Schreyer: 
+Sheaf Cohomology and Free Resolutions over Exterior Algebras, 
+preprint {\tt math.AG/0005055}.
+
+
+\bibitem[ESV]{ESV} H.~Esnault, V.~Schechtman, E.~Viehweg:
+Cohomology of local systems on the complement of hyperplanes, 
+{\sl Invent. Math.} \textbf{109} (1992), no. 3, 557--561.
+\MR{93g:32051}
+
+
+\bibitem[Fa]{Fa} M.~Falk: Arrangements and cohomology, 
+{\sl Ann. Comb.} \textbf{1} (1997), no. 2, 135--157. 
+\MR{99g:52017}
+
+\bibitem[GS]{GS} D.~Grayson, M.~Stillman: {\it Macaulay2}, a
+software system devoted to supporting research in algebraic geometry
+and commutative algebra.  Contact the authors, or download from
+{\tt ftp://ftp.math.uiuc.edu/Macaulay2}.
+
+
+\bibitem[Ho1]{Ho1}  M.~Hochster: Rings of invariants of tori, Cohen-Macaulay
+rings generated by monomials, and polytopes, {\sl Ann. of Math.} \textbf{96},
+(1972), 318--337. \MR{46:3511}
+
+\bibitem[Ho2]{Ho2} M.~Hochster: Cohen-Macaulay rings, combinatorics and
+simplicial complexes, in Ring theory II,  McDonald, B. R. and Morris, R. A. (eds.),
+{\it Lecture Notes in Pure and Appl. Math.} \textbf{26}, Marcel Dekker, 1977.
+\MR{56:376}
+
+
+\bibitem[LY]{LY}  A.~Libgober, S.~Yuzvinsky: Cohomology of the Orlik-Solomon
+algebras  and local systems, {\it Compositio Math.} \textbf{121} (2000), no. 3,
+337--361. \MR{2001j:52032}
+
+\bibitem[MT]{MT} W.~Massey, L.~Traldi:
+On a conjecture of K. Murasugi,
+{\sl Pacific J. Math.} \textbf{124} (1986),
+no. 1, 193--213.
+\MR{87k:57008}
+
+\bibitem[MS]{MS} D.~Matei, A.~Suciu: Cohomology rings and nilpotent 
+quotients of real and complex arrangements, 
+{\it Singularities and Arrangements, Sapporo-Tokyo 1998}, 
+Advanced Studies in Pure Mathematics \textbf{27} (2000), 185--215.
+\MR{2002b:32045}
+
+
+\bibitem[Mi]{Mi} J.~Milnor:
+Isotopy of links, in  {\it Algebraic geometry and topology.
+A symposium in honor of S. Lefschetz}, pp. 280--306.
+Princeton University Press, Princeton, N. J., 1957.
+\MR{19:1070c}
+
+\bibitem[Mu]{Mu} M.~Musta\c t\v a: Local Cohomology at Monomial Ideals, 
+in ``Symbolic computation in algebra, analysis, and geometry 
+(Berkeley, CA, 1998)'', 
+{\sl J. Symbolic Comput.} \textbf{29} (2000), no. 4-5, 709--720.
+\MR{2001i:13020} 
+
+\bibitem[OS]{OS} P.~Orlik, L.~Solomon: Combinatorics and topology of
+complements of hyperplanes, {\sl Invent. Math.} \textbf{56}, (1980), 167--189.
+\MR{81e:32015}
+
+\bibitem[OT]{OT} P.~Orlik, H.~Terao: {\it Arrangements of hyperplanes}, 
+Grundlehren der Mathematischen Wissenschaften \textbf{300}, 
+Springer-Verlag, Berlin, 1992.  
+\MR{94e:52014}
+
+\bibitem[Pr]{Pr} J.~S.~Provan: Decompositions, shellings, and diameters of 
+simplicial complexes and convex polyhedra, Thesis, Cornell Univ., Ithaca, NY,
+1977.
+
+
+\bibitem[R\"o]{Ro} T.~R\"omer: Generalized Alexander Duality and Applications, 
+{\sl Osaka J. Math.} \textbf{38} (2001), 469--485.
+\MR{2002c:13029}
+
+\bibitem[STV]{STV} V.~Schechtman, H.~Terao, A.~Varchenko: Local systems over
+complements of hyperplanes and the Kac-Kazhdan conditions for singular
+vectors,  {\sl J. Pure Appl. Algebra} \textbf{100}, (1995), 93--102.
+\MR{96j:32047}
+
+\bibitem[St1]{St1} R.~Stanley: {\it Combinatorics and Commutative Algebra},
+Second edition, Progress in Math. \textbf{41}, Birkh\"auser, 1996. \MR{98h:05001}
+
+\bibitem[St2]{St2} R.~Stanley: Cohen-Macaulay rings and constructible
+polytopes, {\sl Bull. Amer. Math. Soc.} \textbf{81}, (1975), 133-135. 
+\MR{51:486}
+
+\bibitem[Te]{Te} N.~Terai: Generalization of Eagon-Reiner theorem
+and $h$-vectors of graded rings, preprint 1997.     
+
+\bibitem[Ya]{Ya} K.~Yanagawa: Alexander duality for Stanley-Reisner rings and
+square-free $\mathbf{N}^n$-graded modules, {\sl J. Algebra} 
+\textbf{225} (2000), no. 2, 630--645. 
+\MR{2000m:13036}
+
+\bibitem[Yu]{Yu} S.~Yuzvinsky: Cohomology of the Brieskorn-Orlik-Solomon
+algebras,  {\sl Comm. Algebra} \textbf{23}, (1995), 5339--5354. \MR{97a:52023}
+
+\bibitem[Zi]{Zi} G.~Ziegler: On the difference  between real and  complex
+arrangements,  {\sl Math. Z.} \textbf{212} (1993),  no. 1,  1--11. \MR{94f:52017}
+ 
+\end{thebibliography}
+ 
+\end{document} 

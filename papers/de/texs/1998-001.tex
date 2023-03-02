@@ -1,0 +1,441 @@
+%_ **************************************************************************
+%_ * The TeX source for AMS journal articles is the publisher's TeX code    *
+%_ * which may contain special commands defined for the AMS production      *
+%_ * environment.  Therefore, it may not be possible to process these files *
+%_ * through TeX without errors.  To display a typeset version of a journal *
+%_ * article easily, we suggest that you either view the HTML version or    *
+%_ * retrieve the article in DVI, PostScript, or PDF format.                *
+%_ **************************************************************************
+
+
+%\controldates{17-NOV-1997,17-NOV-1997,17-NOV-1997,8-DEC-1997}
+ 
+\documentclass{proc-l}
+%\issueinfo{126}{03}{March}{1998}
+\pagespan{687}{691}
+\PII{S 0002-9939(98)04229-4}
+\def\copyrightyear{1998}
+
+
+
+
+\theoremstyle{plain}
+\newtheorem*{theorem1}{Corollary 1.1}
+\newtheorem*{theorem2}{Theorem 2.1}
+\newtheorem*{theorem3}{Theorem 3.1}
+\newtheorem*{theorem4}{Proposition 3.2}
+
+\theoremstyle{definition}
+\newtheorem*{definition1}{Example 4.1}
+\newtheorem*{definition2}{Example 4.2}
+
+
+
+
+\newcommand{\precc}{{\prec \kern -5pt\prec }}
+
+
+\begin{document}
+
+\title[Non-commutative Gr\"{o}bner bases for Commutative Algebras]
+{Non-commutative Gr\"{o}bner bases \\ for commutative algebras}
+\author{David Eisenbud}
+\address{MSRI, 1000 Centennial Dr., Berkeley, California 94720}
+\email{de@msri.org}
+\author{Irena Peeva}
+\address{Department of Mathematics, Massachusetts Institute of Technology,
+Cambridge, Massachusetts 02139}
+\email{irena@math.mit.edu}
+\author{Bernd Sturmfels}
+\address{Department of Mathematics, University of California, Berkeley,
+California 94720}
+\email{bernd@math.berkeley.edu}
+\date{September 6, 1996}
+\thanks{The first and third authors are grateful to the NSF and
+ the second and third authors
+are grateful to the David and Lucille Packard Foundation for 
+partial support in preparing this paper. }
+\begin{abstract} An ideal
+$I$ in the free associative algebra  $k\langle X_{1},\dots ,X_{n}\rangle $
+over a field $k$
+is shown to have a finite Gr\"{o}bner basis if the algebra defined by $I$ is
+commutative; in characteristic 0 and generic coordinates the 
+Gr\"{o}bner basis may even be constructed by lifting a commutative Gr\"{o}bner
+basis and adding commutators.
+\end{abstract}
+\subjclass{{Primary 13P10, 16S15}}
+\commby{Wolmer V. Vasconcelos}
+\maketitle
+
+
+
+\section*{1. Introduction}
+
+Let $k$ be a field and let 
+$k[x] = k[x_{1},\dots ,x_{n}]$ be the polynomial ring in
+$n$ variables and $k \langle X \rangle = k\langle X_{1},\dots ,X_{n}\rangle $ 
+the free associative algebra in $n$ variables. Consider the
+natural map $\gamma :\, k \langle X \rangle \to k[x] $ taking $X_{i}$ to $x_{i}$.
+It is sometimes useful to regard a commutative algebra
+$k[x]/I$ through its non-commutative presentation 
+$k[x]/I \cong k \langle X \rangle /J$, 
+where $J = \gamma ^{-1}(I)$. This is especially
+true in the construction of free resolutions as in \cite{An}. 
+Non-commutative presentations have been exploited in 
+\cite{AR} and \cite{PRS} to study homology of 
+coordinate rings of Grassmannians and toric varieties.
+These applications all make use of Gr\"{o}bner bases for $J$
+(see \cite{Mo}  for non-commutative  Gr\"{o}bner bases).
+In this note we give an explicit description (Theorem 2.1) of the minimal
+Gr\"{o}bner bases for $J$ with respect to monomial orders on
+$k \langle X \rangle $ that are lexicographic extensions of
+monomial orders on $k [x] $. 
+
+ Non-commutative  Gr\"{o}bner bases are usually infinite; for
+example, if $n=3$ and  $\,I = (x_{1}x_{2}x_{3}) \,$ then $\gamma ^{-1}(I)$
+does not have a finite Gr\"{o}bner basis
+for any monomial order on $k \langle X \rangle $.  (There are only two ways
+of choosing leading terms for the three commutators,
+and both cases are easy to analyze by hand.)
+However, after a linear change of variables 
+the ideal becomes $\,I'=(X_{1}(X_{1}+X_{2})(X_{1}+X_{3}))$, and we shall 
+see in Theorem 2.1 that
+$\,X_{1}(X_{1}+X_{2})(X_{1}+X_{3})$ and the three commutators 
+$X_{i} X_{j} - X_{j} X_{i}$ are a Gr\"{o}bner basis for $\gamma ^{-1}(I')$
+with respect to a suitable order. This situation is rather general: 
+Theorems 2.1 and 3.1  imply the following  result:
+
+\begin{theorem1} Let $k$ be an infinite field and
+$I\subset k[x]$ be an ideal.
+After a general linear change of variables,
+the ideal  $\gamma ^{-1}(I)$ in $k\langle X \rangle $
+has a finite Gr\"{o}bner basis.  
+In characteristic 0, if $I$ is homogeneous,
+such a basis
+can be found with degree at most 
+$\,max \{2,regularity (I) \}$.
+\end{theorem1}
+
+
+In characteristic 0 the Gr\"{o}bner basis of $\gamma ^{-1}(I)$ in Corollary 1.1
+may be obtained by lifting the Gr\"{o}bner basis
+of $I$, but this is not so in characteristic $p$; see Example 4.2.
+Furthermore, $\gamma ^{-1}(I)$ might have no finite Gr\"{o}bner basis at all
+if the field is finite; see Example 4.1. 
+
+The behavior of $\gamma ^{-1}(I)$
+is in sharp contrast to what happens for arbitrary ideals in 
+$k \langle X \rangle $.
+For example, the defining ideal
+in $k \langle X \rangle $ of the group algebra
+of a group with undecidable word problem has no 
+finite Gr\"{o}bner basis. Another example is Shearer's algebra
+$k\langle a,b\rangle /(ac-ca,aba-bc,b^{2}a)\rangle$,
+which has irrational Hilbert series \cite{Sh}. As any finitely
+generated monomial ideal defines an algebra with rational Hilbert
+series, the ideal $(ac-ca,aba-bc,b^{2}a)$ can have no finite 
+Gr\"{o}bner basis. (Other consequences of having a finite
+Gr\"{o}bner basis are deducible from \cite{An} and \cite{Ba};
+these are well-known in the case of commutative algebras!)
+
+In the next section we present the basic computation of the
+initial ideal and Gr\"{o}bner basis for $J = \gamma ^{-1}(I)$.
+In \S 3 we give the application to finiteness and liftability
+of Gr\"{o}bner bases.
+
+\section*{2. The Gr\"{o}bner basis of $\gamma ^{-1}(I)$}
+
+Throughout this paper we fix an ideal 
+$I\subset k[x] $ and  
+$J := \gamma ^{-1}(I)\subset k \langle X \rangle $.
+We shall make use of the {\em lexicographic splitting} of 
+$\gamma $, which is defined as the $k$-linear map
+\begin{equation*}\delta \,\,: \,\, k[x] \to k \langle X \rangle \, , \quad x_{i_{1}} x_{i_{2}} \cdots x_{i_{r}}  \mapsto X_{i_{1}} X_{i_{2}} \cdots X_{i_{r}}\ \ \
+   \hbox {if}\ \ \ i_{1} \leq i_{2} \leq \cdots \leq i_{r}.  \end{equation*}
+Fix a monomial order $\prec $ on $k[x]$.
+The {\em lexicographic extension\/} $\precc $ of $\prec $
+to $k \langle X \rangle $ is
+defined for monomials
+$M, N \in k \langle X \rangle $ by
+\begin{equation*}M \,\precc \, N \ \ \ \hbox {if} \ \ \ \begin{cases}\gamma (M)\prec \gamma (N) &\text{or}\\
+\gamma (M) = \gamma (N) &\text{and 
+$M$ is lexicographically smaller than $N$.}
+\end{cases}
+\end{equation*}
+Thus, for example, $\,X_{i}X_{j}\precc X_{j}X_{i} \,$ if $\, i<j$.
+
+To describe the $\precc $-initial ideal of $J$ we use the
+following construction:
+Let $L$ be any monomial ideal in $k[x]$.
+If $\, m = x_{i_{1}} \cdots x_{i_{r}} \,\in \, L \,$
+and $\, i_{1} \leq \cdots \leq i_{r} \,$, denote by 
+$\, {\mathcal{U}}_{L} (m)  \,$  the set of all monomials
+$ \, u \in k[x_{i_{1}+1},\ldots , x_{i_{r}-1}]\,$ such that
+neither $\, u\frac{m}{x_{i_{1}}}\,$ nor
+$\, u\frac{m}{x_{i_{r}}}\,$ lies in $L$. 
+For instance,
+if $L = (x_{1} x_{2} x_{3},\, x_{2}^{d})$ then 
+${\mathcal{U}}_{L} (x_{1} x_{2} x_{3}) = \{\,x_{2}^{j} \mid j < d  \,\}.$
+
+\begin{theorem2}
+The non-commutative initial ideal  $\,in_{\precc }(J) \,$
+is minimally generated by the set
+$\, \{\, X_{i} X_{j} \,\mid \, j<i \,\}$ 
+together with the set
+\begin{equation*}\{\delta ( u \cdot m) \,\mid \,
+m \ \hbox{is a generator of} \
+in_{\prec }(I) 
+\
+\hbox {and} 
+\
+u \in {\mathcal{U}}_{in_{\prec }(I)}(m)\}.
+\end{equation*}
+In particular, a 
+minimal $\precc $-Gr\"{o}bner basis for $J$ consists of
+$\{ X_{i} X_{j} - X_{j} X_{i} : j < i \} $ together
+with the elements $\delta ( u \cdot f) $
+for each polynomial $f$ in a minimal $\prec $-Gr\"{o}bner basis for $I$
+and each monomial $\,u \, \in \,
+{\mathcal{U}}_{in_{\prec }(I)}(in_{\prec }(f))$.
+\end{theorem2}
+
+
+\begin{proof} 
+We first argue that a non-commutative monomial 
+$\,M \,= \, X_{i_{1}}  X_{i_{2}} \cdots X_{i_{r}} \, $
+lies  in $\, in_{\precc }(J)$ if and only if
+its commutative image
+$\, \gamma (M) $ is in $\, in_{\prec }(I) \,$ or $i_{j}>i_{j+1}$ for some $j$.
+Indeed, if $i_{j}>i_{j+1}$ then
+$ M \in in_{\precc }(J)$ because
+$X_{s}X_{t}-X_{t}X_{s}\in J$ has initial term $X_{s}X_{t}$ with $s>t$.
+If on the contrary $i_{1}\leq \dots \leq i_{r}$ but 
+$\,\gamma (M) \in in_{\prec } (I) \,$, then there exists
+$\,f \in I \,$ with $in_{\prec }(f) = \gamma (M)$.
+The non-commutative polynomial $\,F = \delta (f)\,$
+satisfies $\,in_{\precc }(F) = M \,$.
+The opposite implication follows because $\gamma $ induces an isomorphism
+$\,k[x]/I \,\cong \, k \langle X \rangle / \gamma ^{-1}(I)$.
+
+Now let
+$m' = u \cdot m$, where $\,m = x_{i_{1}} \cdots x_{i_{r}}\,$
+is a minimal generator of $in_{\prec }(I)$ with
+$i_{1} \leq \cdots \leq i_{r} $.
+We must show that $\, \delta (u \cdot m)\,$ is a minimal generator 
+of $\,in_{\precc }(J) \,$ if and only if $\, u \in {\mathcal{U}}_{in_{\prec }(I)}(m) $.
+
+For the ``only if'' direction, suppose that $\,\delta (u \cdot m)\,$ 
+is a minimal 
+generator of $\,in_{\precc }(J) $. 
+Suppose that $u$ contains the variable $x_{j}$.  We must have 
+$j>i_{1}$, since else, taking $j$ minimal, we would have
+$\,\delta (u \cdot m)\,=\, X_{j} \cdot \delta (\frac{u}{x_{j}}m) \,$. 
+Similarly $j<i_{r}$.
+Thus $ \, u \in k[x_{i_{1}+1},\ldots , x_{i_{r}-1}]$.
+This implies $\,\delta (u \cdot m)\,=\,  
+X_{i_{1}} \cdot \delta ( u \frac{ m}{x_{i_{1}}} ) \,= \,
+\delta ( u\cdot \frac{ m}{x_{i_{r}}} )  \cdot X_{i_{r}} $.
+Therefore neither
+$\,\delta ( u\frac{m}{x_{i_{1}}} ) \,$ nor
+$\,\delta ( u\frac{m}{x_{i_{r}}} ) \,$ 
+lies in $\,in_{\precc }(J)$, and hence neither
+$\, u\frac{m}{x_{i_{1}}}\,$ nor
+$\,u\frac{m}{x_{i_{r}}} \,$ lies in $\, in_{\prec }(I)$.
+
+For the ``if'' direction we reverse the last few implications.
+If $\, u \in {\mathcal{U}}_{in_{\prec }(I)} (m) \,$ then neither
+$\,\delta ( u \frac{ m}{x_{i_{1}}} ) \,$ nor
+$\,\delta ( u \frac{ m}{x_{i_{r}}} ) \,$ 
+lies in $\,in_{\precc }(J)$, and therefore
+ $\,\delta (u \cdot m)\,$ is a minimal generator of $\,in_{\precc }(J)$.
+\end{proof}
+
+
+\section*{3. Finiteness and lifting of non-commutative Gr\"{o}bner bases}
+
+We maintain the notation described above. Recall
+ that for 
+a prime number $p$ the {\em Gauss order\/} on the natural numbers is
+described by 
+\begin{equation*}s\leq _{p}t \quad \text{if} \quad {\binom{t}{s}}\ \not \equiv \ 0 \ 
+\, (\text{mod } p). \end{equation*}
+We write $\,\leq _{0} \,= \,\leq \, $ for the usual order
+on the natural numbers. A monomial 
+ideal $L$ is called {\em $p$-Borel-fixed\/} if it satisfies the
+following condition:
+For each monomial generator $m$ of $L$,
+if $m$ is divisible by $x_{j}^{t}$ but no higher power of 
+$x_{j}$,
+then $(x_{i}/x_{j})^{s} m\in L$ for all $i<j$ and $s\leq _{p} t$. 
+
+\begin{theorem3} With notation as in Section 2:
+\par
+(a)  If $\,in_{\prec }(I)\, $ is 0-Borel fixed, then a minimal 
+$\precc $-Gr\"{o}bner basis of $J$ is obtained by applying 
+$\delta $ to a minimal $\prec $-Gr\"{o}bner basis of $I$
+and adding commutators.
+
+(b) If $\,in_{\prec }(I)\, $ is $p$-Borel-fixed for any $p$,
+then $J$ has a finite $\precc $-Gr\"{o}bner basis.
+\end{theorem3}
+
+
+\begin{proof}
+Suppose that the monomial ideal 
+$\,L := in_{\prec }(I)$ is $p$-Borel-fixed for some $p$.
+Let $m = x_{i_{1}} \cdots x_{i_{r}}$ be any generator of
+$L$, where $i_{1} \leq \cdots \leq i_{r}$, and let
+$x_{i_{r}}^{t}$ be the highest power of $x_{i_{r}}$ dividing $m$.
+Since $t\leq _{p} t$  we have $x_{l}^{t} m/x_{i_{r}}^{t}  \in L$
+for each $l<i_{r}$. This implies
+$\,x_{l}^{t} m/x_{i_{r}} \in L$ for $l < i_{r}$, and
+hence every monomial  $u \in {\mathcal{U}}_{L}(m)$
+satisfies $deg_{x_{l}} (u) < t$ for $i_{1} < l < i_{r}$.
+We conclude that ${\mathcal{U}}_{L}(m)$ is a finite set.
+If $p=0$ then   ${\mathcal{U}}_{L}(m)$ consists of $1$ alone,
+since $\,x_{l} m/x_{i_{r}}  \in L \,$ for all $l < i_{r} $.
+Theorem 3.1 now follows from Theorem 2.1.
+\end{proof}
+
+
+\begin{proof}[Proof of Corollary 1.1]
+We apply Theorem 3.1 together with
+the following results, due to Galligo, Bayer-Stillman and Pardue, 
+which can be found in \cite[Section 15.9]{Ei}:
+if the field $k$ is infinite, then after
+a generic change of variables, the initial ideal of $I$ with 
+respect to any order $\prec $ on $k[x]$ is fixed under the
+Borel group of upper triangular matrices.
+This implies that $in_{\prec }(I)$ is $p$-Borel-fixed in characteristic $p\geq 0$
+in the sense above. If the characteristic of $k$ is $0$ and $I$ is homogeneous
+then, taking the reverse lexicographic
+order in generic coordinates, we get a Gr\"{o}bner basis whose
+maximal degree equals the regularity of $I$.  \end{proof}
+
+We call the monomial ideal  $L$ {\em squeezed} if
+$\, {\mathcal{U}}_{L}(m)\,= \{ 1 \} \,$ for all generators $m $ of $ L$
+or if, equivalently, 
+$m=x_{i_{1}}\cdots x_{i_{r}}\in L $ and $i_{1}\le \dots \le i_{r}$
+imply $\, x_{l}\frac{m}{x_{i_{1}}}\in L \, $
+or $\,x_{l}\frac{m}{x_{i_{r}}}\in L \, $
+for every index $l$ with $i_{1} < l < i_{r}$.
+Thus Theorem 2.1 implies that a minimal $\prec $-Gr\"{o}bner basis 
+of $I$ lifts to a Gr\"{o}bner basis 
+of $J$ if and only if the initial ideal $in_{\prec }(I)$ is squeezed. 
+Monomial ideals that are 0-Borel-fixed, and more generally
+stable ideals (in the sense of \cite{EK}), are squeezed. 
+Squeezed ideals appear naturally in algebraic combinatorics:
+
+\begin{theorem4}
+A square-free monomial ideal $L$ is squeezed if and
+only if the simplicial complex
+associated with $L$ is the complex 
+of chains in a poset.
+\end{theorem4}
+
+
+\begin{proof}
+This follows from Lemma 3.1 in \cite{PRS}.
+\end{proof}
+
+
+\section*{4. Examples in characteristic $p$}
+
+Over a finite field Corollary 1.1 fails even for very simple ideals:
+
+\begin{definition1} Let $k$ be a finite field and $n=3$.
+If $I$ is the principal ideal generated by the product of all
+linear forms in $k[x_{1},x_{2},x_{3}]$, then
+$\gamma ^{-1}(I)$ has no finite Gr\"{o}bner basis, even
+after a linear change of variables. 
+\end{definition1}
+
+
+\begin{proof}
+The ideal $I$ is invariant under all linear changes of variables.
+The $\precc $-Gr\"{o}bner basis for $J$ is computed by Theorem 2.1,
+and is infinite. That no other monomial
+order on $k \langle X \rangle $ yields a finite
+Gr\"{o}bner basis can be shown by direct computation as in the example
+in the second paragraph of the introduction.
+\end{proof}
+
+
+Sometimes in characteristic $p>0$ no Gr\"{o}bner basis for a commutative algebra
+can be lifted to a
+non-commutative  Gr\"{o}bner basis, even after a change of variables:
+
+\begin{definition2} Let $k$ be an infinite field of 
+characteristic $p>0$, and consider the Frobenius power 
+\begin{equation*}L \,\,:= \,\,\bigl ( \,(x_{1},\ x_{2},\ x_{3})^{3} \bigr )^{[p]}
+\quad \subset \quad k[x_{1},x_{2},x_{3}]
+\end{equation*} 
+of the cube of the maximal ideal in $3$ variables.
+No minimal Gr\"{o}bner basis of $L$ lifts to a Gr\"{o}bner basis
+of $\gamma ^{-1}(L)$, and this is true even after any linear
+change of variables.
+\end{definition2}
+
+
+\begin{proof} The ideal $L$ is invariant under linear changes of 
+variable, so it suffices to consider $L$ itself.
+Since $L$ is a monomial ideal, it is its own initial ideal,
+so by Corollary 3.2 it suffices to show that $L$ is not squeezed,
+that is, that neither
+$\, x_{1}^{p-1} x_{2}^{p+1} x_{3}^{p}\,$ nor $\,x_{1}^{p} x_{2}^{p+1} x_{3}^{p-1} \,$ 
+is in $L$. This is obvious, since the power of each variable 
+occurring in a generator of $L$ is divisible by $p$ and has total
+degree $3p$.
+\end{proof}
+
+
+\bibliographystyle{amsalpha}
+\begin{thebibliography}{PRS}
+
+\bibitem[An]{An} D.~Anick, {\em On the homology of associative algebras},
+Transactions Amer.~Math.~Soc. {\bf 296} (1986), 641-659. \MR{87i:16046}
+
+
+
+\bibitem[AR]{AR} D.~Anick, G.-C.~Rota, {\em Higher-order syzygies for the
+bracket algebra and for the ring of coordinates of the Grassmannian},
+Proc.~Nat.~Acad.~Sci.~U.S.A. {\bf 88} (1991), 8087--8090. \MR{92k:15058}
+
+
+
+\bibitem[Ba]{Ba}
+J.~Backelin, {\em On the rates of growth of the homologies of Veronese subrings.}, Algebra, algebraic topology
+and their interactions (Stockholm, 1983),  
+Lecture Notes in Math. 1183, Springer-Verlag, NY, 1986, p.~79--100.
+\MR{87k:13042}
+
+
+
+\bibitem[Ei]{Ei} D.~Eisenbud, {\em Commutative Algebra With a View Toward
+Algebraic Geometry}, Springer-Verlag, NY, 1995. \MR{97a:13001}
+
+
+
+\bibitem[EK]{EK} S.~Eliahou, M. Kervaire, {\em Minimal resolutions of some
+monomial ideals}, {\sl Journal of Algebra} {\bf 129} (1990) 1--25.
+\MR{91b:13019}
+
+
+
+\bibitem[Mo]{Mo} T. Mora, {\em An introduction to commutative and
+non-commutative Gr\"{o}bner bases}, Theoretical Computer Science {\bf 134}
+(1994), 131--173. \MR{95i:13027}\pagebreak
+
+
+
+\bibitem[PRS]{PRS} I. Peeva, V. Reiner and B. Sturmfels, {\em How to shell a
+monoid}, preprint, 1996.
+
+
+
+\bibitem[Sh]{Sh}
+J. B. Shearer, {\em A graded algebra with a nonrational Hilbert series}, J.
+Alg. 62 (1980), 228--231. \MR{81b:16002}
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,123 @@
+
+<h3><a name="books">Books</a></h3>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  1.
+</td><td>
+<b>Seminar D. Eisenbud/B. Singh/W. Vogel.  Vol. 1.</b>
+BSB B. G. Teubner Verlagsgesellschaft, Leipzig.
+<i>Teubner-Texte zur Mathematik.</i> 29 (1980), 144 pages.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  2.
+</td><td>
+<b>Seminar D. Eisenbud/B. Singh/W. Vogel.  Vol. 2.</b>
+BSB B. G. Teubner Verlagsgesellschaft, Leipzig.
+<i>Teubner-Texte zur Mathematik.</i> 48 (1982), 107 pages.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  3.
+</td><td>
+<b>Hodge algebras.</b>
+Corrado De Concini, David Eisenbud, Claudio Procesi.
+<i>Astérisque.</i> 91 (1982), 87 pages.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  4.
+</td><td>
+<b>Three-dimensional link theory and invariants of plane curve singularities.</b>
+David Eisenbud, Walter Neumann.
+Princeton University Press, Princeton, NJ.
+<i>Annals of mathematics studies.</i> 110 (1985), vii+173 pages.
+ISBN: 0-691-08380-0; 0-691-08381-9.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  5.
+</td><td>
+<b>Algebraic geometry, Bowdoin, 1985, Part 1.</b>
+Spencer J. Bloch [Ed.], H. Clemens, D. Eisenbud, W. Fulton, D. Gieseker, J. Harris, R. Hartshorne, S. Mori.
+Proceedings of the summer research institute held at Bowdoin College, Brunswick, Maine, July 8--26, 1985. American Mathematical Society, Providence, RI.
+<i>Proceedings of symposia in pure mathematics.</i> 46 (1987), no.1, vi+481 pages.
+ISBN: 0-8218-1476-1.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  6.
+</td><td>
+<b>Algebraic geometry, Bowdoin, 1985, Part 2.</b>
+Spencer J. Bloch [Ed.], H. Clemens, D. Eisenbud, W. Fulton, D. Gieseker, J. Harris, R. Hartshorne, S. Mori.
+Proceedings of the summer research institute held at Bowdoin College, Brunswick, Maine, July 8--26, 1985. American Mathematical Society, Providence, RI.
+<i>Proceedings of symposia in pure mathematics.</i> 46 (1987), no.2, vi+513 pages.
+ISBN: 0-8218-1480-X.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  7.
+</td><td>
+<b>Free resolutions in commutative algebra and algebraic geometry: Sundance 90.</b>
+David Eisenbud, Craig Huneke [Eds.].
+Proceedings of the Sundance Conference, Sundance, Utah, 1990. Jones and Bartlett, Boston.
+<i>Research notes in mathematics.</i> 2 (1992), xii+146 pages.
+ISBN: 0-867-20285-8.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  8.
+</td><td>
+<b>Schemes. The language of modern algebraic geometry.</b>
+David Eisenbud, Joe Harris.
+Wadsworth & Brooks/Cole Advanced Books & Software, Pacific Grove, CA.
+<i>The Wadsworth & Brooks/Cole Mathematics Series.</i> (1992), xii+157 pages.
+ISBN: 0-534-17606-2; 0-534-17604-6.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  9.
+</td><td>
+<b>Computational algebraic geometry and commutative algebra: Cortona, 1991.</b>
+David Eisenbud, Lorenzo Robbiano [Eds.].
+Proceedings of the Cortona Conference on Computational Algebraic Geometry and Commutative Algebra held June 17-21, 1991.
+Cambridge University Press, Cambridge, England.
+<i>Symposia Mathematica.</i> 34 (1993), x+298 pages.
+ISBN: 0-521-44218-4.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  10.
+</td><td>
+<b>Commutative algebra with a view toward algebraic geometry.</b>
+David Eisenbud.
+Springer-Verlag, New York.
+<i>Graduate texts in mathematics.</i> 150 (1995), xvi+785 pages.
+ISBN: 0-387-94268-8; 0-387-94269-6.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap"> 11.
+</td><td>
+<b>Commutative algebra, algebraic geometry, and computational methods.</b>
+David Eisenbud [Ed.].
+Papers from a conference held in Hanoi, Aug. 19-23, 1996.
+Springer-Verlag, New York. (1999), xvii+320 pages.
+ISBN: 9-814-02150-4.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap"> 12.
+</td><td>
+<b>The geometry of schemes.</b>
+David Eisenbud, Joe Harris.
+Springer-Verlag, New York.
+<i>Graduate texts in mathematics.</i> 197 (2000), x+294 pages.
+ISBN: 0-387-98638-3; 0-387-98637-5.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap"> 13.
+</td><td>
+<b>Computations in algebraic geometry with Macaulay 2.</b>
+David Eisenbud, Daniel R. Grayson, Michael Stillman, Bernd Sturmfels [Eds.].
+Springer-Verlag, Berlin.
+<i>Algorithms and computation in mathematics.</i> 8 (2002), xvi+329 pages.
+ISBN: 3-540-42230-7. (<a href="http://www.math.uiuc.edu/Macaulay2/Book">online</a>)
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap"> 14.
+</td><td>
+<b>The geometry of syzygies:  A second course in commutative algebra and algebraic geometry.</b>
+David Eisenbud.
+Springer-Verlag, New York.
+<i>Graduate texts in mathematics.</i> 229 (2005), xvi+243 pages.
+ISBN: 0-387-22215-4.
+</td></tr></tbody></table></dt>
