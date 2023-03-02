@@ -1,0 +1,717 @@
+
+%Insert after
+\def\insa#1#2{\par\noindent After\smallskip #1\smallskip
+\noindent insert:\smallskip #2\smallskip\hrule
+\goodbreak\smallskip}
+%Insert before
+\def\insb#1#2{\par\noindent Before\smallskip #1\smallskip
+\noindent insert:\smallskip #2\smallskip\hrule
+\goodbreak\smallskip}
+%Insert
+\def\ins#1{\par\noindent Insert:\smallskip #1\smallskip\hrule
+\goodbreak\smallskip}
+%delete
+\def\del#1{\par\noindent Delete:\smallskip #1\smallskip\hrule
+\goodbreak\smallskip}
+%replace
+\def\rep#1#2{\par\noindent Replace:\smallskip #1\smallskip
+\noindent by:\smallskip #2\smallskip\hrule
+\goodbreak\smallskip}
+%describe
+\def\desc#1{\par\noindent #1\smallskip\hrule
+\goodbreak\smallskip}
+
+\centerline{Corrections to the second printing of}
+\centerline{\bf Commutative Algebra with a View Toward Algebraic
+Geometry}
+\bigskip
+This file contains all the corrections to the second printing 
+that I knew of as of 9/7/98.
+References are of the form
+{\bf n;m.} where n is a page number in the second printing, 
+m a line number. Descriptive
+matter (that is, things not actually appearing in the text)
+is surrounded by double parentheses ((like this)).
+\bigskip
+\hskip 1truein ---David Eisenbud
+
+\bigskip
+\hrule\smallskip
+{\bf on title page, or somewhere else prominent}\ins
+{Third corrected printing}
+
+{\bf 22; 15.} \rep{is an}{is a primitive}
+
+{\bf 35; 8.}\del{reduced}
+
+{\bf 36; -7.}\insa{category of}{reduced}
+
+{\bf 43; -13.} \rep{this is}{we make the convention that this is}
+
+{\bf 52; 8-15.}\rep{((the labels a-h))}{((the numbers 1-8))}
+
+{\bf 52; -8.}\rep{a and b}{1 and 2}
+{\bf 52; -7.}\rep{g and h}{7 and 8}
+{\bf 52; -4.}\rep{c,d and h}{3,4 and 8}
+
+{\bf 57; -2.}\rep{3.5}{I.3.6}
+
+{\bf 67; 9.}\insa{ideals}{$P$}
+
+{\bf 83; 1--2.}\rep{$x$}{$f$ ((two occurences))}
+
+{\bf 90; -7.}\rep{union} {finite union}
+
+{\bf 111; 12.}\rep{in press}{1995}
+
+{\bf 118; -8.}\rep{algebra}{algebraic}
+{\bf 118; -5.}\insa{).}
+{Assuming that $X$ and $Y$ are
+affine, so is $Y'$, and its coordinate ring is the 
+normalization of the image of $A(Y)$ in $A(X)$.}
+
+{\bf 124; 4.}\rep{Lemma}{Theorem}
+
+{\bf 129; -14.}\rep{Hartshome}{Hartshorne}
+
+{\bf 130; fig 4.4.}\rep{((the upside down U))}{$\cap$}
+
+{\bf 139; -10 .}\insb{Let}{((as a new part a.))
+\item{a.} Show that the quotient field of $k[\Gamma]$ is
+$k[G(\Gamma)]$.}
+
+{\bf 139; -7.}\rep{its quotient field}{$k[x_1,\dots,x_n]$}
+{\bf 139; -6.}\rep{a.}{b.}
+
+{\bf 140; 3.}\rep{b.}{c.}
+{\bf 140; 5--10.}\del{the whole of part d.}
+{\bf 140; 12.}\insa{$\{$}{(}
+
+{\bf 149; -20.}\insa{ideal}{such}
+
+{\bf 154; Figure 5.2, first line under the left-hand picture.}
+\rep{in $(y^2$}{in$(y^2$}
+
+{\bf 159; -8.}\rep{$a\neq 0$}{$0\neq a$}
+
+{\bf 187; -8.}\rep{equation}{expression}
+{\bf 187 ;-2.}\rep{ $5/32$}{ $5/128$}
+
+{\bf 189; 5.}\rep{$e_j$}{$\sum_{j\neq i}e_j$}
+{\bf 189; 6.}\insa{$=0$}{for each $j\neq i$}
+{\bf 189; 6.}\rep{$m=e_j(n')$}{$m=\sum_{j\neq i}e_j(n_j')$}
+{\bf 189; 7.}\rep{$n_j\in M$}{$n_j'\in M$}
+{\bf 189; 7.}\rep{$e_j(m)=$\dots$=m$}
+{$\sum_{j\neq i}e_j(m)=\sum_{j\neq i}e_j(\sum_{j\neq i}e_j(n_j'))=
+\sum_{j\neq i}e_j(n_j')=m$}
+{\bf 189; 8.}\rep{$e_j(M)$}{$\sum_{j\neq i}e_j(M)$}
+
+{\bf 189; -18.}\del{$[x]$ ((three occurences))}
+{\bf 189; -15.}\insa{(commutative)}{local}
+{\bf 189; -4.}\rep{$\bar e_1$}{$e_1$}
+
+{\bf 190; 18.}\insa{((end of line))}{Also, the hypothesis
+``local'' is unnecessary: see Proposition 7.10.}
+
+{\bf 194; 4.}\rep{((the first subscript)) $_j$}{((the subscript)) $_n$}
+
+{\bf 195; 4.}\rep{{\it m}}{((fraktur)) $m$}
+{\bf 195; 15.}\rep{$1+x$}{$1-x$}
+{\bf 195; 17.}\rep{$1+a$}{$1-a$}
+{\bf 195; 19.}\rep{$1-a+a^2-\dots$}{$1+a+a^2\dots$}
+{\bf 195; 20.}\rep{$1+a$}{$1-a$}
+{\bf 195; 21.}\rep{((the display))}{$(1-a)+(1-a)a+(1-a)a^2\dots$}
+{\bf 195; 22.}\rep{$1+a^i$}{$1-a^i$}
+
+{\bf 200; -15.}\insa{for each $i$}{and taking convergent
+sequences to convergent sequences}
+
+{\bf 201; 17.}\rep{$)^{i+j}$}{$)^{i+j-1}$}
+
+{\bf 203; 19.}\rep {A1.3c}{A1.4c}
+
+{\bf 204; 9.}\del{$\tilde K\subset$}
+
+{\bf 204; 14.}\rep{$\tilde a \in \dots =\tilde K$}{$\tilde a \in R$}
+
+{\bf 204; 16.}\rep{$\tilde K=\varphi(K)$}{$\tilde K\subseteq \varphi(K)$}
+
+{\bf 204; 19--20.}\rep{((entire lines 19-20))}{so $\varphi$ is a
+homomorphism and $\varphi(K)$ is a coefficient field containing $\tilde
+K$. The previous paragraph shows that $\varphi(K)=\tilde K$} 
+
+{\bf 204; -11.}\insb{Since}{We may assume that $\bar u'_w$ and $\bar r_w$
+are nonzero.}
+
+{\bf 204; -10.}\rep{$k^q$}{$k$}
+
+{\bf 217; 10.}\rep{1.15c}{1.15b}
+
+{\bf 227; -4.}
+\rep{Equivalently. it}{Equivalently, it}
+
+{\bf 230; 18.}\rep{dimenion}{dimension}
+
+{\bf 237; -18.}\del{and using Nakayama's lemma,}
+
+{\bf 238; -11 -- -10.}\rep{parameter ideal}{ideal of finite 
+colength on}
+
+{\bf 241; Figure 10.4.}\desc{The $X$ at the upper right should be $Y$;
+the $Y$ at the lower right should be $X$}
+
+{\bf 242; 4.} \rep{$R_P/PR_P$}{$R/P$}
+
+{\bf 242; 6--8.}\rep{$R_P$}{$R$ ((three occurences))}
+
+{\bf 244; 3.}
+\rep {the maximal ideal is generated by $x$}
+{the maximal ideal is generated by $y$}
+
+{\bf 244; 4.}\rep{$k[x]_{(x)}$}{$k[y]_{(y)}$}
+
+{\bf 244; 5.}\rep{$k(x)$}{$k(y)$}
+
+{\bf 248; 20.}\rep{dimensionsion}{dimension}
+
+{\bf 253; -12.}\rep{$ar=bs$}{$r^n\in (s)$}
+{\bf 253; -12 -- -11.}\rep{a zerodivisor\dots of $s$.}
+{nilpotent modulo $(s)$ and is contained in the minimal primes
+of $(s)$.}
+{\bf 253; -11 -- -11.}\rep{this}{each}
+
+{\bf 253; -10.}\rep {associated}{minimal}
+
+{\bf 254; -21}\del{the end of proof sign at the end of the line}
+{\bf 254; -14.} \rep{Continuing}{To complete}
+{\bf 254; -14.} \del{next}
+
+{\bf 255; 2.}\ins{the end of proof sign at the end of the line}
+
+{\bf 258; 17.}\rep{$R$}{$R_P$ ((two occurences))}
+{\bf 258; 19.}\rep{Since\dots =0}
+{Since ${\rm ker} (\varphi_i)_P\otimes R_P\varphi_i$ maps to 
+$(\varphi_i)_P{\rm ker} (\varphi_i)_P=0$}
+
+{\bf 260; 4.}\insa{$K(R)$}{modulo the units of $R$} {\bf 260;
+10.}\rep{so it}{. We have $Ru=Rv$ iff $u$ and $v$ differ by a unit of
+$R$, so we may identify the group of principal divisors, under
+multiplication, with the group $K(R)^*/R^*$. If $I$ is any invertible
+divisor and $Ru$ is a principal divisor, then $(Ru)I = uI$. Thus it}
+
+
+{\bf 276; -15 -- -13.}\rep{Suppose\dots . ((whole sentence))}
+{Suppose that $q\subset R$ is an ideal of finite colength on $M$.
+(($q$ should be fraktur))}
+
+{\bf 276; -1.}\rep{$M/x_1,M$ ((part of the subscript in the middle))}
+{$M/x_1M$ ((that is, delete the comma))}
+
+{\bf 277; -14 -- -13.}\rep{parameter ideal}{ideal of finite colength
+on}
+{\bf 277; -11.}\rep{where\dots with}{where the polynomial $F$
+has}
+{\bf 277; -11.} \rep{whose degree is}{degree}
+
+{\bf 278; 2.}\rep{((comma at the end of the display))}{((period))}
+{\bf 278; 3,4.}\rep{((the entire two lines))}
+{The  equality shows that $F$ has positive leading term,
+while the inequality gives the desired degree bound.}
+
+{\bf 282; 12.}\rep{$(n)$ ((second occurence only!!))}{$(i)$}
+
+{\bf 287; -3.}\rep{In fact, if}{If}
+
+{\bf 288; 2.}\rep{$A$}{$R$}
+
+{\bf 289; -3.}\rep{$x_1'-a_1x_e',\dots,x_{e-1}'-a_{e-1}x_e'$
+((beginning of the displayed list))}
+{$x_1'',\dots,x_{e-1}''$}
+
+{\bf 291; -21.}\insa{a field}{, R is generated by $R_0$ over $R_1$,}
+{\bf 291; -10.}\insa{is a field}{and $Q_0=0$}
+{\bf 291; -7.}\del{$Q_0\oplus$}
+
+{\bf 296; -3.}\rep{Let}{If $f$ is a unit the assertion is obvious.
+Otherwise, let}
+{\bf 298; 2,3.}\rep{$L$}{$L'$ ((two occurences))}
+
+{\bf 301; 17.}\rep{Theorem 13.7} {Theorem 13.17}
+
+{\bf 303; 8,9,10.}\rep{$S_I$}{$B_I$ ((Three occurences))}
+{\bf 303; -1.}\insb{((the period))}{with equality if $R$ is 
+universally catenary}
+
+{\bf 308; 1--3.}\rep{((the first paragraph))}
+{We will prove Theorem 4.1 as the special case $e=0$ of
+Corollary 14.9 to the much stronger Theorem 14.8. For 
+a direct proof see Exercise 14.1.}
+
+{\bf 308; after 3, as a new paragraph.}\ins
+{In general, a morphism $\varphi:\; Y\to X$ of algebraic
+varieties is called {\it projective\/} if $\varphi$ can
+be factored as $Y\to X\times {\bf P}^n\to X$ with the first
+map  a closed embedding and the second map the projection.
+In these geometric terms, Theorem 14.1 says that a projective
+morphism is {\it closed\/} in the sense that it takes 
+closed sets onto closed sets.}
+
+{\bf 308; -21.}\rep{kernal}{kernel}
+
+{\bf 310; -3.}\rep{Andre}{Andr\'e}
+
+{\bf 316; after line 10; just after theorem 14.8.}
+\ins {Let us restate
+Theorem 14.8 (or rather its consequence for reduced affine algebras
+over an algebraically closed field) in geometric terms: Suppose that
+$R\to S$ corresponds to a morphism of varieties $\varphi:\;Y\to
+X$. Set $F_e=\{x\in X\mid {\rm dim\ }\varphi^{-1}(x)\geq e\}$ and let
+$G_e$ be the set of all points of $y$ so that the fiber
+$\varphi^{-1}(\varphi(y))$ has dimension $\geq e$ locally at
+$y$. That is, $G_e$ is the union of the large components of the
+preimages of points of $F_e$.  Theorem 14.8 says that $G_e$ is defined
+by the ideal $I_e$ and is thus closed. If the morphism $\varphi$ is
+projective then $F_e$ is defined by $J_e$, and is closed as well.
+Note that $F_e$ is the image of $G_e$, so we could deduce part b of
+Theorem 14.8 from part a together with Theorem 14.1---if it weren't
+that we will only prove Theorem 14.1 by using part b.}
+
+{\bf 319; 2.}\rep{principal}{principle}
+
+{\bf 330; -17.}\rep{((the boldace type))}{((roman type))}
+
+{\bf 331; 13.}\insa{((end of line))}{((an ``end of proof'' sign))}
+
+{\bf 332; -18.}\rep{with basis $F$}{$F$ with basis}
+
+{\bf 341; 4.}\rep{irreducible}{irreductible}
+
+{\bf 342; -19 -- -18.}\del{refines the order by total degree and}
+{\bf 342; -15.}\rep{Equivalently, as the reader may check, a}
+{A}
+
+{\bf 342; -15.}\rep{is ((last word))}{may be}
+{\bf 342; -14.}\del{either\dots same and}
+
+{\bf 374; 14 (first line of Exercise 15.33).}\rep{$x=$}{$X=$}
+
+{\bf 411; 16.}\rep{an algebra map}{a surjective algebra map}
+
+{\bf 417; -13.}\rep{Let}{Suppose
+that $R$ contains a field of characteristic 0, and let}
+
+{\bf 417; -8.}\insa{field}{of characteristic 0}
+
+{\bf 430; 4.}\rep{$M$}{$M\neq 0$}
+{\bf 430; 5.}\rep {some $k$}{some $k<n$}
+
+{\bf 434; 12.}\rep{mapping cylinder}{mapping cone}
+{\bf 434; 19.}\rep{mapping cylinder}{mapping cone}
+
+
+{\bf 436; 3.}\rep{$x_r$}{$x_n$}
+{\bf 436; 3.}\rep{$\neq$}{$\neq 0$}
+{\bf 436; 4.}\rep{$x_r$}{$x_n$}
+{\bf 436; 4.}\rep{17.4}{17.14}
+
+
+{\bf 437; 8.}\rep{$m\otimes1-1\otimes m$}  {$m\otimes1+1\otimes m$}
+
+{\bf 439; -3.}\desc{The two arrows labeled with $\beta$ should point
+  downwards.}
+{\bf 439; -2.}\rep{$K(x^\ast)$}{$K'(x^\ast)$}
+
+{\bf 440; 5.} \rep {$H_{n-k}(K(x),\delta_{x^\ast})$}
+{$H_{n-k}(K'(x^\ast),\delta_{x^\ast})$}
+
+{\bf 443; -18.}\rep{$S/(x_1,\ldots,x_r)$}{$S/(y_1,\ldots,y_r)$}
+
+{\bf 444; 3.}\rep{$e_j$}{$e_J$}
+
+{\bf 446; 9.}\rep{3.16}{13.16}
+
+{\bf 448; 8.}\desc{The $\sigma$ should be situated on the final arrow.}
+
+
+{\bf 459; -3.}\del{Let $R$ be a Cohen-Macaulay ring.}
+
+
+{\bf 462; 13.}\rep{11.12}{11.10}
+{\bf 462; -16.}\rep{S1'}{S1}
+
+{\bf 466; -10.}\rep{7.17}{7.7}
+
+{\bf 468; 11.}\rep {Fulton [1992]} {Fulton [1993]}
+
+{\bf 471; 10.}\rep{a domain iff $r\ge 3$}{a normal domain iff $r\ge 3$}
+{\bf 471; 10.}\del{normal iff $r\geq 4$;}
+
+{\bf 473.}
+\insb{the first line of text ((as on p. 423))}
+{{\it In this chapter all the rings 
+considered are assumed to be Noetherian}} 
+
+{\bf 476; 2}\rep{$R$-module}{module over a regular local ring of
+dimension $n$}
+
+{\bf 477; 11.}\rep{$PF_n$}{$PF_{n-1}$}
+{\bf 477; 11.}\rep{$i$}{$i\geq 0$}
+
+{\bf 478; -11.}\rep{Corollary 15.13}{Corollary 15.11}
+{\bf 478; -10.}\rep{Corollary 19.6}{Corollary 19.7}
+
+{\bf 484; -9 -- -8.}\rep{It turns\dots remark.}
+{We begin with a simple observation:}
+
+{\bf 487; 13.}\del{((the end of proof symbol at the end of the line))}
+{\bf 487; -6.}\rep{ $R_P$}{$R[x^{-1}]_P$}
+{\bf 487; -1.}\ins{((an end of proof symbol at the end of the line))}
+
+{\bf 490; -18.}\rep{${\rm dim}_k(M_d)$}{${\rm dim}_k(M_d)t^d$}
+
+{\bf 492;3.} \insb{the homogeneous}{which is}
+
+{\bf 492; -7.}\rep{polynomial}{family of polynomials $c_t(M)$}
+
+{\bf 492; -4.} \del{Chern and}
+
+{\bf 492; -5 -- -1.} \rep{((the whole last paragraph))}
+{Knowing the Hilbert polynomial of a module $M$ is
+equivalent to knowing the Chern polynomial
+$c_t(M) = 1+c_1(M)t+c_2(M)t^2+\dots$ mod $t^{n+1}$ and the rank
+of $M$. We sketch this equivalence:
+The Hirzebruch-Riemann-Roch formula allows one
+to deduce the Hilbert polynomial from the Chern
+classes and the rank as follows:
+First form the {\it Chern character,\/} which
+is a power series of the form 
+${\rm rank}(M)+c_1(M)t+{1\over 2}(c_1(M)^2-2c_2(M))t^2+\dots$ mod $t^{n+1}$.
+The Hilbert polynomial $P_M(d)$ is equal, for large $d$,
+to the coefficient of $t^n$ in the expression
+$$e^{nt}\bigl({t\over 1-e^{-t}}\bigr)ch(M).$$ 
+See Hartshorne [1977]
+Appendix A4, or Fulton [1984], especially chapter 15.  
+Conversely, to compute the
+Chern polynomial from the Hilbert polynomial, consider first the
+special case 
+$M=S_j:=S/(x_1,\dots,x_j)$.  
+From the Koszul complex
+resolving $M$ and properties i and ii above we see
+$$
+c_t(S_j)=
+{
+\prod_{i\ {\rm even}}(1-it)^{n-j\choose i}
+\over 
+\prod_{i\ {\rm odd}}(1-it)^{n-j\choose i}
+}
+{\rm mod }t^{n+1}.
+$$
+Now any Hilbert polynomial can be written (uniquely) in the
+form 
+$P_M=\sum_{j\geq 0}a_jP_{S_j}$.
+It follows that the Chern polynomial of $M$ is
+$c_t(M)=\prod_{j\geq 0}a_jc_t(S_j)$.
+Of course the rank
+of $M$ is $a_0$, completing the argument.
+}
+
+
+
+{\bf 493.}
+\insb{the first line of text ((as on p. 423))}
+{{\it In this chapter all the rings 
+considered are assumed to be Noetherian}} 
+
+{\bf 497; -15.}\del{((the end of proof symbol at the end of the line))}
+{\bf 497; -4.}\rep{$I_j\varphi = I_{j+p}\varphi$}{$I_j\varphi = I_{j+p}\psi$}
+
+{\bf 502; -3.}\del{((the end of proof symbol at the end of the line))}
+
+{\bf 506; -14.}\insa{is exact,}{$F_2$ is free,}
+{\bf 506; -10.}\rep{ $I(\varphi_2)$}{ $I_{n-1}(\varphi_2)$}
+
+{\bf 510; -7.}\rep{${\rm Ext}^j(M,R)_n$}{${\rm Ext}^j(M,S)_n$}
+
+{\bf 521; -12.}\rep{((the entire line))}
+{${\rm Ext}^j(M,S)_k=0$ for all $j\le n-1$ and $k=-m-j-1$.}
+
+{\bf 529; 14.}\rep{By Proposition 9.2}{By hypothesis}
+
+{\bf 529; -19.}\insb{whose}{$\varphi$}
+
+{\bf 530; 1.}\insa{Zariski}{Gorenstein rings were defined---in exactly
+the way done in this book!---in the artinian and graded cases
+by Macaulay in his last paper [1934] (his definition in the affine
+case differs slightly from the modern one).}
+
+{\bf 530; 7.}\insa{attests.} {There is also a well-developed noncommutative
+theory (Frobenius and quasi-Frobenius rings.)}
+
+
+{\bf 530; -11.}\rep{Proposition 21.2}{Corollary  21.3}
+
+{\bf 531; 4.} \insa{$x_i$}{and $x_i^{-1}$}
+
+{\bf 531; 5.} \rep{the $S$-module\dots $T$}{$T$ with a 
+sub-$S$-module of $K(S)/L$}
+
+{\bf 531; 10.} \insa{generated}{nonzero}
+
+{\bf 531; -14.}\rep{$:=$}{$=$}
+
+{\bf 531; -10.}\insa{any}{ nonzero finitely generated}
+
+{\bf 531; -2.}\insa{).} {(Proof: One checks by linear algebra that these
+elements generate the part of the annihilator in degrees $\leq 2$, 
+even as a vector space. These elements generate all forms
+of degree $\geq 3$.)}
+
+{\bf 532; 11.}\insa{$x\in A$}{that is also a nonzerodivisor on $\omega_A$}
+
+{\bf 532; -18.}\rep{21.4d}{21.5d}
+
+
+{\bf 533; -8.}\insa{condition.}{Note that c implies that the 
+annihilator of $W$ is 0, just as in the special case of Prop. 21.3}
+
+{\bf 533; -3.} \rep{..}{. ((after the Proposition number))}
+
+{\bf 539; 14.}\rep{$x$}{$x\in R$}
+
+{\bf 543; -17.}\rep{$M/xM$}{---}
+
+{\bf 544; 13.}\rep{$x_0, x_1$}{$x_1, x_2$} 
+
+{\bf 544; 18.}\rep{Enzykolp\"adie}{Enzyklop\"adie}
+
+{\bf 547; -6.}\rep{$A^n$}{$A^{n+1}$}
+
+{\bf 549; -7.}\insa{such that}{$x$ is a nonzerodivisor on $W$ and}
+
+{\bf 550; first line of Exercise 21.1}\insa{$y^n)$}{, $n\geq 2$}
+{\bf 550; -5.}\rep{$\omega_R$}{$R$}
+
+{\bf 551; 1.}\insa{and}{, with the notation introduced just
+after Proposition 21.5,}
+
+{\bf 551; first two displays.}\rep{$$\sum_{i_1,\dots,i_r}$$}
+{$$\sum_{i_1,\dots,i_r\geq 0}$$((two occurences))}
+
+{\bf 554; -1.}\del{((this entire line))}
+
+{\bf 556; -7.}\rep{degree}{deg ((two occurences))}
+
+{\bf 559; 6.}\rep{$x_1$}{ $x_0$}
+{\bf 559; 13.}\rep{$\sum d_i-r$}{$\sum d_i-r-1$}
+
+{\bf 575; 8--12 and 13--19.}\desc{((These two paragraphs
+are both definitions, and should be set in italics, with
+a skip below the paragraph, just as with the first paragraph on
+this page.))}
+
+{\bf 581; 13.}\insb{module}{of rank $n$}
+{\bf 581; 15.}\rep{$\lambda^d$}{$\lambda^{n-d}$}
+
+{\bf 609; -20.}\rep{corollary}{theorem}
+{\bf 609; -7.}\rep{Corollary}{Theorem}
+
+{\bf 623; 10.}\rep{a variety}{an affine variety}
+
+{\bf 630; -17.}\rep{both $E$}{both $E'$}
+
+
+{\bf 630; -4.} \rep{b.$^*$}{b.}
+{\bf 631; 1.} \rep{c.}{c.$^*$}
+
+
+{\bf 645; -9.}\del{$0\to$}
+
+{\bf 652; -11.}\rep{$E^1(A,B)$}{$E_R^1(A,B)$}
+{\bf 652; -15.}\rep{$0:\ 0\to A\to A\oplus B\to B\to 0$}
+{$0:\ 0\to B\to A\oplus B\to A\to 0$}
+
+{\bf 653; 10.}\rep{$A.$}{$B.$}
+
+{\bf 654; -9.}\rep{$A,B$}{$B,A$}
+{\bf 654; -7.}\rep{$A,B$}{$B,A$}
+{\bf 654; -6.}\rep{$A,B$}{$B,A$}
+{\bf 654; -6.}\rep{an injective}{a projective}
+{\bf 654; -5.}\rep{a projective}{an injective}
+
+{\bf 655; 5.}\rep{$A$}{$C$}
+{\bf 655; 7.}\rep{$C$}{$A$}
+{\bf 655; 10.}\rep{$C$}{$A$}
+{\bf 655; 10.}\rep{$A$}{$C$}
+
+
+{\bf 661; -7.}\rep{$F\to G$}{$G\to F$}
+
+{\bf 669; 3,4.}\rep{$F$}{$A$ ((three occurences))}
+{\bf 669; 5.}\del{$\bar F$}
+{\bf 669; 8.}\rep{$F$}{$A$}
+{\bf 669; 10.}\rep{$F$}{$A$ ((two occurences))}
+
+
+{\bf 671; -3.}\rep{We consider}
+{Let $A=\oplus_{p\in {\bf Z}}G^p$, and let $\alpha:\; A\to A$
+be the map defined by the inclusions $G^{p+1}\subset G^p$.
+We consider}
+
+{\bf 671; -2.}\rep{$H(G)$}{$H(A)$}
+{\bf 671; -2.}\rep{$H(G/\alpha G)$}{$H(A/\alpha A)$}
+
+{\bf 672; Figure A3.29.}\rep{$G$}{$A$ ((four occurences))}
+{\bf 672; -9.}\rep{horizontal}{vertical}
+
+{\bf 674; 9.}\insa{$G^q)^p$}{$=\oplus_{i+j=q,j\geq p}F^{i,j}$}
+
+{\bf 674; 10.}\insa{then in}{$(G^{q+1})^{p+r}$}
+
+{\bf 674; 11.}\desc{((delete the display, and close up))}
+
+{\bf 688; 11.}\rep{$G\circ P\rightarrow LF\circ P\rightarrow F$}
+{$G\circ P\rightarrow LF\circ P\rightarrow P\circ KF$}
+
+{\bf 694; -10.}\rep {$R$-module}{$S$-module}
+{\bf 694; -9.}\rep {$R$}{$S$}
+{\bf 694; -8.}Replace two occurences of $R$ by $S$. That is,\hfill\break
+\rep {${\rm Hom}_R(---,E(R/P))$}{${\rm Hom}_S(---,E(S/P))$}
+
+{\bf 697; 5.}\rep{collections}{collection}
+
+{\bf 728; -9.}\del{(by Lemma 3.3)}
+
+{\bf 728; -9.}\rep{$\in R_i$}{$\in R$}
+
+{\bf 743; 16.}\rep {b.} {c.}
+
+{\bf 746; 13--17.}\rep{((the complete text of the hint for
+Exercise 20.20 by))}
+{It follows from local duality that if $S=k[x_0,\ldots,x_n]$ is
+the homogeneous coordinate ring of ${\bf P}^n$, then
+$$
+H^j({\bf P}^n; {\cal F}(m-j))^{\vee} \cong
+{\rm Ext}^{n-j}(M,S)_{-n-1-(m-j)}
+$$ 
+for all $j$. This gives a. If $M$
+has depth $\ge 2$ we have ${\rm Ext}^{n-j}(M,S)=0$ for $j\le 0$ and
+statement b becomes a direct translation of Proposition
+20.16 and Theorem 20.17.}
+ 
+{\bf 746; -1.}\desc{((The dots in the right part of the diagram should
+run from SE to NW and should connect the two pieces of this part of the
+diagram, in analogy with what happens in the left part of the diagram.))}
+
+{\bf 747; 15.}\rep{Theorem 18.4}{Proposition 18.4}
+
+{\bf 747; 18.}\rep{((The displayed sequence))}
+{$$
+   0\rightarrow {\rm Ext}^d_R(M'',R)
+    \rightarrow {\rm Ext}^d_R(M,R) 
+    \rightarrow {\rm Ext}^d_R(M',R) 
+    \rightarrow  0
+$$}
+
+
+{\bf 751; -19.} \rep{b.}{c.}
+{\bf 751; -14 -- -11.} \rep{For this value\dots $Q$ is injective
+((three sentences))} {The map $\alpha$ thus factors through
+the projection $I\to I/P^dI$, so by Artin-Rees it factors
+through the projection $I\to I/(P^e\cap I) \subset R/P^e$ for large $e$.
+Since $Q^{(e)}$ is injective over $R/P^e$, we can extend this
+to a map $R/P^e\to Q^{(e)}$, and thus to a map $R\to Q$,
+proving that $Q$ is injective.}
+
+
+{\bf 758; 5.}\rep{Th\'eoremes}{Th\'eor\`emes}
+
+{\bf 758; -19 -- -18.}\rep{((italics))}{((roman))}
+{\bf 758; -18.}\rep{Preprint.}
+{Inst.~Hautes \'Etudes Sci.~Publ.~Math.~86 (1997) 67--114.}
+
+{\bf 759; 9--13.}\rep{entire reference}{Bayer, D., and M.~Stillman
+(1982-1990) Macaulay: A system for computation in algebraic geometry
+and commutative algebra. Source and object code available for many
+computer platforms. See http://www.math.uiuc.edu/Macaulay2/ for a
+pointer to this and to the successor program Macaulay2 by D.~Grayson
+and M.~Stillman.}
+
+{\bf 759; 22.}\rep{{\it Alg\'ebre}}{{\it Alg\`ebre}}
+{\bf 759; 28.}\rep{Alg\`ebre}{{\it Alg\`ebre}}
+
+{\bf 759; -15.}\ins{93 (1994) 211--229. ((at end of line))}
+
+{\bf 760; 6.}\ins{((as new reference))
+Buchsbaum, D.~A. (1969).  Lectures on regular local rings.
+In {\it Category theory, homology theory and their applications, I. \/}
+Battelle Inst. Conf., Seattle, Washington., 1968, Vol. 1, 13--22.
+Springer Lect.~Notes in Math. 86}
+
+
+{\bf 760; -8.}\rep{1944}{1943}
+
+{\bf 761; -9.} \rep{Schopf}{Sch\"opf}
+
+{\bf 762; 6.}\rep{in the}{is the}
+
+{\bf 762; -13 -- -12.}\rep{(in press).}{Duke Math. J. 84 (1995) 1--45.}
+
+{\bf 763; -18 -- -14.}\rep{the whole Gelfand-Manin reference}
+{Gelfand, S.~and Y.~I.~Manin (1989--1996). {\it Methods of homological
+algebra.\/} Springer-Verlag, Berlin, 1996. English translation of 
+the 1989 Russian original.}
+
+{\bf 764; 24.}\rep{Les foncteurs \dots continu ((the whole title))}
+{Cat\'egories d\'eriv\'ees et foncteurs d\'eriv\'es}
+
+{\bf 764; -14.}\rep{point}{points}
+
+{\bf 766; 1.}\rep{Der Frage}{Die Frage}
+
+{\bf 766; 15.}\rep{((boldface type))}{((roman))}
+
+{\bf 767; -15.}\rep{Time}{Times}
+
+{\bf 767; -12.}\rep{van}{von}
+
+{\bf 768; 11.}\rep{Birkhauser}{Birkh\"auser}
+
+{\bf 769 Insert as a new referece.}\ins{Macaulay, F.S.~Modern
+algebra and polynomial ideals, {\it Proc.~Cam.~Phil.~Soc.\/} 30,
+pp. 27--64.}
+
+{\bf 770; -14.}\rep{van}{von}
+
+{\bf 770; -12}\rep{in press}{1996}
+
+{\bf 771; 7.}\rep{Rabinowitch}{Rabinowitsch}
+
+{\bf 772; -12.}\rep{Bemerking}{Bemerkung}
+{\bf 772; -12.}\rep{van}{von}
+
+{\bf 773; -18.}\rep{Uber}{\"Uber}
+{\bf 773; -16.}\rep{Bezout}{B\'ezout}
+{\bf 773; -2.}\rep{{\it Its}}{{\it its}}
+
+{\bf 774; 4.}\rep{1994}{1995}
+
+{\bf 774; 5.}\rep{(preprint)}{J.~Algebraic Combin. 4 (1995) 253--269.}
+
+{\bf 775; -16 -- -15, second column.}
+\ins{$\kappa(P)$, residue field, 60}
+
+{\bf 776; -0, second column.}\ins{$E(M)$, injective envelope, 628}
+
+{\bf 785; 20, second column.}\rep{18}{17}
+
+{\bf 789; 10, second column.}\rep{Kozul}{Koszul}
+
+{\bf 790; 8 of second column.}\insa{M-sequence,}{243,248,423ff,}
+
+{\bf 793; -17 of first column.} \rep{167}{308,316}
+
+\end
+
+
+
+

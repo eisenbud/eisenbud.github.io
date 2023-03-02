@@ -1,0 +1,1315 @@
+ 
+\magnification=\magstep1
+\baselineskip=13pt
+\parskip=5pt
+\def \Box {\hbox{}\nobreak \vrule width 1.6mm height 1.6mm
+depth 0mm  \par \goodbreak \smallskip}
+\input amssym.def
+
+\rightline {Updated: July 11, 1996}
+\smallskip
+\centerline{Corrections to}
+\centerline{\bf Commutative Algebra with a 
+View Towards Algebraic Geometry}
+\medskip
+\centerline{by}
+\smallskip
+\centerline{David Eisenbud}
+\bigskip
+
+\beginsection Introduction
+
+\item{p. 6} line 2*  and p. 8, line 2*
+Macdonald is misspelled (the D should 
+be d).
+
+\item{p. 7} line 17: replace `` is'' (at end of line) by ``are''
+
+\item{p. 7} line 3*: replace 1.11 by 1.9
+
+\beginsection Chapter 0.
+
+\item{p. 11} line 12*: Replace this line by:
+\smallskip
+\noindent A {\bf ring} is an abelian group $R$ with
+an operation $(a,b)\mapsto ab$ called {\it multiplication}
+
+\medskip
+
+\item{p. 11} lines 6*-4*: Replace the sentence beginning
+``Nearly\dots by `` In this book we use the word ring to denote
+a commutative ring, with a very few exceptions that will be
+explicitly noted.''
+
+\item{p. 11} line 1*: after ``in which'' insert $1 \neq 0$ and
+
+\item{p. 12} line 8: replace $R$ by $I$ 
+
+\item{p. 15} line 21: change ``$I=(i), J=(ij)$, and $i$ is a 
+nonzerodivisor'' to 
+``$I=(ij), J=(j)$, and $j$ is a nonzerodivisor''
+
+\item{p. 15} line 17*: Add to this paragraph the sentence:
+``For example, we say that a nonzero element $r\in R$ is
+a {\bf nonzerodivisor on $M$} if $(0:_{M}r) = 0$; that is,
+if $r$ annihilates no nonzero element of $M$.''
+
+\item{p. 16} line 11: ``Corollary 4.5'' should be ``Corollary 4.4'' 
+
+\beginsection Chapter 1.
+
+\item{p. 16} line 2*: ``generated'' should be ``generate''
+
+\item{p. 22} 
+\itemitem line 3*: change ``unfortunately'' to ``but''
+\itemitem line 2*: delete the words ``after all''
+\itemitem line 1*: replace ``spawned.'' with ``spawned, including a large
+chunk of commutative algebra.  The amazing recent
+proof of Fermat's last theorem by Wiles and Taylor continued
+this tradition: a small but significant step in the proof involves
+a novel argument about Gorenstein rings.)
+
+\item{p. 23} line 5: after [1881] insert (see also Edwards [1990])
+
+\item{p. 24} line 14*: change [1992] to [1993]
+
+\item{p. 24} line 3*: replace $R$ by $k$
+
+\item{p. 26} line 3 of the footnote:  after ``celebrated''
+insert (see for example Browder [1976] or Kaplansky [1977])
+
+\item{p. 26} last line of the footnote: change [1986] to [1990]
+
+\item{p. 27} line 19: before the word ``collection'' insert
+``nonempty''
+
+\item{p. 28} line 15*: before the word ``collection'' insert
+``nonempty''
+
+\item{p. 29} lines 20*-18*:  Change the long sentence
+beginning ``If $G$...'' to:
+
+If $G$ is $SL_n(k)$ or $GL_n(k)$ we suppose further that
+the matrices $g\in G$ act on $k^r$ as matrices whose
+entries are rational functions of the entries of $g$;
+such a representation of $G$ is called {\it rational\ }.
+
+\item{p.30} line 7: ``for $j$'' should be ``for $j >>0$''.
+
+\item{p.31} line 11: before the period, insert ``is a
+homogeneous polynomial''.
+
+\item{p.31} line 20.  Replace the last sentence of the proof
+by:  Thus any homogeneous element of $R$ is in $R'$.
+But if $f\in R$ is any element, then applying $\phi$ to
+each homogeneous component of $f$ we see that $f$ is 
+a sum of homogeneous elements of $R$, so we are done.
+
+\item{p.32} line 10: ``called an affine'' should be
+``called affine''
+
+\item{p.32} line 21*. insert ``nonempty'' at the beginning of
+the line.  Near the end of the line,
+change ``to two'' to ``of two nonempty''.
+
+\item{p.33} line 4*. Change ${\bf A}^n_k$ to ${\bf A}^n(k)$
+
+\item{p. 37} line 1*. Change $fg$ to $f\circ g$
+
+\item{p. 41} line 15*.  Before ``algebraic'' insert
+``projective''
+
+\item{p. 42} 
+\itemitem{line 13*} Change $x_1$ to $x_0$
+\itemitem{line 12*} Change $r-1$ to $r$
+
+\item{p.43} line 12: change ``integer $s$'' to ``integer $s\geq 0$''
+
+\item{p.43} line 14, 15: change `` $H(s)$. For all $s$ we have''
+to ``$H(s)$, and''
+
+\item{p.46} line 2:  the last ``$s+d$" should
+be $s+d+1$
+
+\item{p.47} line 6*: change $\phi$ to $\pi$
+
+\item{p.49} line 11: change ``imples'' to ``implies''
+
+\item{p.49} line 16: change ``$Z(X)$'' to ``$I(X)$''
+
+\item{p.55} line 9: before the period at the end of the line
+insert ``and the empty set''.
+
+\beginsection Chapter 2.
+
+\item{p. 58} line 10*.  Change ${\bf A}^r_k$ to ${\bf A}^r(k)$
+
+\item{p. 61} line 4*.  change ``$S$ is a domain'' to ``$S/I$
+is a domain''
+
+\item{p. 63} line 3.  change ${\rm Hom}($ to ${\rm Hom_{R}}($
+
+\item{p. 63} line 4. change ${\rm Hom}($ to ${\rm Hom_{R}}($
+
+\item{p. 63} line 21.  change $M/A$ to $B/A$
+
+\item{p. 73} line 19: ``then clearly $M \supset M_i$."  should be
+``the claim follows since $M_i=0$."
+
+\item{p. 73} line 24: change $M' \cap M_{i} =M' \cap M_{i}$
+to $M' \cap M_{i+1} =M' \cap M_{i}$
+
+\item{p. 79} 
+\item\item {line 5 of problem 2.3}   Change 
+``sums'' to ``inclusions''.
+
+\item\item {line 9 of problem 2.3.} Delete the first
+superscript $\infty$, and delete from ``where'' to
+the end of the sentence.  Thus sentence should end:
+``have $R\cap JR[U^{-1}]=\sum_{f\in U}(J:f)$.
+
+\item{p.82} line 13: replace ``if $x$'' by ``if $x\in R$
+
+\item{p.85} Exercise 2.23.  Add a $^*$ to the exercise 
+number (indicating that there is a hint, as added below).
+
+\item{p.85} line 7*:  delete the $^{*}$
+
+\beginsection Chapter 3. 
+
+\item{p.90}{line 3} The subscript $u$ in the display should be
+a subscript $U$
+
+\item{p. 90} After line 8 insert the following paragraph,
+set off by smallskips.
+
+\smallskip 
+Like maximal ideals, primes minimal over a given ideal
+$I$ exist in {\it any} ring.  To see this, note first that
+if a set of prime ideals in a ring $R$ is totally ordered by
+inclusion, then the intersection of these primes is again
+prime.  By Zorn's Lemma we may find a maximal totally ordered
+subset of the primes containing $I$, and the intersection of
+the primes in this subset is necessarily minimal over $I$.
+By Theorem 3.1a, the set of primes minimal over $I$ is
+finite if $R$ is Noetherian.  This
+result generalizes the  statement that a nonzero polynomial in
+one variable can have only finitely many roots.
+\smallskip
+
+\item{p.90} lines 19-22.  Replace these lines (Cor. 3.2 and
+the sentence before) by:
+
+Theorem 3.1 yields a surprising dichotomy:
+
+\proclaim Corollary 3.2.  Let $R$ be a Noetherian ring, let
+$M$ be a finitely generated, nonzero $R$-module, and let
+$I$ be an ideal of $R$.  Either $I$ contains a nonzerodivisor
+on $M$ or $I$ annihilates an element of $M$.
+
+\item{p.91} line 8*:  Change ``an $R$-module'' to `` a 
+nonzero $R$-module''
+
+\item{p.95} line 15: Change ``some ideal $I$'' to 
+``some ideal $I\neq 0$''
+
+\item{p.95} line 7*: Change ``primary submodules'' to 
+``finitely many primary submodules''
+
+\item{p.96} line 3: Change ``of $M'$.'' to ``of 0 in $M'$.''
+
+\item{p.96} before line 10:  After the statement of the
+theorem, and before the proof, add the following paragraph:
+
+ 	``The language in part c is often stretched, and
+the module
+$M_i$  is referred to as the $P_i$-primary component of $M$
+in the given decomposition (it may depend on the decomposition).
+
+\item{p.96} line 14: Change ``irreducible submodules'' to 
+``finitely many irreducible submodules''
+
+\item{p.100} line 20: change ``closed'' to 
+``intersections of ${\rm Ass\ }M$ with the open''
+
+\item{p.101} line 16*: $P$ should be $P_i$
+
+\item{p.111} line 6: replace [in press] by [1995] 
+
+\item{p.112} line 10*:  before ``show'' insert:
+``and given a minimal primary decomposition $0 = \cap M_i$
+as in Theorem 3.10,''
+
+\item{p.112} line 9*: replace ``primary components of $0$
+in $M$'' by ``$M_i$''
+
+\beginsection Chapter 4.
+
+\item{p.118} line 2:  Replace ``basis'' by ``free basis'' 
+
+\item{p.119} line 15:  Replace ``${\bf Q}$'' by ``${\bf Q}(\sqrt 5)$''
+
+\item{p.121} line 3: Replace $(x)$ by $(t)$
+
+\item{p.121} line 20: change $p$ to $P$
+
+\item{p.123} line 5*:  ``Proposition 4.5" should be ``Corollary 4.5"
+
+\item{p.130} line 13: after ``that of $R$'' add ``(in the sense
+that every element of the big field is the root of a nontrivial
+polynomial
+with coefficients in the small field)''
+
+\item{p.131} line 21:  change ``3.10'' to ``13.10''
+
+\item{p.134} line 11: change the subscript $_{n}$ to $_{r}$
+
+\item{p.134} line 4*: Delete from the sentence ``By Theorem...''
+to the end of the page.  Replace this text by:
+
+\noindent By Theorem 4.19 the ring $S := k[x_1,\ldots,x_n]$ is
+a Jacobson ring, so every prime ideal of $S$, and in
+particular every prime ideal that contains
+$I$, is an intersection of maximal ideals.  Thus $I(Z(I))$
+is equal to the intersection of all the prime ideals containing $I$.
+By Corollary 2.12, this is ${\rm rad}(I)$, proving the 
+formula.  
+
+The equality $Z(I(X)) = X$ follows directly from the definition
+of an algebraic set.  The formula just proved shows
+that if $I$ is a radical ideal then
+$I(Z(I)) = I$.  Thus
+the functions $Z$ and $I$ are inverse bijections between
+algebraic sets and radical ideals as claimed.\hfill\Box
+
+\beginsection Chapter 5.
+
+\item{p.146} line 4: change ``large $i$'' to ``large $n$''
+
+\item{p.146} line 13: change ``later in this chapter" to
+``after Proposition 5.3".
+
+\item{p.148} line 4: Change ``an $R$-module'' to 
+``a finitely-generated $R$-module''
+
+\item{p.148} line 30 = line 8*: the $g_{j}$ at the end of the line
+should be $g_{j}t$
+
+\item{p.149} line 18: change $B_{\cal I}$ to $B_{I}$
+
+\beginsection Chapter 6.
+
+\item{p.156} line 16:  change ``maximal'' to ``prime''
+
+\item{p.156} line 19*: delete ``, $U\cong \phi(U)$''
+
+\item{p.157} line 2: change first character of the line,
+``$X$'', to ``$x$''
+
+\item{p.157} line 12:  Append ``We have chosen cases where (most
+of) the fibers are finite sets.''
+
+\item{p.158} line 13*:  replace ``in not flat'' by ``is not flat''
+
+\item{p.158} line 7*:  $X$ should be $x$
+
+\item{p.158} line 5*:  replace ``$=R[x]$'' (at the end ofthe line)
+by ``$=k[x]$
+
+\item{p.159} line 13*: Delete the sentence beginning 
+``So that the reader may judge the merits\dots''
+
+\item{p.159} line 8*-5*:  Replace these four lines by
+\smallskip
+\item {1.} If $M$ and $N$ are $R$-modules, and
+$\ldots \to F_{i+1}\to F_{i}\to F_{i-1}\to
+\ldots \to F_{0} \to M\to 0$ 
+is a free resolutios of 
+$M$ as an $R$-module, then 
+${\rm Tor}^{R}_{i}(M,N)$
+is the homology at $F_{i}\otimes N$ of the complex
+$F_{i+1}\otimes N\to F_{i}\otimes N\to F_{i-1}\otimes N$;
+that is, it is the kernel of 
+$F_{i}\otimes N\to F_{i-1}\otimes N$
+modulo the image of
+$F_{i+1}\otimes N\to F_{i}\otimes N$.
+
+
+\item{p. 162} 
+The elementary ``proof'' offered is garbage --- the
+``it follows'' just in the middle of the page is too
+optimistic. Therefore:
+
+Delete the last 2 lines of page 161 and all but the
+last 3 lines of p. 162.
+
+\item{p. 163} line 1*: in the display, before ``$for\ all\ i$''
+insert ``$\ in\ M\ $''
+
+\item{p. 165} line 9*: change ``$m_{j}$'' at the beginning of the
+line to $m_{i}$
+
+\item{p. 166} line 19: change ``$1+st$'' to ``$1-ts$''
+
+\item{p. 172}, Exercise 6.5.  Change each $P$ (four occurences)
+to $\frak m$, and each $Q$ (two occurences) to $\frak n$
+
+\item{p. 173}, line 2*.  delete ``should be $((x)\cap(x,t)^{2})$''  
+
+\item{p. 175}, lines 5,6.  Replace the sentence
+beginning ``We may think of'' by
+For each prime ideal $P\subset R_0$ with residue
+field $\kappa(P) = K(R_0/P)$ we have a graded module
+$\kappa(P)\otimes M$ over the ring $\kappa(P)\otimes R$;
+Thus $M$ gives rise to a family of graded modules, parametrized
+by ${\rm Spec}(R_0)$.
+
+\item{p. 175}, line 12:  replace ``Hartshome'' by ``Hartshorne''
+
+\beginsection Chapter 7.
+
+\item{p. 180} fig 7.1:  in the figure, replace ``$k[x,y]_{(x,y+1)}$''
+by ``$k[x,y]$''
+
+\item{p. 181}line 19: replace ``$\hat m$'' with 
+``$\hat {\frak m}$''
+
+\item{p. 181}line 20: replace ``$\hat m_{1}$'' with 
+``$\hat {\frak m}_{1}$''
+
+\item{p. 181}line 24:  \itemitem{} replace ``$\hat m$'' with 
+``$\hat {\frak m}$'' 
+\itemitem{} replace ``$\hat R/\hat {\frak m}\hat R_{\hat {\frak m}}$''
+by
+``$\hat R_{\hat {\frak m}}/\hat {\frak m}\hat R_{\hat {\frak m}}$''
+ 
+\item{p. 187} para. 3 line 3: replace (f,g) by (g,h).
+
+\item{p. 188} para. 5 last line: the first $e_n$ should have 
+a bar over it like the others.
+
+\item{p. 188} para. 7: replace ``by" with ``be".
+
+\item{p. 192}line 13:  replace 
+``$\hat {\frak m}_{n}\subset (\hat {\frak m}_{1})^{n}$'' 
+by
+``$(\hat {\frak m}_{1})^{n}\subset \hat {\frak m}_{n}$''
+ 
+ \item{p. 192}line 18:  replace ``$/{\frak m}_{n}$''
+ by ``$/\hat {\frak m}_{n}$''
+ 
+\item{p. 194} line 7* and 6*: after the second ``Noetherian''
+insert `'and ${\frak m}/{\frak m}^{2}$ is a finitely generated
+$R/{\frak m}$-module.''  Replace the following
+sentence, `` The ring\dots `' up to is Noetherian.''
+by :  ``The ring ${\rm gr}_{\frak m} R$ is generated
+as an $R/{\frak m}$-algebra by any set of generators for the
+module ${\frak m}/{\frak m}^{2}$.  Thus by the Hilbert Basis
+Theorem (Theorem 1.2) ${\rm gr}_{\frak m} R$ is Noetherian.''
+
+\beginsection Chapter 8.
+
+\item{p.214} line 15*: change [1935] to [1985]
+\beginsection Chapter 9.
+
+\item{p.226} line 5*: replace ``$M=$'' by ``$(M\cup L) =$''
+
+\item{p.226} line 2*:replace ``$M$'' by ``$M\cup L$''
+
+\item{p. 228} Replace Exercise 9.1 with the following:
+\itemitem {a)} Let $R$ be a Noetherian local ring.  If the
+maximal  ideal of $R$ is principal, show that every ideal of $R$
+is  principal, and any nonzero ideal of $R$ is a power of
+the maximal ideal. 
+\itemitem{b)} Deduce from part a) that if each maximal ideal
+of a Noetherian ring is principal, then the ring has
+dimension $\leq 1$.
+
+\item{p. 228} 18*.  Replace ``is monic in $y$'' by ``is a scalar times a 
+monic polynomial in $y$''
+
+\item{p. 229} line 2*.  replace ``every element'' by ``every nonzero 
+element''
+
+\beginsection Chapter 10.
+
+\item{p. 234} line 12*:  In the section title, replace ``Parameter Ideals''
+by ``Ideals of Finite Colength''
+
+\item{p. 235} line 3 of text: replace {\bf parameter ideal for $R$}
+by {\bf ideal of finite colength}
+
+\item{p. 235} line 13 of text: replace `` a parameter ideal for''
+by ``an ideal of finite colength on''
+
+\item{p. 235} line 11*, line 10* and line 7* (three occurences):
+replace ``is a parameter ideal for'' with ``has finite colength on''
+
+
+\item{p. 235} line 5*: replace ``a parameter ideal for'' with
+``an ideal of finite colength on''
+
+\item{p. 237} Theorem 10.10:  replace ``map of local rings" by
+``map of local rings sending $\frak m$ into $\frak n$'' 
+
+\item{p. 246} Add the following exercise: 
+
+\noindent {\bf Exercise 10.14:}  Let $S$ be a Noetherian ring
+of dimensionsion $d$,
+and let $I$ be a radical ideal of $S$, that is, $I = {\rm rad}(I)$.
+We consider the problem of finding the smallest number of 
+elements $f_{1},\ldots, f_{e}$  
+that {\it generate $I$ up to radical\/} in the sense
+that ${\rm rad}(f_{1},\ldots, f_{e}) = I$. In the case where
+$S = k[x_{1},\ldots,x_{d}]$, and $k$ is an algebraically
+closed field, the ideal $I$ corresponds to an algebraic
+set $X$, and the problem is equivalent, by the Nullstellensatz,
+to the problem of determining the 
+minimal number of hypersurfaces that intersect precisely in $X$.
+(In the non-algebraically closed case, the problems are quite
+different; show that every algebraic set in ${\bf R}^{d}$ is
+a hypersurface, that is, may be defined by a single equation.)
+
+\item{a.} Show that if ${\rm codim\ }I = c$
+then $I$ cannot be generated up to radical by fewer than
+$c$ elements.  Thus there are ideals in $S$ which cannot be generated up
+to radical by fewer than $d$ elements. 
+
+\item{b.}  Show that $I$ is generated up to
+radical by at most $d+1$ elements, as follows. If
+$I$ is contained in all the minimal primes of $S$, then
+$I$ is nilpotent, so the empty set generates $I$ up to radical.
+Otherwise,
+choose as first generator $f_1$ an element
+in $I$ but not in any of the minimal primes of $S$ that do not
+contain $I$. If ${\rm codim\ } I >0$, factor
+out $(f_1)$ and do induction on the maximum of the dimensions of minimal
+primes of $S$ that do not contain $I$.  
+
+\item{c.} Suppose that $S$ can be written as a polynomial ring
+in one variable over a smaller ring, say $S = R[x]$.  Show
+by induction on $d-1 = {\rm dim\ }R$ that $I$ can be generated up
+to radical by just $d$ elements, perhaps using the following
+outline.  Conclude that every algebraic set in affine $d$-space
+is the intersection of $d$ hypersurfaces.  The corresponding
+theorem is also true in projective space, and can be proved
+by a modification of the argument given below (see Eisenbud--Evans 
+[1973] or Kunz [1985, Ch.~5] for an 
+account).\footnote{$^{1}$}
+{These results have a controversial history.
+Part b was first proved by Kronecker [1881], using difficult
+arguments from elimination theory; the argument suggested here
+is due to van der Waerden, about 1941.  In 1891 Kurt
+Vahlen announced an example (a rational quintic curve in
+projective 3-space) that he claimed was not the intersection
+of 3 hypersurfaces. The subsequent history was once
+explained to me by Alfred Brauer:
+According to him, Vahlen abandoned mathematics and became,
+after the first world war, a
+University Rektor (President), and
+a prominent Nazi.  Perhaps because of this, Oscar Perron
+was moved to re-examine the example, Vahlen's only significant
+mathematical contribution, and showed that it was wrong!
+By hard computation Perron [1941]
+exhibited 3 hypersurfaces that intersect in Vahlen's curve.
+Later, Kneser [1960] showed that any algebraic set in projective
+3-space is the intersection of 3 hypersurfaces.  The proof
+for affine $d$-space outlined below is from
+Storch [1972] and Eisenbud--Evans [1973]. The question of whether
+curves in projective 3-space can be expressed as the interesection
+of just two hypersurfaces remains tantalizingly open, even in  
+simple concrete cases; see the discussion at the end of Ch.~15.} 
+%
+\itemitem{i.}  Show that it suffices to treat the case where 
+$S$ (equivalently $R$) is reduced. 
+Note that if $R$ is reduced and of dimension 0
+ then $R$ is a product of 
+fields. Now do the case $d=1$.
+%
+\itemitem{ii.} Assuming $R$ is reduced, let $U$ be the set of
+nonzerodivisors of $R$.  Show $R[U^{-1}]$ is a product of 
+fields, and that you can choose $f_{1}\in I$ so that
+$f_{1}R[U^{-1}] = IR[U^{-1}]$.  
+%
+\itemitem{iii.} Show that there is an element $r\in R$ not in any 
+minimal prime of $R$ such that $rI\subset (f_{1})$.  Factor 
+out $r$ and use the induction hypothesis to find 
+$d-1$ elements that generate $I(R/(r)[x])$ up to radical.
+Lift these elements to elements $f_{2},\ldots,f_{d}\in I$.
+Show that together with $f_{1}$ these generate $I$ up to 
+radical.
+
+
+\beginsection Chapter 11.
+
+\item{p. 258} line 10*-7*.  Replace the two sentences ``This is an uncountable
+... . Thus Pic(R).. .'' by
+``This is an uncountable divisible group.  An easy argument show that if $R$ is
+the coordinate  ring of an affine open subset of such a curve then
+${\rm Pic\ }R$ is a quotient of this torus by a finitely generated subgroup
+which maps onto ${\bf Z}$.  Thus (still assuming $g>0$) ${\rm Pic\ }R$ is
+an uncountable divisible group.
+
+\beginsection Chapter 12.
+
+\item{p. 271} line 13*: bad line break.
+
+\item{p. 272} line 6:replace ``parameter ideal ${\frak q}$ for $M$''
+by ``ideal of finite colength on $M$''
+
+\item{p. 272} line 7-8: replace ``parameter ideal ${\frak q}$ of $M$''
+by ``ideal ${\frak q}$ of finite colength on $M$''
+
+\item{p. 272} line 20-21: replace ``a parameter ideal for $M$'' by
+``an ideal of finite colength on $M$''
+
+\item{p. 275} line 14*-13*: replace ``parameter ideals for'' by 
+``ideals of finite colength on''
+
+\item{p. 275} line 7*: replace ``a parameter ideal'' 
+by ``an ideal of finite colength''
+
+\item{p. 275} line 3*: replace ``parameter ideal'' by  ''ideal of finite colength''
+
+\item{p. 276} line 7: replace ``parameter ideal'' by  ''ideal of finite colength''
+\item{p. 276} line 6*: replace ``a parameter ideal for ''
+ by  ''an ideal of finite colength on''
+
+\item{p. 277} line 5: delete ``the'' (third word in the line).
+
+\item{p. 277} line 13: replace ``a parameter ideal for ''
+ by  ''an ideal of finite colength on''
+
+\item{p. 278} line 2-3: replace ``a parameter ideal of ''
+ by  ''an ideal of finite colength on''
+
+\item{p. 279} line 17*: replace ``any parameter ideal for ''
+ by  ''any ideal of finite colength on''
+
+\item{p. 279} line 2*: replace ``a parameter ideal for ''
+ by  ''an ideal of finite colength on''
+
+
+
+\beginsection Chapter 13.
+
+\item{p. 283} line 8*: change $d_m > 0$ to $d_m\geq 0$
+
+\item{p. 283} line 6*: change $x_{d_{j+1}}$ to $x_{{d_j}+1}$ 
+
+\beginsection Chapter 14.
+
+\beginsection Chapter 15.
+
+\item{p. 317} line 1: replace ``Restkalssen-'' with ``Restklassen-''
+
+\item{p. 319} line 11:  Delete the ' after ``Sturmfels''
+
+\item{p. 320} line 20*:  after ``largest monomial in $F$'' 
+insert ``, in the sense of divisibility,''
+
+\item{p. 322}, 1st line of paragraph before last display:
+\itemitem{}  ``We may now assume that 
+$\sigma = \sum a_v n_v ^\epsilon (\ker \phi)_n$''
+should be
+``We may now assume that 
+$\sigma = \sum a_v n_v \epsilon_v\in (\ker \phi)_n$''
+
+\item{p. 322-323} Delete the last two lines of p. 322
+and the first 12 lines of p. 323 (Lemma 15.1 bis and its proof).
+
+\item{p. 325} line 8*: change $m_i$ to $u_im_i$
+
+\item{p. 332} line 15: replace $(g_1,\ldots, g_t)\in F$
+by $(g_1,\ldots, g_t)\subset F$
+
+\item{p. 332} line 14* to p. 333, line 4: replace these
+paragraphs by\smallskip
+
+choose an element
+$$
+f = \sum_u f_u\epsilon_u
+\qquad{\rm with}\qquad
+{\rm in}(\phi(f))\notin ({\rm in}(g_1),\ldots,{\rm in}(g_t)).
+$$
+Let $m$ be the maximal monomial that occurs among the
+terms ${\rm in}(f_ug_u)$. We may assume that the expression
+for $f$ is chosen so that $m$ is minimal, and so that
+the number of times $m$ occurs among the ${\rm in}(f_ug_u)$
+is also minimal.  Since
+${\rm in}(\phi(f))$ is not divisible by an ${\rm in}(g_i)$, the
+terms of  the $f_ug_u$ that involve the monomial $m$ must 
+cancel; in particular, there must be at least two such terms, 
+and renumbering the $g_u$ we may assume for simplicity that
+${\rm in}(f_1g_1)$ and ${\rm in}(f_2g_2)$ are among them. We may
+write these terms in the form $n_1m_1$ and $n_2m_2$, where
+$n_i$ is a term of $f_i$.
+
+Since $n_1m_1$ and $n_2m_2$ differ by only a scalar, 
+$n_1$ is divisible by $m_2/{\rm GCD}(m_1,m_2)$, 
+and thus there is a term
+$n\in S$ such that $nm_{2,1} = n_1$. 
+Consider the element 
+$$
+f' = f - n(\sigma_{1,2} - \sum f_u^{1,2}\epsilon_u),
+$$
+and write it in the form $f' = \sum f'_u\epsilon_u$.
+By our hypothesis $h_{ij}=0$ we see that $\phi(f')=\phi(f)$.
+The terms of $\phi(nf_u^{ij}\epsilon_u)$ are all $< m$.
+The term $n_1\epsilon_1$ in $f$ cancels with the 
+term $nm_{2,1}\epsilon_1$ of $n\sigma_{1,2}$, so this
+term is missing from $f'$.  The 
+other term $nm_{1,2}\epsilon_2$ of $n\sigma_{1,2}$
+combines with the term $n_2\epsilon_2$ of $f$ so that the
+number of occurences of $m$ among the ${\rm in}(f'_ug_u)$
+is strictly less than among the ${\rm in}(f_ug_u)$.
+This contradicts the minimality property of
+$f$, so $g_1,\ldots, g_t$ is a Gr\"obner basis after all.
+\Box 
+
+\item{p 333} line 15*ff:  Delete from the paragraph that begins ``There is a 
+fairly sharp...'' through the end of the page.  
+
+\item{p 334} line 1: replace ``This estimate is so large as to suggest'' by
+``Worst-case analysis of Gr\"obner bases shows that the degrees of the
+elements in a Gr\"obner basis may be extremely large, 
+suggesting'' 
+  
+\item{p. 337} Footnote: replace 
+``was a postdoctoral student'' by
+``was a young visitor''
+
+\item{p. 339} line 6:  delete the word ``graded''
+
+\item{p. 339} line 8*-7*: replace ``inequality'' by
+``inclusion''
+
+\item{p. 340} line 11*: replace ``monomials'' by ``terms''
+
+\item{p. 342} line 5*: The first $>$ should be $>_{\lambda}$
+
+\item{p. 347} line 8*:  replace ``term of the equation is
+$y^2$'' by ``term is $-y^2$''
+
+\item{p. 351} line 2*: Replace the $(1+\delta)$ with
+$(1+\gamma)$
+
+\item{p. 352} line 6: replace $\delta_n$ by $\delta_r$
+
+\item{p. 353} display on line 13*: After $t\choose s$
+insert $c^{s}$ 
+
+\item{p. 359} line 19*: replace $p'$ by $g'$ and $p$ by $g$
+
+\item{p. 360} line 8: replace $I'$ by $I$.  Replace
+``the ${\rm in}(g_i') = {\rm in}(g_i)$.'' by
+``the ${\rm in}(g_i)$.
+
+\item{p. 372} Exercise 15.39, replace ``$I'$ is any''
+by ``$I'$ is a homogeneous''.
+
+
+\beginsection Chapter 16.
+
+\item{p. 392} 5th line from the bottom: The direct sum symbol
+$\oplus_R$ should be $\otimes_R$.
+
+\item{p. 393} lines 9 and 12: the two occurences of $\otimes_R$
+should both be $\otimes_{S_i}$
+\item{p. 394} Corollary 16.6, displayed equation:
+add two pairs of parentheses, to make it
+$$
+\Omega_{T/R} \cong 
+(T\otimes_S\Omega_{S/R})
+\oplus
+(\oplus_i Tdx_i).
+$$
+\item{p. 394} Corollary 16.6, line 2 of the proof: add two
+pairs of parentheses to the expression on the right hand
+side of the equation, to make it
+$(T\otimes_S\Omega_{S/R})
+\oplus
+(T\otimes_{T'}\Omega_{T'/R})
+$
+\item{p. 394} Corollary 16.6, line 3 of the proof: add a pair
+of parentheses to make
+$=T\otimes_{T'}\oplus_iT'dx_i=$ into
+$=T\otimes_{T'}(\oplus_iT'dx_i)=$
+\item{p. 394} Theorem 16.8, line 2: the roman ``B'' should be
+a caligraphic B, as on the first line.
+\item{p. 394} Theorem 16.8, line 3: the map at the end should
+be $\phi: S'\to S$.
+\item{p. 402} Theorem 16.19, line 3: Change $K(R/P)$ to 
+$K(S/P)$.
+
+
+\beginsection Part III
+
+\item{p. 417} line 11*:  [1858] should be [1848]
+\beginsection Chapter 17.
+
+\item{p.424} line 4: insert the missing rightarrow
+in the display
+between $\wedge^n N$ and $\wedge^{n+1} N$; should
+be
+$$
+\cdots \to \wedge^{n-1} N\to \wedge^{n} N
+\to \wedge^{n+1} N \to 0.
+$$
+
+\item{p. 439} line 8. after `` is a subset'' insert `` of length $s$ of''
+  
+\item{p.439} line 17: $\sum_J c_{I,J}$ should be 
+$\sum_J c_{I,J} e_J$
+
+
+\beginsection Chapter 18.
+
+\item{p. 466} second line of Exc. 18.11:  Insert the word
+``primitive'' before ``polynomial''.
+
+\item{p. 477} In Corollary 19.11, delete the phrase
+``, and let $F$ \dots monomial order''.
+  
+Change the period at the end of the display to a comma, and.
+after the display add the phrase
+``where the generic initial ideal is taken with respect to 
+reverse lexicographic order.''
+
+\item{p. 482} line 11:  after the word ``respectively'',
+and before the semicolon, insert:
+(exept that in the case of the Cayley numbers it is 
+non-associative)
+
+\beginsection Chapter 19.
+
+\item{p. 487} Exercise 19.18.  Delete the second sentence
+of the exercise,  beginnning ``Suppose the degrees\dots''.
+
+\beginsection Chapter 20.
+
+\item{p. 494} First word of the second line of the Proof of 
+Prop. 20.6:   ``localiztion" should be ``localization"
+is misspelled in the second line of the proof
+           of Prop. 20.6.
+
+\item{p. 506}  line 4*:  $M$ should be $M'$
+
+\beginsection Chapter 21.
+
+\item{p. 522} line 10 replace ``$A,P$'' by ``$(A,P)$''
+\item{p. 522} line 3*: replace $\omega_{A}$ by $D(A)$
+
+\item{p. 541} Theorem 21.23: Delete the first occurence of
+``$J=(0:_AI)$".
+
+\item{p.550} Exercise 21.15 should have the hypothesis
+that $dim(R) = c$, or more generally that $R/J$ 
+is Cohen-Macaulay.
+
+\item{p. 551} Exercise 21.19: Add a ``)" at the end of the first
+line.
+
+\beginsection Appendix A1.
+
+\beginsection Appendix A2.
+
+\item{p. 576} end of first paragraph: There should be a space
+between ``2" and ``(bi)". 
+
+\item{p. 577}: The right margin is ragged.
+
+\item{p. 596} Fig. A2.7: in the middle of the middle row,
+the $\wedge^{q}-gG$ should be $\wedge^{q-g}G$.  Also,
+there is an extra $=$ floating below the symbol $\sum_{p+q-k}$
+which should be deleted.
+
+\item{p. 597} Lemma A2.11: The numerals 
+(and perhaps the ``A''? in ``Theorem A2.10" should
+be typeset in roman. (Compare with similar situations in Lemma
+A2.5 and Proposition A3.17.)
+
+\beginsection Appendix A3.
+
+\item{p. 614} Footnote:  Add
+``(In later editions of the book Lang takes a more
+moderate position; see Lang [1993].)''
+
+\item{p. 620} lines 4 and 6: The small 
+italic ``o" in the statement of
+ Proposition A3.5 and in the first line of the proof
+should be the number ``0" (zero).
+
+\item{p. 629} line 12 (last line before the second display):
+two pairs of () should be removed, and one ( added, so
+that the final equation should be
+$\alpha x -\beta x  = \partial (h(x)) - h(\partial(x))$.
+
+
+\item{p. 629}  The caption of Figure A3.2 needs to be fixed:
+In the third line of the caption $\delta$'s should be
+$\partial$'s. The last line of the caption should be
+$\alpha x -\beta x  = \partial (h(x)) - h(\partial(x))$
+
+\item{p. 630} line 9*: ``A3.,'' should be ``A3.13,'' 
+
+\item{p. 632} line 1*: in the display replace $F''$ by
+$F'' \to 0$
+
+\item{p. 650}  line 9*:  ``differential of $F$'' should be
+``differential of $F[-1]$''
+
+\item{p. 678} line 8: Insert a comma after ``Chapter 1]''
+and after ``[1986],''  add ``Gelfand-Manin [1989],''
+
+\item{p. 679} line 8: $H_{i}$ should be $H_{n}$
+
+\item{p. 681} lines 16 AND 18: ``$\to KF$'' should be 
+``$\to P \circ KF$''
+
+\beginsection Appendix A4.
+
+\item{p.683} line 10*: replace ``zeroeth'' by '
+``$0^{\rm th}$''
+
+\item{p.687} line 8: after $Q\neq P$ insert before the
+period:
+ ``and that
+all the minimal primes of $R$ have the same dimension''
+
+\item{p.687} line 9*-6*: replace these lines (first four
+lines of ex A4.3 by
+\smallskip
+\noindent{\bf Exercise A4.3:} Let $(R,P)$ be a Noetherian local
+ring, and suppose that $x_{1},\ldots,x_{n}$ generate $P$.
+For each $i\geq 0$ there is a natural map 
+$H^{i}(K(x_{1},\ldots,x_{n})) \to {\rm H}^{i}_{P}(R)$
+from the cohomology of the Koszul complex to the
+local cohomology.  For
+$i=0$ this map is injective, but in general it is neither
+injective nor surjective.  We say that $R$ is 
+{\bf Buchsbaum} if these maps are all surjective for
+$i< {\rm dim\ }R$.  It turns out that this somewhat unappetizing
+definition leads to a rich and surprizing theory, initiated in
+Vogel [1973]; the definitive exposition 
+is given in St\"uckrad and Vogel [1986]. Show
+
+\item{p.687} line 5*:  before the word ``projective'' insert
+``locally Cohen-Macaulay''
+
+\beginsection Appendix A5.
+
+\item{p.690} lines 2-4:  Replace the sentence beginning
+``All the methods\dots'' by:
+``There are difficult foundational issues, but they do not
+seem to threaten the use of categorical language in 
+common situations.  For the best-known way out, 
+see Grothendieck [1972, Ch. I]; for a review, see
+Feferman [1969].  We shall take a naive approach, and simply
+ignore the problem.'' 
+
+\item{p.691} lines 8:  Replace $M\to N$ by $M\to M$
+
+\item{p.692} line 3: replace $A\to A'$ by $\phi:\ A\to A'$
+and replace $B\to B'$ by $\psi:\ B\to B'$
+
+\item{p.692} diagram, symbols next to the left hand vertical arrow:
+replace $G(\phi)$ by $G(\psi)$.
+
+\item{p.692} diagram, bottom row left hand side: replace $A'$ by  $A$
+
+
+
+\beginsection Appendix A6.
+
+\beginsection Appendix A7.
+
+\item{p. 710} line 1: replace ``algebra" with ``algebraic''.
+
+\item{p. 710} line 16: replace ``Theory'' with ``theory''
+
+\beginsection Hints and Solutions for Selected Exercises.
+
+\item{p.714} Before the hint for Exercise 2.27, add a hint
+for exercise 2.23, as follows:
+
+\noindent{\bf Exercise 2.23:\ }  Check and use the fact that
+if an ideal $I$ is contained in a principal ideal $(a)$
+then $I = a(I:a)$ to show that if every ideal
+containing an ideal $I$ is principal, then $I$ is
+either principal or prime.
+
+\item{p. 730} line 4 ``J. Sally'' should be ``S. Wiegand''.
+
+\item{p. 733} line 3 of hint for 18.11: after ``because''
+insert ``$f$ is primitive we must have $d,e \geq 1$,
+and because''
+
+\item{p. 741} line 4 of hint for A3.13: in the displayed 
+diagram the subscript ``F'' should be ``$F$''
+
+\beginsection References.
+
+\item{p. 747} The reference to Bass appears out of order.  It
+should come before the Bayer references.
+
+\item{p. 747} Insert the reference:
+
+Browder, F. (1976).  {\it Mathematical developments arising from
+Hilbert's problems.\ } Proc. of Symp. in Pure Math. 28.  
+Amer. Math. Soc., Providence, RI.  
+
+\item{p. 749} before line 4* Insert the reference:
+
+\itemitem{} Edwards, H. M. (1990). {\it Divisor Theory.\/} 
+Birkh\"auser, Boston.
+
+\item{p. 750} Insert new reference: 
+Eisenbud, D.~and Evans, E.~G.~ (1973). Every algebraic set in 
+$n$-space is the intersection of $n$ hypersurfaces.
+Inv. Math. 19, pp. 107-112.
+
+\item{p. 750}  line 11:  add ``75, pp. 339--352.''
+
+\item{p. 750}  line 16:  add ``To be published in revised 
+form by Springer-Verlag, under the title {\it Why Schemes?}.''
+
+\item{p. 750}  line 17*:  add ``109, pp. 168--187.''
+
+\item{p. 750}  line 13*:  Change ``1994''
+to ``1996'', and add at the end of the line 
+``Duke J.~Math. (in press).''
+
+\item{p. 750}  before line 7*: Add the reference:
+\itemitem Feferman, S. (1969).  Set-Theoretical Foundations
+of Category Theory.  in {\it Reports of the Midwest Category
+Theory Seminar}, Ed. S. Maclane, Springer Lect. Notes in Math.
+106, pp. 201--247, Springer-Verlag, New York.
+
+\item{p. 752} line 19:  change 593 to 523
+
+\item{p. 753} The paper of Heinzer, Ratliffe, and Shah has
+now appeared; the reference is 
+Houston J. Math, 21, 29-52 (1995)
+
+\item{p. 754} After the references to David Hilbert's 
+papers, insert
+(Hilbert's papers above are noe available in an English 
+translation in {\bf Hilbert's Invariant Theory Papers},
+transl. M. Ackermann. Lie Groups: History, Frontiers,
+and Applications Volume VIII, Math Sci Press, Boston Mass, 1978.)
+\item{p. 758} line 5*, reference to Peskine's book: remove the
+accent  from the word ``Algebraic".
+
+\item{p. 755} Insert new reference:
+\itemitem{} Kaplansky, I. (1977). Hilbert's problems, Lecture
+Notes in Mathematics, Univ. Chicago, Chicago, IL.
+
+\item{p. 755} Insert new reference: Kneser, M. (1960).
+\"Uber die Darstellung algebraisher Raumkurven als
+Durchschnitte von Fl\"achen.  Arch.~Math.~11, pp.157-158.
+
+\item{p. 758} Insert new reference: 
+Perron, O. (1941). \"Uber das
+Vahlensche Beispiel zu einem Satz von 
+Kronecker.  Math.~Z.~47, pp. 318-324.
+   
+\item{p. 761} Insert new reference: 
+Storch, U. (1972). Bemerkung zu einem Satz von M.~Kneser.  
+Arch.~Math.~23, pp. 403-404.
+
+\item{p. 761} line 5: replace ``In Press'' by 1995
+
+\item{p. 761} line 6: add 301, pp. 417--432.
+
+\item{p. 761} before line 5*: Insert new reference:
+Vogel, W.(1973).  Uber eine Vermutung von D.~A.~Buchsbaum.
+{\it J. Alg.} 25, pp. 106--112.
+
+\beginsection Index.
+
+\item{p. 769} line 5, left column:  502 should be 501
+
+\item{p. 769} line 55, left column:  the references to 
+Vogel should be:
+7, 111, 278, 301, 337, 363, 687.
+
+\item{p. 769} line 2, left column:
+ add the page number 15 to the references for the
+word ``nonzerodivisor''
+
+\item{p. 776} add an index item in the list after ``ideal'', after 
+line 15 in the left column:
+
+of finite colength, 234--236,272,275--279
+
+
+\item{p. 780} remove all the references to ``parameter ideal''
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\beginsection: added 6/16/96 
+
+Ch. 10
+\item{p. 235} line 17: replace ``parameter ideals for'' by ``ideals 
+of finite colength on''.
+
+\item{p. 235} line 7*: replace ``is a parameter ideal for'' 
+by ``has finite colength on''.  (this is the second occurence
+on line 7*!)
+
+\item{p. 236} line 8: replace ``is a parameter ideal for'' 
+by ``has finite colength on''.  
+
+\item{p. 236} line 8: replace ``then it is for'' 
+by ``then it has for''.  
+
+\item{p. 236} line 11*-10* : replace ``is a parameter ideal for'' 
+by ``has finite colength on''. 
+
+\item{p. 236} line 9*-8* : replace ``is a parameter ideal for'' 
+by ``has finite colength on''. 
+
+\
+
+Ch. 12
+\item{p. 273} line 15*-14* : replace ``a parameter ideal for'' 
+by ``an ideal of finite colength on''. 
+
+\item{p. 274} line 4-5 : replace ``a parameter ideal for'' 
+by ``an ideal of finite colength on''. 
+
+\item{p. 274} line 8* and line 6* (two occurrences) : replace 
+``parameter ideal'' 
+by ``ideal of finite colength''. 
+
+\item{p. 275} line 2 : replace 
+``parameter ideal'' 
+by ``ideal of finite colength''. 
+
+\item{p. 276} line 17 : replace ``parameter ideal'' 
+by ``ideal of finite colength''. 
+
+\item{p. 276} line 9* : replace ``parameter ideal'' 
+by ``ideal of finite colength''. 
+
+\item{p. 277} line 2*, 1* (two occurrences!) : 
+replace ``a parameter ideal for'' 
+by ``an ideal of finite colength on''. 
+
+\item{p. 279} line 2  : 
+replace ``a parameter ideal'' 
+by ``an ideal of finite colength''. 
+
+\item{p. 279} line 3*: 
+replace ``a parameter ideal for'' 
+by ``an ideal of finite colength on''. 
+
+
+
+\
+
+Appendix A2:
+\item{p. 594} line 17* (display) change $\phi_{1}$ to $\phi_{2}$
+and change $\phi_{0}$ to $\phi_{1}$.
+
+\item{p. 599} line 13 (display as on p. 594) change $\phi_{1}$ to $\phi_{2}$
+and change $\phi_{0}$ to $\phi_{1}$
+
+\
+
+Appendix A3:
+
+\item{p. 677} line 3*. replace ``has just been'' by ``is about to be''.
+\item{p. 677} line 1*. after ``1963'' add ``, quoted in the
+introduction to Hartshorne [1966b].''
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\beginsection: added 7/11/96 
+
+\item{p.33}{line 11}.  $f^n$ should be$f^d$
+
+\item{p.43}{line 4*}:  "algebra" should be "algebraic".
+ 
+\item{p.48}{line 9*}:  ``$1992$'' should be``$1993$''
+
+\item{p.52}{line 3}:  "coincident" should be "incident"
+
+\item{p. 58}{line 3}:   ${\bf A}^{r+1}_k$ should be ${\bf A}^{r+1}(k)$
+
+\item{p. 58}{line 13}:  ``algebra'' should be ``algebraic''
+
+\item{p. 58}{line 16}:   ${\bf A}^r_k$ should be ${\bf A}^r(k)$
+
+\item{p. 58} In the figure $z$ and $x-1$ should have the same sign.
+\noindent The branches live in the first and third-quadrant.
+ 
+\item{p. 70}{line 8} :  "left" should be "right"  
+
+\item{p.90}{line 3} :    more space around the vertical bar in the set definition
+
+\item{p.114}{line 7, Ex. 3.18a} :  After ``Show that'' insert ``, if $k$ is
+an infinite field, then'' 
+
+\item{p.129}{line 3} :   $x-1$ should be $x+1$
+
+\item{p.136} in Exercise 4.11 the reference to A3.3 should be to A3.2.
+
+\item{p.156}{line 2*} :  ";" should be "."
+
+\item{p.158}{line 1*}: At the end there should be a parenthesis  ")"
+
+\item{p.251}{line 8} : "ring" should be "reduced ring"
+
+\item{p.252}{line 12*}: $R_{P}$ should be $R_{P_{j}}$
+
+\item{p.303}{line 3}: $\otimes_P$ should be $\otimes_R$
+
+\item{p.304}{line 5}: $f_{i}(x_{1},\ldots,x_{n},y_{0},\ldots,y_{m})$ should 
+be $f_{i}(x_{0},\ldots,x_{m},y_{0},\ldots,y_{n})$
+
+\item{p.304}{line 6}:  $m+1$ should be $n+1$
+
+\item{p.305}{line 17*}: "polymials" should be "polynomials"
+  
+\item{p. 325} line 15*.  line should end with a colon 
+
+\item{p. 330} line 15 (mid of Prop).  In the expression that ends with )),
+the second one should also be in math mode (not so tilted)
+
+\item{p. 333} line 7. comma before last word should be period
+
+\item{p. 367} line 13 ``ldots" should be ``...'' (missing backslash in the tex
+
+\item{p.384}{line 11} Diagram: $\exists ! e$ should be $\exists ! e'$
+
+\item{p.389}{line 8} $f$ should be $\phi$
+
+\item{p.389}{line 11} $\phi^{*}$ should be $f^{*}$
+
+\item{p.391}{line 13*} $R/S$ should be $S/R$
+
+\item{p.405}{line 15*} $R/P$ should be $S/P$
+
+\item{p.405}{line 6*} $R/P$ should be $S/P$
+
+\item{p.410}{line 2*}  after ``as a'' insert ``deformation''
+
+\item{p.431}{line 9*} 17.4 should be 17.14
+
+\item{p.539} line 4*:  ``first'' should be ``middle''
+\item{p.539} line 3*:  should be `` $f_2 = x_1x_3-x_2^2$
+\item{p.539} line 1*:  change ``$x_0=x_1=0$'' to ``$x_1=x_2=0$''
+
+\item{p. 754} line 8 (Herzog-Kunz reference)  
+Should be ``Herzog, J., and ''
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\beginsection Not corrected in the Oct 96 printing
+
+In the following ``first'' means first printing, ``sec'' means
+second printing (Fall 96).
+
+\beginsection Chapter 1
+
+\item{}{first 152 sec.154 Figure 5.2}
+There should not be any space between "in" and "($y^2$..." otherwise
+it takes time (for me) to figure out that you actually mean the
+initial term of ($y^2-$... .
+
+\item {p. 251} (of first printing). First line of the pf of Cor 11.4:
+Prop. 11.3, which is referenced, requires the ring to be reduced.
+
+
+\item{}first 256 sec.260 Corollary 11.7a and its proof: At the end
+of the statement of part a of the Cor, before the period, add:
+``modulo the group of units of $R$''. In the fourth line of 
+the proof of part a, replace ``, so it'' by:
+
+``. We have $Ru=Rv$ iff $u$ and $v$ differ by a
+unit of $R$, so we may identify the group of principal divisors,
+under multiplication, with the group $K(R)^*/R^*$. If $I$ is any
+invertible divisor and $Ru$ is a principal divisor, then
+$(Ru)I = uI$. Thus it''
+
+\item {p. 327} (of first printing). There should be an end-of-proof
+sign following the statement of Prop 15.4
+
+\item {p. 332} (of first printing).  The large insert 
+fixing the proof of Thm 15.8 was put in the wrong place:
+The part from
+``choose and expression'' to ``possible.  Now''
+should be deleted.
+
+\item {}{first 528 sec 532} first paragraph after definition.
+Towards the end of the paragraph there is a reference to a
+proposition. It should be "Proposition 21.5d" not 21.4d.
+
+\item {p. 546} (of first printing). Exercise 21.6 should refer
+explicitly to the notation introduced just after Prop. 21.5.
+
+\item {p. 609} (of second printing) First line after the proof.
+``Corollary'' should be ``Theorem''. Same in EXC A2.15
+
+\item {}{first 645 sec 652} exact sequence labeled as 0:
+It should be $0\to B\to A+B\to A\to 0$ and not $0\to A\to $ etc.
+
+\item {}{first 645 sec 652 last paragraph of Exc A3.26a}
+$ E^1(A,B)$ should be and $E^1_R(A,B)$
+
+\item {}{first 645 sec 652 last paragraph of Exc A3.26c}
+should end with $B$
+
+\item {}{first 778,sec 790}
+Reference page for ``$M$-sequence'' should be 419ff in the first
+printing and 423ff in the second printing
+
+
+\beginsection Thanks!
+
+Thanks to all those who have helped me compile these
+latest corrections -- in particular, to: 
+
+\item{$\bullet$}Craig Huneke
+\item{$\bullet$}Kenji Matsuki
+\item{$\bullet$}Jan Strooker
+\item{$\bullet$}Wolfgang Vogel
+\item{$\bullet$}Karen Smith
+\item{$\bullet$}Hara Charalambous
+\item{$\bullet$}Sinan Sertoz
+\item{$\bullet$}Roger Wiegand
+\item{$\bullet$}Faheem Mitha
+\item{$\bullet$}Bernd Sturmfels
+\item{$\bullet$}Keith Pardue
+\item{$\bullet$}Will Traves
+\item{$\bullet$}Leslie Roberts
+\item{$\bullet$}Ezra Miller
+\item{$\bullet$}CW
+\item{$\bullet$}Bill Adams
+\item{$\bullet$}Aron Simis
+\item{$\bullet$}Richard Belshoff
+\item{$\bullet$}Kishor Shah
+\item{$\bullet$}Udo Vetter
+\item{$\bullet$}Marie Vitulli
+\item{$\bullet$}Martin Lorenz
+\item{$\bullet$}Allan Adler
+\item{$\bullet$}Ebrahim Jahangard
+\item{$\bullet$}Pietro de Poi
+\item{$\bullet$}Vivek Pawale
+\item{$\bullet$}Daniel Mall
+\item{$\bullet$}Harm Derksen
+\item{$\bullet$}Gerhard Quarg
+\item{$\bullet$}Sorin Popescu
+\item{$\bullet$}Juan Migliore
+\item{$\bullet$}Chris Peterson
+\item{$\bullet$}Colin McLarty
+\item{$\bullet$}Vesselin Gasharov
+\item{$\bullet$}Paolo Oliverio
+\item{$\bullet$}Claude Quitte
+\bigskip
+
+\noindent{Dept. of Math., Brandeis Univ., Waltham MA 02254 \par 
+\noindent eisenbud@math.brandeis.edu}
+\vfil \eject
+\bye
+
+
