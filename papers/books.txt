@@ -131,17 +131,29 @@ David Eisenbud and Irena Peeva.
 ISBN: 978-3-319-26436-3; 978-3-319-26437-0.
 </td></tr></tbody></table></dt>
 
+
 <dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap"> 14.
 </td><td>
-<b>3264 and all that—a second course in algebraic geometry.</b>David Eisenbud and Joe Harris. Cambridge University Press, Cambridge (2016), xiv+616 pp. ISBN: 978-1-107-60272-4; 978-1-107-01708-5.</b>
+<b>Minimal free resolutions over complete intersections.</b>
+David Eisenbud and Irena Peeva.
+<i>Lecture Notes in Mathematics 2152</>, Springer-Verlag, New York. (2016), x+107 pages.
+ISBN: 978-3-319-26436-3; 978-3-319-26437-0.
 </td></tr></tbody></table></dt>
 
 <dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap"> 14.
 </td><td>
-<b>The practice of algebraic curves—a second course in algebraic geometry.
-<b>David Eisenbud and Joe Harris</b>
+<b>3264 and all that—a second course in algebraic geometry.</b>David Eisenbud and Joe Harris.
+Cambridge University Press, Cambridge (2016), xiv+616 pp. ISBN: 978-1-107-60272-4; 978-1-107-01708-5.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap"> 14.
+</td><td>
+<b>The practice of algebraic curves—a second course in algebraic geometry.</b>
+David Eisenbud and Joe Harris.
 <i>Graduate Studies in Mathematics, 250</i>
  American Mathematical Society, Providence, RI, (2024),
 xv+413 pp. ISBN: 978-1-4704-7637-3
 </td></tr></tbody></table></dt>
+
+
 
