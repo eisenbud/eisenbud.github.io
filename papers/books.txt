@@ -19,7 +19,7 @@ BSB B. G. Teubner Verlagsgesellschaft, Leipzig.
 </td><td>
 <b>Hodge algebras.</b>
 Corrado De Concini, David Eisenbud, Claudio Procesi.
-<i>Ast�risque.</i> 91 (1982), 87 pages.
+<i>Astérisque.</i> 91 (1982), 87 pages.
 </td></tr></tbody></table></dt>
 
 <dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap">  4.
@@ -121,3 +121,27 @@ Springer-Verlag, New York.
 <i>Graduate texts in mathematics.</i> 229 (2005), xvi+243 pages.
 ISBN: 0-387-22215-4; 0-387-22232-4.
 </td></tr></tbody></table></dt>
+
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap"> 14.
+</td><td>
+<b>Minimal free resolutions over complete intersections.y.</b>
+David Eisenbud and Irena Peeva.
+<i>Lecture Notes in Mathematics 2152</>, Springer-Verlag, New York. (2016), x+107 pages.
+ISBN: 978-3-319-26436-3; 978-3-319-26437-0.
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap"> 14.
+</td><td>
+<b>3264 and all that—a second course in algebraic geometry.</b>David Eisenbud and Joe Harris. Cambridge University Press, Cambridge (2016), xiv+616 pp. ISBN: 978-1-107-60272-4; 978-1-107-01708-5.</b>
+</td></tr></tbody></table></dt>
+
+<dt><table cellpadding="0"><tbody><tr valign="top"><td nowrap="nowrap"> 14.
+</td><td>
+<b>The practice of algebraic curves—a second course in algebraic geometry.
+<b>David Eisenbud and Joe Harris</b>
+<i>Graduate Studies in Mathematics, 250</i>
+ American Mathematical Society, Providence, RI, (2024),
+xv+413 pp. ISBN: 978-1-4704-7637-3
+</td></tr></tbody></table></dt>
+
