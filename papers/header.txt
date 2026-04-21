@@ -7,7 +7,9 @@
 <tr>
 <td style="padding-right:10pt; font-size:larger"><a href="#papers">Papers</a></td>
 <td style="padding-left:10pt; padding-right:10pt; font-size:larger"><a href="#books">Books</a></td>
+<!--
 <td style="padding-left:10pt; font-size:larger"><a href="#arxiv">arXiv</a></td>
+-->
 </tr>
 </table>
 </center>
