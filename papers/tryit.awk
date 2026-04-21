@@ -27,11 +27,11 @@ year = $2
 
 title = $3
 if (title !~ /\?$/) title = title "."
-sub("\.\.$", ".", title)
+sub(/\.\.$/, ".", title)
 
 author = $4
 # remove a final "." because it would print two, e.g., "Jr."
-sub("\.$", "", author)
+sub(/\.$/, "", author)
 
 journal = ($5 != "") ? ($5 ".") : ""
 

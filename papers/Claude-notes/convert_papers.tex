@@ -1,0 +1,279 @@
+#!/usr/bin/env python3
+"""
+convert_papers.py
+=================
+Converts a plain-text MathSciNet bibliography file into a tab-separated
+file suitable for David Eisenbud's papers list.
+
+INPUT FORMAT (MathSciNet plain text):
+    MR4968625  Author1, First ; Author2, First . Title of paper.
+     Journal Name  VOL  (YEAR),  no. N, PAGE--PAGE. YEAR-NNN
+
+OUTPUT FORMAT (9 tab-separated columns):
+    INDEX  YEAR  TITLE  AUTHORS  JOURNAL  VOL:ISSUE  PAGES  YEAR-CODE  ?
+
+USAGE:
+    python3 convert_papers.py input.txt output.txt [--start N]
+
+    --start N   : starting index number (default: 1)
+
+NOTES:
+- Entries in the input file are processed in REVERSE order (last entry
+  gets the lowest index number, matching the existing list convention).
+- The MR token is stripped from each entry.
+- Book chapters: journal column gets the book/series title; vol/issue blank.
+- The input file should have Unix line endings and a final newline.
+  If needed, preprocess with:
+      sed -i '' 's/--/-/g' input.txt   (replace double hyphens)
+      printf "\\n" >> input.txt         (ensure final newline)
+- The downstream awk script requires /regex/ syntax (not "string") in
+  sub() calls to avoid '.' matching any character. Specifically:
+      sub(/\\.$/, "", author)       -- not sub("\\.$", ...)
+      sub(/\\.\\.$/,  ".", title)   -- not sub("\\.\\.$", ...)
+"""
+
+import re
+import argparse
+import sys
+
+# -----------------------------------------------------------------------
+# Keywords that identify book chapters / conference proceedings.
+# If any of these appear in the publication info, the entry is treated
+# as a book chapter: col5 = book/series title, col6 = blank.
+# Extend this list as needed.
+# -----------------------------------------------------------------------
+BOOK_KEYWORDS = [
+    'Contemp. Math.',
+    'London Math. Soc.',
+    'Abel Symp.',
+    'Clay Math.',
+    'Math. Sci. Res. Inst.',
+    'Hindustan Book',
+    'Cambridge Univ. Press',
+    'Springer, Berlin',
+    'Amer. Math. Soc.',
+    'Proceedings of the International Congress',
+]
+
+# -----------------------------------------------------------------------
+# Manual fixes: applied AFTER automatic parsing.
+# Keys are 1-based positions in the REVERSED entry list (i.e. the output
+# row number relative to --start).
+# Use this for entries where the parser can't cleanly separate journal
+# name from volume (usually because source has only single spaces).
+# Format: position -> (journal, vol_issue, pages)
+#
+# When reusing this script for a new batch, clear this dict and add new
+# fixes as needed after a first-pass review.
+# -----------------------------------------------------------------------
+MANUAL_FIXES = {
+    # Examples from the 2007-2025 batch (positions relative to start=134):
+    # 134: ('Bull. Amer. Math. Soc. (N.S.)', '44:3', '331-359'),
+    # Add new fixes here as needed.
+}
+
+
+def parse_authors(s):
+    """Split 'Last, First ; Last, First ; ...' into 'Last, First, Last, First, ...'"""
+    parts = [p.strip().rstrip('.') for p in re.split(r'\s*;\s*', s)]
+    return ', '.join([p for p in parts if p])
+
+
+def parse_entry(raw):
+    """
+    Parse one raw MathSciNet entry (MR token already present) into a dict
+    with keys: year, title, authors, journal, vol_issue, pages, year_code.
+    """
+    # --- Strip MR token ---
+    raw = re.sub(r'^MR\d+\s*', '', raw)
+
+    # --- Extract year-code (e.g. 2025-001) from end of entry ---
+    m = re.search(r'(\d{4}-\d{3})\s*$', raw)
+    year_code = m.group(1) if m else '?'
+    raw = raw[:m.start()].strip() if m else raw
+    year = year_code[:4]
+
+    # --- Split into lines, clean up ---
+    lines = [l.strip() for l in raw.split('\n') if l.strip()]
+    # Remove language annotations like "(French)"
+    lines = [re.sub(r'^\([A-Z][a-z]+\)\s*', '', l) for l in lines]
+
+    # ---------------------------------------------------------------
+    # Parse authors and title from line 0.
+    # MathSciNet format: "Author1 ; Author2 . Title text."
+    # The separator is ' . ' (space-dot-space).
+    # Special case: some entries have "Nitsche, Max J.  Title" where
+    # the author list ends with an initial and double-space precedes title.
+    # ---------------------------------------------------------------
+    line0 = lines[0]
+    sep = re.search(r'\s\.\s', line0)
+    if sep:
+        authors_raw = line0[:sep.start()]
+        title = line0[sep.end():].strip().rstrip('.')
+    else:
+        # Fallback: author block ends with "X." then double space
+        m2 = re.match(r'^((?:[^.]+\.\s*)+?)\s{2,}(.+)$', line0)
+        if m2:
+            authors_raw = m2.group(1).strip()
+            title = m2.group(2).strip().rstrip('.')
+        else:
+            authors_raw = line0.rstrip('.')
+            title = ''
+
+    # --- Check if title continues on line 2 (lowercase continuation) ---
+    pub_start = 1
+    while pub_start < len(lines):
+        l = lines[pub_start]
+        if l and l[0].islower():
+            # Lowercase start = continuation of title
+            title += ' ' + l.rstrip('.')
+            pub_start += 1
+        elif re.match(r'^Special volume', l):
+            # Dedication note (e.g. "Special volume in honor of X") — skip
+            pub_start += 1
+            break
+        else:
+            break
+
+    # --- Clean up title ---
+    authors = parse_authors(authors_raw)
+    title = re.sub(r'\s+', ' ', title).strip()
+    title = title.replace('\\ell', 'ell')          # LaTeX \ell -> ell
+    title = re.sub(r'\[\s*MR\d+\s*\]', '[MR]', title)  # shorten MR refs
+
+    # --- Publication info: join remaining lines ---
+    pub_text = ' '.join(lines[pub_start:])
+    pub_text = re.sub(r'\s+', ' ', pub_text).strip()
+    # Remove any dedication note at start of pub_text
+    pub_text = re.sub(r'^Special volume[^.]+\.\s*', '', pub_text)
+
+    # ---------------------------------------------------------------
+    # Parse publication info into journal, vol_issue, pages.
+    # Three cases:
+    #   1. Book chapter (contains BOOK_KEYWORDS)
+    #   2. Épijournal-style with [year range]
+    #   3. Standard journal article
+    #      a. Gaz. Math. style: "Journal  No. N,  (YEAR), pages"
+    #      b. Normal: "Journal  VOL  (YEAR),  [no. N,]  pages"
+    # ---------------------------------------------------------------
+    is_book = any(kw in pub_text for kw in BOOK_KEYWORDS)
+    is_epi  = 'pijournal' in pub_text or ('[' in pub_text and '--' not in pub_text
+                                          and re.search(r'\[\d{4}', pub_text))
+
+    journal = vol_issue = pages = ''
+
+    if is_book:
+        pm = re.search(r'(\d+-\d+)', pub_text)
+        pages = pm.group(1) if pm else ''
+        if pages:
+            book_part = pub_text[:pub_text.index(pages)].strip().rstrip(',').strip()
+        else:
+            book_part = pub_text.split(',')[0].strip()
+        journal = book_part
+
+    elif is_epi:
+        m = re.match(r'^(.*?)\s+\[.*?\],\s*(.*)', pub_text)
+        if m:
+            journal = m.group(1).strip()
+            rest = m.group(2)
+            art = re.search(r'Art\.\s*(\d+)', rest)
+            pp  = re.search(r'(\d+)\s*pp', rest)
+            if art and pp:
+                pages = f"Art. {art.group(1)}, {pp.group(1)} pp"
+            elif pp:
+                pages = pp.group(1) + ' pp'
+        else:
+            journal = pub_text
+
+    else:
+        # Gaz. Math. style: no volume number, just "No. N"
+        gaz = re.match(r'^(.*?)\s+No\.\s*(\d+),\s*\(\d{4}\),\s*(.*)', pub_text)
+        if gaz:
+            journal   = gaz.group(1).strip()
+            vol_issue = 'No. ' + gaz.group(2)
+            rest = gaz.group(3).rstrip('.')
+            pm = re.search(r'(\d+-\d+)', rest)
+            pages = pm.group(1) if pm else rest
+
+        else:
+            # Standard journal: try double-space split first, then single-space
+            m = re.match(r'^(.*?)\s{2,}(\d+)\s+\(\d{4}\),\s*(?:no\.\s*(\S+),\s*)?(.*)', pub_text)
+            if not m:
+                m = re.match(r'^(.*?)\s(\d+)\s+\(\d{4}\),\s*(?:no\.\s*(\S+),\s*)?(.*)', pub_text)
+            if m:
+                journal   = m.group(1).strip()
+                vol       = m.group(2)
+                issue     = m.group(3)
+                rest      = m.group(4).strip().rstrip('.')
+                vol_issue = f"{vol}:{issue}" if issue else vol
+                pm = re.search(r'(\d+-\d+)', rest)
+                if pm:
+                    pages = pm.group(1)
+                else:
+                    pp = re.search(r'(\d+)\s*pp', rest)
+                    pages = pp.group(1) + ' pp' if pp else rest
+            else:
+                journal = pub_text
+
+    return dict(year=year, title=title, authors=authors,
+                journal=journal, vol_issue=vol_issue, pages=pages,
+                year_code=year_code)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('input',  help='Input plain-text file from MathSciNet')
+    parser.add_argument('output', help='Output tab-separated file')
+    parser.add_argument('--start', type=int, default=1,
+                        help='Starting index number (default: 1)')
+    args = parser.parse_args()
+
+    with open(args.input, 'r', encoding='utf-8') as f:
+        text = f.read()
+
+    # Split on blank line before each MR token
+    entries = re.split(r'\n(?=MR\d+)', text.strip())
+    entries = [e.strip() for e in entries if e.strip()]
+
+    # Reverse: last entry in file gets the lowest index number
+    entries = list(reversed(entries))
+
+    results = [parse_entry(e) for e in entries]
+
+    # Apply manual fixes
+    for i, r in enumerate(results):
+        pos = args.start + i
+        if pos in MANUAL_FIXES:
+            r['journal'], r['vol_issue'], r['pages'] = MANUAL_FIXES[pos]
+
+    # Write output
+    output_lines = []
+    for i, r in enumerate(results):
+        num  = args.start + i
+        cols = [str(num), r['year'], r['title'], r['authors'],
+                r['journal'], r['vol_issue'], r['pages'], r['year_code'], '?']
+        output_lines.append('\t'.join(cols))
+
+    with open(args.output, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(output_lines) + '\n')
+
+    print(f"Wrote {len(output_lines)} entries to {args.output}.")
+
+    # Warn about any entries that may need manual review
+    issues = []
+    for i, r in enumerate(results):
+        num = args.start + i
+        if not r['title']:
+            issues.append(f"  Entry {num}: empty title")
+        if re.search(r'\(\d{4}\)', r['journal']):
+            issues.append(f"  Entry {num}: year found in journal field — may need manual fix")
+    if issues:
+        print("\nEntries that may need review:")
+        for issue in issues:
+            print(issue)
+        print("\nAdd corrections to the MANUAL_FIXES dict at the top of the script.")
+
+
+if __name__ == '__main__':
+    main()
